@@ -1,5 +1,5 @@
 body {
-  overflow-x: hidden;
+  overflow: hidden;
   .sectionsContainer {
     display: flex;
     width: 400%;
@@ -20,4 +20,9 @@ body {
       }
     }
   }
+}
+
+
+@media (max-width: 737px){
+  
 }
