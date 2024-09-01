@@ -3,8 +3,13 @@ document.querySelectorAll("nav li").forEach((item) => {
     e.preventDefault();
 
     const sectionId = e.target.closest("li").getAttribute("data-section");
-
+    const newActiveSection = document.getElementById(`section${sectionId}`);
     const currentActiveSection = document.querySelector(".section.active");
+
+    if (newActiveSection === currentActiveSection) {
+      return;
+    }
+
     if (currentActiveSection) {
       currentActiveSection.classList.remove("active");
     }

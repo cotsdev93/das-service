@@ -26,25 +26,15 @@ body nav ul li {
   color: white;
   display: flex;
   margin: 15px;
+  cursor: pointer;
 }
 
 body {
   overflow-x: hidden;
 }
-body nav ul {
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  justify-content: center;
-}
-body nav ul li {
-  margin: 0 15px;
-  cursor: pointer;
-}
 body .sectionsContainer {
   display: flex;
-  width: 300%;
+  width: 400%;
   overflow: hidden;
   position: relative;
   transition: transform 1s ease;
@@ -79,6 +69,11 @@ body .sectionsContainer .section:not(.active) {
   height: 80vh;
   border: solid 5px blue;
   background-color: blue;
+}
+
+#section4 {
+  background-color: lightblue;
+  height: 80vh;
 }
 
 /*# sourceMappingURL=style.css.map */
