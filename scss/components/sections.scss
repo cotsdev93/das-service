@@ -1,5 +1,14 @@
 body {
-    .sections {
+    overflow-x: hidden;
+    .sectionsContainer {
         display: flex;
+        width: 300%;
+        .section {
+            display: none;
+            width: 33.3%;
+            &.active {
+              display: block;
+            }
+        }
     }
 }

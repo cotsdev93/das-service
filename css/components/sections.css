@@ -1,5 +1,16 @@
-body .sections {
+body {
+  overflow-x: hidden;
+}
+body .sectionsContainer {
   display: flex;
+  width: 300%;
+}
+body .sectionsContainer .section {
+  display: none;
+  width: 33.3%;
+}
+body .sectionsContainer .section.active {
+  display: block;
 }
 
 /*# sourceMappingURL=sections.css.map */

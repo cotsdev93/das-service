@@ -22,31 +22,39 @@ body nav ul {
   display: flex;
   align-items: center;
 }
-body nav ul li a {
+body nav ul li {
   color: white;
   display: flex;
   margin: 15px;
 }
 
-body .sections {
+body {
+  overflow-x: hidden;
+}
+body .sectionsContainer {
   display: flex;
+  width: 300%;
+}
+body .sectionsContainer .section {
+  display: none;
+  width: 33.3%;
+}
+body .sectionsContainer .section.active {
+  display: block;
 }
 
-#repuestos {
-  width: 500px;
-  height: 500px;
+#section2 {
+  height: 80vh;
   border: solid 5px green;
 }
 
-#service {
-  width: 500px;
-  height: 500px;
+#section1 {
+  height: 80vh;
   border: solid 5px red;
 }
 
-#equipos {
-  width: 500px;
-  height: 500px;
+#section3 {
+  height: 80vh;
   border: solid 5px blue;
 }
 

@@ -1,6 +1,5 @@
-#service {
-  width: 500px;
-  height: 500px;
+#section1 {
+  height: 80vh;
   border: solid 5px red;
 }
 
