@@ -1,25 +1,23 @@
-body {
+body .sectionsContainer {
+  width: 100%;
+  border: solid 5px black;
   overflow: hidden;
 }
-body .sectionsContainer {
+body .sectionsContainer .sections {
   display: flex;
   width: 400%;
-  overflow: hidden;
-  position: relative;
   transition: transform 1s ease;
 }
-body .sectionsContainer .section {
+body .sectionsContainer .sections .section {
   width: 100vw;
-  flex-shrink: 0;
   transition: opacity 0.5s ease, transform 2s ease;
+  display: none;
 }
-body .sectionsContainer .section.active {
-  opacity: 1;
-  transform: translateX(0);
+body .sectionsContainer .sections .section.active {
+  display: block;
 }
-body .sectionsContainer .section:not(.active) {
-  opacity: 0;
-  transform: translateX(100%);
+body .sectionsContainer .sections .section:not(.active) {
+  display: none;
 }
 
 /*# sourceMappingURL=sections.css.map */

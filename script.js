@@ -16,7 +16,7 @@ document.querySelectorAll("nav li").forEach((item) => {
 
     document.querySelector(
       ".sectionsContainer"
-    ).style.transform = `translateX(-${(sectionId - 1) * 100}vw)`;
+    ).style.transform = `translateX(-${(sectionId - 1) * 100})`;
 
     setTimeout(() => {
       const newActiveSection = document.getElementById(`section${sectionId}`);

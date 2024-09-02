@@ -1,28 +1,30 @@
 body {
-  overflow: hidden;
   .sectionsContainer {
-    display: flex;
-    width: 400%;
+    width: 100%;
+    border: solid 5px black;
     overflow: hidden;
-    position: relative;
-    transition: transform 1s ease;
-    .section {
-      width: 100vw;
-      flex-shrink: 0;
-      transition: opacity 0.5s ease, transform 2s ease;
-      &.active {
-        opacity: 1;
-        transform: translateX(0);
-      }
-      &:not(.active) {
-        opacity: 0;
-        transform: translateX(100%);
+    .sections {
+      display: flex;
+      width: 400%;
+      transition: transform 1s ease;
+      .section {
+        width: 100vw;
+        transition: opacity 0.5s ease, transform 2s ease;
+        display: none;
+        &.active {
+          // opacity: 1;
+          // transform: translateX(0);
+          display: block;
+        }
+        &:not(.active) {
+          // opacity: 0;
+          display: none;
+          // transform: translateX(100%);
+        }
       }
     }
   }
 }
 
-
-@media (max-width: 737px){
-  
+@media (max-width: 737px) {
 }
