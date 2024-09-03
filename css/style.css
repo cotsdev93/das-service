@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   text-decoration: none;
   list-style: none;
@@ -52,26 +53,38 @@ body nav ul li {
     cursor: pointer;
   }
 }
-body .sectionsContainer {
+.sectionsContainer {
+  position: relative;
   width: 100%;
-  border: solid 5px black;
+  height: 100vh; /* Asegura que cada sección ocupe toda la altura de la pantalla */
   overflow: hidden;
 }
-body .sectionsContainer .sections {
+.sectionsContainer .section {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
   display: flex;
-  width: 400%;
-  transition: transform 1s ease;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0.8) translateX(100%);
+  transition: transform 0.5s ease, opacity 0.5s ease;
 }
-body .sectionsContainer .sections .section {
-  width: 100vw;
-  transition: opacity 0.5s ease, transform 2s ease;
-  display: none;
+.sectionsContainer .section.active {
+  opacity: 1;
+  transform: scale(1) translateX(0);
 }
-body .sectionsContainer .sections .section.active {
-  display: block;
+.sectionsContainer .section.exit-left {
+  opacity: 0;
+  transform: scale(0.8) translateX(-100%);
+  transition: transform 0.5s ease, opacity 0.5s ease;
 }
-body .sectionsContainer .sections .section:not(.active) {
-  display: none;
+.sectionsContainer .section.enter-right {
+  opacity: 1;
+  transform: scale(0.8) translateX(100%);
+  transition: transform 0.5s ease, opacity 0.5s ease 0.5s; /* Aparece después de que la otra sección se haya ido */
 }
 
 #section2 {
