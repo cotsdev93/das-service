@@ -26,6 +26,6 @@ document.querySelectorAll("nav li").forEach((item) => {
       }
       newActiveSection.classList.remove("enter-right");
       newActiveSection.classList.add("active");
-    }, 900); // La duración debe coincidir con la duración de la transición en CSS.
+    }, 1000); // La duración debe coincidir con la duración de la transición en CSS.
   });
 });
