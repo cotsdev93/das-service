@@ -7,7 +7,7 @@ document.querySelectorAll("nav li").forEach((item) => {
     const currentActiveSection = document.querySelector(".section.active");
 
     if (newActiveSection === currentActiveSection) {
-      return; // Si la nueva sección es la misma que la actual, no hace nada.
+      return; // Si es la misma sección, no hace nada.
     }
 
     // Añadir clase para animar la salida de la sección actual.
@@ -16,16 +16,18 @@ document.querySelectorAll("nav li").forEach((item) => {
       currentActiveSection.classList.add("exit-left");
     }
 
-    // Añadir clase para preparar la entrada de la nueva sección.
-    newActiveSection.classList.add("enter-right");
+    // Esperar 500ms antes de activar la entrada de la nueva sección.
+    setTimeout(() => {
+      newActiveSection.classList.add("enter-right");
+    }, 500); // La nueva sección entra cuando la actual está a mitad de su animación.
 
-    // Esperar a que la animación de salida termine antes de activar la nueva sección.
+    // Esperar hasta que la animación de salida termine antes de activar la nueva sección.
     setTimeout(() => {
       if (currentActiveSection) {
         currentActiveSection.classList.remove("exit-left");
       }
       newActiveSection.classList.remove("enter-right");
       newActiveSection.classList.add("active");
-    }, 1000); // La duración debe coincidir con la duración de la transición en CSS.
+    }, 1500); // La duración debe coincidir con la duración de la animación.
   });
 });
