@@ -126,14 +126,8 @@ body nav ul li {
 
 #section3 {
   height: 80vh;
-  border: solid 5px blue;
-  background-color: blue;
 }
-
-#section4 {
-  height: 80vh;
-}
-#section4 .clientesContainer {
+#section3 .equiposContainer {
   border: 1px solid rgba(0, 0, 0, 0.1); /* Borde delgado y sutil */
   border-radius: 20px; /* Esquinas redondeadas */
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -141,19 +135,36 @@ body nav ul li {
   height: 70vh;
   backdrop-filter: blur(2px);
 }
-#section4 .clientesContainer h3 {
+
+#section4 {
+  height: 80vh;
+}
+#section4 .clientesContainer {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  height: 70vh;
+  backdrop-filter: blur(2px);
+}
+#section4 .clientesContainer .titleClientes {
   margin: 15px;
 }
-#section4 .clientesContainer p {
+#section4 .clientesContainer .titleClientes .titleSabemos {
+  color: #003459;
+  text-transform: uppercase;
+  font-size: 25px;
+}
+#section4 .clientesContainer .textClientes {
   margin: 15px;
   text-align: justify;
+  color: #2e2e2e;
 }
 #section4 .clientesContainer .buttonContainer {
   text-align: right;
   margin: 15px;
 }
 #section4 .clientesContainer .opinionesContainer {
-  border: solid 1px red;
   margin: 15px;
   height: 20vh;
 }

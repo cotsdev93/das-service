@@ -1,29 +1,17 @@
-#section4 {
-  height: 80vh;
-}
-#section4 .clientesContainer {
-  border: 1px solid rgba(0, 0, 0, 0.1); /* Borde delgado y sutil */
-  border-radius: 20px; /* Esquinas redondeadas */
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.1);
-  width: 50%;
-  height: 70vh;
-  backdrop-filter: blur(2px);
-}
-#section4 .clientesContainer h3 {
-  margin: 15px;
-}
-#section4 .clientesContainer p {
-  margin: 15px;
-  text-align: justify;
-}
-#section4 .clientesContainer .buttonContainer {
-  text-align: right;
-  margin: 15px;
-}
-#section4 .clientesContainer .opinionesContainer {
-  border: solid 1px red;
-  margin: 15px;
-  height: 20vh;
-}
+/* Error: Undefined variable.
+ *    ,
+ * 13 |         color: $azul;
+ *    |                ^^^^^
+ *    '
+ *   scss\components\clientes.scss 13:16  root stylesheet */
 
-/*# sourceMappingURL=clientes.css.map */
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined variable.\a    \2577 \a 13 \2502          color: $azul;\d\a    \2502                 ^^^^^\a    \2575 \a   scss\\components\\clientes.scss 13:16  root stylesheet";
+}

@@ -1,25 +1,30 @@
 #section4 {
   height: 80vh;
   .clientesContainer {
-    border: 1px solid rgba(0, 0, 0, 0.1); /* Borde delgado y sutil */
-    border-radius: 20px; /* Esquinas redondeadas */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.1);
     width: 50%;
     height: 70vh;
     backdrop-filter: blur(2px);
-    h3 {
+    .titleClientes {
       margin: 15px;
+      .titleSabemos {
+        color: $azul;
+        text-transform: uppercase;
+        font-size: 25px;
+      }
     }
-    p {
+    .textClientes {
       margin: 15px;
       text-align: justify;
+      color: $grisTexto;
     }
     .buttonContainer {
       text-align: right;
       margin: 15px;
     }
     .opinionesContainer {
-      border: solid 1px red;
       margin: 15px;
       height: 20vh;
     }
