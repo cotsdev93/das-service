@@ -1,4 +1,27 @@
 #section4 {
-    background-color: lightblue;
-    height: 80vh;
+  height: 80vh;
+  .clientesContainer {
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Borde delgado y sutil */
+    border-radius: 20px; /* Esquinas redondeadas */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    height: 70vh;
+    backdrop-filter: blur(2px);
+    h3 {
+      margin: 15px;
+    }
+    p {
+      margin: 15px;
+      text-align: justify;
+    }
+    .buttonContainer {
+      text-align: right;
+      margin: 15px;
+    }
+    .opinionesContainer {
+      border: solid 1px red;
+      margin: 15px;
+      height: 20vh;
+    }
+  }
 }

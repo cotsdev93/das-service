@@ -1,3 +1,4 @@
+// NAV ANIMACIONES ENTRADA Y SALIDA
 document.querySelectorAll("nav li").forEach((item) => {
   item.addEventListener("click", (e) => {
     e.preventDefault();
@@ -6,9 +7,9 @@ document.querySelectorAll("nav li").forEach((item) => {
     const newActiveSection = document.getElementById(`section${sectionId}`);
     const currentActiveSection = document.querySelector(".section.active");
 
-    if (newActiveSection === currentActiveSection) {
-      return; // Si es la misma sección, no hace nada.
-    }
+    // if (newActiveSection === currentActiveSection) {
+    //   return; // Si es la misma sección, no hace nada.
+    // }
 
     // Añadir clase para animar la salida de la sección actual.
     if (currentActiveSection) {
@@ -31,3 +32,13 @@ document.querySelectorAll("nav li").forEach((item) => {
     }, 1500); // La duración debe coincidir con la duración de la animación.
   });
 });
+
+// CLIENTES
+//  api key AIzaSyCp87SnpuaNwzEwtKyl_8A_ATvK0-cCiss
+
+async function getGoogleReviews() {
+  const placeId = ""
+  const apiKey = "AIzaSyCp87SnpuaNwzEwtKyl_8A_ATvK0-cCiss"
+
+  const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=rating,reviews&key=${apiKey}`;
+}
