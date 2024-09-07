@@ -37,7 +37,7 @@ document.querySelectorAll("nav li").forEach((item) => {
 //  api key AIzaSyCp87SnpuaNwzEwtKyl_8A_ATvK0-cCiss
 
 async function getGoogleReviews() {
-  const placeId = ""
+  const placeId = "ChIJbfOMr3PIvJURJ2vXCwQqGzI"
   const apiKey = "AIzaSyCp87SnpuaNwzEwtKyl_8A_ATvK0-cCiss"
 
   const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=rating,reviews&key=${apiKey}`;
