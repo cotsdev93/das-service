@@ -5,7 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  font-family: "Open Sans", sans-serif;
+  font-family: "roboto";
 }
 
 body {
@@ -159,7 +159,8 @@ body nav ul li {
 #section4 .clientesContainer .titleClientes .titleSabemos {
   color: #003459;
   text-transform: uppercase;
-  font-size: 25px;
+  font-size: 35px;
+  font-weight: 600;
 }
 #section4 .clientesContainer .textClientes {
   margin: 15px;
