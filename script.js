@@ -33,12 +33,70 @@ document.querySelectorAll("nav li").forEach((item) => {
   });
 });
 
-// CLIENTES
-//  api key AIzaSyCp87SnpuaNwzEwtKyl_8A_ATvK0-cCiss
+// // CLIENTES
+const placeId = "ChIJbfOMr3PIvJURJ2vXCwQqGzI";
+const apiKey = "AIzaSyB2qQJFxptyNJyBkyQD1bzZHg-sr3V07Tw";
 
-async function getGoogleReviews() {
-  const placeId = "ChIJbfOMr3PIvJURJ2vXCwQqGzI"
-  const apiKey = "AIzaSyCp87SnpuaNwzEwtKyl_8A_ATvK0-cCiss"
+// async function getGoogleReviews() {
+//   try {
+//     const response = await fetch("http://localhost:3000/google-reviews");
+//     const data = await response.json();
 
-  const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=rating,reviews&key=${apiKey}`;
+//     console.log(data); // Verifica la estructura de la respuesta
+
+//     const reviews = data.result?.reviews; // Accede a las reseñas dentro de data.result
+//     if (reviews && Array.isArray(reviews)) {
+//       const reviewsElement = document.getElementById("reviews");
+//       reviewsElement.innerHTML = ""; // Limpiar contenido anterior
+
+//       reviews.forEach((review) => {
+//         const reviewElement = document.createElement("p");
+//         reviewElement.textContent = review.text;
+//         reviewsElement.appendChild(reviewElement);
+//       });
+//     } else {
+//       console.error("No se encontraron reseñas.");
+//     }
+//   } catch (error) {
+//     console.error("Error al obtener las calificaciones:", error);
+//   }
+// }
+
+// getGoogleReviews();
+
+// document.getElementById("reviews").innerHTML = "Some content";
+
+ // Función para inicializar y cargar la API de Google Maps y Places
+ function initMap() {
+  async function getPlaceDetails(Place) {
+      try {
+          // Crea una nueva instancia de Place usando el Place ID.
+          const place = new google.maps.places.Place({
+              id: "ChIJbfOMr3PIvJURJ2vXCwQqGzI",
+              requestedLanguage: "en",
+          });
+
+          // Llama a fetchFields, pasando los campos de datos deseados.
+          await place.fetchFields({ fields: ["displayName", "formattedAddress"] });
+
+          // Verifica si los campos están definidos.
+          if (place.displayName && place.formattedAddress) {
+              console.log("Nombre del lugar:", place.displayName);
+              console.log("Dirección formateada:", place.formattedAddress);
+          } else {
+              console.error("No se encontraron detalles para el Place ID proporcionado.");
+          }
+      } catch (error) {
+          console.error("Error al obtener los detalles del lugar:", error);
+      }
+  }
+
+  // Llama a la función y verifica el resultado
+  getPlaceDetails(google.maps.places.Place);
 }
+// Espera a que el DOM esté completamente cargado
+document.addEventListener('DOMContentLoaded', function() {
+  initMap();
+});
+
+
