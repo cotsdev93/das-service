@@ -25,13 +25,11 @@
 .sectionsContainer {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 110vh;
   overflow: hidden;
-
   .section {
     position: absolute;
     width: 100%;
-    height: 100%;
     top: 0;
     left: 0;
     display: flex;
@@ -40,17 +38,14 @@
     opacity: 0;
     transform: scale(0.8) translateX(120%);
     transition: transform 1.5s ease, opacity 1.5s ease;
-
     &.active {
       opacity: 1;
       transform: scale(1) translateX(0);
     }
-
     &.exit-left {
       opacity: 0;
       animation: exit-left-animation 1.5s ease forwards;
     }
-
     &.enter-right {
       opacity: 1;
       animation: enter-right-animation 1.5s ease forwards;

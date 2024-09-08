@@ -1,22 +1,15 @@
 #section4 {
-  // height: 80vh;
-  align-items: center; // Para centrar verticalmente el contenido
-  height: 100%; // Para que ocupe toda la sección
-  // overflow-y: auto;
   .clientesContainer {
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgb(229, 229, 229);
     border-radius: 20px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.1);
     width: 850px;
-    height: 120%; // Permitir que el contenedor crezca según su contenido
-    min-height: 50vh; // Establece una altura mínima
+    min-height: 50vh;
     margin: 40px;
-    margin: auto;
     backdrop-filter: blur(2px);
-    flex-direction: column; // Asegurar que los elementos dentro se ordenen verticalmente
-    justify-content: space-between; // Espaciado uniforme entre los elementos
+    padding-bottom: 25px;
     .titleClientes {
-      margin: 15px;
+      margin: 15px 15px 0px 15px;
       .titleSabemos {
         color: $azul;
         text-transform: uppercase;
@@ -25,19 +18,20 @@
       }
     }
     .textClientes {
-      margin: 15px;
+      margin: 0px 15px 15px 15px;
       text-align: justify;
       color: $grisTexto;
     }
     .opinionesContainer {
       margin: 15px;
       max-height: 60vh; // Limita la altura del contenedor de reseñas
-      .elfsight-app-1cbcc4ce-5824-44dd-b8f7-7ca3dc986183 .es-header-container  {
+      .elfsight-app-1cbcc4ce-5824-44dd-b8f7-7ca3dc986183 .es-header-container {
         border: solid 0.5px $clarito;
         box-shadow: inset 0px 0px 3px 1px #00000010;
         padding: 20px;
       }
-      .elfsight-app-1cbcc4ce-5824-44dd-b8f7-7ca3dc986183 .es-review-background-container {
+      .elfsight-app-1cbcc4ce-5824-44dd-b8f7-7ca3dc986183
+        .es-review-background-container {
         border: solid 0.5px $clarito;
         box-shadow: inset 0px 0px 3px 1px #00000010;
         padding: 20px;
