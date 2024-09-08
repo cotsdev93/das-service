@@ -167,13 +167,19 @@ body nav ul li {
   text-align: justify;
   color: #2e2e2e;
 }
-#section4 .clientesContainer .buttonContainer {
-  text-align: right;
-  margin: 15px;
-}
 #section4 .clientesContainer .opinionesContainer {
   margin: 15px;
   max-height: 60vh;
+}
+#section4 .clientesContainer .opinionesContainer .elfsight-app-1cbcc4ce-5824-44dd-b8f7-7ca3dc986183 .es-header-container {
+  border: solid 0.5px #c9c9c9;
+  box-shadow: inset 0px 0px 3px 1px rgba(0, 0, 0, 0.062745098);
+  padding: 20px;
+}
+#section4 .clientesContainer .opinionesContainer .elfsight-app-1cbcc4ce-5824-44dd-b8f7-7ca3dc986183 .es-review-background-container {
+  border: solid 0.5px #c9c9c9;
+  box-shadow: inset 0px 0px 3px 1px rgba(0, 0, 0, 0.062745098);
+  padding: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */

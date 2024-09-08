@@ -29,13 +29,19 @@
       text-align: justify;
       color: $grisTexto;
     }
-    .buttonContainer {
-      text-align: right;
-      margin: 15px;
-    }
     .opinionesContainer {
       margin: 15px;
       max-height: 60vh; // Limita la altura del contenedor de reseñas
+      .elfsight-app-1cbcc4ce-5824-44dd-b8f7-7ca3dc986183 .es-header-container  {
+        border: solid 0.5px $clarito;
+        box-shadow: inset 0px 0px 3px 1px #00000010;
+        padding: 20px;
+      }
+      .elfsight-app-1cbcc4ce-5824-44dd-b8f7-7ca3dc986183 .es-review-background-container {
+        border: solid 0.5px $clarito;
+        box-shadow: inset 0px 0px 3px 1px #00000010;
+        padding: 20px;
+      }
     }
   }
 }
