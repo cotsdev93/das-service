@@ -2,11 +2,12 @@
     {
         "id" : 1,
         "categoria": "lavarropas",
-        "marca" : "samsung",
-        "modelo" : "x",
+        "marca" : "SAMSUNG",
+        "modelo" : "ABC-123",
         "condicion": "reacondicionado",
         "precio": 650000,
-        "imagen": ""
+        "img": "./assets/img/lavarropas.png",
+        "descripcion": ""
     },
     {
         "id" : 2,
@@ -15,7 +16,8 @@
         "modelo" : "x",
         "condicion": "reacondicionado",
         "precio": 700000,
-        "imagen": ""
+        "img": "",
+        "descripcion": ""
     },
     {
         "id" : 3,
@@ -24,15 +26,7 @@
         "modelo" : "x",
         "condicion": "reacondicionado",
         "precio": 800000,
-        "imagen": ""
-    },
-    {
-        "id" : 4,
-        "categoria": "lavavajillas",
-        "marca" : "ariston",
-        "modelo" : "x",
-        "condicion": "reacondicionado",
-        "precio": 450000,
-        "imagen": ""
+        "img": "",
+        "descripcion": ""
     }
 ]

@@ -60,14 +60,23 @@ function cargarProductos(productos) {
 
   for (const producto of productos) {
     productosElement.innerHTML += `
-    <h1>producto</h1>
+      <div class="productoContainer">
+        <div class="imgContainer">
+          <img src="${producto.img}" alt="" />
+        </div>
+        <div class="productoDetail">
+          <div class="productoTitle">
+            <p class="productMarca">${producto.marca}</p>
+            <p class="productoModelo">${producto.modelo}</p>
+          </div>
+          <p class="productoPrecio">$${producto.precio.toLocaleString("es-ES")}</p>
+        </div>
+      </div>
     `;
   }
 }
 
 const bd = new BaseDeDatos(); // Crear la base de datos
-
-// No necesitas llamar cargarProductos aquí, ya que lo llamas en cargarRegistros()
 
 // CLIENTES
 // const placeId = "ChIJbfOMr3PIvJURJ2vXCwQqGzI";
