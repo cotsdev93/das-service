@@ -1,0 +1,38 @@
+[
+    {
+        "id" : 1,
+        "categoria": "lavarropas",
+        "marca" : "samsung",
+        "modelo" : "x",
+        "condicion": "reacondicionado",
+        "precio": 650000,
+        "imagen": ""
+    },
+    {
+        "id" : 2,
+        "categoria": "lavavajillas",
+        "marca" : "ariston",
+        "modelo" : "x",
+        "condicion": "reacondicionado",
+        "precio": 700000,
+        "imagen": ""
+    },
+    {
+        "id" : 3,
+        "categoria": "heladera",
+        "marca" : "ariston",
+        "modelo" : "x",
+        "condicion": "reacondicionado",
+        "precio": 800000,
+        "imagen": ""
+    },
+    {
+        "id" : 4,
+        "categoria": "lavavajillas",
+        "marca" : "ariston",
+        "modelo" : "x",
+        "condicion": "reacondicionado",
+        "precio": 450000,
+        "imagen": ""
+    }
+]

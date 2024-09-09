@@ -33,6 +33,42 @@ document.querySelectorAll("nav li").forEach((item) => {
   });
 });
 
+// BASE DE DATOS
+
+class BaseDeDatos {
+  constructor() {
+    this.productos = [];
+
+    this.cargarRegistros();
+  }
+
+  async cargarRegistros() {
+    const resultado = await fetch("./JSON/productos.json");
+    this.productos = await resultado.json(); // Corregido `this.produtos` a `this.productos`
+    cargarProductos(this.productos); // Llamar después de cargar los productos
+  }
+
+  traerRegistros() {
+    return this.productos;
+  }
+}
+
+const productosElement = document.querySelector("#productos"); // Usar el ID o clase correctamente
+
+function cargarProductos(productos) {
+  productosElement.innerHTML = ""; // Limpiar el contenido antes de cargar
+
+  for (const producto of productos) {
+    productosElement.innerHTML += `
+    <h1>producto</h1>
+    `;
+  }
+}
+
+const bd = new BaseDeDatos(); // Crear la base de datos
+
+// No necesitas llamar cargarProductos aquí, ya que lo llamas en cargarRegistros()
+
 // CLIENTES
 // const placeId = "ChIJbfOMr3PIvJURJ2vXCwQqGzI";
 // const apiKey = "AIzaSyB2qQJFxptyNJyBkyQD1bzZHg-sr3V07Tw";
@@ -98,6 +134,4 @@ document.querySelectorAll("nav li").forEach((item) => {
 //   getGoogleReviews();
 // });
 
-
 // EQUIPOS
-
