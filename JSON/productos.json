@@ -12,21 +12,11 @@
     {
         "id" : 2,
         "categoria": "lavavajillas",
-        "marca" : "ariston",
-        "modelo" : "x",
+        "marca" : "ARISTON",
+        "modelo" : "HJL-567",
         "condicion": "reacondicionado",
         "precio": 700000,
-        "img": "",
-        "descripcion": ""
-    },
-    {
-        "id" : 3,
-        "categoria": "heladera",
-        "marca" : "ariston",
-        "modelo" : "x",
-        "condicion": "reacondicionado",
-        "precio": 800000,
-        "img": "",
+        "img": "./assets/img/lavavajillas.png",
         "descripcion": ""
     }
 ]
