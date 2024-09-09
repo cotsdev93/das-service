@@ -7,9 +7,9 @@ document.querySelectorAll("nav li").forEach((item) => {
     const newActiveSection = document.getElementById(`section${sectionId}`);
     const currentActiveSection = document.querySelector(".section.active");
 
-    // if (newActiveSection === currentActiveSection) {
-    //   return; // Si es la misma sección, no hace nada.
-    // }
+    if (newActiveSection === currentActiveSection) {
+      return; // Si es la misma sección, no hace nada.
+    }
 
     // Añadir clase para animar la salida de la sección actual.
     if (currentActiveSection) {
@@ -97,3 +97,7 @@ document.querySelectorAll("nav li").forEach((item) => {
 //   initMap();
 //   getGoogleReviews();
 // });
+
+
+// EQUIPOS
+
