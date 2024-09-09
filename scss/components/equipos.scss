@@ -24,6 +24,21 @@ body {
         color: #000000;
         font-size: 20px;
       }
+      .buscadorContainer {
+        display: flex;
+        justify-content: center;
+        margin: 20px;
+        input {
+          width: 60%;
+          height: 40px;
+          background-color: $claritoFondo;
+          border: solid 0.5px $clarito;
+          box-shadow: inset 0px 0px 3px 1px #00000010;
+          border-radius: 20px;
+          outline: none;
+          padding-left: 15px;
+        }
+      }
       .productosContainer {
         width: 90%;
         margin: auto;
@@ -36,7 +51,6 @@ body {
           border: solid 1px white;
           border-radius: 15px;
           overflow: hidden;
-          box-shadow: inset 0px 0px 3px 1px #00000020;
           border: solid 0.5px $clarito;
           box-shadow: inset 0px 0px 3px 1px #00000010;
           background-color: $claritoFondo;

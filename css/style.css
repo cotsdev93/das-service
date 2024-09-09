@@ -153,6 +153,21 @@ body #section3 .equiposContainer .textEquipos {
   color: #000000;
   font-size: 20px;
 }
+body #section3 .equiposContainer .buscadorContainer {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+body #section3 .equiposContainer .buscadorContainer input {
+  width: 60%;
+  height: 40px;
+  background-color: #f8f8f8;
+  border: solid 0.5px #c9c9c9;
+  box-shadow: inset 0px 0px 3px 1px rgba(0, 0, 0, 0.062745098);
+  border-radius: 20px;
+  outline: none;
+  padding-left: 15px;
+}
 body #section3 .equiposContainer .productosContainer {
   width: 90%;
   margin: auto;
@@ -166,7 +181,6 @@ body #section3 .equiposContainer .productosContainer .productoContainer {
   border: solid 1px white;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: inset 0px 0px 3px 1px rgba(0, 0, 0, 0.1254901961);
   border: solid 0.5px #c9c9c9;
   box-shadow: inset 0px 0px 3px 1px rgba(0, 0, 0, 0.062745098);
   background-color: #f8f8f8;
