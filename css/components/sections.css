@@ -23,7 +23,7 @@
 body .sectionsContainer {
   position: relative;
   width: 100%;
-  height: 110vh;
+  min-height: 120vh;
   overflow: hidden;
 }
 body .sectionsContainer .section {

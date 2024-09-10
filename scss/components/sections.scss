@@ -26,7 +26,8 @@ body {
   .sectionsContainer {
     position: relative;
     width: 100%;
-    height: 110vh;
+    min-height: 120vh;
+    // height: auto;
     overflow: hidden;
     .section {
       position: absolute;
