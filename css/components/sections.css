@@ -1,22 +1,28 @@
 @keyframes exit-left-animation {
   0% {
+    opacity: 1;
     transform: scale(1) translateX(0);
   }
   50% {
+    opacity: 0.5;
     transform: scale(0.95) translateX(0);
   }
   100% {
+    opacity: 0;
     transform: scale(0.9) translateX(-100%);
   }
 }
 @keyframes enter-right-animation {
   0% {
+    opacity: 0;
     transform: scale(0.9) translateX(100%);
   }
   50% {
+    opacity: 0.5;
     transform: scale(0.95) translateX(0);
   }
   100% {
+    opacity: 1;
     transform: scale(1) translateX(0);
   }
 }
@@ -24,6 +30,7 @@ body .sectionsContainer {
   position: relative;
   width: 100%;
   min-height: 120vh;
+  height: auto;
   overflow: hidden;
 }
 body .sectionsContainer .section {
@@ -35,8 +42,8 @@ body .sectionsContainer .section {
   justify-content: center;
   align-items: center;
   opacity: 0;
-  transform: scale(0.8) translateX(120%);
-  transition: transform 1.5s ease, opacity 1.5s ease;
+  transform: scale(0.9) translateX(120%);
+  transition: opacity 2.5s ease, transform 4s ease;
 }
 body .sectionsContainer .section.active {
   opacity: 1;
@@ -48,7 +55,7 @@ body .sectionsContainer .section.exit-left {
 }
 body .sectionsContainer .section.enter-right {
   opacity: 1;
-  animation: enter-right-animation 1.5s ease forwards;
+  animation: enter-right-animation 4s ease-in-out forwards;
 }
 
 /*# sourceMappingURL=sections.css.map */

@@ -1,4 +1,3 @@
-// NAV ANIMACIONES ENTRADA Y SALIDA
 document.querySelectorAll("nav li").forEach((item) => {
   item.addEventListener("click", (e) => {
     e.preventDefault();
@@ -17,10 +16,11 @@ document.querySelectorAll("nav li").forEach((item) => {
       currentActiveSection.classList.add("exit-left");
     }
 
-    // Esperar 500ms antes de activar la entrada de la nueva sección.
-    setTimeout(() => {
+    // Usamos requestAnimationFrame para coordinar mejor la entrada de la nueva sección.
+    requestAnimationFrame(() => {
+      // Activar la entrada de la nueva sección al instante.
       newActiveSection.classList.add("enter-right");
-    }, 500); // La nueva sección entra cuando la actual está a mitad de su animación.
+    });
 
     // Esperar hasta que la animación de salida termine antes de activar la nueva sección.
     setTimeout(() => {
@@ -29,7 +29,7 @@ document.querySelectorAll("nav li").forEach((item) => {
       }
       newActiveSection.classList.remove("enter-right");
       newActiveSection.classList.add("active");
-    }, 1500); // La duración debe coincidir con la duración de la animación.
+    }, 4000); // La duración debe coincidir con la duración de la animación.
   });
 });
 
