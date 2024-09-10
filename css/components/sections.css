@@ -55,7 +55,7 @@ body .sectionsContainer .section.exit-left {
 }
 body .sectionsContainer .section.enter-right {
   opacity: 1;
-  animation: enter-right-animation 4s ease-in-out forwards;
+  animation: enter-right-animation 3.5s cubic-bezier(0.42, 0, 0.58, 1) forwards;
 }
 
 /*# sourceMappingURL=sections.css.map */

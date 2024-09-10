@@ -60,7 +60,7 @@ body {
 
       &.enter-right {
         opacity: 1;
-        animation: enter-right-animation 4s ease-in-out forwards; // Coordinación para la entrada
+        animation: enter-right-animation 3.5s cubic-bezier(0.42, 0, 0.58, 1) forwards; // Coordinación para la entrada
       }
     }
   }
