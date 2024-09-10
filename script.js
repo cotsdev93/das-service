@@ -44,19 +44,25 @@ class BaseDeDatos {
 
   async cargarRegistros() {
     const resultado = await fetch("./JSON/productos.json");
-    this.productos = await resultado.json(); // Corregido `this.produtos` a `this.productos`
-    cargarProductos(this.productos); // Llamar después de cargar los productos
+    this.productos = await resultado.json();
+    cargarProductos(this.productos);
   }
 
   traerRegistros() {
     return this.productos;
   }
+
+  registrosPorMarca(palabra) {
+    return this.productos.filter((producto) =>
+      producto.marca.toLowerCase().includes(palabra.toLowerCase())
+    );
+  }
 }
 
-const productosElement = document.querySelector("#productos"); // Usar el ID o clase correctamente
+const productosElement = document.querySelector("#productos");
 
 function cargarProductos(productos) {
-  productosElement.innerHTML = ""; // Limpiar el contenido antes de cargar
+  productosElement.innerHTML = "";
 
   for (const producto of productos) {
     productosElement.innerHTML += `
@@ -69,14 +75,25 @@ function cargarProductos(productos) {
             <p class="productMarca">${producto.marca}</p>
             <p class="productoModelo">${producto.modelo}</p>
           </div>
-          <p class="productoPrecio">$${producto.precio.toLocaleString("es-ES")}</p>
+          <p class="productoPrecio">$${producto.precio.toLocaleString(
+            "es-ES"
+          )}</p>
         </div>
       </div>
     `;
   }
 }
 
-const bd = new BaseDeDatos(); // Crear la base de datos
+const bd = new BaseDeDatos();
+
+const inputBuscador = document.querySelector("#inputBuscador");
+
+inputBuscador.addEventListener("input", (event) => {
+  event.preventDefault();
+  const palabra = inputBuscador.value;
+  const productos = bd.registrosPorMarca(palabra);
+  cargarProductos(productos);
+});
 
 // CLIENTES
 // const placeId = "ChIJbfOMr3PIvJURJ2vXCwQqGzI";
