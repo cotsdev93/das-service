@@ -54,15 +54,16 @@ class BaseDeDatos {
 
   registrosPorMarca(palabra) {
     return this.productos.filter((producto) =>
-      producto.marca.toLowerCase().includes(palabra.toLowerCase())
+      producto.marca.toLowerCase().indexOf(palabra.toLowerCase()) !== -1
     );
-    
   }
+  
   registroPorCategoria(palabra) {
     return this.productos.filter((producto) =>
-      producto.categoria.toLowerCase().includes(palabra.toLowerCase())
-    )
+      producto.categoria.toLowerCase().indexOf(palabra.toLowerCase()) !== -1
+    );
   }
+  
 }
 
 const productosElement = document.querySelector("#productos");

@@ -5,7 +5,6 @@ body {
       border-radius: 20px;
       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.1);
       width: 70%;
-
       margin: 40px;
       backdrop-filter: blur(2px);
       padding-bottom: 15px;
@@ -57,56 +56,83 @@ body {
           }
         }
       }
-      .productosContainer {
-        width: auto;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-wrap: nowrap;
-        border: solid 0.5px $clarito;
-        box-shadow: inset 0px 0px 3px 1px #00000010;
-        backdrop-filter: blur(2px);
+      .productosCarrousell {
         position: relative;
-        margin: 5px;
-        border-radius: 15px;
-        .productoContainer {
-          margin: 10px;
-          width: 250px;
-          border: solid 1px white;
+        .productosContainer {
+          width: auto;
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          flex-wrap: nowrap;
+          position: relative;
+          margin: 15px;
           border-radius: 15px;
-          overflow: hidden;
-          border: solid 0.5px $clarito;
-          box-shadow: inset 0px 0px 3px 1px #00000010;
-          background-color: $claritoFondo;
-          .imgContainer {
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-            img {
-              width: 100%;
-            }
-          }
-          .productoDetail {
-            margin: 8px;
-            .productoTitle {
-              display: flex;
-              align-items: center;
-              .productMarca {
-                font-size: 18px;
-                padding-right: 8px;
-                font-weight: 450;
-              }
-              .productModelo {
-                font-size: 18px;
-                font-weight: 350;
+          padding: 0px 25px;
+  
+          .productoContainer {
+            margin: 5px;
+            width: 25%;
+            border-radius: 15px;
+            overflow: hidden;
+            border: solid 0.5px $clarito;
+            box-shadow: inset 0px 0px 3px 1px #00000010;
+            background-color: $claritoFondo;
+            .imgContainer {
+              box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+              img {
+                width: 100%;
               }
             }
-            .productoPrecio {
-              font-size: 20px;
-              font-weight: 500;
-              color: rgb(15, 200, 15);
+            .productoDetail {
+              margin: 8px;
+              .productoTitle {
+                display: flex;
+                align-items: center;
+                .productMarca {
+                  font-size: auto;
+                  padding-right: 8px;
+                  font-weight: 450;
+                }
+                .productModelo {
+                  font-size: auto;
+                  font-weight: 350;
+                }
+              }
+              .productoPrecio {
+                font-size: 20px;
+                font-weight: 500;
+                color: rgb(15, 200, 15);
+              }
             }
           }
         }
+        .bx-chevron-left {
+          position: absolute;
+          left: 0;
+          top: 45%;
+          color: $grisClaro;
+          font-size: 28px;
+          margin-left: 10px;
+          color: white;
+          background-color: rgb(0, 0, 0);
+          border-radius: 50%;
+          opacity: 0.3;
+        }
+        .bx-chevron-right {
+          position: absolute;
+          right: 0;
+          top: 45%;
+          color: $grisClaro;
+          font-size: 28px;
+          margin-right: 10px;
+          color: white;
+          background-color: rgb(0, 0, 0);
+          border-radius: 50%;
+          opacity: 0.3;
+
+        }
       }
+
     }
   }
 }
