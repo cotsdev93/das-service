@@ -150,6 +150,7 @@ body #section3 .equiposContainer {
   margin: 40px;
   backdrop-filter: blur(2px);
   padding-bottom: 15px;
+  overflow-x: hidden;
 }
 body #section3 .equiposContainer .titleEquipos {
   margin: 15px 15px 0px 15px;
@@ -169,7 +170,7 @@ body #section3 .equiposContainer .textEquipos {
 body #section3 .equiposContainer .buscadorContainer {
   display: flex;
   justify-content: center;
-  margin: 20px;
+  margin: 20px 0px 0px 0px;
 }
 body #section3 .equiposContainer .buscadorContainer input {
   width: 60%;
@@ -180,16 +181,39 @@ body #section3 .equiposContainer .buscadorContainer input {
   border-radius: 20px;
   outline: none;
   padding-left: 15px;
+  font-size: 20px;
+  color: #787878;
+}
+body #section3 .equiposContainer .buscadorContainer input::placeholder {
+  color: #c5c5c5;
+}
+body #section3 .equiposContainer .categoriasContainer {
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+}
+body #section3 .equiposContainer .categoriasContainer ul {
+  display: flex;
+}
+body #section3 .equiposContainer .categoriasContainer ul li {
+  margin: 15px;
+  color: #787878;
 }
 body #section3 .equiposContainer .productosContainer {
-  width: 90%;
-  margin: auto;
+  width: auto;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  border: solid 0.5px #c9c9c9;
+  box-shadow: inset 0px 0px 3px 1px rgba(0, 0, 0, 0.062745098);
+  backdrop-filter: blur(2px);
+  position: relative;
+  margin: 5px;
+  border-radius: 15px;
 }
 body #section3 .equiposContainer .productosContainer .productoContainer {
+  margin: 10px;
   width: 250px;
   border: solid 1px white;
   border-radius: 15px;

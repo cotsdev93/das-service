@@ -56,6 +56,12 @@ class BaseDeDatos {
     return this.productos.filter((producto) =>
       producto.marca.toLowerCase().includes(palabra.toLowerCase())
     );
+    
+  }
+  registroPorCategoria(palabra) {
+    return this.productos.filter((producto) =>
+      producto.categoria.toLowerCase().includes(palabra.toLowerCase())
+    )
   }
 }
 
@@ -91,9 +97,18 @@ const inputBuscador = document.querySelector("#inputBuscador");
 inputBuscador.addEventListener("input", (event) => {
   event.preventDefault();
   const palabra = inputBuscador.value;
-  const productos = bd.registrosPorMarca(palabra);
+  
+  // Obtener productos por marca o categoría
+  const productosPorMarca = bd.registrosPorMarca(palabra);
+  const productosPorCategoria = bd.registroPorCategoria(palabra);
+
+  // Combinar los resultados eliminando duplicados
+  const productos = [...new Set([...productosPorMarca, ...productosPorCategoria])];
+
+  // Cargar los productos filtrados
   cargarProductos(productos);
 });
+
 
 // CLIENTES
 // const placeId = "ChIJbfOMr3PIvJURJ2vXCwQqGzI";
