@@ -110,6 +110,44 @@ inputBuscador.addEventListener("input", (event) => {
   cargarProductos(productos);
 });
 
+const btnLeft = document.querySelector('.btnLeft');
+const btnRight = document.querySelector('.btnRight');
+const productosContainer = document.querySelector('.productosContainer');
+
+// Función para obtener el ancho total de un producto, incluyendo márgenes
+function obtenerAnchoProductoConMargen() {
+  const producto = document.querySelector('.productoContainer');
+  if (producto) {
+    const estilo = window.getComputedStyle(producto);
+    const margenIzquierdo = parseFloat(estilo.marginLeft);
+    const margenDerecho = parseFloat(estilo.marginRight);
+    const anchoTotal = producto.offsetWidth + margenIzquierdo + margenDerecho;
+    return anchoTotal;
+  }
+  return 0;
+}
+
+// Función para mover el carrusel
+function moverCarrousel(direccion) {
+  const anchoProducto = obtenerAnchoProductoConMargen();
+  if (anchoProducto > 0) {
+    const desplazamientoActual = productosContainer.scrollLeft;  // Posición actual del scroll
+    const nuevoDesplazamiento = direccion === 'izquierda'
+      ? desplazamientoActual - anchoProducto
+      : desplazamientoActual + anchoProducto;
+
+    productosContainer.scrollTo({
+      left: nuevoDesplazamiento,
+      behavior: 'smooth'
+    });
+  }
+}
+
+// Event listeners para los botones
+btnLeft.addEventListener('click', () => moverCarrousel('izquierda'));
+btnRight.addEventListener('click', () => moverCarrousel('derecha'));
+
+
 
 // CLIENTES
 // const placeId = "ChIJbfOMr3PIvJURJ2vXCwQqGzI";
