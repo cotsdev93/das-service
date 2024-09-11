@@ -58,31 +58,39 @@ body {
       }
       .productosCarrousell {
         position: relative;
+        width: 100%; /* Asegura que el carrusel ocupe el ancho completo */
+        overflow: hidden; /* Oculta los productos que están fuera de la vista */
+
         .productosContainer {
-          width: auto;
           display: flex;
           justify-content: space-evenly;
           align-items: center;
           flex-wrap: nowrap;
+          width: 98%;
           position: relative;
-          margin: 15px;
-          border-radius: 15px;
-          padding: 0px 25px;
-  
+          overflow-x: scroll;
+          scroll-behavior: smooth;
+          margin: auto;
+          &::-webkit-scrollbar {
+            display: none;
+          }
+
           .productoContainer {
-            margin: 5px;
-            width: 25%;
-            border-radius: 15px;
-            overflow: hidden;
+            margin: 3px;
+            flex: 0 0 24.3%;
+            border-radius: 5px;
             border: solid 0.5px $clarito;
             box-shadow: inset 0px 0px 3px 1px #00000010;
             background-color: $claritoFondo;
+            overflow: hidden;
+
             .imgContainer {
               box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
               img {
                 width: 100%;
               }
             }
+
             .productoDetail {
               margin: 8px;
               .productoTitle {
@@ -106,6 +114,7 @@ body {
             }
           }
         }
+
         .bx-chevron-left {
           position: absolute;
           left: 0;
@@ -118,6 +127,7 @@ body {
           border-radius: 50%;
           opacity: 0.3;
         }
+
         .bx-chevron-right {
           position: absolute;
           right: 0;
@@ -129,10 +139,8 @@ body {
           background-color: rgb(0, 0, 0);
           border-radius: 50%;
           opacity: 0.3;
-
         }
       }
-
     }
   }
 }

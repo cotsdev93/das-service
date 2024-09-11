@@ -38,5 +38,25 @@
         "precio": 700000,
         "img": "./assets/img/lavavajillas.png",
         "descripcion": ""
+    },
+    {
+        "id" : 2,
+        "categoria": "lavavajillas",
+        "marca" : "ARISTON",
+        "modelo" : "HJL-567",
+        "condicion": "reacondicionado",
+        "precio": 700000,
+        "img": "./assets/img/lavavajillas.png",
+        "descripcion": ""
+    },
+    {
+        "id" : 2,
+        "categoria": "lavavajillas",
+        "marca" : "ARISTON",
+        "modelo" : "HJL-567",
+        "condicion": "reacondicionado",
+        "precio": 700000,
+        "img": "./assets/img/lavavajillas.png",
+        "descripcion": ""
     }
 ]

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   text-decoration: none;
   list-style: none;
@@ -201,26 +202,31 @@ body #section3 .equiposContainer .categoriasContainer ul li {
 }
 body #section3 .equiposContainer .productosCarrousell {
   position: relative;
+  width: 100%; /* Asegura que el carrusel ocupe el ancho completo */
+  overflow: hidden; /* Oculta los productos que están fuera de la vista */
 }
 body #section3 .equiposContainer .productosCarrousell .productosContainer {
-  width: auto;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: nowrap;
+  width: 98%;
   position: relative;
-  margin: 15px;
-  border-radius: 15px;
-  padding: 0px 25px;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  margin: auto;
+}
+body #section3 .equiposContainer .productosCarrousell .productosContainer::-webkit-scrollbar {
+  display: none;
 }
 body #section3 .equiposContainer .productosCarrousell .productosContainer .productoContainer {
-  margin: 5px;
-  width: 25%;
-  border-radius: 15px;
-  overflow: hidden;
+  margin: 3px;
+  flex: 0 0 24.3%;
+  border-radius: 5px;
   border: solid 0.5px #c9c9c9;
   box-shadow: inset 0px 0px 3px 1px rgba(0, 0, 0, 0.062745098);
   background-color: #f8f8f8;
+  overflow: hidden;
 }
 body #section3 .equiposContainer .productosCarrousell .productosContainer .productoContainer .imgContainer {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
