@@ -32,10 +32,8 @@ body {
   .sectionsContainer {
     position: relative;
     width: 100%;
-    min-height: 120vh;
-    height: auto;
+    height: 100%;
     overflow: hidden;
-
     .section {
       position: absolute;
       width: 100%;

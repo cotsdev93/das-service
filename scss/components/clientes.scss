@@ -8,14 +8,14 @@ body {
       // min-height: 50vh;
       margin: 40px;
       backdrop-filter: blur(2px);
-      padding-bottom: 25px;
+      padding-bottom: 45px;
       height: 100vh;
       .titleClientes {
         margin: 15px 15px 0px 15px;
         .titleSabemos {
           color: $azul;
           text-transform: uppercase;
-          font-size: 35px;
+          font-size: 20px;
           font-weight: 600;
         }
       }
@@ -23,7 +23,7 @@ body {
         margin: 0px 15px 15px 15px;
         text-align: justify;
         color: #000000;
-        font-size: 20px;
+        font-size: 15px;
       }
       .opinionesContainer {
         margin: 15px;
@@ -32,13 +32,26 @@ body {
           .es-header-container {
           border: solid 0.5px $clarito;
           box-shadow: inset 0px 0px 3px 1px #00000010;
-          padding: 20px;
+          padding: 10px;
+          height: 10%;
+          display: flex;
+        }
+        .elfsight-app-1cbcc4ce-5824-44dd-b8f7-7ca3dc986183 .es-header-rating {
+          padding-left: 20px;
         }
         .elfsight-app-1cbcc4ce-5824-44dd-b8f7-7ca3dc986183
           .es-review-background-container {
           border: solid 0.5px $clarito;
           box-shadow: inset 0px 0px 3px 1px #00000010;
-          padding: 20px;
+          padding: 10px;
+        }
+        .elfsight-app-1cbcc4ce-5824-44dd-b8f7-7ca3dc986183 .eWYNAh {
+          margin-bottom: 8px;
+        }
+        .elfsight-app-1cbcc4ce-5824-44dd-b8f7-7ca3dc986183 .es-header-info {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
         }
       }
     }

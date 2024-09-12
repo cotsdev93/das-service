@@ -14,7 +14,7 @@ body {
         .titleSabemos {
           color: $azul;
           text-transform: uppercase;
-          font-size: 35px;
+          font-size: 20px;
           font-weight: 600;
         }
       }
@@ -22,22 +22,22 @@ body {
         margin: 0px 15px 15px 15px;
         text-align: justify;
         color: #000000;
-        font-size: 20px;
+        font-size: 15px;
       }
       .buscadorContainer {
         display: flex;
         justify-content: center;
-        margin: 20px 0px 0px 0px;
+        margin: 10px 0px 0px 0px;
         input {
           width: 60%;
-          height: 40px;
+          height: 30px;
           background-color: $claritoFondo;
           border: solid 0.5px $clarito;
           box-shadow: inset 0px 0px 3px 1px #00000010;
           border-radius: 20px;
           outline: none;
           padding-left: 15px;
-          font-size: 20px;
+          font-size: 17px;
           color: $grisTexto;
           &::placeholder {
             color: $grisClaro;
@@ -54,6 +54,7 @@ body {
             margin: 12px;
             color: $grisTexto;
             cursor: pointer;
+            font-size: 12px;
           }
         }
       }
@@ -77,7 +78,7 @@ body {
           }
 
           .productoContainer {
-            margin: 3px;
+            margin: 2px;
             flex: 0 0 24.3%;
             border-radius: 5px;
             border: solid 0.5px $clarito;
@@ -93,13 +94,14 @@ body {
             }
 
             .productoDetail {
-              margin: 8px;
+              margin: 5px;
+              white-space: nowrap;
               .productoTitle {
                 display: flex;
                 align-items: center;
                 .productMarca {
                   font-size: auto;
-                  padding-right: 8px;
+                  padding-right: 6px;
                   font-weight: 450;
                 }
                 .productModelo {
@@ -108,7 +110,7 @@ body {
                 }
               }
               .productoPrecio {
-                font-size: 20px;
+                font-size: auto;
                 font-weight: 500;
                 color: rgb(15, 200, 15);
               }

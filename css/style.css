@@ -13,28 +13,31 @@
   src: url("../../assets/font/VCR_OSD_MONO_1.001.ttf");
 }
 html {
-  min-height: 100vh;
-  height: auto;
+  min-height: 180vh;
+  height: 100%;
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 html body {
-  height: auto;
+  height: 100%;
   background-image: url("../assets/img/fondo.jpg");
   background-position: center;
   background-repeat: repeat-y;
   background-size: auto;
+  display: flex;
+  flex-direction: column;
 }
 html body nav {
   width: 100%;
-  height: 80px;
+  height: 60px;
   background-color: #003459;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 html body nav .logoContainer img {
-  width: 200px;
+  width: 150px;
   object-fit: cover;
 }
 html body nav ul {
@@ -47,6 +50,9 @@ html body nav ul li {
   margin: 15px;
   cursor: pointer;
   font-weight: 450;
+}
+html body main {
+  flex: 1;
 }
 
 @media (max-width: 737px) {
@@ -101,8 +107,7 @@ html body nav ul li {
 body .sectionsContainer {
   position: relative;
   width: 100%;
-  min-height: 120vh;
-  height: auto;
+  height: 100%;
   overflow: hidden;
 }
 body .sectionsContainer .section {
@@ -158,30 +163,30 @@ body #section3 .equiposContainer .titleEquipos {
 body #section3 .equiposContainer .titleEquipos .titleSabemos {
   color: #003459;
   text-transform: uppercase;
-  font-size: 35px;
+  font-size: 20px;
   font-weight: 600;
 }
 body #section3 .equiposContainer .textEquipos {
   margin: 0px 15px 15px 15px;
   text-align: justify;
   color: #000000;
-  font-size: 20px;
+  font-size: 15px;
 }
 body #section3 .equiposContainer .buscadorContainer {
   display: flex;
   justify-content: center;
-  margin: 20px 0px 0px 0px;
+  margin: 10px 0px 0px 0px;
 }
 body #section3 .equiposContainer .buscadorContainer input {
   width: 60%;
-  height: 40px;
+  height: 30px;
   background-color: #f8f8f8;
   border: solid 0.5px #c9c9c9;
   box-shadow: inset 0px 0px 3px 1px rgba(0, 0, 0, 0.062745098);
   border-radius: 20px;
   outline: none;
   padding-left: 15px;
-  font-size: 20px;
+  font-size: 17px;
   color: #787878;
 }
 body #section3 .equiposContainer .buscadorContainer input::placeholder {
@@ -199,6 +204,7 @@ body #section3 .equiposContainer .categoriasContainer ul li {
   margin: 12px;
   color: #787878;
   cursor: pointer;
+  font-size: 12px;
 }
 body #section3 .equiposContainer .productosCarrousell {
   position: relative;
@@ -221,7 +227,7 @@ body #section3 .equiposContainer .productosCarrousell .productosContainer::-webk
   display: none;
 }
 body #section3 .equiposContainer .productosCarrousell .productosContainer .productoContainer {
-  margin: 3px;
+  margin: 2px;
   flex: 0 0 24.3%;
   border-radius: 5px;
   border: solid 0.5px #c9c9c9;
@@ -236,7 +242,8 @@ body #section3 .equiposContainer .productosCarrousell .productosContainer .produ
   width: 100%;
 }
 body #section3 .equiposContainer .productosCarrousell .productosContainer .productoContainer .productoDetail {
-  margin: 8px;
+  margin: 5px;
+  white-space: nowrap;
 }
 body #section3 .equiposContainer .productosCarrousell .productosContainer .productoContainer .productoDetail .productoTitle {
   display: flex;
@@ -244,7 +251,7 @@ body #section3 .equiposContainer .productosCarrousell .productosContainer .produ
 }
 body #section3 .equiposContainer .productosCarrousell .productosContainer .productoContainer .productoDetail .productoTitle .productMarca {
   font-size: auto;
-  padding-right: 8px;
+  padding-right: 6px;
   font-weight: 450;
 }
 body #section3 .equiposContainer .productosCarrousell .productosContainer .productoContainer .productoDetail .productoTitle .productModelo {
@@ -252,7 +259,7 @@ body #section3 .equiposContainer .productosCarrousell .productosContainer .produ
   font-weight: 350;
 }
 body #section3 .equiposContainer .productosCarrousell .productosContainer .productoContainer .productoDetail .productoPrecio {
-  font-size: 20px;
+  font-size: auto;
   font-weight: 500;
   color: rgb(15, 200, 15);
 }
@@ -288,7 +295,7 @@ body #section4 .clientesContainer {
   width: 70%;
   margin: 40px;
   backdrop-filter: blur(2px);
-  padding-bottom: 25px;
+  padding-bottom: 45px;
   height: 100vh;
 }
 body #section4 .clientesContainer .titleClientes {
@@ -297,14 +304,14 @@ body #section4 .clientesContainer .titleClientes {
 body #section4 .clientesContainer .titleClientes .titleSabemos {
   color: #003459;
   text-transform: uppercase;
-  font-size: 35px;
+  font-size: 20px;
   font-weight: 600;
 }
 body #section4 .clientesContainer .textClientes {
   margin: 0px 15px 15px 15px;
   text-align: justify;
   color: #000000;
-  font-size: 20px;
+  font-size: 15px;
 }
 body #section4 .clientesContainer .opinionesContainer {
   margin: 15px;
@@ -313,17 +320,30 @@ body #section4 .clientesContainer .opinionesContainer {
 body #section4 .clientesContainer .opinionesContainer .elfsight-app-1cbcc4ce-5824-44dd-b8f7-7ca3dc986183 .es-header-container {
   border: solid 0.5px #c9c9c9;
   box-shadow: inset 0px 0px 3px 1px rgba(0, 0, 0, 0.062745098);
-  padding: 20px;
+  padding: 10px;
+  height: 10%;
+  display: flex;
+}
+body #section4 .clientesContainer .opinionesContainer .elfsight-app-1cbcc4ce-5824-44dd-b8f7-7ca3dc986183 .es-header-rating {
+  padding-left: 20px;
 }
 body #section4 .clientesContainer .opinionesContainer .elfsight-app-1cbcc4ce-5824-44dd-b8f7-7ca3dc986183 .es-review-background-container {
   border: solid 0.5px #c9c9c9;
   box-shadow: inset 0px 0px 3px 1px rgba(0, 0, 0, 0.062745098);
-  padding: 20px;
+  padding: 10px;
+}
+body #section4 .clientesContainer .opinionesContainer .elfsight-app-1cbcc4ce-5824-44dd-b8f7-7ca3dc986183 .eWYNAh {
+  margin-bottom: 8px;
+}
+body #section4 .clientesContainer .opinionesContainer .elfsight-app-1cbcc4ce-5824-44dd-b8f7-7ca3dc986183 .es-header-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 html body footer {
   width: 100%;
-  height: 120px;
+  height: 90px;
   background-color: #003459;
 }
 html body .copyR {
