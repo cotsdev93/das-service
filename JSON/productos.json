@@ -38,5 +38,15 @@
         "precio": 700000,
         "img": "./assets/img/heladera.png",
         "descripcion": ""
+    },
+    {
+        "id" : 4,
+        "categoria": "heladeras",
+        "marca" : "ARISTON",
+        "modelo" : "HJL-567",
+        "condicion": "reacondicionado",
+        "precio": 700000,
+        "img": "./assets/img/heladera.png",
+        "descripcion": ""
     }
 ]

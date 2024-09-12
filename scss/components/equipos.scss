@@ -76,7 +76,6 @@ body {
           &::-webkit-scrollbar {
             display: none;
           }
-
           .productoContainer {
             margin: 2px;
             flex: 0 0 24.3%;
@@ -85,14 +84,12 @@ body {
             box-shadow: inset 0px 0px 3px 1px #00000010;
             background-color: $claritoFondo;
             overflow: hidden;
-
             .imgContainer {
               box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
               img {
                 width: 100%;
               }
             }
-
             .productoDetail {
               margin: 5px;
               white-space: nowrap;
