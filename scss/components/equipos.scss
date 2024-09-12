@@ -51,16 +51,16 @@ body {
         ul {
           display: flex;
           li {
-            margin: 15px;
+            margin: 12px;
             color: $grisTexto;
+            cursor: pointer;
           }
         }
       }
       .productosCarrousell {
         position: relative;
-        width: 100%; /* Asegura que el carrusel ocupe el ancho completo */
-        overflow: hidden; /* Oculta los productos que están fuera de la vista */
-
+        width: 100%;
+        overflow: hidden;
         .productosContainer {
           display: flex;
           justify-content: space-evenly;
@@ -68,9 +68,10 @@ body {
           flex-wrap: nowrap;
           width: 98%;
           position: relative;
-          overflow-x: scroll;
+          overflow-x: auto;
           scroll-behavior: smooth;
           margin: auto;
+          pointer-events: none;
           &::-webkit-scrollbar {
             display: none;
           }

@@ -53,17 +53,18 @@ class BaseDeDatos {
   }
 
   registrosPorMarca(palabra) {
-    return this.productos.filter((producto) =>
-      producto.marca.toLowerCase().indexOf(palabra.toLowerCase()) !== -1
+    return this.productos.filter(
+      (producto) =>
+        producto.marca.toLowerCase().indexOf(palabra.toLowerCase()) !== -1
     );
   }
-  
-  registroPorCategoria(palabra) {
-    return this.productos.filter((producto) =>
-      producto.categoria.toLowerCase().indexOf(palabra.toLowerCase()) !== -1
+
+  registroPorCategoria(categoria) {
+    return this.productos.filter(
+      (producto) =>
+        producto.categoria.toLowerCase().indexOf(categoria.toLowerCase()) !== -1
     );
   }
-  
 }
 
 const productosElement = document.querySelector("#productos");
@@ -98,25 +99,27 @@ const inputBuscador = document.querySelector("#inputBuscador");
 inputBuscador.addEventListener("input", (event) => {
   event.preventDefault();
   const palabra = inputBuscador.value;
-  
+
   // Obtener productos por marca o categoría
   const productosPorMarca = bd.registrosPorMarca(palabra);
   const productosPorCategoria = bd.registroPorCategoria(palabra);
 
   // Combinar los resultados eliminando duplicados
-  const productos = [...new Set([...productosPorMarca, ...productosPorCategoria])];
+  const productos = [
+    ...new Set([...productosPorMarca, ...productosPorCategoria]),
+  ];
 
   // Cargar los productos filtrados
   cargarProductos(productos);
 });
 
-const btnLeft = document.querySelector('.btnLeft');
-const btnRight = document.querySelector('.btnRight');
-const productosContainer = document.querySelector('.productosContainer');
+const btnLeft = document.querySelector(".btnLeft");
+const btnRight = document.querySelector(".btnRight");
+const productosContainer = document.querySelector(".productosContainer");
 
 // Función para obtener el ancho total de un producto, incluyendo márgenes
 function obtenerAnchoProductoConMargen() {
-  const producto = document.querySelector('.productoContainer');
+  const producto = document.querySelector(".productoContainer");
   if (producto) {
     const estilo = window.getComputedStyle(producto);
     const margenIzquierdo = parseFloat(estilo.marginLeft);
@@ -131,23 +134,33 @@ function obtenerAnchoProductoConMargen() {
 function moverCarrousel(direccion) {
   const anchoProducto = obtenerAnchoProductoConMargen();
   if (anchoProducto > 0) {
-    const desplazamientoActual = productosContainer.scrollLeft;  // Posición actual del scroll
-    const nuevoDesplazamiento = direccion === 'izquierda'
-      ? desplazamientoActual - anchoProducto
-      : desplazamientoActual + anchoProducto;
+    const desplazamientoActual = productosContainer.scrollLeft; // Posición actual del scroll
+    const nuevoDesplazamiento =
+      direccion === "izquierda"
+        ? desplazamientoActual - anchoProducto
+        : desplazamientoActual + anchoProducto;
 
     productosContainer.scrollTo({
       left: nuevoDesplazamiento,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   }
 }
 
 // Event listeners para los botones
-btnLeft.addEventListener('click', () => moverCarrousel('izquierda'));
-btnRight.addEventListener('click', () => moverCarrousel('derecha'));
+btnLeft.addEventListener("click", () => moverCarrousel("izquierda"));
+btnRight.addEventListener("click", () => moverCarrousel("derecha"));
 
+const btnCategoria = document.querySelectorAll(".btnCategoria");
 
+btnCategoria.forEach((boton) => {
+  boton.addEventListener("click", () => {
+    const categoria = boton.dataset.categoria
+    
+    const productos = bd.registroPorCategoria(boton.dataset.categoria);
+    cargarProductos(productos);
+  });
+});
 
 // CLIENTES
 // const placeId = "ChIJbfOMr3PIvJURJ2vXCwQqGzI";

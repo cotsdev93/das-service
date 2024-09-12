@@ -1,4 +1,3 @@
-@charset "UTF-8";
 * {
   text-decoration: none;
   list-style: none;
@@ -197,13 +196,14 @@ body #section3 .equiposContainer .categoriasContainer ul {
   display: flex;
 }
 body #section3 .equiposContainer .categoriasContainer ul li {
-  margin: 15px;
+  margin: 12px;
   color: #787878;
+  cursor: pointer;
 }
 body #section3 .equiposContainer .productosCarrousell {
   position: relative;
-  width: 100%; /* Asegura que el carrusel ocupe el ancho completo */
-  overflow: hidden; /* Oculta los productos que están fuera de la vista */
+  width: 100%;
+  overflow: hidden;
 }
 body #section3 .equiposContainer .productosCarrousell .productosContainer {
   display: flex;
@@ -212,9 +212,10 @@ body #section3 .equiposContainer .productosCarrousell .productosContainer {
   flex-wrap: nowrap;
   width: 98%;
   position: relative;
-  overflow-x: scroll;
+  overflow-x: auto;
   scroll-behavior: smooth;
   margin: auto;
+  pointer-events: none;
 }
 body #section3 .equiposContainer .productosCarrousell .productosContainer::-webkit-scrollbar {
   display: none;
