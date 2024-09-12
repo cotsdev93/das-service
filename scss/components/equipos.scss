@@ -123,25 +123,41 @@ body {
           left: 0;
           top: 45%;
           color: $grisClaro;
-          font-size: 28px;
+          font-size: 24px;
           margin-left: 10px;
           color: white;
           background-color: rgb(0, 0, 0);
           border-radius: 50%;
           opacity: 0.3;
+          cursor: pointer;
+          box-shadow: 0px 0px 5px 3px #00000060;
+          &:hover {
+            box-shadow: 0px 0px 7px 3px #00000080;
+          }
+          &:active {
+            box-shadow: 0px 0px 5px 3px #00000080;
+          }
         }
 
         .bx-chevron-right {
           position: absolute;
           right: 0;
           top: 45%;
-          color: $grisClaro;
-          font-size: 28px;
-          margin-right: 10px;
+          color: white;
+          font-size: 24px;
+          margin-right: 11px;
           color: white;
           background-color: rgb(0, 0, 0);
           border-radius: 50%;
           opacity: 0.3;
+          cursor: pointer;
+          box-shadow: 0px 0px 5px 3px #00000060;
+          &:hover {
+            box-shadow: 0px 0px 7px 3px #00000080;
+          }
+          &:active {
+            box-shadow: 0px 0px 4px 3px #00000080;
+          }
         }
       }
     }

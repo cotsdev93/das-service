@@ -20,43 +20,23 @@
         "descripcion": ""
     },
     {
-        "id" : 2,
-        "categoria": "lavavajillas",
+        "id" : 3,
+        "categoria": "secarropas",
         "marca" : "ARISTON",
         "modelo" : "HJL-567",
         "condicion": "reacondicionado",
-        "precio": 700000,
-        "img": "./assets/img/lavavajillas.png",
+        "precio": 550000,
+        "img": "./assets/img/secarropa.png",
         "descripcion": ""
     },
     {
-        "id" : 2,
-        "categoria": "lavavajillas",
+        "id" : 4,
+        "categoria": "heladeras",
         "marca" : "ARISTON",
         "modelo" : "HJL-567",
         "condicion": "reacondicionado",
         "precio": 700000,
-        "img": "./assets/img/lavavajillas.png",
-        "descripcion": ""
-    },
-    {
-        "id" : 2,
-        "categoria": "lavavajillas",
-        "marca" : "ARISTON",
-        "modelo" : "HJL-567",
-        "condicion": "reacondicionado",
-        "precio": 700000,
-        "img": "./assets/img/lavavajillas.png",
-        "descripcion": ""
-    },
-    {
-        "id" : 2,
-        "categoria": "lavavajillas",
-        "marca" : "ARISTON",
-        "modelo" : "HJL-567",
-        "condicion": "reacondicionado",
-        "precio": 700000,
-        "img": "./assets/img/lavavajillas.png",
+        "img": "./assets/img/heladera.png",
         "descripcion": ""
     }
 ]
