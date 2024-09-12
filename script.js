@@ -79,8 +79,9 @@ function cargarProductos(productos) {
           <img src="${producto.img}" alt="" />
         </div>
         <div class="productoDetail">
+          <p class="productoCategoria">${producto.categoria}</p>
           <div class="productoTitle">
-            <p class="productMarca">${producto.marca}</p>
+            <p class="productoMarca">${producto.marca}</p>
             <p class="productoModelo">${producto.modelo}</p>
           </div>
           <p class="productoPrecio">$${producto.precio.toLocaleString(

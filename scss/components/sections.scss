@@ -44,7 +44,7 @@ body {
       align-items: center;
       opacity: 0;
       transform: scale(0.9) translateX(120%);
-      transition: opacity 2.5s ease, transform 4s ease;  // Coordinando las transiciones
+      transition: opacity 2.5s ease, transform 4s ease;
 
       &.active {
         opacity: 1;
@@ -53,17 +53,16 @@ body {
 
       &.exit-left {
         opacity: 0;
-        animation: exit-left-animation 1.5s ease forwards; // Coordinación para la salida
+        animation: exit-left-animation 1.5s ease-out forwards;
       }
 
       &.enter-right {
         opacity: 1;
-        animation: enter-right-animation 3.5s cubic-bezier(0.42, 0, 0.58, 1) forwards; // Coordinación para la entrada
+        animation: enter-right-animation 3s ease-in forwards;
       }
     }
   }
 }
-
 
 @media (max-width: 737px) {
 }

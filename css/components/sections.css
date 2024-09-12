@@ -50,11 +50,11 @@ body .sectionsContainer .section.active {
 }
 body .sectionsContainer .section.exit-left {
   opacity: 0;
-  animation: exit-left-animation 1.5s ease forwards;
+  animation: exit-left-animation 1.5s ease-out forwards;
 }
 body .sectionsContainer .section.enter-right {
   opacity: 1;
-  animation: enter-right-animation 3.5s cubic-bezier(0.42, 0, 0.58, 1) forwards;
+  animation: enter-right-animation 3s ease-in forwards;
 }
 
 /*# sourceMappingURL=sections.css.map */

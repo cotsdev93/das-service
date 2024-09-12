@@ -47,14 +47,17 @@ body {
       .categoriasContainer {
         display: flex;
         justify-content: center;
-        margin: 5px;
         ul {
           display: flex;
           li {
-            margin: 12px;
+            margin: 8px 12px;
             color: $grisTexto;
             cursor: pointer;
             font-size: 12px;
+
+            &:hover {
+              font-weight: 450;
+            }
           }
         }
       }
@@ -93,10 +96,15 @@ body {
             .productoDetail {
               margin: 5px;
               white-space: nowrap;
+              .productoCategoria {
+                font: 10px;
+                margin: -3px 0px -1px 0px;
+                color: $grisTexto;
+              }
               .productoTitle {
                 display: flex;
                 align-items: center;
-                .productMarca {
+                .productoMarca {
                   font-size: auto;
                   padding-right: 6px;
                   font-weight: 450;

@@ -128,11 +128,11 @@ body .sectionsContainer .section.active {
 }
 body .sectionsContainer .section.exit-left {
   opacity: 0;
-  animation: exit-left-animation 1.5s ease forwards;
+  animation: exit-left-animation 1.5s ease-out forwards;
 }
 body .sectionsContainer .section.enter-right {
   opacity: 1;
-  animation: enter-right-animation 3.5s cubic-bezier(0.42, 0, 0.58, 1) forwards;
+  animation: enter-right-animation 3s ease-in forwards;
 }
 
 body #section2 {
@@ -195,16 +195,18 @@ body #section3 .equiposContainer .buscadorContainer input::placeholder {
 body #section3 .equiposContainer .categoriasContainer {
   display: flex;
   justify-content: center;
-  margin: 5px;
 }
 body #section3 .equiposContainer .categoriasContainer ul {
   display: flex;
 }
 body #section3 .equiposContainer .categoriasContainer ul li {
-  margin: 12px;
+  margin: 8px 12px;
   color: #787878;
   cursor: pointer;
   font-size: 12px;
+}
+body #section3 .equiposContainer .categoriasContainer ul li:hover {
+  font-weight: 450;
 }
 body #section3 .equiposContainer .productosCarrousell {
   position: relative;
@@ -245,11 +247,16 @@ body #section3 .equiposContainer .productosCarrousell .productosContainer .produ
   margin: 5px;
   white-space: nowrap;
 }
+body #section3 .equiposContainer .productosCarrousell .productosContainer .productoContainer .productoDetail .productoCategoria {
+  font: 10px;
+  margin: -3px 0px -1px 0px;
+  color: #787878;
+}
 body #section3 .equiposContainer .productosCarrousell .productosContainer .productoContainer .productoDetail .productoTitle {
   display: flex;
   align-items: center;
 }
-body #section3 .equiposContainer .productosCarrousell .productosContainer .productoContainer .productoDetail .productoTitle .productMarca {
+body #section3 .equiposContainer .productosCarrousell .productosContainer .productoContainer .productoDetail .productoTitle .productoMarca {
   font-size: auto;
   padding-right: 6px;
   font-weight: 450;

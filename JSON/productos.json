@@ -31,7 +31,7 @@
     },
     {
         "id" : 4,
-        "categoria": "heladeras",
+        "categoria": "heladera",
         "marca" : "ARISTON",
         "modelo" : "HJL-567",
         "condicion": "reacondicionado",
@@ -41,7 +41,7 @@
     },
     {
         "id" : 4,
-        "categoria": "heladeras",
+        "categoria": "heladera",
         "marca" : "ARISTON",
         "modelo" : "HJL-567",
         "condicion": "reacondicionado",
