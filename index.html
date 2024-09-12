@@ -35,8 +35,45 @@
     <main>
       <div class="sectionsContainer">
         <section id="section1" class="section"></section>
-        <section id="section2" class="section"></section>
-        <section id="section3" class="section active">
+        <section id="section2" class="section active">
+          <div class="repuestosContainer">
+            <div class="titleRepuestosContainer">
+              <p class="titleRepuestos">repuestos originales</p>
+            </div>
+            <p class="textRepuestos">
+              Confía en nuestra tienda para encontrar repuestos originales que
+              prolongan la vida de tus electrodomésticos. Seguridad y
+              satisfacción garantizadas en cada compra.
+            </p>
+            <div class="buscadorContainerRepuestos">
+              <input
+                type="text"
+                id="inputBuscadorRepuestos"
+                placeholder="Que estas buscando?"
+              />
+            </div>
+            <div class="categoriasContainer">
+              <ul>
+                <li class="boton btnCategoria seleccionado" data-categoria="">
+                  Todos
+                </li>
+                <li class="boton btnCategoria" data-categoria="lavarropas">
+                  Lavarropas
+                </li>
+                <li class="boton btnCategoria" data-categoria="secarropas">
+                  Secarropas
+                </li>
+                <li class="boton btnCategoria" data-categoria="lavavajillas">
+                  lavavajillas
+                </li>
+                <li class="boton btnCategoria" data-categoria="heladera">
+                  heladeras
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section id="section3" class="section">
           <div class="equiposContainer">
             <div class="titleEquipos">
               <p class="titleSabemos">equipos seleccionados</p>
@@ -48,10 +85,10 @@
               confianza. Con nuestro respaldo, cada compra es una decisión
               inteligente y confiable.
             </p>
-            <div class="buscadorContainer">
+            <div class="buscadorContainerEquipos">
               <input
                 type="text"
-                id="inputBuscador"
+                id="inputBuscadorEquipos"
                 placeholder="Que estas buscando?"
               />
             </div>

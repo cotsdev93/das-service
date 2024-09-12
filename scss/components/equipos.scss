@@ -24,7 +24,7 @@ body {
         color: #000000;
         font-size: 15px;
       }
-      .buscadorContainer {
+      .buscadorContainerEquipos {
         display: flex;
         justify-content: center;
         margin: 10px 0px 0px 0px;
@@ -54,9 +54,13 @@ body {
             color: $grisTexto;
             cursor: pointer;
             font-size: 12px;
-
+            transition: transform 0.3s ease, color 0.3s ease; 
             &:hover {
-              font-weight: 450;
+              transform: scale(1.05); 
+              color: darken(
+                $grisTexto,
+                20%
+              );
             }
           }
         }

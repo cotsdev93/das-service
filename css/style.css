@@ -135,10 +135,69 @@ body .sectionsContainer .section.enter-right {
   animation: enter-right-animation 3s ease-in forwards;
 }
 
-body #section2 {
-  height: 100%;
-  border: solid 5px green;
-  background-color: green;
+body #section2 .repuestosContainer {
+  border: 1px solid rgb(229, 229, 229);
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 70%;
+  margin: 40px;
+  backdrop-filter: blur(2px);
+  padding-bottom: 15px;
+  overflow-x: hidden;
+}
+body #section2 .repuestosContainer .titleRepuestosContainer {
+  font-size: 200px;
+  margin: 15px 15px 0px 15px;
+}
+body #section2 .repuestosContainer .titleRepuestosContainer .titleRepuestos {
+  color: #003459;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 600;
+}
+body #section2 .repuestosContainer .textRepuestos {
+  margin: 0px 15px 15px 15px;
+  text-align: justify;
+  color: #000000;
+  font-size: 15px;
+}
+body #section2 .repuestosContainer .buscadorContainerRepuestos {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0px 0px 0px;
+}
+body #section2 .repuestosContainer .buscadorContainerRepuestos input {
+  width: 60%;
+  height: 30px;
+  background-color: #f8f8f8;
+  border: solid 0.5px #c9c9c9;
+  box-shadow: inset 0px 0px 3px 1px rgba(0, 0, 0, 0.062745098);
+  border-radius: 20px;
+  outline: none;
+  padding-left: 15px;
+  font-size: 17px;
+  color: #787878;
+}
+body #section2 .repuestosContainer .buscadorContainerRepuestos input::placeholder {
+  color: #c5c5c5;
+}
+body #section2 .repuestosContainer .categoriasContainer {
+  display: flex;
+  justify-content: center;
+}
+body #section2 .repuestosContainer .categoriasContainer ul {
+  display: flex;
+}
+body #section2 .repuestosContainer .categoriasContainer ul li {
+  margin: 8px 12px;
+  color: #787878;
+  cursor: pointer;
+  font-size: 12px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+body #section2 .repuestosContainer .categoriasContainer ul li:hover {
+  transform: scale(1.05);
+  color: #454545;
 }
 
 body #section1 {
@@ -172,12 +231,12 @@ body #section3 .equiposContainer .textEquipos {
   color: #000000;
   font-size: 15px;
 }
-body #section3 .equiposContainer .buscadorContainer {
+body #section3 .equiposContainer .buscadorContainerEquipos {
   display: flex;
   justify-content: center;
   margin: 10px 0px 0px 0px;
 }
-body #section3 .equiposContainer .buscadorContainer input {
+body #section3 .equiposContainer .buscadorContainerEquipos input {
   width: 60%;
   height: 30px;
   background-color: #f8f8f8;
@@ -189,7 +248,7 @@ body #section3 .equiposContainer .buscadorContainer input {
   font-size: 17px;
   color: #787878;
 }
-body #section3 .equiposContainer .buscadorContainer input::placeholder {
+body #section3 .equiposContainer .buscadorContainerEquipos input::placeholder {
   color: #c5c5c5;
 }
 body #section3 .equiposContainer .categoriasContainer {
@@ -204,9 +263,11 @@ body #section3 .equiposContainer .categoriasContainer ul li {
   color: #787878;
   cursor: pointer;
   font-size: 12px;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 body #section3 .equiposContainer .categoriasContainer ul li:hover {
-  font-weight: 450;
+  transform: scale(1.05);
+  color: #454545;
 }
 body #section3 .equiposContainer .productosCarrousell {
   position: relative;

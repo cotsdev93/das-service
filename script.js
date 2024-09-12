@@ -96,11 +96,11 @@ function cargarProductos(productos) {
 
 const bd = new BaseDeDatos();
 
-const inputBuscador = document.querySelector("#inputBuscador");
+const inputBuscadorEquipos = document.querySelector("#inputBuscadorEquipos");
 
-inputBuscador.addEventListener("input", (event) => {
+inputBuscadorEquipos.addEventListener("input", (event) => {
   event.preventDefault();
-  const palabra = inputBuscador.value;
+  const palabra = inputBuscadorEquipos.value;
 
   // Obtener productos por marca o categoría
   const productosPorMarca = bd.registrosPorMarca(palabra);
