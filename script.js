@@ -94,7 +94,7 @@ function cargarProductos(productos) {
   verificarCantidadProductos();
 }
 
-const bd = new BaseDeDatosProductos();
+const bdProductos = new BaseDeDatosProductos();
 
 const inputBuscadorEquipos = document.querySelector("#inputBuscadorEquipos");
 
@@ -151,18 +151,17 @@ function moverCarrousel(direccion) {
 
 // Función para verificar la cantidad de productos y ocultar/mostrar flechas
 function verificarCantidadProductos() {
-  const cantidadProductos = document.querySelectorAll(".productoContainer").length;
+  const cantidadProductos =
+    document.querySelectorAll(".productoContainer").length;
 
   if (cantidadProductos <= 4) {
     btnLeft.style.display = "none";
     btnRight.style.display = "none";
-    console.log("funca")
   } else {
     btnLeft.style.display = "block";
     btnRight.style.display = "block";
   }
 }
-
 
 // Event listeners para los botones
 btnLeft.addEventListener("click", () => moverCarrousel("izquierda"));
@@ -174,9 +173,9 @@ const btnCategoria = document.querySelectorAll(".btnCategoria");
 
 btnCategoria.forEach((boton) => {
   boton.addEventListener("click", () => {
-    const categoria = boton.dataset.categoria
-    
-    const productos = bd.registroPorCategoria(boton.dataset.categoria);
+    const categoria = boton.dataset.categoria;
+
+    const productos = bdProductos.registroPorCategoria(boton.dataset.categoria);
     cargarProductos(productos);
   });
 });
