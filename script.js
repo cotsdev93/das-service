@@ -35,7 +35,7 @@ document.querySelectorAll("nav li").forEach((item) => {
 
 // BASE DE DATOS
 
-class BaseDeDatos {
+class BaseDeDatosProductos {
   constructor() {
     this.productos = [];
 
@@ -94,7 +94,7 @@ function cargarProductos(productos) {
   verificarCantidadProductos();
 }
 
-const bd = new BaseDeDatos();
+const bd = new BaseDeDatosProductos();
 
 const inputBuscadorEquipos = document.querySelector("#inputBuscadorEquipos");
 
@@ -103,8 +103,8 @@ inputBuscadorEquipos.addEventListener("input", (event) => {
   const palabra = inputBuscadorEquipos.value;
 
   // Obtener productos por marca o categoría
-  const productosPorMarca = bd.registrosPorMarca(palabra);
-  const productosPorCategoria = bd.registroPorCategoria(palabra);
+  const productosPorMarca = bdProductos.registrosPorMarca(palabra);
+  const productosPorCategoria = bdProductos.registroPorCategoria(palabra);
 
   // Combinar los resultados eliminando duplicados
   const productos = [

@@ -45,8 +45,8 @@
         "marca" : "ARISTON",
         "modelo" : "HJL-567",
         "condicion": "reacondicionado",
-        "precio": 700000,
-        "img": "./assets/img/heladera.png",
+        "precio": 850000,
+        "img": "./assets/img/heladera2.png",
         "descripcion": ""
     }
 ]
