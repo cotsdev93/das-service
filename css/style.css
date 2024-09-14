@@ -199,6 +199,109 @@ body #section2 .repuestosContainer .categoriasContainer ul li:hover {
   transform: scale(1.05);
   color: #454545;
 }
+body #section2 .repuestosContainer .repuestosCarrousell {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: none;
+}
+body #section2 .repuestosContainer .repuestosCarrousell .repuestosContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 98%;
+  position: relative;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  margin: auto;
+  pointer-events: none;
+}
+body #section2 .repuestosContainer .repuestosCarrousell .repuestosContainer::-webkit-scrollbar {
+  display: none;
+}
+body #section2 .repuestosContainer .repuestosCarrousell .repuestosContainer .repuestoContainer {
+  margin: 2px;
+  flex: 0 0 24.3%;
+  border-radius: 5px;
+  border: solid 0.5px #c9c9c9;
+  box-shadow: inset 0px 0px 3px 1px rgba(0, 0, 0, 0.062745098);
+  background-color: #f8f8f8;
+  overflow: hidden;
+}
+body #section2 .repuestosContainer .repuestosCarrousell .repuestosContainer .repuestoContainer .imgContainer {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+body #section2 .repuestosContainer .repuestosCarrousell .repuestosContainer .repuestoContainer .imgContainer img {
+  width: 100%;
+}
+body #section2 .repuestosContainer .repuestosCarrousell .repuestosContainer .repuestoContainer .repuestoDetail {
+  margin: 5px;
+  white-space: nowrap;
+}
+body #section2 .repuestosContainer .repuestosCarrousell .repuestosContainer .repuestoContainer .repuestoDetail .repuestoCategoria {
+  font: 10px;
+  margin: -3px 0px -1px 0px;
+  color: #787878;
+}
+body #section2 .repuestosContainer .repuestosCarrousell .repuestosContainer .repuestoContainer .repuestoDetail .repuestoTitle {
+  display: flex;
+  align-items: center;
+}
+body #section2 .repuestosContainer .repuestosCarrousell .repuestosContainer .repuestoContainer .repuestoDetail .repuestoTitle .repuestoMarca {
+  font-size: auto;
+  padding-right: 6px;
+  font-weight: 450;
+}
+body #section2 .repuestosContainer .repuestosCarrousell .repuestosContainer .repuestoContainer .repuestoDetail .repuestoTitle .repuestoModelo {
+  font-size: auto;
+  font-weight: 350;
+}
+body #section2 .repuestosContainer .repuestosCarrousell .repuestosContainer .repuestoContainer .repuestoDetail .repuestoPrecio {
+  font-size: auto;
+  font-weight: 500;
+  color: rgb(15, 200, 15);
+}
+body #section2 .repuestosContainer .repuestosCarrousell .bx-chevron-left {
+  position: absolute;
+  left: 0;
+  top: 45%;
+  color: #c5c5c5;
+  font-size: 24px;
+  margin-left: 10px;
+  color: white;
+  background-color: rgb(0, 0, 0);
+  border-radius: 50%;
+  opacity: 0.3;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.3764705882);
+}
+body #section2 .repuestosContainer .repuestosCarrousell .bx-chevron-left:hover {
+  box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.5019607843);
+}
+body #section2 .repuestosContainer .repuestosCarrousell .bx-chevron-left:active {
+  box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.5019607843);
+}
+body #section2 .repuestosContainer .repuestosCarrousell .bx-chevron-right {
+  position: absolute;
+  right: 0;
+  top: 45%;
+  color: white;
+  font-size: 24px;
+  margin-right: 11px;
+  color: white;
+  background-color: rgb(0, 0, 0);
+  border-radius: 50%;
+  opacity: 0.3;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.3764705882);
+}
+body #section2 .repuestosContainer .repuestosCarrousell .bx-chevron-right:hover {
+  box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.5019607843);
+}
+body #section2 .repuestosContainer .repuestosCarrousell .bx-chevron-right:active {
+  box-shadow: 0px 0px 4px 3px rgba(0, 0, 0, 0.5019607843);
+}
 
 body #section1 {
   height: auto;
@@ -322,7 +425,7 @@ body #section3 .equiposContainer .productosCarrousell .productosContainer .produ
   padding-right: 6px;
   font-weight: 450;
 }
-body #section3 .equiposContainer .productosCarrousell .productosContainer .productoContainer .productoDetail .productoTitle .productModelo {
+body #section3 .equiposContainer .productosCarrousell .productosContainer .productoContainer .productoDetail .productoTitle .productoModelo {
   font-size: auto;
   font-weight: 350;
 }

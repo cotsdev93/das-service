@@ -33,6 +33,71 @@ document.querySelectorAll("nav li").forEach((item) => {
   });
 });
 
+// BASE DE DATOS repuestos
+
+class BaseDeDatosRepuestos {
+  constructor() {
+    this.repuestos = [];
+
+    this.cargarRegistros();
+  }
+
+  async cargarRegistros() {
+    const resultado = await fetch("./JSON/repuestos.json");
+    this.repuestos = await resultado.json();
+    cargarRepuestos(this.repuestos);
+  }
+
+  traerRegistros() {
+    return this.repuestos;
+  }
+
+  registrosPorMarca(palabra) {
+    return this.productos.filter(
+      (repuesto) =>
+        repuesto.marca.toLowerCase().indexOf(palabra.toLowerCase()) !== -1
+    );
+  }
+
+  registroPorCategoria(categoria) {
+    return this.productos.filter(
+      (repuesto) =>
+        repuesto.categoria.toLowerCase().indexOf(categoria.toLowerCase()) !== -1
+    );
+  }
+}
+
+const repuestosElement = document.querySelector("#repuestos");
+
+function cargarRepuestos(repuestos) {
+  repuestosElement.innerHTML = "";
+
+  for (const repuesto of repuestos) {
+    repuestosElement.innerHTML += `
+      <div class="repuestoContainer">
+        <div class="imgContainer">
+          <img src="${repuesto.img}" alt="" />
+        </div>
+        <div class="repuestoDetail">
+          <p class="repuestoCategoria">${repuesto.categoria}</p>
+          <div class="repuestoTitle">
+            <p class="repuestoMarca">${repuesto.marca}</p>
+            <p class="repuestoModelo">${repuesto.modelo}</p>
+          </div>
+          <p class="repuestoPrecio">$${repuesto.precio.toLocaleString(
+            "es-ES"
+          )}</p>
+        </div>
+      </div>
+    `;
+  }
+  // verificarCantidadProductos();
+}
+
+const bdRepuestos = new BaseDeDatosRepuestos();
+
+const inputBuscadorRepuestos = document.querySelector("#inputBuscadorRepuestos");
+
 // BASE DE DATOS
 
 class BaseDeDatosProductos {
@@ -115,8 +180,8 @@ inputBuscadorEquipos.addEventListener("input", (event) => {
   cargarProductos(productos);
 });
 
-const btnLeft = document.querySelector(".btnLeft");
-const btnRight = document.querySelector(".btnRight");
+const btnLeftProductos = document.querySelector(".btnLeftProductos");
+const btnRightProductos = document.querySelector(".btnRightProductos");
 const productosContainer = document.querySelector(".productosContainer");
 
 // Función para obtener el ancho total de un producto, incluyendo márgenes
@@ -155,17 +220,17 @@ function verificarCantidadProductos() {
     document.querySelectorAll(".productoContainer").length;
 
   if (cantidadProductos <= 4) {
-    btnLeft.style.display = "none";
-    btnRight.style.display = "none";
+    btnLeftProductos.style.display = "none";
+    btnRightProductos.style.display = "none";
   } else {
-    btnLeft.style.display = "block";
-    btnRight.style.display = "block";
+    btnLeftProductos.style.display = "block";
+    btnRightProductos.style.display = "block";
   }
 }
 
 // Event listeners para los botones
-btnLeft.addEventListener("click", () => moverCarrousel("izquierda"));
-btnRight.addEventListener("click", () => moverCarrousel("derecha"));
+btnLeftProductos.addEventListener("click", () => moverCarrousel("izquierda"));
+btnRightProductos.addEventListener("click", () => moverCarrousel("derecha"));
 
 verificarCantidadProductos();
 
