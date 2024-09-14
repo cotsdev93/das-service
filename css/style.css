@@ -203,9 +203,11 @@ body #section2 .repuestosContainer .repuestosCarrousell {
   position: relative;
   width: 100%;
   overflow: hidden;
-  box-shadow: none;
 }
 body #section2 .repuestosContainer .repuestosCarrousell .repuestosContainer {
+  box-shadow: none;
+  border: none;
+  border-radius: 0;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
