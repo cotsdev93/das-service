@@ -38,7 +38,6 @@ document.querySelectorAll("nav li").forEach((item) => {
 class BaseDeDatosRepuestos {
   constructor() {
     this.repuestos = [];
-
     this.cargarRegistros();
   }
 
@@ -53,14 +52,14 @@ class BaseDeDatosRepuestos {
   }
 
   registrosPorMarca(palabra) {
-    return this.productos.filter(
+    return this.repuestos.filter(
       (repuesto) =>
         repuesto.marca.toLowerCase().indexOf(palabra.toLowerCase()) !== -1
     );
   }
 
   registroPorCategoria(categoria) {
-    return this.productos.filter(
+    return this.repuestos.filter(
       (repuesto) =>
         repuesto.categoria.toLowerCase().indexOf(categoria.toLowerCase()) !== -1
     );
@@ -91,14 +90,79 @@ function cargarRepuestos(repuestos) {
       </div>
     `;
   }
-  // verificarCantidadProductos();
+  verificarCantidadRepuestos();
 }
 
 const bdRepuestos = new BaseDeDatosRepuestos();
 
-const inputBuscadorRepuestos = document.querySelector("#inputBuscadorRepuestos");
+const inputBuscadorRepuestos = document.querySelector(
+  "#inputBuscadorRepuestos"
+);
 
-// BASE DE DATOS
+const btnLeftRepuestos = document.querySelector(".btnLeftRepuestos");
+const btnRightRepuestos = document.querySelector(".btnRightRepuestos");
+const repuestosContainer = document.querySelector(".repuestosContainer");
+
+
+btnLeftRepuestos.addEventListener("click", () => {
+  console.log("funciona");
+});
+
+btnRightRepuestos.addEventListener("click", () => {
+  console.log("funciona");
+})
+
+// Función para obtener el ancho total de un repuesto, incluyendo márgenes
+function obtenerAnchoRepuestoConMargen() {
+  const repuesto = document.querySelector(".repuestoContainer");
+  if (repuesto) {
+    const estilo = window.getComputedStyle(repuesto);
+    const margenIzquierdo = parseFloat(estilo.marginLeft);
+    const margenDerecho = parseFloat(estilo.marginRight);
+    const anchoTotal = repuesto.offsetWidth + margenIzquierdo + margenDerecho;
+    return anchoTotal;
+  }
+  return 0;
+}
+
+// Función para mover el carrusel
+function moverCarrouselRepuestos(direccion) {
+  const anchoRepuesto = obtenerAnchoRepuestoConMargen();
+  if (anchoRepuesto > 0) {
+    const desplazamientoActual = repuestosContainer.scrollLeft; // Posición actual del scroll
+    const nuevoDesplazamiento =
+      direccion === "izquierda"
+        ? desplazamientoActual - anchoRepuesto
+        : desplazamientoActual + anchoRepuesto;
+
+    repuestosContainer.scrollTo({
+      left: nuevoDesplazamiento,
+      behavior: "smooth",
+    });
+  }
+}
+
+// Función para verificar la cantidad de repuestos y ocultar/mostrar flechas
+function verificarCantidadRepuestos() {
+  const cantidadRepuestos =
+    document.querySelectorAll(".repuestoContainer").length;
+
+  if (cantidadRepuestos <= 4) {
+    btnLeftRepuestos.style.display = "none";
+    btnRightRepuestos.style.display = "none";
+  } else {
+    btnLeftRepuestos.style.display = "block";
+    btnRightRepuestos.style.display = "block";
+  }
+}
+
+// Event listeners para los botones
+btnLeftRepuestos.addEventListener("click", () => moverCarrouselRepuestos("izquierda"));
+btnRightRepuestos.addEventListener("click", () => moverCarrouselRepuestos("derecha"));
+
+verificarCantidadRepuestos();
+
+// BASE DE DATOS productos
 
 class BaseDeDatosProductos {
   constructor() {
@@ -234,9 +298,9 @@ btnRightProductos.addEventListener("click", () => moverCarrousel("derecha"));
 
 verificarCantidadProductos();
 
-const btnCategoria = document.querySelectorAll(".btnCategoria");
+const btnCategoriaProductos = document.querySelectorAll(".btnCategoriaProductos");
 
-btnCategoria.forEach((boton) => {
+btnCategoriaProductos.forEach((boton) => {
   boton.addEventListener("click", () => {
     const categoria = boton.dataset.categoria;
 

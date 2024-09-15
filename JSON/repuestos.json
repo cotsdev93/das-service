@@ -11,10 +11,10 @@
     "codigoProducto": 123,
     "img": "./assets/img/bombaDesagote.png"
   },  {
-    "id": 1,
-    "nombre": "Bomba de desagote",
-    "categoria": "lavarropas",
-    "marca": "LG",
+    "id": 2,
+    "nombre": "2",
+    "categoria": "secarropa",
+    "marca": "2",
     "modelo": "WMN1234",
     "descripcion": "Correa de lavarropas",
     "precio": 10.99,
@@ -22,10 +22,10 @@
     "codigoProducto": 123,
     "img": "./assets/img/bombaDesagote.png"
   },  {
-    "id": 1,
-    "nombre": "Bomba de desagote",
+    "id": 3,
+    "nombre": "3",
     "categoria": "lavarropas",
-    "marca": "LG",
+    "marca": "3",
     "modelo": "WMN1234",
     "descripcion": "Correa de lavarropas",
     "precio": 10.99,
