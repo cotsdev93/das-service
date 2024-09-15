@@ -78,9 +78,9 @@ function cargarRepuestos(repuestos) {
           <img src="${repuesto.img}" alt="" />
         </div>
         <div class="repuestoDetail">
-          <p class="repuestoCategoria">${repuesto.categoria}</p>
+          <p class="repuestoCategoria">${repuesto.marca}</p>
           <div class="repuestoTitle">
-            <p class="repuestoMarca">${repuesto.marca}</p>
+            <p class="repuestoMarca">${repuesto.nombre}</p>
             <p class="repuestoModelo">${repuesto.modelo}</p>
           </div>
           <p class="repuestoPrecio">$${repuesto.precio.toLocaleString(
@@ -161,6 +161,18 @@ btnLeftRepuestos.addEventListener("click", () => moverCarrouselRepuestos("izquie
 btnRightRepuestos.addEventListener("click", () => moverCarrouselRepuestos("derecha"));
 
 verificarCantidadRepuestos();
+
+const btnCategoriaRepuestos = document.querySelectorAll(".btnCategoriaRepuestos");
+
+btnCategoriaRepuestos.forEach((boton) => {
+  boton.addEventListener("click", () => {
+    const categoria = boton.dataset.categoria;
+
+    const repuestos = bdRepuestos.registroPorCategoria(boton.dataset.categoria);
+    cargarRepuestos(repuestos);
+  });
+});
+
 
 // BASE DE DATOS productos
 
