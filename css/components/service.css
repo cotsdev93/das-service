@@ -1,7 +1,17 @@
-body #section1 {
-  height: auto;
-  border: solid 5px red;
-  background-color: red;
-}
+/* Error: Undefined variable.
+ *    ,
+ * 16 |           color: $azul;
+ *    |                  ^^^^^
+ *    '
+ *   scss\components\service.scss 16:18  root stylesheet */
 
-/*# sourceMappingURL=service.css.map */
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined variable.\a    \2577 \a 16 \2502            color: $azul;\d\a    \2502                   ^^^^^\a    \2575 \a   scss\\components\\service.scss 16:18  root stylesheet";
+}
