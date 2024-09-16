@@ -74,6 +74,13 @@ class BaseDeDatosRepuestos {
         repuesto.categoria.toLowerCase().indexOf(categoria.toLowerCase()) !== -1
     );
   }
+
+  registroPorNombre(nombre) {
+    return this.repuestos.filter(
+      (repuesto) =>
+        repuesto.nombre.toLowerCase().indexOf(nombre.toLowerCase()) !== -1
+    )
+  }
 }
 
 const repuestosElement = document.querySelector("#repuestos");
@@ -106,17 +113,30 @@ const inputBuscadorRepuestos = document.querySelector(
   "#inputBuscadorRepuestos"
 );
 
+inputBuscadorRepuestos.addEventListener("input", (event) => {
+  event.preventDefault();
+  const palabra = inputBuscadorRepuestos.value;
+
+  // Obtener productos por marca o categoría
+  const repuestosPorMarca = bdRepuestos.registrosPorMarca(palabra);
+  const repuestosPorCategoria = bdRepuestos.registroPorCategoria(palabra);
+  const repuestosPorNombre = bdRepuestos.registroPorNombre(palabra)
+  
+  // Combinar los resultados eliminando duplicados
+  const repuestos = [
+    ...new Set([...repuestosPorMarca, ...repuestosPorCategoria, ...repuestosPorNombre]),
+  ];
+  
+  // Cargar los productos filtrados
+  cargarRepuestos(repuestos);
+  console.log(palabra)
+});
+
+
+
 const btnLeftRepuestos = document.querySelector(".btnLeftRepuestos");
 const btnRightRepuestos = document.querySelector(".btnRightRepuestos");
 const repuestosContainer = document.querySelector(".repuestosContainer");
-
-btnLeftRepuestos.addEventListener("click", () => {
-  console.log("funciona");
-});
-
-btnRightRepuestos.addEventListener("click", () => {
-  console.log("funciona");
-});
 
 // Función para obtener el ancho total de un repuesto, incluyendo márgenes
 function obtenerAnchoRepuestoConMargen() {
