@@ -1,14 +1,21 @@
+let isAnimating = false;
+
 document.querySelectorAll("nav li").forEach((item) => {
   item.addEventListener("click", (e) => {
     e.preventDefault();
+
+    // Si la animación está en curso, no hacemos nada.
+    if (isAnimating) return;
 
     const sectionId = e.target.closest("li").getAttribute("data-section");
     const newActiveSection = document.getElementById(`section${sectionId}`);
     const currentActiveSection = document.querySelector(".section.active");
 
-    if (newActiveSection === currentActiveSection) {
-      return; // Si es la misma sección, no hace nada.
-    }
+    // Si es la misma sección, no hace nada.
+    if (newActiveSection === currentActiveSection) return;
+
+    // Activamos el flag de animación.
+    isAnimating = true;
 
     // Añadir clase para animar la salida de la sección actual.
     if (currentActiveSection) {
@@ -29,6 +36,9 @@ document.querySelectorAll("nav li").forEach((item) => {
       }
       newActiveSection.classList.remove("enter-right");
       newActiveSection.classList.add("active");
+
+      // Desactivamos el flag de animación después de que todas las animaciones hayan terminado.
+      isAnimating = false;
     }, 4000); // La duración debe coincidir con la duración de la animación.
   });
 });
@@ -103,14 +113,13 @@ const btnLeftRepuestos = document.querySelector(".btnLeftRepuestos");
 const btnRightRepuestos = document.querySelector(".btnRightRepuestos");
 const repuestosContainer = document.querySelector(".repuestosContainer");
 
-
 btnLeftRepuestos.addEventListener("click", () => {
   console.log("funciona");
 });
 
 btnRightRepuestos.addEventListener("click", () => {
   console.log("funciona");
-})
+});
 
 // Función para obtener el ancho total de un repuesto, incluyendo márgenes
 function obtenerAnchoRepuestoConMargen() {
@@ -157,12 +166,18 @@ function verificarCantidadRepuestos() {
 }
 
 // Event listeners para los botones
-btnLeftRepuestos.addEventListener("click", () => moverCarrouselRepuestos("izquierda"));
-btnRightRepuestos.addEventListener("click", () => moverCarrouselRepuestos("derecha"));
+btnLeftRepuestos.addEventListener("click", () =>
+  moverCarrouselRepuestos("izquierda")
+);
+btnRightRepuestos.addEventListener("click", () =>
+  moverCarrouselRepuestos("derecha")
+);
 
 verificarCantidadRepuestos();
 
-const btnCategoriaRepuestos = document.querySelectorAll(".btnCategoriaRepuestos");
+const btnCategoriaRepuestos = document.querySelectorAll(
+  ".btnCategoriaRepuestos"
+);
 
 btnCategoriaRepuestos.forEach((boton) => {
   boton.addEventListener("click", () => {
@@ -172,7 +187,6 @@ btnCategoriaRepuestos.forEach((boton) => {
     cargarRepuestos(repuestos);
   });
 });
-
 
 // BASE DE DATOS productos
 
@@ -310,7 +324,9 @@ btnRightProductos.addEventListener("click", () => moverCarrousel("derecha"));
 
 verificarCantidadProductos();
 
-const btnCategoriaProductos = document.querySelectorAll(".btnCategoriaProductos");
+const btnCategoriaProductos = document.querySelectorAll(
+  ".btnCategoriaProductos"
+);
 
 btnCategoriaProductos.forEach((boton) => {
   boton.addEventListener("click", () => {

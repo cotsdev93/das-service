@@ -42,7 +42,7 @@ body .sectionsContainer .section {
   align-items: center;
   opacity: 0;
   transform: scale(0.9) translateX(120%);
-  transition: opacity 2.5s ease, transform 4s ease;
+  transition: opacity 2.5s ease, transform 2s cubic-bezier(0.25, 0.03, 1, 1.1);
 }
 body .sectionsContainer .section.active {
   opacity: 1;
@@ -54,7 +54,7 @@ body .sectionsContainer .section.exit-left {
 }
 body .sectionsContainer .section.enter-right {
   opacity: 1;
-  animation: enter-right-animation 3s ease-in forwards;
+  animation: enter-right-animation 3s cubic-bezier(0.25, 0.03, 1, 1.1) forwards;
 }
 
 /*# sourceMappingURL=sections.css.map */
