@@ -81,10 +81,6 @@ html body main {
     opacity: 1;
     transform: scale(1) translateX(0);
   }
-  50% {
-    opacity: 0.5;
-    transform: scale(0.95) translateX(0);
-  }
   100% {
     opacity: 0;
     transform: scale(0.9) translateX(-100%);
@@ -94,10 +90,6 @@ html body main {
   0% {
     opacity: 0;
     transform: scale(0.9) translateX(100%);
-  }
-  50% {
-    opacity: 0.5;
-    transform: scale(0.95) translateX(0);
   }
   100% {
     opacity: 1;
@@ -119,20 +111,18 @@ body .sectionsContainer .section {
   justify-content: center;
   align-items: center;
   opacity: 0;
-  transform: scale(0.9) translateX(120%);
-  transition: opacity 2.5s ease, transform 1s forwards;
+  transform: scale(0.9) translateX(100%);
+  transition: opacity 0s, transform 2s; /* Resetea las transiciones para usar animaciones en lugar de transiciones */
 }
 body .sectionsContainer .section.active {
   opacity: 1;
   transform: scale(1) translateX(0);
 }
 body .sectionsContainer .section.exit-left {
-  opacity: 0;
-  animation: exit-left-animation 1.5s ease-out forwards;
+  animation: exit-left-animation 2s ease-out forwards;
 }
 body .sectionsContainer .section.enter-right {
-  opacity: 1;
-  animation: enter-right-animation 3s cubic-bezier(0.25, 0.03, 1, 1.1) forwards;
+  animation: enter-right-animation 2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
 }
 
 body #section2 .repuestosContainerMain {
