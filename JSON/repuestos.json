@@ -22,5 +22,41 @@
     "stock": 5,
     "codigoProducto": 123,
     "img": "./assets/img/fuelle.png"
+  },
+  {
+    "id": 3,
+    "nombre": "Termostato",
+    "categoria": "horno",
+    "marca": "Ariston",
+    "modelo": "",
+    "descripcion": "",
+    "precio": 32000,
+    "stock": 5,
+    "codigoProducto": 123,
+    "img": "./assets/img/termostatoHorno.png"
+  },
+  {
+    "id": 4,
+    "nombre": "Reten y Rulemanes",
+    "categoria": "lavarropas",
+    "marca": "SKT",
+    "modelo": "",
+    "descripcion": "",
+    "precio": 27000,
+    "stock": 5,
+    "codigoProducto": 123,
+    "img": "./assets/img/kitRetenRuleman.png"
+  },
+  {
+    "id": 5,
+    "nombre": "Resistencia Secarropa",
+    "categoria": "secarropas",
+    "marca": "whirlpool",
+    "modelo": "",
+    "descripcion": "",
+    "precio": 42000,
+    "stock": 5,
+    "codigoProducto": 123,
+    "img": "./assets/img/resistenciaSecarropa.png"
   }
 ]

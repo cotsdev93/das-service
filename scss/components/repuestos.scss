@@ -101,28 +101,30 @@ body {
             .repuestoDetail {
               margin: 5px;
               white-space: nowrap;
-              .repuestoCategoria {
-                font: 10px;
-                margin: -3px 0px -1px 0px;
-                color: $grisTexto;
+
+              .repuestoNombre {
+                font-size: auto;
+                padding-right: 6px;
+                font-weight: 450;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 100%;
               }
               .repuestoTitle {
                 display: flex;
                 align-items: center;
+                justify-content: space-between;
                 .repuestoMarca {
                   font-size: auto;
                   padding-right: 6px;
-                  font-weight: 450;
+                  font-weight: 400;
                 }
-                .repuestoModelo {
+                .repuestoPrecio {
                   font-size: auto;
-                  font-weight: 350;
+                  font-weight: 500;
+                  color: rgb(15, 200, 15);
                 }
-              }
-              .repuestoPrecio {
-                font-size: auto;
-                font-weight: 500;
-                color: rgb(15, 200, 15);
               }
             }
           }

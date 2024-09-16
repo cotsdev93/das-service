@@ -88,14 +88,11 @@ function cargarRepuestos(repuestos) {
           <img src="${repuesto.img}" alt="" />
         </div>
         <div class="repuestoDetail">
-          <p class="repuestoCategoria">${repuesto.marca}</p>
+        <p class="repuestoNombre">${repuesto.nombre}</p>
           <div class="repuestoTitle">
-            <p class="repuestoMarca">${repuesto.nombre}</p>
-            <p class="repuestoModelo">${repuesto.modelo}</p>
+            <p class="repuestoMarca">${repuesto.marca}</p>
+            <p class="repuestoPrecio">$${repuesto.precio.toLocaleString( "es-ES" )}</p>
           </div>
-          <p class="repuestoPrecio">$${repuesto.precio.toLocaleString(
-            "es-ES"
-          )}</p>
         </div>
       </div>
     `;

@@ -120,7 +120,7 @@ body .sectionsContainer .section {
   align-items: center;
   opacity: 0;
   transform: scale(0.9) translateX(120%);
-  transition: opacity 2.5s ease, transform 2s cubic-bezier(0.25, 0.03, 1, 1.1);
+  transition: opacity 2.5s ease, transform 1s forwards;
 }
 body .sectionsContainer .section.active {
   opacity: 1;
@@ -241,25 +241,26 @@ body #section2 .repuestosContainerMain .repuestosCarrousell .repuestosContainer 
   margin: 5px;
   white-space: nowrap;
 }
-body #section2 .repuestosContainerMain .repuestosCarrousell .repuestosContainer .repuestoContainer .repuestoDetail .repuestoCategoria {
-  font: 10px;
-  margin: -3px 0px -1px 0px;
-  color: #787878;
+body #section2 .repuestosContainerMain .repuestosCarrousell .repuestosContainer .repuestoContainer .repuestoDetail .repuestoNombre {
+  font-size: auto;
+  padding-right: 6px;
+  font-weight: 450;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 body #section2 .repuestosContainerMain .repuestosCarrousell .repuestosContainer .repuestoContainer .repuestoDetail .repuestoTitle {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 body #section2 .repuestosContainerMain .repuestosCarrousell .repuestosContainer .repuestoContainer .repuestoDetail .repuestoTitle .repuestoMarca {
   font-size: auto;
   padding-right: 6px;
-  font-weight: 450;
+  font-weight: 400;
 }
-body #section2 .repuestosContainerMain .repuestosCarrousell .repuestosContainer .repuestoContainer .repuestoDetail .repuestoTitle .repuestoModelo {
-  font-size: auto;
-  font-weight: 350;
-}
-body #section2 .repuestosContainerMain .repuestosCarrousell .repuestosContainer .repuestoContainer .repuestoDetail .repuestoPrecio {
+body #section2 .repuestosContainerMain .repuestosCarrousell .repuestosContainer .repuestoContainer .repuestoDetail .repuestoTitle .repuestoPrecio {
   font-size: auto;
   font-weight: 500;
   color: rgb(15, 200, 15);
