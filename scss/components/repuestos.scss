@@ -67,6 +67,7 @@ body {
         position: relative;
         width: 100%;
         overflow: hidden;
+        
         .repuestosContainer {
           box-shadow: none;
           border: none;
@@ -83,6 +84,18 @@ body {
           pointer-events: none;
           &::-webkit-scrollbar {
             display: none;
+          }
+
+          .noHayRepuestos {
+            
+            width: 100%;
+            min-height: 30vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            p {
+              color: $grisClaro;
+            }
           }
           .repuestoContainer {
             margin: 2px;
@@ -101,7 +114,6 @@ body {
             .repuestoDetail {
               margin: 5px;
               white-space: nowrap;
-
               .repuestoNombre {
                 font-size: auto;
                 padding-right: 6px;
@@ -129,6 +141,8 @@ body {
             }
           }
         }
+
+
 
         .bx-chevron-left {
           position: absolute;
@@ -172,6 +186,7 @@ body {
           }
         }
       }
+      
     }
   }
 }

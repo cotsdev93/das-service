@@ -79,7 +79,7 @@ class BaseDeDatosRepuestos {
     return this.repuestos.filter(
       (repuesto) =>
         repuesto.nombre.toLowerCase().indexOf(nombre.toLowerCase()) !== -1
-    )
+    );
   }
 }
 
@@ -98,13 +98,23 @@ function cargarRepuestos(repuestos) {
         <p class="repuestoNombre">${repuesto.nombre}</p>
           <div class="repuestoTitle">
             <p class="repuestoMarca">${repuesto.marca}</p>
-            <p class="repuestoPrecio">$${repuesto.precio.toLocaleString( "es-ES" )}</p>
+            <p class="repuestoPrecio">$${repuesto.precio.toLocaleString(
+              "es-ES"
+            )}</p>
           </div>
         </div>
       </div>
     `;
   }
   verificarCantidadRepuestos();
+}
+
+function noHayRepuestos(categoria) {
+  repuestosElement.innerHTML = `
+  <div class="noHayRepuestos">
+    <p>No hay repuestos de ${categoria} disponibles</p>
+  </div>
+  `;
 }
 
 const bdRepuestos = new BaseDeDatosRepuestos();
@@ -120,19 +130,20 @@ inputBuscadorRepuestos.addEventListener("input", (event) => {
   // Obtener productos por marca o categoría
   const repuestosPorMarca = bdRepuestos.registrosPorMarca(palabra);
   const repuestosPorCategoria = bdRepuestos.registroPorCategoria(palabra);
-  const repuestosPorNombre = bdRepuestos.registroPorNombre(palabra)
-  
+  const repuestosPorNombre = bdRepuestos.registroPorNombre(palabra);
+
   // Combinar los resultados eliminando duplicados
   const repuestos = [
-    ...new Set([...repuestosPorMarca, ...repuestosPorCategoria, ...repuestosPorNombre]),
+    ...new Set([
+      ...repuestosPorMarca,
+      ...repuestosPorCategoria,
+      ...repuestosPorNombre,
+    ]),
   ];
-  
+
   // Cargar los productos filtrados
   cargarRepuestos(repuestos);
-  console.log(palabra)
 });
-
-
 
 const btnLeftRepuestos = document.querySelector(".btnLeftRepuestos");
 const btnRightRepuestos = document.querySelector(".btnRightRepuestos");
@@ -202,6 +213,12 @@ btnCategoriaRepuestos.forEach((boton) => {
 
     const repuestos = bdRepuestos.registroPorCategoria(boton.dataset.categoria);
     cargarRepuestos(repuestos);
+
+    if (repuestos.length > 0) {
+      cargarRepuestos(repuestos);
+    } else {
+      noHayRepuestos(categoria);
+    }
   });
 });
 

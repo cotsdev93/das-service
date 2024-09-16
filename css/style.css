@@ -212,6 +212,16 @@ body #section2 .repuestosContainerMain .repuestosCarrousell .repuestosContainer 
 body #section2 .repuestosContainerMain .repuestosCarrousell .repuestosContainer::-webkit-scrollbar {
   display: none;
 }
+body #section2 .repuestosContainerMain .repuestosCarrousell .repuestosContainer .noHayRepuestos {
+  width: 100%;
+  min-height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body #section2 .repuestosContainerMain .repuestosCarrousell .repuestosContainer .noHayRepuestos p {
+  color: #c5c5c5;
+}
 body #section2 .repuestosContainerMain .repuestosCarrousell .repuestosContainer .repuestoContainer {
   margin: 2px;
   flex: 0 0 24.3%;
