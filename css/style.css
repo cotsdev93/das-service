@@ -395,6 +395,16 @@ body #section3 .equiposContainer .productosCarrousell .productosContainer {
 body #section3 .equiposContainer .productosCarrousell .productosContainer::-webkit-scrollbar {
   display: none;
 }
+body #section3 .equiposContainer .productosCarrousell .productosContainer .noHayProductos {
+  width: 100%;
+  min-height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body #section3 .equiposContainer .productosCarrousell .productosContainer .noHayProductos p {
+  color: #c5c5c5;
+}
 body #section3 .equiposContainer .productosCarrousell .productosContainer .productoContainer {
   margin: 2px;
   flex: 0 0 24.3%;

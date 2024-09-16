@@ -79,7 +79,7 @@ class BaseDeDatosRepuestos {
     return this.repuestos.filter(
       (repuesto) =>
         repuesto.nombre.toLowerCase().indexOf(nombre.toLowerCase()) !== -1
-    );
+    )
   }
 }
 
@@ -98,9 +98,7 @@ function cargarRepuestos(repuestos) {
         <p class="repuestoNombre">${repuesto.nombre}</p>
           <div class="repuestoTitle">
             <p class="repuestoMarca">${repuesto.marca}</p>
-            <p class="repuestoPrecio">$${repuesto.precio.toLocaleString(
-              "es-ES"
-            )}</p>
+            <p class="repuestoPrecio">$${repuesto.precio.toLocaleString( "es-ES" )}</p>
           </div>
         </div>
       </div>
@@ -109,12 +107,12 @@ function cargarRepuestos(repuestos) {
   verificarCantidadRepuestos();
 }
 
-function noHayRepuestos(categoria) {
+function noHayRepuestos (categoria){
   repuestosElement.innerHTML = `
   <div class="noHayRepuestos">
     <p>No hay repuestos de ${categoria} disponibles</p>
   </div>
-  `;
+  `
 }
 
 const bdRepuestos = new BaseDeDatosRepuestos();
@@ -130,20 +128,18 @@ inputBuscadorRepuestos.addEventListener("input", (event) => {
   // Obtener productos por marca o categoría
   const repuestosPorMarca = bdRepuestos.registrosPorMarca(palabra);
   const repuestosPorCategoria = bdRepuestos.registroPorCategoria(palabra);
-  const repuestosPorNombre = bdRepuestos.registroPorNombre(palabra);
-
+  const repuestosPorNombre = bdRepuestos.registroPorNombre(palabra)
+  
   // Combinar los resultados eliminando duplicados
   const repuestos = [
-    ...new Set([
-      ...repuestosPorMarca,
-      ...repuestosPorCategoria,
-      ...repuestosPorNombre,
-    ]),
+    ...new Set([...repuestosPorMarca, ...repuestosPorCategoria, ...repuestosPorNombre]),
   ];
-
+  
   // Cargar los productos filtrados
   cargarRepuestos(repuestos);
 });
+
+
 
 const btnLeftRepuestos = document.querySelector(".btnLeftRepuestos");
 const btnRightRepuestos = document.querySelector(".btnRightRepuestos");
@@ -283,6 +279,14 @@ function cargarProductos(productos) {
   verificarCantidadProductos();
 }
 
+function noHayProductos (categoria){
+  productosElement.innerHTML = `
+  <div class="noHayProductos">
+    <p>No hay ${categoria} disponibles</p>
+  </div>
+  `
+}
+
 const bdProductos = new BaseDeDatosProductos();
 
 const inputBuscadorEquipos = document.querySelector("#inputBuscadorEquipos");
@@ -368,5 +372,11 @@ btnCategoriaProductos.forEach((boton) => {
 
     const productos = bdProductos.registroPorCategoria(boton.dataset.categoria);
     cargarProductos(productos);
+
+    if (productos.length > 0) {
+      cargarProductos(productos);
+    } else {
+      noHayProductos(categoria);
+    }
   });
 });

@@ -83,6 +83,17 @@ body {
           &::-webkit-scrollbar {
             display: none;
           }
+          .noHayProductos {
+            
+            width: 100%;
+            min-height: 30vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            p {
+              color: $grisClaro;
+            }
+          }
           .productoContainer {
             margin: 2px;
             flex: 0 0 24.3%;
