@@ -1,41 +1,54 @@
 [
   {
-    "img": "./assets/img/logo01.png"
+    "img": "./assets/img/logo07.png",
+    "alt" : "logo ariston"
   },
   {
-    "img": "./assets/img/logo02.png"
+    "img": "./assets/img/logo04.png",
+    "alt" : "logo samsung"
   },
   {
-    "img": "./assets/img/logo03.png"
+    "img": "./assets/img/logo03.png",
+    "alt" : "logo electrolux"
   },
   {
-    "img": "./assets/img/logo04.png"
+    "img": "./assets/img/logo02.png",
+    "alt" : "logo gafa"
   },
   {
-    "img": "./assets/img/logo05.png"
+    "img": "./assets/img/logo05.png",
+    "alt" : "logo sanyo"
   },
   {
-    "img": "./assets/img/logo06.png"
+    "img": "./assets/img/logo06.png",
+    "alt" : "logo general electric"
   },
   {
-    "img": "./assets/img/logo07.png"
+    "img": "./assets/img/logo01.png",
+    "alt" : "logo whirlpool"
   },
   {
-    "img": "./assets/img/logo08.png"
+    "img": "./assets/img/logo08.png",
+    "alt" : "logo patrik"
   },
   {
-    "img": "./assets/img/logo09.png"
+    "img": "./assets/img/logo09.png",
+    "alt" : "logo mabe"
   },
   {
-    "img": "./assets/img/logo10.png"
+    "img": "./assets/img/logo10.png",
+    "alt" : "logo kohinoor"
   },
   {
-    "img": "./assets/img/logo11.png"
+    "img": "./assets/img/logo11.png",
+    "alt" : "logo LG"
   },
   {
-    "img": "./assets/img/logo12.png"
+    "img": "./assets/img/logo12.png",
+    "alt" : "logo drean"
   },
   {
-    "img": "./assets/img/logo13.png"
+    "img": "./assets/img/logo13.png",
+    "alt" : "logo candy"
   }
 ]

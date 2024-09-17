@@ -66,7 +66,7 @@ function cargarMarcas(marcas) {
   for (const marca of marcas) {
     marcasElement.innerHTML += `
       <div class="marcaContainer">
-        <img src="${marca.img}" alt="Marca">
+        <img src="${marca.img}" alt="${marca.alt}">
       </div>
     `;
   }
@@ -122,7 +122,7 @@ let autoSlide = setInterval(() => {
     // Mueve el carrusel un casillero hacia la derecha
     moverCarrouselMarca("derecha");
   }
-}, 3000); // 3000 ms = 3 segundos
+}, 4000); 
 
 function verificarCantidadMarca() {
   const cantidadMarca = document.querySelectorAll(".marcaContainer").length;

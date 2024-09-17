@@ -1,22 +1,54 @@
 html {
   body {
-  footer {
-    width: 100%;
-    height: 90px;
-    background-color: $azul;
-  }
-  .copyR {
-    width: 100%;
-    height: 13px;
-    background-color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    p {
-      font-family: "pixel";
-      color: white;
-      font-size: 10px;
+    footer {
+      width: 100%;
+      height: 90px;
+      background-color: $azul;
+      display: flex;
+      justify-content: space-around;
+      .primerBloque {
+        width: 25%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border:solid 4px red;
+        img {
+          width: 70%;
+        }
+      }
+      .segundoBloque {
+        width: 40%;
+        height: auto;
+        border: solid 4px red;
+      }
+      .tercerBloque {
+        width: 30%;
+        height: auto;
+        border: solid 4px red;
+        color:$claritoFondo;
+        font-size: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        i {
+          margin: 5px;
+          cursor: pointer;
+        }
+      }
+    }
+    .copyR {
+      width: 100%;
+      height: 13px;
+      background-color: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      p {
+        font-family: "pixel";
+        color: white;
+        font-size: 10px;
+      }
     }
   }
-}
 }
