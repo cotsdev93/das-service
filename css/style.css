@@ -36,20 +36,38 @@ html body nav {
   justify-content: space-around;
   align-items: center;
 }
+html body nav .logoContainer {
+  margin-left: 30px;
+}
 html body nav .logoContainer img {
   width: 150px;
   object-fit: cover;
 }
-html body nav ul {
+html body nav .navMid {
+  display: flex;
+  justify-content: flex-end;
+  width: 70%;
+}
+html body nav .navMid ul {
   display: flex;
   align-items: center;
 }
-html body nav ul li {
-  color: white;
+html body nav .navMid ul li {
+  color: #f8f8f8;
   display: flex;
   margin: 10px;
   cursor: pointer;
   font-weight: 400;
+}
+html body nav .navMid .navEnd {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+html body nav .navMid .navEnd i {
+  margin: 15px;
+  font-size: 23px;
+  color: #f8f8f8;
 }
 html body main {
   flex: 1;

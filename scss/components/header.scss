@@ -20,20 +20,36 @@ html {
       justify-content: space-around;
       align-items: center;
       .logoContainer {
+        margin-left: 30px;
         img {
           width: 150px;
           object-fit: cover;
         }
       }
-      ul {
+      .navMid {
         display: flex;
-        align-items: center;
-        li {
-          color: white;
+        justify-content: flex-end;
+        width: 70%;
+        ul {
           display: flex;
-          margin: 10px;
-          cursor: pointer;
-          font-weight: 400;
+          align-items: center;
+          li {
+            color: $claritoFondo;
+            display: flex;
+            margin: 10px;
+            cursor: pointer;
+            font-weight: 400;
+          }
+        }
+        .navEnd {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          i {
+            margin: 15px;
+            font-size: 23px;
+            color: $claritoFondo;
+          }
         }
       }
     }
