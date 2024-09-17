@@ -1,13 +1,13 @@
 let isAnimating = false;
 
-document.querySelectorAll("nav li").forEach((item) => {
+document.querySelectorAll("nav li, .navEnd i").forEach((item) => {
   item.addEventListener("click", (e) => {
     e.preventDefault();
 
     // Si la animación está en curso, no hacemos nada.
     if (isAnimating) return;
 
-    const sectionId = e.target.closest("li").getAttribute("data-section");
+    const sectionId = e.target.closest("li, i").getAttribute("data-section");
     const newActiveSection = document.getElementById(`section${sectionId}`);
     const currentActiveSection = document.querySelector(".section.active");
 

@@ -68,6 +68,7 @@ html body nav .navMid .navEnd i {
   margin: 15px;
   font-size: 23px;
   color: #f8f8f8;
+  cursor: pointer;
 }
 html body main {
   flex: 1;
@@ -705,6 +706,17 @@ html body .copyR p {
   font-family: "pixel";
   color: #787878;
   font-size: 10px;
+}
+
+body #section5 .userContainer {
+  border: 1px solid rgb(229, 229, 229);
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 70%;
+  margin: 40px;
+  backdrop-filter: blur(2px);
+  padding-bottom: 15px;
+  overflow-x: hidden;
 }
 
 /*# sourceMappingURL=style.css.map */

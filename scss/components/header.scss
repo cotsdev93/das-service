@@ -49,6 +49,9 @@ html {
             margin: 15px;
             font-size: 23px;
             color: $claritoFondo;
+            cursor: pointer;
+            &:hover {
+            }
           }
         }
       }
