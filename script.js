@@ -93,7 +93,7 @@ function obtenerAnchoMarcaConMargen() {
 function moverCarrouselMarca(direccion) {
   const anchoMarca = obtenerAnchoMarcaConMargen();
   if (anchoMarca > 0) {
-    const desplazamientoActual = serviceMarcasContainer.scrollLeft; // Posición actual del scroll
+    const desplazamientoActual = serviceMarcasContainer.scrollLeft;
     const nuevoDesplazamiento =
       direccion === "izquierda"
         ? desplazamientoActual - anchoMarca
@@ -105,6 +105,24 @@ function moverCarrouselMarca(direccion) {
     });
   }
 }
+
+// Mover el carrusel automáticamente hacia la derecha cada 3 segundos
+let autoSlide = setInterval(() => {
+  const anchoTotalScroll = serviceMarcasContainer.scrollWidth;
+  const desplazamientoActual = serviceMarcasContainer.scrollLeft;
+  const anchoMarca = obtenerAnchoMarcaConMargen();
+
+  // Si el desplazamiento actual está al final, reinicia al principio
+  if (desplazamientoActual + anchoMarca >= anchoTotalScroll - serviceMarcasContainer.clientWidth) {
+    serviceMarcasContainer.scrollTo({
+      left: 0,
+      behavior: "smooth",
+    });
+  } else {
+    // Mueve el carrusel un casillero hacia la derecha
+    moverCarrouselMarca("derecha");
+  }
+}, 3000); // 3000 ms = 3 segundos
 
 function verificarCantidadMarca() {
   const cantidadMarca = document.querySelectorAll(".marcaContainer").length;

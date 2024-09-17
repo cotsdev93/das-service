@@ -53,7 +53,12 @@ body {
             box-shadow: inset 0px 0px 3px 1px #00000010;
             background-color: $claritoFondo;
             overflow: hidden;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             img {
+              
               width: 100%;
               filter: sepia(1) saturate(0) brightness(0.5);
             }
@@ -69,7 +74,7 @@ body {
           color: white;
           background-color: rgb(0, 0, 0);
           border-radius: 50%;
-          opacity: 0.2;
+          opacity: 0.1;
           cursor: pointer;
           box-shadow: 0px 0px 5px 3px #00000060;
           &:hover {
@@ -89,7 +94,7 @@ body {
           color: white;
           background-color: rgb(0, 0, 0);
           border-radius: 50%;
-          opacity: 0.2;
+          opacity: 0.1;
           cursor: pointer;
           box-shadow: 0px 0px 5px 3px #00000060;
           &:hover {
