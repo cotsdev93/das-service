@@ -25,23 +25,27 @@ body {
         color: #000000;
         font-size: 15px;
       }
-      .serviceMarcasContainer {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-wrap: nowrap;
-        width: 98%;
+      .serviceMarcasCarrousel {
         position: relative;
-        overflow-x: auto;
-        scroll-behavior: smooth;
-        margin: auto;
-        pointer-events: none;s
-        &::-webkit-scrollbar {
-          display: none;
-        }
-        .marcaContainer {
+        width: 100%;
+        overflow: hidden;
+        .serviceMarcasContainer {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          flex-wrap: nowrap;
+          width: 98%;
+          position: relative;
+          overflow-x: auto;
+          scroll-behavior: smooth;
+          margin: auto;
+          pointer-events: none;
+          &::-webkit-scrollbar {
+            display: none;
+          }
+          .marcaContainer {
             margin: 2px;
             flex: 0 0 24.3%;
             border-radius: 5px;
@@ -49,9 +53,50 @@ body {
             box-shadow: inset 0px 0px 3px 1px #00000010;
             background-color: $claritoFondo;
             overflow: hidden;
-          img {
-            width: 100%;
-            filter: sepia(1) saturate(0) brightness(0.5);
+            img {
+              width: 100%;
+              filter: sepia(1) saturate(0) brightness(0.5);
+            }
+          }
+        }
+        .bx-chevron-left {
+          position: absolute;
+          left: 0;
+          top: 45%;
+          color: $grisClaro;
+          font-size: 24px;
+          margin-left: 10px;
+          color: white;
+          background-color: rgb(0, 0, 0);
+          border-radius: 50%;
+          opacity: 0.2;
+          cursor: pointer;
+          box-shadow: 0px 0px 5px 3px #00000060;
+          &:hover {
+            box-shadow: 0px 0px 7px 3px #00000080;
+          }
+          &:active {
+            box-shadow: 0px 0px 5px 3px #00000080;
+          }
+        }
+        .bx-chevron-right {
+          position: absolute;
+          right: 0;
+          top: 45%;
+          color: white;
+          font-size: 24px;
+          margin-right: 11px;
+          color: white;
+          background-color: rgb(0, 0, 0);
+          border-radius: 50%;
+          opacity: 0.2;
+          cursor: pointer;
+          box-shadow: 0px 0px 5px 3px #00000060;
+          &:hover {
+            box-shadow: 0px 0px 7px 3px #00000080;
+          }
+          &:active {
+            box-shadow: 0px 0px 4px 3px #00000080;
           }
         }
       }

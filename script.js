@@ -54,6 +54,7 @@ class BaseDeDatosService {
     const resultado = await fetch("./JSON/marcas.json");
     this.marcas = await resultado.json();
     cargarMarcas(this.marcas);
+    verificarCantidadMarca()
   }
 }
 
@@ -72,6 +73,59 @@ function cargarMarcas(marcas) {
 }
 
 const bdService = new BaseDeDatosService();
+
+const btnLeftService = document.querySelector(".btnLeftMarcas");
+const btnRightService = document.querySelector(".btnRightMarcas");
+const serviceMarcasContainer = document.querySelector(".serviceMarcasContainer");
+
+function obtenerAnchoMarcaConMargen() {
+  const marca = document.querySelector(".marcaContainer");
+  if (marca) {
+    const estilo = window.getComputedStyle(marca);
+    const margenIzquierdo = parseFloat(estilo.marginLeft);
+    const margenDerecho = parseFloat(estilo.marginRight);
+    const anchoTotal = marca.offsetWidth + margenIzquierdo + margenDerecho;
+    return anchoTotal;
+  }
+  return 0;
+}
+
+function moverCarrouselMarca(direccion) {
+  const anchoMarca = obtenerAnchoMarcaConMargen();
+  if (anchoMarca > 0) {
+    const desplazamientoActual = serviceMarcasContainer.scrollLeft; // Posición actual del scroll
+    const nuevoDesplazamiento =
+      direccion === "izquierda"
+        ? desplazamientoActual - anchoMarca
+        : desplazamientoActual + anchoMarca;
+
+    serviceMarcasContainer.scrollTo({
+      left: nuevoDesplazamiento,
+      behavior: "smooth",
+    });
+  }
+}
+
+function verificarCantidadMarca() {
+  const cantidadMarca = document.querySelectorAll(".marcaContainer").length;
+
+  if (cantidadMarca <= 4) {
+    btnLeftService.style.display = "none";
+    btnRightService.style.display = "none";
+  } else {
+    btnLeftService.style.display = "block";
+    btnRightService.style.display = "block";
+  }
+}
+
+btnLeftService.addEventListener("click", () =>
+  moverCarrouselMarca("izquierda")
+);
+btnRightService.addEventListener("click", () =>
+  moverCarrouselMarca("derecha")
+);
+
+verificarCantidadMarca();
 
 // BASE DE DATOS repuestos
 
