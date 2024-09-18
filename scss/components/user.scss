@@ -41,12 +41,41 @@ body {
         .olvideMiContra {
           font-size: 10px;
           margin-top: 10px;
-          color: rgb(82, 7, 179);  
+          color: rgb(82, 7, 179);
           text-decoration: underline;
-          text-decoration-color: rgb(82, 7, 179);    /* Cambiar el color del subrayado */
-          text-decoration-thickness: 1px; /* Ajustar el grosor del subrayado */
-          text-underline-offset: 2px;    /* Cambiar la distancia entre el texto y el subrayado */
+          text-decoration-color: rgb(
+            82,
+            7,
+            179
+          ); /* Cambiar el color del subrayado */
+          text-decoration-thickness: 0.7px; /* Ajustar el grosor del subrayado */
+          text-underline-offset: 1px; /* Cambiar la distancia entre el texto y el subrayado */
           cursor: pointer;
+        }
+        .login {
+          width: 70%;
+          height: 27px;
+          background: linear-gradient(80deg, #003459, #001b28, #003459);
+          border: solid 0.5px $clarito;
+          box-shadow: inset 0px 0px 3px 1px #00000010;
+          border-radius: 20px;
+          outline: none;
+          padding-left: 15px;
+          font-size: 17px;
+          color: $claritoFondo;
+          margin-top: 15px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+          &:hover {
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2),
+              0 4px 6px rgba(0, 0, 0, 0.1);
+            transform: translateY(-0.8px);
+          }
+          &:active {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            transform: translateY(0px);
+          }
         }
       }
     }
