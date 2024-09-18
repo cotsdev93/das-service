@@ -712,11 +712,51 @@ body #section5 .userContainer {
   border: 1px solid rgb(229, 229, 229);
   border-radius: 20px;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.1);
-  width: 70%;
+  width: 50%;
   margin: 40px;
   backdrop-filter: blur(2px);
   padding-bottom: 15px;
   overflow-x: hidden;
+}
+body #section5 .userContainer .titleUser {
+  font-size: 18px;
+  color: #003459;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 25px;
+}
+body #section5 .userContainer .formsLogin {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+body #section5 .userContainer .formsLogin .inputUser {
+  width: 70%;
+  height: 27px;
+  background-color: #f8f8f8;
+  border: solid 0.5px #c9c9c9;
+  box-shadow: inset 0px 0px 3px 1px rgba(0, 0, 0, 0.062745098);
+  border-radius: 20px;
+  outline: none;
+  padding-left: 15px;
+  font-size: 17px;
+  color: #787878;
+  margin-top: 15px;
+}
+body #section5 .userContainer .formsLogin .inputUser::placeholder {
+  color: #c5c5c5;
+}
+body #section5 .userContainer .formsLogin .olvideMiContra {
+  font-size: 10px;
+  margin-top: 10px;
+  color: rgb(82, 7, 179);
+  text-decoration: underline;
+  text-decoration-color: rgb(82, 7, 179); /* Cambiar el color del subrayado */
+  text-decoration-thickness: 1px; /* Ajustar el grosor del subrayado */
+  text-underline-offset: 2px; /* Cambiar la distancia entre el texto y el subrayado */
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */
