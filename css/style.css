@@ -70,6 +70,27 @@ html body nav .navMid .navEnd i {
   color: #f8f8f8;
   cursor: pointer;
 }
+html body nav .navMid .navEnd .cartContainer {
+  position: relative;
+}
+html body nav .navMid .navEnd .cartContainer .cartCircle {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: #b3b3b3;
+  border-radius: 50%;
+  top: 30%;
+  right: 32%;
+  transform: translate(50%, -50%);
+}
+html body nav .navMid .navEnd .cartContainer .cartCircle span {
+  color: #f8f8f8;
+  font-size: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
 html body main {
   flex: 1;
 }
@@ -249,16 +270,18 @@ body #section2 .repuestosContainerMain .repuestosCarrousell .repuestosContainer 
   box-shadow: inset 0px 0px 3px 1px rgba(0, 0, 0, 0.062745098);
   background-color: #f8f8f8;
   overflow: hidden;
+  pointer-events: auto;
 }
 body #section2 .repuestosContainerMain .repuestosCarrousell .repuestosContainer .repuestoContainer .imgContainer {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 body #section2 .repuestosContainerMain .repuestosCarrousell .repuestosContainer .repuestoContainer .imgContainer img {
   width: 100%;
+  cursor: pointer;
 }
 body #section2 .repuestosContainerMain .repuestosCarrousell .repuestosContainer .repuestoContainer .repuestoDetail {
   display: flex;
-  margin: 5px;
+  margin: 3px 5px;
   white-space: nowrap;
 }
 body #section2 .repuestosContainerMain .repuestosCarrousell .repuestosContainer .repuestoContainer .repuestoDetail .repuestoNombre {
@@ -275,7 +298,23 @@ body #section2 .repuestosContainerMain .repuestosCarrousell .repuestosContainer 
   font-weight: 400;
 }
 body #section2 .repuestosContainerMain .repuestosCarrousell .repuestosContainer .repuestoContainer .repuestoPrecioContainer {
-  border: solid 1px red;
+  display: flex;
+  margin: 3px 5px;
+}
+body #section2 .repuestosContainerMain .repuestosCarrousell .repuestosContainer .repuestoContainer .repuestoPrecioContainer .repuestoPrecio {
+  font-size: auto;
+  font-weight: 500;
+  color: rgb(15, 200, 15);
+}
+body #section2 .repuestosContainerMain .repuestosCarrousell .repuestosContainer .repuestoContainer .repuestoPrecioContainer .repuestoPrecioCart {
+  margin-left: 5px;
+  pointer-events: auto;
+}
+body #section2 .repuestosContainerMain .repuestosCarrousell .repuestosContainer .repuestoContainer .repuestoPrecioContainer .repuestoPrecioCart .fa-cart-plus {
+  font-size: 14px;
+  color: rgb(56, 162, 208);
+  cursor: pointer;
+  transform: translateY(-1px);
 }
 body #section2 .repuestosContainerMain .repuestosCarrousell .bx-chevron-left {
   position: absolute;
@@ -565,13 +604,14 @@ body #section3 .equiposContainer .productosCarrousell .productosContainer .produ
   color: rgb(15, 200, 15);
 }
 body #section3 .equiposContainer .productosCarrousell .productosContainer .productoContainer .productoDetail .productoPrecioContainer .productoPrecioCart {
-  margin-left: 8px;
+  margin-left: 5px;
   pointer-events: auto;
 }
 body #section3 .equiposContainer .productosCarrousell .productosContainer .productoContainer .productoDetail .productoPrecioContainer .productoPrecioCart .fa-cart-plus {
   font-size: 14px;
   color: rgb(56, 162, 208);
   cursor: pointer;
+  transform: translateY(-1px);
 }
 body #section3 .equiposContainer .productosCarrousell .bx-chevron-left {
   position: absolute;

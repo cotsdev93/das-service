@@ -200,7 +200,12 @@ function cargarRepuestos(repuestos) {
           <p class="repuestoMarca">${repuesto.marca}</p>
         </div>
         <div class="repuestoPrecioContainer">
-          <p class="repuestoPrecio">$${repuesto.precio.toLocaleString( "es-ES" )}</p>
+          <p class="repuestoPrecio">$${repuesto.precio.toLocaleString(
+            "es-ES"
+          )}</p>
+          <div class="repuestoPrecioCart">
+            <i class="fa-solid fa-cart-plus"></i>
+          </div>
         </div>
       </div>
     `;
@@ -369,7 +374,9 @@ function cargarProductos(productos) {
               <p class="productoModelo">${producto.modelo}</p>
             </div>
             <div class="productoPrecioContainer">
-              <p class="productoPrecio">$${producto.precio.toLocaleString("es-ES")}</p>
+              <p class="productoPrecio">$${producto.precio.toLocaleString(
+                "es-ES"
+              )}</p>
               <div class="productoPrecioCart">
                 <i class="fa-solid fa-cart-plus"></i>
               </div>

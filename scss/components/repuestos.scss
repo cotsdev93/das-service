@@ -102,15 +102,17 @@ body {
             box-shadow: inset 0px 0px 3px 1px #00000010;
             background-color: $claritoFondo;
             overflow: hidden;
+            pointer-events: auto;
             .imgContainer {
               box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
               img {
                 width: 100%;
+                cursor: pointer;
               }
             }
             .repuestoDetail {
               display: flex;
-              margin: 5px;
+              margin: 3px 5px;
               white-space: nowrap;
               .repuestoNombre {
                 font-size: auto;
@@ -127,7 +129,23 @@ body {
               }
             }
             .repuestoPrecioContainer {
-              border: solid 1px red;
+              display: flex;
+              margin: 3px 5px;
+              .repuestoPrecio {
+                font-size: auto;
+                font-weight: 500;
+                color: rgb(15, 200, 15);
+              }
+              .repuestoPrecioCart {
+                margin-left: 5px;
+                pointer-events: auto;
+                .fa-cart-plus {
+                  font-size: 14px;
+                  color: rgb(56, 162, 208);
+                  cursor: pointer;
+                  transform: translateY(-1px)
+                }
+              }
             }
           }
         }

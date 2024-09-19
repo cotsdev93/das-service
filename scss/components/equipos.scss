@@ -133,15 +133,15 @@ body {
                   font-size: auto;
                   font-weight: 500;
                   color: rgb(15, 200, 15);
-                  
                 }
                 .productoPrecioCart {
-                  margin-left: 8px;
+                  margin-left: 5px;
                   pointer-events: auto;
                   .fa-cart-plus {
                     font-size: 14px;
                     color: rgb(56, 162, 208);
                     cursor: pointer;
+                    transform: translateY(-1px)
                   }
                 }
               }
