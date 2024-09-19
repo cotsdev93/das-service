@@ -257,32 +257,25 @@ body #section2 .repuestosContainerMain .repuestosCarrousell .repuestosContainer 
   width: 100%;
 }
 body #section2 .repuestosContainerMain .repuestosCarrousell .repuestosContainer .repuestoContainer .repuestoDetail {
+  display: flex;
   margin: 5px;
   white-space: nowrap;
 }
 body #section2 .repuestosContainerMain .repuestosCarrousell .repuestosContainer .repuestoContainer .repuestoDetail .repuestoNombre {
   font-size: auto;
-  padding-right: 6px;
+  padding-right: 3px;
   font-weight: 450;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 100%;
 }
-body #section2 .repuestosContainerMain .repuestosCarrousell .repuestosContainer .repuestoContainer .repuestoDetail .repuestoTitle {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-body #section2 .repuestosContainerMain .repuestosCarrousell .repuestosContainer .repuestoContainer .repuestoDetail .repuestoTitle .repuestoMarca {
+body #section2 .repuestosContainerMain .repuestosCarrousell .repuestosContainer .repuestoContainer .repuestoDetail .repuestoNombre .repuestoMarca {
   font-size: auto;
-  padding-right: 6px;
   font-weight: 400;
 }
-body #section2 .repuestosContainerMain .repuestosCarrousell .repuestosContainer .repuestoContainer .repuestoDetail .repuestoTitle .repuestoPrecio {
-  font-size: auto;
-  font-weight: 500;
-  color: rgb(15, 200, 15);
+body #section2 .repuestosContainerMain .repuestosCarrousell .repuestosContainer .repuestoContainer .repuestoPrecioContainer {
+  border: solid 1px red;
 }
 body #section2 .repuestosContainerMain .repuestosCarrousell .bx-chevron-left {
   position: absolute;
@@ -535,8 +528,10 @@ body #section3 .equiposContainer .productosCarrousell .productosContainer .produ
 }
 body #section3 .equiposContainer .productosCarrousell .productosContainer .productoContainer .imgContainer {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  pointer-events: auto;
 }
 body #section3 .equiposContainer .productosCarrousell .productosContainer .productoContainer .imgContainer img {
+  cursor: pointer;
   width: 100%;
 }
 body #section3 .equiposContainer .productosCarrousell .productosContainer .productoContainer .productoDetail {
@@ -561,10 +556,22 @@ body #section3 .equiposContainer .productosCarrousell .productosContainer .produ
   font-size: auto;
   font-weight: 350;
 }
-body #section3 .equiposContainer .productosCarrousell .productosContainer .productoContainer .productoDetail .productoPrecio {
+body #section3 .equiposContainer .productosCarrousell .productosContainer .productoContainer .productoDetail .productoPrecioContainer {
+  display: flex;
+}
+body #section3 .equiposContainer .productosCarrousell .productosContainer .productoContainer .productoDetail .productoPrecioContainer .productoPrecio {
   font-size: auto;
   font-weight: 500;
   color: rgb(15, 200, 15);
+}
+body #section3 .equiposContainer .productosCarrousell .productosContainer .productoContainer .productoDetail .productoPrecioContainer .productoPrecioCart {
+  margin-left: 8px;
+  pointer-events: auto;
+}
+body #section3 .equiposContainer .productosCarrousell .productosContainer .productoContainer .productoDetail .productoPrecioContainer .productoPrecioCart .fa-cart-plus {
+  font-size: 14px;
+  color: rgb(56, 162, 208);
+  cursor: pointer;
 }
 body #section3 .equiposContainer .productosCarrousell .bx-chevron-left {
   position: absolute;
@@ -779,6 +786,17 @@ body #section5 .userContainer .formsLogin .login:hover {
 body #section5 .userContainer .formsLogin .login:active {
   background: linear-gradient(90deg, #001b28, #003459, #001b28);
   transform: translateY(0px);
+}
+
+body #section6 .cartContainer {
+  border: 1px solid rgb(229, 229, 229);
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  margin: 40px;
+  backdrop-filter: blur(2px);
+  padding-bottom: 15px;
+  overflow-x: hidden;
 }
 
 /*# sourceMappingURL=style.css.map */

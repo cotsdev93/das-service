@@ -54,7 +54,7 @@ class BaseDeDatosService {
     const resultado = await fetch("./JSON/marcas.json");
     this.marcas = await resultado.json();
     cargarMarcas(this.marcas);
-    verificarCantidadMarca()
+    verificarCantidadMarca();
   }
 }
 
@@ -76,7 +76,9 @@ const bdService = new BaseDeDatosService();
 
 const btnLeftService = document.querySelector(".btnLeftMarcas");
 const btnRightService = document.querySelector(".btnRightMarcas");
-const serviceMarcasContainer = document.querySelector(".serviceMarcasContainer");
+const serviceMarcasContainer = document.querySelector(
+  ".serviceMarcasContainer"
+);
 
 function obtenerAnchoMarcaConMargen() {
   const marca = document.querySelector(".marcaContainer");
@@ -113,7 +115,10 @@ let autoSlide = setInterval(() => {
   const anchoMarca = obtenerAnchoMarcaConMargen();
 
   // Si el desplazamiento actual está al final, reinicia al principio
-  if (desplazamientoActual + anchoMarca >= anchoTotalScroll - serviceMarcasContainer.clientWidth) {
+  if (
+    desplazamientoActual + anchoMarca >=
+    anchoTotalScroll - serviceMarcasContainer.clientWidth
+  ) {
     serviceMarcasContainer.scrollTo({
       left: 0,
       behavior: "smooth",
@@ -122,7 +127,7 @@ let autoSlide = setInterval(() => {
     // Mueve el carrusel un casillero hacia la derecha
     moverCarrouselMarca("derecha");
   }
-}, 4000); 
+}, 4000);
 
 function verificarCantidadMarca() {
   const cantidadMarca = document.querySelectorAll(".marcaContainer").length;
@@ -139,9 +144,7 @@ function verificarCantidadMarca() {
 btnLeftService.addEventListener("click", () =>
   moverCarrouselMarca("izquierda")
 );
-btnRightService.addEventListener("click", () =>
-  moverCarrouselMarca("derecha")
-);
+btnRightService.addEventListener("click", () => moverCarrouselMarca("derecha"));
 
 verificarCantidadMarca();
 
@@ -193,13 +196,11 @@ function cargarRepuestos(repuestos) {
           <img src="${repuesto.img}" alt="" />
         </div>
         <div class="repuestoDetail">
-        <p class="repuestoNombre">${repuesto.nombre}</p>
-          <div class="repuestoTitle">
-            <p class="repuestoMarca">${repuesto.marca}</p>
-            <p class="repuestoPrecio">$${repuesto.precio.toLocaleString(
-              "es-ES"
-            )}</p>
-          </div>
+          <p class="repuestoNombre">${repuesto.nombre}</p>
+          <p class="repuestoMarca">${repuesto.marca}</p>
+        </div>
+        <div class="repuestoPrecioContainer">
+          <p class="repuestoPrecio">$${repuesto.precio.toLocaleString( "es-ES" )}</p>
         </div>
       </div>
     `;
@@ -357,21 +358,24 @@ function cargarProductos(productos) {
 
   for (const producto of productos) {
     productosElement.innerHTML += `
-      <div class="productoContainer">
-        <div class="imgContainer">
-          <img src="${producto.img}" alt="" />
-        </div>
-        <div class="productoDetail">
-          <p class="productoCategoria">${producto.categoria}</p>
-          <div class="productoTitle">
-            <p class="productoMarca">${producto.marca}</p>
-            <p class="productoModelo">${producto.modelo}</p>
+        <div class="productoContainer">
+          <div class="imgContainer">
+            <img src="${producto.img}" alt="" />
           </div>
-          <p class="productoPrecio">$${producto.precio.toLocaleString(
-            "es-ES"
-          )}</p>
+          <div class="productoDetail">
+            <p class="productoCategoria">${producto.categoria}</p>
+            <div class="productoTitle">
+              <p class="productoMarca">${producto.marca}</p>
+              <p class="productoModelo">${producto.modelo}</p>
+            </div>
+            <div class="productoPrecioContainer">
+              <p class="productoPrecio">$${producto.precio.toLocaleString("es-ES")}</p>
+              <div class="productoPrecioCart">
+                <i class="fa-solid fa-cart-plus"></i>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
     `;
   }
   verificarCantidadProductos();

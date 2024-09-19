@@ -67,7 +67,6 @@ body {
         position: relative;
         width: 100%;
         overflow: hidden;
-        
         .repuestosContainer {
           box-shadow: none;
           border: none;
@@ -85,7 +84,6 @@ body {
           &::-webkit-scrollbar {
             display: none;
           }
-
           .noHayRepuestos {
             width: 100%;
             min-height: 30vh;
@@ -111,32 +109,25 @@ body {
               }
             }
             .repuestoDetail {
+              display: flex;
               margin: 5px;
               white-space: nowrap;
               .repuestoNombre {
                 font-size: auto;
-                padding-right: 6px;
+                padding-right: 3px;
                 font-weight: 450;
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
                 max-width: 100%;
-              }
-              .repuestoTitle {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
                 .repuestoMarca {
                   font-size: auto;
-                  padding-right: 6px;
                   font-weight: 400;
                 }
-                .repuestoPrecio {
-                  font-size: auto;
-                  font-weight: 500;
-                  color: rgb(15, 200, 15);
-                }
               }
+            }
+            .repuestoPrecioContainer {
+              border: solid 1px red;
             }
           }
         }
