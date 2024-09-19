@@ -47,33 +47,31 @@ body {
             82,
             7,
             179
-          ); /* Cambiar el color del subrayado */
-          text-decoration-thickness: 0.7px; /* Ajustar el grosor del subrayado */
-          text-underline-offset: 1px; /* Cambiar la distancia entre el texto y el subrayado */
+          ); 
+          text-decoration-thickness: 0.7px; 
+          text-underline-offset: 1px;
           cursor: pointer;
         }
         .login {
           width: 70%;
           height: 27px;
-          background: linear-gradient(80deg, #003459, #001b28, #003459);
+          background: linear-gradient(90deg, #003459, #001b28, #003459);
           border: solid 0.5px $clarito;
           box-shadow: inset 0px 0px 3px 1px #00000010;
           border-radius: 20px;
           outline: none;
-          padding-left: 15px;
           font-size: 17px;
           color: $claritoFondo;
           margin-top: 15px;
           cursor: pointer;
           transition: all 0.3s ease;
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+          text-align: center;
           &:hover {
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2),
-              0 4px 6px rgba(0, 0, 0, 0.1);
-            transform: translateY(-0.8px);
+            transform: translateY(0.5px);
           }
+
           &:active {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(90deg, #001b28, #003459, #001b28);
             transform: translateY(0px);
           }
         }
