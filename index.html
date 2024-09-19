@@ -137,7 +137,7 @@
           </div>
         </section>
         <section id="section3" class="section">
-          <div class="equiposContainer">
+          <div class="equiposContainerMain">
             <div class="titleEquipos">
               <p class="titleSabemos">equipos seleccionados</p>
             </div>
@@ -158,46 +158,43 @@
             <div class="categoriasContainer">
               <ul>
                 <li
-                  class="boton btnCategoriaProductos seleccionado"
+                  class="boton btnCategoriaEquipos seleccionado"
                   data-categoria=""
                 >
                   Todos
                 </li>
                 <li
-                  class="boton btnCategoriaProductos"
+                  class="boton btnCategoriaEquipos"
                   data-categoria="lavarropas"
                 >
                   Lavarropas
                 </li>
                 <li
-                  class="boton btnCategoriaProductos"
+                  class="boton btnCategoriaEquipos"
                   data-categoria="secarropas"
                 >
                   Secarropas
                 </li>
                 <li
-                  class="boton btnCategoriaProductos"
+                  class="boton btnCategoriaEquipos"
                   data-categoria="lavavajillas"
                 >
                   Lavavajillas
                 </li>
-                <li
-                  class="boton btnCategoriaProductos"
-                  data-categoria="heladera"
-                >
+                <li class="boton btnCategoriaEquipos" data-categoria="heladera">
                   Heladeras
                 </li>
-                <li class="boton btnCategoriaProductos" data-categoria="horno">
+                <li class="boton btnCategoriaEquipos" data-categoria="horno">
                   Hornos
                 </li>
               </ul>
             </div>
-            <div class="productosCarrousell">
-              <div id="productos" class="productosContainer"></div>
-              <div class="btnLeftProductos">
+            <div class="equiposCarrousell">
+              <div id="equipos" class="equiposContainer"></div>
+              <div class="btnLeftEquipos">
                 <i class="bx bx-chevron-left"></i>
               </div>
-              <div class="btnRightProductos">
+              <div class="btnRightEquipos">
                 <i class="bx bx-chevron-right"></i>
               </div>
             </div>
@@ -231,7 +228,7 @@
         <section id="section5" class="section">
           <div class="userContainer">
             <div class="titleUser">
-              <p>Inicia sesion...</p>
+              <p>Iniciar sesion</p>
             </div>
             <div class="formsLogin">
               <label for="email"></label>
@@ -257,7 +254,12 @@
           </div>
         </section>
         <section id="section6" class="section">
-          <div class="cartContainer"></div>
+          <div class="cartContainer">
+            <div class="titleCart">
+              <p>Mi carrito:</p>
+            </div>
+            <div id="carrito"></div>
+          </div>
         </section>
       </div>
     </main>
@@ -288,5 +290,3 @@
     <script src="./script.js"></script>
   </body>
 </html>
-
-

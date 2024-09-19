@@ -182,6 +182,10 @@ class BaseDeDatosRepuestos {
         repuesto.nombre.toLowerCase().indexOf(nombre.toLowerCase()) !== -1
     );
   }
+
+  registroPorId(id) {
+    return this.repuestos.find((repuesto) => repuesto.id === id);
+  }
 }
 
 const repuestosElement = document.querySelector("#repuestos");
@@ -204,12 +208,27 @@ function cargarRepuestos(repuestos) {
             "es-ES"
           )}</p>
           <div class="repuestoPrecioCart">
-            <i class="fa-solid fa-cart-plus"></i>
+            <i class="fa-solid fa-cart-plus agregarCarrito" data-id="${
+              repuesto.id
+            }"></i>
           </div>
         </div>
       </div>
     `;
   }
+
+  const agregarCarrito = document.querySelectorAll(".agregarCarrito");
+
+  for (const boton of agregarCarrito) {
+    boton.addEventListener("click", (event) => {
+      event.preventDefault;
+      const idRepuesto = Number(boton.dataset.id);
+      const repuesto = bdRepuestos.registroPorId(idRepuesto); 
+      console.log("funca ")
+      carrito.agregar(repuesto)
+    });
+  }
+
   verificarCantidadRepuestos();
 }
 
@@ -231,7 +250,7 @@ inputBuscadorRepuestos.addEventListener("input", (event) => {
   event.preventDefault();
   const palabra = inputBuscadorRepuestos.value;
 
-  // Obtener productos por marca o categoría
+  // Obtener repuestos por marca o categoría
   const repuestosPorMarca = bdRepuestos.registrosPorMarca(palabra);
   const repuestosPorCategoria = bdRepuestos.registroPorCategoria(palabra);
   const repuestosPorNombre = bdRepuestos.registroPorNombre(palabra);
@@ -245,7 +264,7 @@ inputBuscadorRepuestos.addEventListener("input", (event) => {
     ]),
   ];
 
-  // Cargar los productos filtrados
+  // Cargar los repuestos filtrados
   cargarRepuestos(repuestos);
 });
 
@@ -326,109 +345,122 @@ btnCategoriaRepuestos.forEach((boton) => {
   });
 });
 
-// BASE DE DATOS productos
+// BASE DE DATOS equipos
 
-class BaseDeDatosProductos {
+// Definir la clase BaseDeDatosEquipos para manejar la carga y filtrado de equipos
+class BaseDeDatosEquipos {
   constructor() {
-    this.productos = [];
+    this.equipos = [];
 
+    // Cargar los registros al inicializar
     this.cargarRegistros();
   }
 
+  // Cargar los equipos desde el archivo JSON
   async cargarRegistros() {
     const resultado = await fetch("./JSON/productos.json");
-    this.productos = await resultado.json();
-    cargarProductos(this.productos);
+    this.equipos = await resultado.json();
+    cargarEquipo(this.equipos); // Llamar a cargarEquipo para mostrar los equipos
   }
 
+  // Filtrar equipos por marca
   registrosPorMarca(palabra) {
-    return this.productos.filter(
-      (producto) =>
-        producto.marca.toLowerCase().indexOf(palabra.toLowerCase()) !== -1
+    return this.equipos.filter(
+      (equipo) =>
+        equipo.marca.toLowerCase().indexOf(palabra.toLowerCase()) !== -1
     );
   }
 
+  // Filtrar equipos por categoría
   registroPorCategoria(categoria) {
-    return this.productos.filter(
-      (producto) =>
-        producto.categoria.toLowerCase().indexOf(categoria.toLowerCase()) !== -1
+    return this.equipos.filter(
+      (equipo) =>
+        equipo.categoria.toLowerCase().indexOf(categoria.toLowerCase()) !== -1
     );
   }
 }
 
-const productosElement = document.querySelector("#productos");
+// Seleccionar el contenedor donde se mostrarán los equipos
+const equiposElement = document.querySelector("#equipos");
 
-function cargarProductos(productos) {
-  productosElement.innerHTML = "";
+// Función para cargar los equipos y mostrarlos en el HTML
+function cargarEquipo(equipos) {
+  equiposElement.innerHTML = ""; // Limpiar el contenido previo
 
-  for (const producto of productos) {
-    productosElement.innerHTML += `
-        <div class="productoContainer">
+  for (const equipo of equipos) {
+    equiposElement.innerHTML += `
+        <div class="equipoContainer">
           <div class="imgContainer">
-            <img src="${producto.img}" alt="" />
+            <img src="${equipo.img}" alt="" />
           </div>
-          <div class="productoDetail">
-            <p class="productoCategoria">${producto.categoria}</p>
-            <div class="productoTitle">
-              <p class="productoMarca">${producto.marca}</p>
-              <p class="productoModelo">${producto.modelo}</p>
+          <div class="equipoDetail">
+            <p class="equipoCategoria">${equipo.categoria}</p>
+            <div class="equipoTitle">
+              <p class="equipoMarca">${equipo.marca}</p>
+              <p class="equipoModelo">${equipo.modelo}</p>
             </div>
-            <div class="productoPrecioContainer">
-              <p class="productoPrecio">$${producto.precio.toLocaleString(
+            <div class="equipoPrecioContainer">
+              <p class="equipoPrecio">$${equipo.precio.toLocaleString(
                 "es-ES"
               )}</p>
-              <div class="productoPrecioCart">
-                <i class="fa-solid fa-cart-plus"></i>
+              <div class="equipoPrecioCart">
+                <i class="fa-solid fa-cart-plus agregarCarrito" data-id="${
+                  equipo.id
+                }"></i>
               </div>
             </div>
           </div>
         </div>
     `;
   }
-  verificarCantidadProductos();
+  verificarCantidadEquipos(); // Verificar si hay suficientes equipos para mostrar las flechas
 }
 
-function noHayProductos(categoria) {
-  productosElement.innerHTML = `
-  <div class="noHayProductos">
+// Función para mostrar un mensaje si no hay equipos disponibles en una categoría
+function noHayEquipos(categoria) {
+  equiposElement.innerHTML = `
+  <div class="noHayEquipos">
     <p>No hay ${categoria} disponibles</p>
   </div>
   `;
 }
 
-const bdProductos = new BaseDeDatosProductos();
+// Inicializar la base de datos de equipos
+const bdEquipos = new BaseDeDatosEquipos();
 
+// Manejar el evento de búsqueda de equipos
 const inputBuscadorEquipos = document.querySelector("#inputBuscadorEquipos");
 
 inputBuscadorEquipos.addEventListener("input", (event) => {
   event.preventDefault();
   const palabra = inputBuscadorEquipos.value;
 
-  // Obtener productos por marca o categoría
-  const productosPorMarca = bdProductos.registrosPorMarca(palabra);
-  const productosPorCategoria = bdProductos.registroPorCategoria(palabra);
+  // Obtener equipos por marca o categoría
+  const equiposPorMarca = bdEquipos.registrosPorMarca(palabra);
+  const equiposPorCategoria = bdEquipos.registroPorCategoria(palabra);
 
   // Combinar los resultados eliminando duplicados
-  const productos = [
-    ...new Set([...productosPorMarca, ...productosPorCategoria]),
+  const equipos = [
+    ...new Set([...equiposPorMarca, ...equiposPorCategoria]),
   ];
 
-  // Cargar los productos filtrados
-  cargarProductos(productos);
+  // Cargar los equipos filtrados
+  cargarEquipo(equipos);
 });
 
-const btnLeftProductos = document.querySelector(".btnLeftProductos");
-const btnRightProductos = document.querySelector(".btnRightProductos");
-const productosContainer = document.querySelector(".productosContainer");
+// Seleccionar los botones de navegación del carrusel
+const btnLeftEquipos = document.querySelector(".btnLeftEquipos");
+const btnRightEquipos = document.querySelector(".btnRightEquipos");
+const equiposContainer = document.querySelector(".equiposContainer");
 
-// Función para obtener el ancho total de un producto, incluyendo márgenes
-function obtenerAnchoProductoConMargen() {
-  const producto = document.querySelector(".productoContainer");
-  if (producto) {
-    const estilo = window.getComputedStyle(producto);
+// Función para obtener el ancho total de un equipo, incluyendo márgenes
+function obtenerAnchoEquipoConMargen() {
+  const equipo = document.querySelector(".equipoContainer");
+  if (equipo) {
+    const estilo = window.getComputedStyle(equipo);
     const margenIzquierdo = parseFloat(estilo.marginLeft);
     const margenDerecho = parseFloat(estilo.marginRight);
-    const anchoTotal = producto.offsetWidth + margenIzquierdo + margenDerecho;
+    const anchoTotal = equipo.offsetWidth + margenIzquierdo + margenDerecho;
     return anchoTotal;
   }
   return 0;
@@ -436,56 +468,56 @@ function obtenerAnchoProductoConMargen() {
 
 // Función para mover el carrusel
 function moverCarrousel(direccion) {
-  const anchoProducto = obtenerAnchoProductoConMargen();
-  if (anchoProducto > 0) {
-    const desplazamientoActual = productosContainer.scrollLeft; // Posición actual del scroll
+  const anchoEquipo = obtenerAnchoEquipoConMargen();
+  if (anchoEquipo > 0) {
+    const desplazamientoActual = equiposContainer.scrollLeft; // Posición actual del scroll
     const nuevoDesplazamiento =
       direccion === "izquierda"
-        ? desplazamientoActual - anchoProducto
-        : desplazamientoActual + anchoProducto;
+        ? desplazamientoActual - anchoEquipo
+        : desplazamientoActual + anchoEquipo;
 
-    productosContainer.scrollTo({
+    equiposContainer.scrollTo({
       left: nuevoDesplazamiento,
       behavior: "smooth",
     });
   }
 }
 
-// Función para verificar la cantidad de productos y ocultar/mostrar flechas
-function verificarCantidadProductos() {
-  const cantidadProductos =
-    document.querySelectorAll(".productoContainer").length;
+// Función para verificar la cantidad de equipos y mostrar u ocultar las flechas
+function verificarCantidadEquipos() {
+  const cantidadEquipos =
+    document.querySelectorAll(".equipoContainer").length;
 
-  if (cantidadProductos <= 4) {
-    btnLeftProductos.style.display = "none";
-    btnRightProductos.style.display = "none";
+  if (cantidadEquipos <= 4) {
+    btnLeftEquipos.style.display = "none";
+    btnRightEquipos.style.display = "none";
   } else {
-    btnLeftProductos.style.display = "block";
-    btnRightProductos.style.display = "block";
+    btnLeftEquipos.style.display = "block";
+    btnRightEquipos.style.display = "block";
   }
 }
 
-// Event listeners para los botones
-btnLeftProductos.addEventListener("click", () => moverCarrousel("izquierda"));
-btnRightProductos.addEventListener("click", () => moverCarrousel("derecha"));
+// Event listeners para los botones del carrusel
+btnLeftEquipos.addEventListener("click", () => moverCarrousel("izquierda"));
+btnRightEquipos.addEventListener("click", () => moverCarrousel("derecha"));
 
-verificarCantidadProductos();
+// Verificar cantidad de equipos al cargar la página
+verificarCantidadEquipos();
 
-const btnCategoriaProductos = document.querySelectorAll(
-  ".btnCategoriaProductos"
+// Manejar el filtrado por categorías de equipos
+const btnCategoriaEquipos = document.querySelectorAll(
+  ".btnCategoriaEquipos"
 );
 
-btnCategoriaProductos.forEach((boton) => {
+btnCategoriaEquipos.forEach((boton) => {
   boton.addEventListener("click", () => {
     const categoria = boton.dataset.categoria;
 
-    const productos = bdProductos.registroPorCategoria(boton.dataset.categoria);
-    cargarProductos(productos);
-
-    if (productos.length > 0) {
-      cargarProductos(productos);
+    const equipos = bdEquipos.registroPorCategoria(boton.dataset.categoria);
+    if (equipos.length > 0) {
+      cargarEquipo(equipos); // Mostrar los equipos filtrados
     } else {
-      noHayProductos(categoria);
+      noHayEquipos(categoria); // Mostrar mensaje si no hay equipos
     }
   });
 });

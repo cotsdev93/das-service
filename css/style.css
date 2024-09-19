@@ -244,7 +244,7 @@ body #section2 .repuestosContainerMain .repuestosCarrousell .repuestosContainer 
   flex-wrap: nowrap;
   width: 98%;
   position: relative;
-  overflow-x: auto;
+  overflow-x: hidden;
   scroll-behavior: smooth;
   margin: auto;
   pointer-events: none;
@@ -463,7 +463,7 @@ body #section1 .serviceContainer .serviceMarcasCarrousel .bx-chevron-right:activ
   box-shadow: 0px 0px 4px 3px rgba(0, 0, 0, 0.5019607843);
 }
 
-body #section3 .equiposContainer {
+body #section3 .equiposContainerMain {
   border: 1px solid rgb(229, 229, 229);
   border-radius: 20px;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -473,27 +473,27 @@ body #section3 .equiposContainer {
   padding-bottom: 15px;
   overflow-x: hidden;
 }
-body #section3 .equiposContainer .titleEquipos {
+body #section3 .equiposContainerMain .titleEquipos {
   margin: 15px 15px 0px 15px;
 }
-body #section3 .equiposContainer .titleEquipos .titleSabemos {
+body #section3 .equiposContainerMain .titleEquipos .titleSabemos {
   color: #003459;
   text-transform: uppercase;
   font-size: 20px;
   font-weight: 600;
 }
-body #section3 .equiposContainer .textEquipos {
+body #section3 .equiposContainerMain .textEquipos {
   margin: 0px 15px 15px 15px;
   text-align: justify;
   color: #000000;
   font-size: 15px;
 }
-body #section3 .equiposContainer .buscadorContainerEquipos {
+body #section3 .equiposContainerMain .buscadorContainerEquipos {
   display: flex;
   justify-content: center;
   margin: 10px 0px 0px 0px;
 }
-body #section3 .equiposContainer .buscadorContainerEquipos input {
+body #section3 .equiposContainerMain .buscadorContainerEquipos input {
   width: 60%;
   height: 30px;
   background-color: #f8f8f8;
@@ -505,58 +505,59 @@ body #section3 .equiposContainer .buscadorContainerEquipos input {
   font-size: 17px;
   color: #787878;
 }
-body #section3 .equiposContainer .buscadorContainerEquipos input::placeholder {
+body #section3 .equiposContainerMain .buscadorContainerEquipos input::placeholder {
   color: #c5c5c5;
 }
-body #section3 .equiposContainer .categoriasContainer {
+body #section3 .equiposContainerMain .categoriasContainer {
   display: flex;
   justify-content: center;
 }
-body #section3 .equiposContainer .categoriasContainer ul {
+body #section3 .equiposContainerMain .categoriasContainer ul {
   display: flex;
 }
-body #section3 .equiposContainer .categoriasContainer ul li {
+body #section3 .equiposContainerMain .categoriasContainer ul li {
   margin: 8px 12px;
   color: #787878;
   cursor: pointer;
   font-size: 12px;
   transition: transform 0.3s ease, color 0.3s ease;
 }
-body #section3 .equiposContainer .categoriasContainer ul li:hover {
+body #section3 .equiposContainerMain .categoriasContainer ul li:hover {
   transform: scale(1.05);
   color: #454545;
 }
-body #section3 .equiposContainer .productosCarrousell {
+body #section3 .equiposContainerMain .equiposCarrousell {
   position: relative;
   width: 100%;
   overflow: hidden;
+  pointer-events: auto;
 }
-body #section3 .equiposContainer .productosCarrousell .productosContainer {
+body #section3 .equiposContainerMain .equiposCarrousell .equiposContainer {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: nowrap;
   width: 98%;
   position: relative;
-  overflow-x: auto;
+  overflow-x: hidden;
   scroll-behavior: smooth;
   margin: auto;
   pointer-events: none;
 }
-body #section3 .equiposContainer .productosCarrousell .productosContainer::-webkit-scrollbar {
+body #section3 .equiposContainerMain .equiposCarrousell .equiposContainer::-webkit-scrollbar {
   display: none;
 }
-body #section3 .equiposContainer .productosCarrousell .productosContainer .noHayProductos {
+body #section3 .equiposContainerMain .equiposCarrousell .equiposContainer .noHayEquipos {
   width: 100%;
   min-height: 30vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-body #section3 .equiposContainer .productosCarrousell .productosContainer .noHayProductos p {
+body #section3 .equiposContainerMain .equiposCarrousell .equiposContainer .noHayEquipos p {
   color: #c5c5c5;
 }
-body #section3 .equiposContainer .productosCarrousell .productosContainer .productoContainer {
+body #section3 .equiposContainerMain .equiposCarrousell .equiposContainer .equipoContainer {
   margin: 2px;
   flex: 0 0 24.3%;
   border-radius: 5px;
@@ -565,55 +566,55 @@ body #section3 .equiposContainer .productosCarrousell .productosContainer .produ
   background-color: #f8f8f8;
   overflow: hidden;
 }
-body #section3 .equiposContainer .productosCarrousell .productosContainer .productoContainer .imgContainer {
+body #section3 .equiposContainerMain .equiposCarrousell .equiposContainer .equipoContainer .imgContainer {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   pointer-events: auto;
 }
-body #section3 .equiposContainer .productosCarrousell .productosContainer .productoContainer .imgContainer img {
+body #section3 .equiposContainerMain .equiposCarrousell .equiposContainer .equipoContainer .imgContainer img {
   cursor: pointer;
   width: 100%;
 }
-body #section3 .equiposContainer .productosCarrousell .productosContainer .productoContainer .productoDetail {
+body #section3 .equiposContainerMain .equiposCarrousell .equiposContainer .equipoContainer .equipoDetail {
   margin: 5px;
   white-space: nowrap;
 }
-body #section3 .equiposContainer .productosCarrousell .productosContainer .productoContainer .productoDetail .productoCategoria {
+body #section3 .equiposContainerMain .equiposCarrousell .equiposContainer .equipoContainer .equipoDetail .equipoCategoria {
   font: 10px;
   margin: -3px 0px -1px 0px;
   color: #787878;
 }
-body #section3 .equiposContainer .productosCarrousell .productosContainer .productoContainer .productoDetail .productoTitle {
+body #section3 .equiposContainerMain .equiposCarrousell .equiposContainer .equipoContainer .equipoDetail .equipoTitle {
   display: flex;
   align-items: center;
 }
-body #section3 .equiposContainer .productosCarrousell .productosContainer .productoContainer .productoDetail .productoTitle .productoMarca {
+body #section3 .equiposContainerMain .equiposCarrousell .equiposContainer .equipoContainer .equipoDetail .equipoTitle .equipoMarca {
   font-size: auto;
   padding-right: 6px;
   font-weight: 450;
 }
-body #section3 .equiposContainer .productosCarrousell .productosContainer .productoContainer .productoDetail .productoTitle .productoModelo {
+body #section3 .equiposContainerMain .equiposCarrousell .equiposContainer .equipoContainer .equipoDetail .equipoTitle .equipoModelo {
   font-size: auto;
   font-weight: 350;
 }
-body #section3 .equiposContainer .productosCarrousell .productosContainer .productoContainer .productoDetail .productoPrecioContainer {
+body #section3 .equiposContainerMain .equiposCarrousell .equiposContainer .equipoContainer .equipoDetail .equipoPrecioContainer {
   display: flex;
 }
-body #section3 .equiposContainer .productosCarrousell .productosContainer .productoContainer .productoDetail .productoPrecioContainer .productoPrecio {
+body #section3 .equiposContainerMain .equiposCarrousell .equiposContainer .equipoContainer .equipoDetail .equipoPrecioContainer .equipoPrecio {
   font-size: auto;
   font-weight: 500;
   color: rgb(15, 200, 15);
 }
-body #section3 .equiposContainer .productosCarrousell .productosContainer .productoContainer .productoDetail .productoPrecioContainer .productoPrecioCart {
+body #section3 .equiposContainerMain .equiposCarrousell .equiposContainer .equipoContainer .equipoDetail .equipoPrecioContainer .equipoPrecioCart {
   margin-left: 5px;
   pointer-events: auto;
 }
-body #section3 .equiposContainer .productosCarrousell .productosContainer .productoContainer .productoDetail .productoPrecioContainer .productoPrecioCart .fa-cart-plus {
+body #section3 .equiposContainerMain .equiposCarrousell .equiposContainer .equipoContainer .equipoDetail .equipoPrecioContainer .equipoPrecioCart .fa-cart-plus {
   font-size: 14px;
   color: rgb(56, 162, 208);
   cursor: pointer;
   transform: translateY(-1px);
 }
-body #section3 .equiposContainer .productosCarrousell .bx-chevron-left {
+body #section3 .equiposContainerMain .equiposCarrousell .bx-chevron-left {
   position: absolute;
   left: 0;
   top: 45%;
@@ -627,13 +628,13 @@ body #section3 .equiposContainer .productosCarrousell .bx-chevron-left {
   cursor: pointer;
   box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.3764705882);
 }
-body #section3 .equiposContainer .productosCarrousell .bx-chevron-left:hover {
+body #section3 .equiposContainerMain .equiposCarrousell .bx-chevron-left:hover {
   box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.5019607843);
 }
-body #section3 .equiposContainer .productosCarrousell .bx-chevron-left:active {
+body #section3 .equiposContainerMain .equiposCarrousell .bx-chevron-left:active {
   box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.5019607843);
 }
-body #section3 .equiposContainer .productosCarrousell .bx-chevron-right {
+body #section3 .equiposContainerMain .equiposCarrousell .bx-chevron-right {
   position: absolute;
   right: 0;
   top: 45%;
@@ -647,10 +648,10 @@ body #section3 .equiposContainer .productosCarrousell .bx-chevron-right {
   cursor: pointer;
   box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.3764705882);
 }
-body #section3 .equiposContainer .productosCarrousell .bx-chevron-right:hover {
+body #section3 .equiposContainerMain .equiposCarrousell .bx-chevron-right:hover {
   box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.5019607843);
 }
-body #section3 .equiposContainer .productosCarrousell .bx-chevron-right:active {
+body #section3 .equiposContainerMain .equiposCarrousell .bx-chevron-right:active {
   box-shadow: 0px 0px 4px 3px rgba(0, 0, 0, 0.5019607843);
 }
 
@@ -837,6 +838,13 @@ body #section6 .cartContainer {
   backdrop-filter: blur(2px);
   padding-bottom: 15px;
   overflow-x: hidden;
+}
+body #section6 .cartContainer .titleCart {
+  font-size: 18px;
+  color: #003459;
+  font-weight: bold;
+  text-align: left;
+  margin: 25px;
 }
 
 /*# sourceMappingURL=style.css.map */

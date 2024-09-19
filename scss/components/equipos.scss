@@ -1,6 +1,6 @@
 body {
   #section3 {
-    .equiposContainer {
+    .equiposContainerMain {
       border: 1px solid rgb(229, 229, 229);
       border-radius: 20px;
       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -62,25 +62,27 @@ body {
           }
         }
       }
-      .productosCarrousell {
+      .equiposCarrousell {
         position: relative;
         width: 100%;
         overflow: hidden;
-        .productosContainer {
+        pointer-events: auto;
+
+        .equiposContainer {
           display: flex;
           justify-content: space-evenly;
           align-items: center;
           flex-wrap: nowrap;
           width: 98%;
           position: relative;
-          overflow-x: auto;
+          overflow-x: hidden;
           scroll-behavior: smooth;
           margin: auto;
           pointer-events: none;
           &::-webkit-scrollbar {
             display: none;
           }
-          .noHayProductos {
+          .noHayEquipos {
             width: 100%;
             min-height: 30vh;
             display: flex;
@@ -90,7 +92,7 @@ body {
               color: $grisClaro;
             }
           }
-          .productoContainer {
+          .equipoContainer {
             margin: 2px;
             flex: 0 0 24.3%;
             border-radius: 5px;
@@ -106,42 +108,42 @@ body {
                 width: 100%;
               }
             }
-            .productoDetail {
+            .equipoDetail {
               margin: 5px;
               white-space: nowrap;
-              .productoCategoria {
+              .equipoCategoria {
                 font: 10px;
                 margin: -3px 0px -1px 0px;
                 color: $grisTexto;
               }
-              .productoTitle {
+              .equipoTitle {
                 display: flex;
                 align-items: center;
-                .productoMarca {
+                .equipoMarca {
                   font-size: auto;
                   padding-right: 6px;
                   font-weight: 450;
                 }
-                .productoModelo {
+                .equipoModelo {
                   font-size: auto;
                   font-weight: 350;
                 }
               }
-              .productoPrecioContainer {
+              .equipoPrecioContainer {
                 display: flex;
-                .productoPrecio {
+                .equipoPrecio {
                   font-size: auto;
                   font-weight: 500;
                   color: rgb(15, 200, 15);
                 }
-                .productoPrecioCart {
+                .equipoPrecioCart {
                   margin-left: 5px;
                   pointer-events: auto;
                   .fa-cart-plus {
                     font-size: 14px;
                     color: rgb(56, 162, 208);
                     cursor: pointer;
-                    transform: translateY(-1px)
+                    transform: translateY(-1px);
                   }
                 }
               }

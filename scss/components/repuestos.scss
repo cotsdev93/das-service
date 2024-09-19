@@ -67,6 +67,7 @@ body {
         position: relative;
         width: 100%;
         overflow: hidden;
+        
         .repuestosContainer {
           box-shadow: none;
           border: none;
@@ -77,7 +78,7 @@ body {
           flex-wrap: nowrap;
           width: 98%;
           position: relative;
-          overflow-x: auto;
+          overflow-x: hidden;
           scroll-behavior: smooth;
           margin: auto;
           pointer-events: none;
