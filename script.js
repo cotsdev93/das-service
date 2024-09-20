@@ -221,11 +221,12 @@ function cargarRepuestos(repuestos) {
 
   for (const boton of agregarCarrito) {
     boton.addEventListener("click", (event) => {
-      event.preventDefault;
+      event.preventDefault();
       const idRepuesto = Number(boton.dataset.id);
-      const repuesto = bdRepuestos.registroPorId(idRepuesto); 
-      console.log("funca ")
-      carrito.agregar(repuesto)
+      const repuesto = bdRepuestos.registroPorId(idRepuesto);
+      console.log("funca", carrito);
+
+      carrito.agregar(repuesto);
     });
   }
 
@@ -351,7 +352,6 @@ btnCategoriaRepuestos.forEach((boton) => {
 class BaseDeDatosEquipos {
   constructor() {
     this.equipos = [];
-
     // Cargar los registros al inicializar
     this.cargarRegistros();
   }
@@ -377,6 +377,10 @@ class BaseDeDatosEquipos {
       (equipo) =>
         equipo.categoria.toLowerCase().indexOf(categoria.toLowerCase()) !== -1
     );
+  }
+
+  registroPorId(id) {
+    return this.equipos.find((equipo) => equipo.id === id);
   }
 }
 
@@ -440,9 +444,7 @@ inputBuscadorEquipos.addEventListener("input", (event) => {
   const equiposPorCategoria = bdEquipos.registroPorCategoria(palabra);
 
   // Combinar los resultados eliminando duplicados
-  const equipos = [
-    ...new Set([...equiposPorMarca, ...equiposPorCategoria]),
-  ];
+  const equipos = [...new Set([...equiposPorMarca, ...equiposPorCategoria])];
 
   // Cargar los equipos filtrados
   cargarEquipo(equipos);
@@ -485,8 +487,7 @@ function moverCarrousel(direccion) {
 
 // Función para verificar la cantidad de equipos y mostrar u ocultar las flechas
 function verificarCantidadEquipos() {
-  const cantidadEquipos =
-    document.querySelectorAll(".equipoContainer").length;
+  const cantidadEquipos = document.querySelectorAll(".equipoContainer").length;
 
   if (cantidadEquipos <= 4) {
     btnLeftEquipos.style.display = "none";
@@ -505,9 +506,7 @@ btnRightEquipos.addEventListener("click", () => moverCarrousel("derecha"));
 verificarCantidadEquipos();
 
 // Manejar el filtrado por categorías de equipos
-const btnCategoriaEquipos = document.querySelectorAll(
-  ".btnCategoriaEquipos"
-);
+const btnCategoriaEquipos = document.querySelectorAll(".btnCategoriaEquipos");
 
 btnCategoriaEquipos.forEach((boton) => {
   boton.addEventListener("click", () => {
@@ -521,3 +520,67 @@ btnCategoriaEquipos.forEach((boton) => {
     }
   });
 });
+const divCarrito = document.querySelector("#carrito")
+
+class Carrito {
+  constructor() {
+    this.carrito = [];
+    this.total = 0;
+    this.cantidadProductos = 0;
+  }
+  
+  estaEnCarrito({ id }) {
+    return this.carrito.find((producto) => producto.id === id);
+  }
+  
+  agregar(producto) {
+    const productoEnCarrito = this.estaEnCarrito(producto);
+    
+    if (!productoEnCarrito) {
+      this.carrito.push({ ...producto, cantidad: 1 });
+    } else {
+      productoEnCarrito.cantidad++;
+    }
+
+    this.listar()
+  }
+  
+  quitar(id) {
+    const indice = this.carrito.findIndex((producto) => producto.id === id);
+    if (this.carrito[indice].cantidad > 1) {
+      this.carrito[indice].cantidad--;
+    } else {
+      this.carrito.splice(indice, 1);
+    }
+  }
+  
+  listar() {
+    this.total = 0
+    this.cantidadProductos = 0
+    divCarrito.innerHTML = ""
+    
+    for (const producto of this.carrito) {
+      divCarrito.innerHTML += `
+      <div>
+      <h1>${producto.nombre}</h1>
+      <p>Precio: $${producto.precio}</p>
+      <p>Cantidad: ${producto.cantidad}</p>
+      <a href="#" data-id="${producto.id}" class="quitarCarrito">Quitar carrito</a>
+      </div>
+      `
+      this.total += producto.precio * producto.cantidad
+      this.cantidadProductos += producto.cantidad
+    }
+    const quitarCarrito = document.querySelectorAll(".quitarCarrito")
+    
+    for (const boton of quitarCarrito ) {
+      boton.addEventListener("click", (event) => {
+        event.preventDefault()
+        const idProducto = Number(boton.dataset.id)
+        this.quitar(idProducto)
+      })
+    }
+  }
+}
+
+const carrito = new Carrito()
