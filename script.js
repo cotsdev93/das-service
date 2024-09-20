@@ -552,6 +552,7 @@ class Carrito {
     } else {
       this.carrito.splice(indice, 1);
     }
+    this.listar()
   }
   
   listar() {
