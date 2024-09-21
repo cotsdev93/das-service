@@ -236,7 +236,7 @@ function cargarRepuestos(repuestos) {
 function noHayRepuestos(categoria) {
   repuestosElement.innerHTML = `
   <div class="noHayRepuestos">
-    <p>No hay repuestos de ${categoria} disponibles</p>
+  <p>No hay repuestos de ${categoria} disponibles</p>
   </div>
   `;
 }
@@ -394,28 +394,29 @@ function cargarEquipo(equipos) {
   for (const equipo of equipos) {
     equiposElement.innerHTML += `
         <div class="equipoContainer">
-          <div class="imgContainer">
-            <img src="${equipo.img}" alt="" />
+        <div class="imgContainer">
+          <img src="${equipo.img}" alt="" />
+        </div>
+        <div class="equipoDetail">
+          <p class="equipoCategoria">${equipo.categoria}</p>
+          <div class="equipoTitle">
+            <p class="equipoMarca">${equipo.marca}</p>
+            <p class="equipoModelo">${equipo.modelo}</p>
           </div>
-          <div class="equipoDetail">
-            <p class="equipoCategoria">${equipo.categoria}</p>
-            <div class="equipoTitle">
-              <p class="equipoMarca">${equipo.marca}</p>
-              <p class="equipoModelo">${equipo.modelo}</p>
-            </div>
-            <div class="equipoPrecioContainer">
-              <p class="equipoPrecio">$${equipo.precio.toLocaleString(
-                "es-ES"
-              )}</p>
-              <div class="equipoPrecioCart">
-                <i class="fa-solid fa-cart-plus agregarCarrito" data-id="${
-                  equipo.id
-                }"></i>
-              </div>
+          <div class="equipoPrecioContainer">
+            <p class="equipoPrecio">$${equipo.precio.toLocaleString(
+              "es-ES"
+            )}</p>
+            <div class="equipoPrecioCart">
+              <i
+                class="fa-solid fa-cart-plus agregarCarrito"
+                data-id="${equipo.id}"
+              ></i>
             </div>
           </div>
         </div>
-    `;
+      </div>
+                `;
   }
   verificarCantidadEquipos(); // Verificar si hay suficientes equipos para mostrar las flechas
 }
@@ -520,7 +521,7 @@ btnCategoriaEquipos.forEach((boton) => {
     }
   });
 });
-const divCarrito = document.querySelector("#carrito")
+const divCarrito = document.querySelector("#carrito");
 
 class Carrito {
   constructor() {
@@ -528,23 +529,23 @@ class Carrito {
     this.total = 0;
     this.cantidadProductos = 0;
   }
-  
+
   estaEnCarrito({ id }) {
     return this.carrito.find((producto) => producto.id === id);
   }
-  
+
   agregar(producto) {
     const productoEnCarrito = this.estaEnCarrito(producto);
-    
+
     if (!productoEnCarrito) {
       this.carrito.push({ ...producto, cantidad: 1 });
     } else {
       productoEnCarrito.cantidad++;
     }
 
-    this.listar()
+    this.listar();
   }
-  
+
   quitar(id) {
     const indice = this.carrito.findIndex((producto) => producto.id === id);
     if (this.carrito[indice].cantidad > 1) {
@@ -552,36 +553,79 @@ class Carrito {
     } else {
       this.carrito.splice(indice, 1);
     }
-    this.listar()
+    this.listar();
   }
-  
+
   listar() {
-    this.total = 0
-    this.cantidadProductos = 0
-    divCarrito.innerHTML = ""
-    
+    this.total = 0;
+    this.cantidadProductos = 0;
+    divCarrito.innerHTML = "";
+
     for (const producto of this.carrito) {
       divCarrito.innerHTML += `
-      <div>
-      <h1>${producto.nombre}</h1>
-      <p>Precio: $${producto.precio}</p>
-      <p>Cantidad: ${producto.cantidad}</p>
-      <a href="#" data-id="${producto.id}" class="quitarCarrito">Quitar carrito</a>
+<div class="productoContainer">
+  <div class="productoImgContainer">
+    <img src="${producto.img}" alt="${producto.nombre}" />
+  </div>
+  <div class="productoDetailContainer">
+    <div class="bloque01">
+      <div class="productoNombreContainer">
+        <p>${producto.nombre}</p>
       </div>
-      `
-      this.total += producto.precio * producto.cantidad
-      this.cantidadProductos += producto.cantidad
+      <div class="productoMarcaModelo">
+        <p>${producto.marca}</p>
+        <p></p>
+        <p>${producto.modelo}</p>
+      </div>
+    </div>
+    <div class="productoDescrip">p</div>
+  </div>
+</div>
+      `;
+      this.total += producto.precio * producto.cantidad;
+      this.cantidadProductos += producto.cantidad;
     }
-    const quitarCarrito = document.querySelectorAll(".quitarCarrito")
-    
-    for (const boton of quitarCarrito ) {
+    const quitarCarrito = document.querySelectorAll(".quitarCarrito");
+
+    for (const boton of quitarCarrito) {
       boton.addEventListener("click", (event) => {
-        event.preventDefault()
-        const idProducto = Number(boton.dataset.id)
-        this.quitar(idProducto)
-      })
+        event.preventDefault();
+        const idProducto = Number(boton.dataset.id);
+        this.quitar(idProducto);
+      });
     }
   }
 }
 
-const carrito = new Carrito()
+const carrito = new Carrito();
+
+const productoCarrito = [
+  {
+    id: 1,
+    nombre: "Bomba desagote",
+    categoria: "lavarropas",
+    marca: "LG",
+    modelo: "12345",
+    descripcion: "Correa de lavarropas",
+    precio: 20000,
+    stock: 5,
+    codigoProducto: 123,
+    img: "./assets/img/bombaDesagote.png",
+  },
+  {
+    id: 2,
+    nombre: "Bomba desagote",
+    categoria: "lavarropas",
+    marca: "LG",
+    modelo: "12345",
+    descripcion: "Correa de lavarropas",
+    precio: 20000,
+    stock: 5,
+    codigoProducto: 123,
+    img: "./assets/img/bombaDesagote.png",
+  },
+];
+
+for (const product of productoCarrito) {
+  carrito.agregar(product);
+}

@@ -1,21 +1,68 @@
 body {
-    #section6 {
-        .cartContainer {
-            border: 1px solid rgb(229, 229, 229);
-            border-radius: 20px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.1);
-            width: 50%;
-            margin: 40px;
-            backdrop-filter: blur(2px);
-            padding-bottom: 15px;
-            overflow-x: hidden;
-            .titleCart {
-                font-size: 18px;
-                color: $azul;
-                font-weight: bold;
-                text-align: left;
-                margin: 25px;
+  #section6 {
+    .cartContainer {
+      border: 1px solid rgb(229, 229, 229);
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.1);
+      width: 70%;
+      margin: 40px;
+      backdrop-filter: blur(2px);
+      padding-bottom: 15px;
+      .titleCart {
+        overflow-x: hidden;
+        font-size: 18px;
+        color: $azul;
+        font-weight: bold;
+        text-align: left;
+        margin: 10px;
+      }
+      #carrito {
+        margin: 10px;
+        .productoContainer {
+          display: flex;
+          height: autogit s;
+          align-items: center;
+          border: solid 1px red;
+          .productoImgContainer {
+            width: 120px;
+            margin: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+              width: 100%;
+              background-color: $claritoFondo;
+              background: $claritoFondo;
+              border: solid 1px red;
             }
+          }
+          .productoNombreContainer {
+            width: 40%;
+          }
+          .productoDetailContainer {
+            width: 100%;
+            display: flex;
+            // border: solid 2px red;
+            .bloque01 {
+              .productoNombreContainer {
+                width: 100%;
+              }
+              .productoMarcaModelo {
+                display: flex;
+                width: 100%;
+                p {
+                  margin: 1px;
+                }
+              }
+            }
+            .productoDescrip {
+              width: 30%;
+              border: solid 1px black;
+              margin: 2px;
+            }
+          }
         }
+      }
     }
+  }
 }
