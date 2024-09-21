@@ -102,6 +102,15 @@ body {
             }
           }
         }
+        .noHayProductos{
+          height: 120px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          p {
+            color: $grisClaro;
+          }
+        }
       }
       .totalCarritoContainer {
         height: 40px;

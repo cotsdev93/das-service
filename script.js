@@ -418,10 +418,9 @@ function cargarEquipo(equipos) {
       </div>
                 `;
   }
-  verificarCantidadEquipos(); // Verificar si hay suficientes equipos para mostrar las flechas
+  verificarCantidadEquipos();
 }
 
-// Función para mostrar un mensaje si no hay equipos disponibles en una categoría
 function noHayEquipos(categoria) {
   equiposElement.innerHTML = `
   <div class="noHayEquipos">
@@ -430,33 +429,26 @@ function noHayEquipos(categoria) {
   `;
 }
 
-// Inicializar la base de datos de equipos
 const bdEquipos = new BaseDeDatosEquipos();
 
-// Manejar el evento de búsqueda de equipos
 const inputBuscadorEquipos = document.querySelector("#inputBuscadorEquipos");
 
 inputBuscadorEquipos.addEventListener("input", (event) => {
   event.preventDefault();
   const palabra = inputBuscadorEquipos.value;
 
-  // Obtener equipos por marca o categoría
   const equiposPorMarca = bdEquipos.registrosPorMarca(palabra);
   const equiposPorCategoria = bdEquipos.registroPorCategoria(palabra);
 
-  // Combinar los resultados eliminando duplicados
   const equipos = [...new Set([...equiposPorMarca, ...equiposPorCategoria])];
 
-  // Cargar los equipos filtrados
   cargarEquipo(equipos);
 });
 
-// Seleccionar los botones de navegación del carrusel
 const btnLeftEquipos = document.querySelector(".btnLeftEquipos");
 const btnRightEquipos = document.querySelector(".btnRightEquipos");
 const equiposContainer = document.querySelector(".equiposContainer");
 
-// Función para obtener el ancho total de un equipo, incluyendo márgenes
 function obtenerAnchoEquipoConMargen() {
   const equipo = document.querySelector(".equipoContainer");
   if (equipo) {
@@ -469,7 +461,6 @@ function obtenerAnchoEquipoConMargen() {
   return 0;
 }
 
-// Función para mover el carrusel
 function moverCarrousel(direccion) {
   const anchoEquipo = obtenerAnchoEquipoConMargen();
   if (anchoEquipo > 0) {
@@ -486,7 +477,6 @@ function moverCarrousel(direccion) {
   }
 }
 
-// Función para verificar la cantidad de equipos y mostrar u ocultar las flechas
 function verificarCantidadEquipos() {
   const cantidadEquipos = document.querySelectorAll(".equipoContainer").length;
 
@@ -499,14 +489,11 @@ function verificarCantidadEquipos() {
   }
 }
 
-// Event listeners para los botones del carrusel
 btnLeftEquipos.addEventListener("click", () => moverCarrousel("izquierda"));
 btnRightEquipos.addEventListener("click", () => moverCarrousel("derecha"));
 
-// Verificar cantidad de equipos al cargar la página
 verificarCantidadEquipos();
 
-// Manejar el filtrado por categorías de equipos
 const btnCategoriaEquipos = document.querySelectorAll(".btnCategoriaEquipos");
 
 btnCategoriaEquipos.forEach((boton) => {
@@ -583,7 +570,9 @@ class Carrito {
                 <p>${producto.descripcion}</p>
               </div>
               <div class="productoUnidades">
-                <i class="fa-solid fa-circle-minus" data-id="${producto.id}"></i>
+                <i class="fa-solid fa-circle-minus" data-id="${
+                  producto.id
+                }"></i>
                 <p>${producto.cantidad}</p>
                 <i class="fa-solid fa-circle-plus" data-id="${producto.id}"></i>
               </div>
@@ -627,37 +616,55 @@ class Carrito {
   }
 }
 
+function carritoVacio() {
+  const carritoContainer = document.getElementById("carrito");
+
+  const totalContainer = document.querySelector(".totalCarritoContainer");
+  
+  if (carritoContainer) {
+    carritoContainer.innerHTML = `
+    <div class="noHayProductos">
+      <p>No hay productos en el carrito.</p>
+    </div>
+    `;
+    totalContainer.style.display = "none"
+    console.log("funca")
+  }
+}
+
+carritoVacio()
+
 const carrito = new Carrito();
 
-const productoCarrito = [
-  {
-    id: 1,
-    nombre: "Bomba desagote",
-    categoria: "lavarropas",
-    marca: "LG",
-    modelo: "12345",
-    descripcion:
-      "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
-    precio: 20000,
-    stock: 5,
-    codigoProducto: 123,
-    img: "./assets/img/bombaDesagote.png",
-  },
-  {
-    id: 3,
-    nombre: "Bomba desagote",
-    categoria: "lavarropas",
-    marca: "LG",
-    modelo: "12345",
-    descripcion:
-      "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
-    precio: 20000,
-    stock: 5,
-    codigoProducto: 123,
-    img: "./assets/img/bombaDesagote.png",
-  },
-];
+// const productoCarrito = [
+//   {
+//     id: 1,
+//     nombre: "Bomba desagote",
+//     categoria: "lavarropas",
+//     marca: "LG",
+//     modelo: "12345",
+//     descripcion:
+//       "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
+//     precio: 20000,
+//     stock: 5,
+//     codigoProducto: 123,
+//     img: "./assets/img/bombaDesagote.png",
+//   },
+//   {
+//     id: 3,
+//     nombre: "Bomba desagote",
+//     categoria: "lavarropas",
+//     marca: "LG",
+//     modelo: "12345",
+//     descripcion:
+//       "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
+//     precio: 20000,
+//     stock: 5,
+//     codigoProducto: 123,
+//     img: "./assets/img/bombaDesagote.png",
+//   },
+// ];
 
-for (const product of productoCarrito) {
-  carrito.agregar(product);
-}
+// for (const product of productoCarrito) {
+//   carrito.agregar(product);
+// }

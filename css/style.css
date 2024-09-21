@@ -932,6 +932,15 @@ body #section6 .cartContainer #carrito .productoContainer .productoDetailContain
 body #section6 .cartContainer #carrito .productoContainer .productoDetailContainer .productoPrecio p {
   color: green;
 }
+body #section6 .cartContainer #carrito .noHayProductos {
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body #section6 .cartContainer #carrito .noHayProductos p {
+  color: #c5c5c5;
+}
 body #section6 .cartContainer .totalCarritoContainer {
   height: 40px;
   width: 100%;
