@@ -20,45 +20,84 @@ body {
         margin: 10px;
         .productoContainer {
           display: flex;
-          height: autogit s;
+          height: auto;
           align-items: center;
-          border: solid 1px red;
+          border-bottom: 0.5px $clarito solid;
           .productoImgContainer {
-            width: 120px;
+            width: 20%;
             margin: 5px;
             display: flex;
             justify-content: center;
             align-items: center;
             img {
+              border-radius: 5px;
               width: 100%;
               background-color: $claritoFondo;
-              background: $claritoFondo;
-              border: solid 1px red;
+              box-shadow: inset 0px 0px 3px 1px #00000010;
             }
           }
           .productoNombreContainer {
-            width: 40%;
+            width: 20%;
           }
           .productoDetailContainer {
             width: 100%;
             display: flex;
-            // border: solid 2px red;
+            align-items: center;
             .bloque01 {
+              width: 30%;
               .productoNombreContainer {
                 width: 100%;
+                p {
+                  color: $grisTexto;
+                  font-weight: 470;
+                  white-space: nowrap;
+                }
               }
               .productoMarcaModelo {
                 display: flex;
                 width: 100%;
+                .marca {
+                  font-size: auto;
+                  font-weight: 400;
+                }
+                .modelo {
+                  font-weight: 380;
+                }
                 p {
+                  color: $grisTexto;
                   margin: 1px;
                 }
               }
             }
             .productoDescrip {
               width: 30%;
-              border: solid 1px black;
               margin: 2px;
+              font-size: 10px;
+              color: $grisClaro;
+              // border: solid 1px red;
+            }
+            .productoUnidades {
+              width: 10%;
+              // border: solid 1px red;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin: 5px;
+
+              p {
+                margin: 4px;
+                color: $grisTexto;
+              }
+              .fa-circle-minus {
+                color: $grisClaro;
+                font-size: 12px;
+                cursor: pointer;
+              }
+              .fa-circle-plus {
+                color: $grisClaro;
+                font-size: 12px;
+                cursor: pointer;
+              }
             }
           }
         }

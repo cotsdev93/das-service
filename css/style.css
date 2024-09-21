@@ -853,42 +853,81 @@ body #section6 .cartContainer #carrito .productoContainer {
   display: flex;
   height: auto;
   align-items: center;
-  border: solid 1px red;
+  border-bottom: 0.5px #c9c9c9 solid;
 }
 body #section6 .cartContainer #carrito .productoContainer .productoImgContainer {
-  width: 120px;
+  width: 20%;
   margin: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 body #section6 .cartContainer #carrito .productoContainer .productoImgContainer img {
+  border-radius: 5px;
   width: 100%;
   background-color: #f8f8f8;
-  background: #f8f8f8;
-  border: solid 1px red;
+  box-shadow: inset 0px 0px 3px 1px rgba(0, 0, 0, 0.062745098);
 }
 body #section6 .cartContainer #carrito .productoContainer .productoNombreContainer {
-  width: 40%;
+  width: 20%;
 }
 body #section6 .cartContainer #carrito .productoContainer .productoDetailContainer {
   width: 100%;
   display: flex;
+  align-items: center;
+}
+body #section6 .cartContainer #carrito .productoContainer .productoDetailContainer .bloque01 {
+  width: 30%;
 }
 body #section6 .cartContainer #carrito .productoContainer .productoDetailContainer .bloque01 .productoNombreContainer {
   width: 100%;
+}
+body #section6 .cartContainer #carrito .productoContainer .productoDetailContainer .bloque01 .productoNombreContainer p {
+  color: #787878;
+  font-weight: 470;
+  white-space: nowrap;
 }
 body #section6 .cartContainer #carrito .productoContainer .productoDetailContainer .bloque01 .productoMarcaModelo {
   display: flex;
   width: 100%;
 }
+body #section6 .cartContainer #carrito .productoContainer .productoDetailContainer .bloque01 .productoMarcaModelo .marca {
+  font-size: auto;
+  font-weight: 400;
+}
+body #section6 .cartContainer #carrito .productoContainer .productoDetailContainer .bloque01 .productoMarcaModelo .modelo {
+  font-weight: 380;
+}
 body #section6 .cartContainer #carrito .productoContainer .productoDetailContainer .bloque01 .productoMarcaModelo p {
+  color: #787878;
   margin: 1px;
 }
 body #section6 .cartContainer #carrito .productoContainer .productoDetailContainer .productoDescrip {
   width: 30%;
-  border: solid 1px black;
   margin: 2px;
+  font-size: 10px;
+  color: #c5c5c5;
+}
+body #section6 .cartContainer #carrito .productoContainer .productoDetailContainer .productoUnidades {
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+body #section6 .cartContainer #carrito .productoContainer .productoDetailContainer .productoUnidades p {
+  margin: 4px;
+  color: #787878;
+}
+body #section6 .cartContainer #carrito .productoContainer .productoDetailContainer .productoUnidades .fa-circle-minus {
+  color: #c5c5c5;
+  font-size: 12px;
+  cursor: pointer;
+}
+body #section6 .cartContainer #carrito .productoContainer .productoDetailContainer .productoUnidades .fa-circle-plus {
+  color: #c5c5c5;
+  font-size: 12px;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */

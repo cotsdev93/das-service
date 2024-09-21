@@ -548,11 +548,15 @@ class Carrito {
 
   quitar(id) {
     const indice = this.carrito.findIndex((producto) => producto.id === id);
-    if (this.carrito[indice].cantidad > 1) {
+
+    // Verifico si el producto existe en el carrito antes de acceder a su cantidad
+    if (indice !== -1 && this.carrito[indice].cantidad > 1) {
       this.carrito[indice].cantidad--;
-    } else {
+    } else if (indice !== -1) {
+      // Si el producto existe pero tiene 1 unidad, lo remuevo
       this.carrito.splice(indice, 1);
     }
+    
     this.listar();
   }
 
@@ -563,34 +567,43 @@ class Carrito {
 
     for (const producto of this.carrito) {
       divCarrito.innerHTML += `
-<div class="productoContainer">
-  <div class="productoImgContainer">
-    <img src="${producto.img}" alt="${producto.nombre}" />
-  </div>
-  <div class="productoDetailContainer">
-    <div class="bloque01">
-      <div class="productoNombreContainer">
-        <p>${producto.nombre}</p>
-      </div>
-      <div class="productoMarcaModelo">
-        <p>${producto.marca}</p>
-        <p></p>
-        <p>${producto.modelo}</p>
-      </div>
-    </div>
-    <div class="productoDescrip">p</div>
-  </div>
-</div>
+          <div class="productoContainer">
+            <div class="productoImgContainer">
+              <img src="${producto.img}" alt="${producto.nombre}" />
+            </div>
+            <div class="productoDetailContainer">
+              <div class="bloque01">
+                <div class="productoNombreContainer">
+                  <p>${producto.nombre}</p>
+                </div>
+                <div class="productoMarcaModelo">
+                  <p class="marca">${producto.marca}</p>
+                  <p class="modelo">${producto.modelo}</p>
+                </div>
+              </div>
+              <div class="productoDescrip">
+                <p>${producto.descripcion}</p>
+              </div>
+              <div class="productoUnidades">
+                <i class="fa-solid fa-circle-minus" data-id="${producto.id}"></i>
+                <!-- Agregué un dataset a los botones para enlazar el id del producto -->
+                <p>${producto.cantidad}</p>
+                <i class="fa-solid fa-circle-plus masUnidades" data-id="${producto.id}"></i>
+              </div>
+            </div>
+          </div>
       `;
       this.total += producto.precio * producto.cantidad;
       this.cantidadProductos += producto.cantidad;
     }
-    const quitarCarrito = document.querySelectorAll(".quitarCarrito");
+    const quitarCarrito = document.querySelectorAll(".fa-circle-minus");
 
     for (const boton of quitarCarrito) {
       boton.addEventListener("click", (event) => {
         event.preventDefault();
         const idProducto = Number(boton.dataset.id);
+
+        // Aseguro que el dataset contiene el id correcto al hacer click
         this.quitar(idProducto);
       });
     }
@@ -606,19 +619,20 @@ const productoCarrito = [
     categoria: "lavarropas",
     marca: "LG",
     modelo: "12345",
-    descripcion: "Correa de lavarropas",
+    descripcion: "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
     precio: 20000,
     stock: 5,
     codigoProducto: 123,
     img: "./assets/img/bombaDesagote.png",
   },
   {
-    id: 2,
+    id: 3,
     nombre: "Bomba desagote",
     categoria: "lavarropas",
     marca: "LG",
     modelo: "12345",
-    descripcion: "Correa de lavarropas",
+    descripcion:
+      "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
     precio: 20000,
     stock: 5,
     codigoProducto: 123,
