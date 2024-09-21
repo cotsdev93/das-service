@@ -558,13 +558,15 @@ class Carrito {
       this.carrito.splice(indice, 1);
     }
 
+    // Verifico si el carrito está vacío
     if (this.carrito.length === 0) {
-      carritoVacio(); 
-      console.log("carritovacio")
+      carritoVacio(); // Muestra el mensaje de carrito vacío
+      console.log("carrito vacío");
+    } else {
+      this.listar(); // Solo lista si el carrito tiene productos
     }
-
-    this.listar();
   }
+
 
   listar() {
     this.total = 0;
