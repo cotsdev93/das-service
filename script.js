@@ -549,14 +549,12 @@ class Carrito {
   quitar(id) {
     const indice = this.carrito.findIndex((producto) => producto.id === id);
 
-    // Verifico si el producto existe en el carrito antes de acceder a su cantidad
     if (indice !== -1 && this.carrito[indice].cantidad > 1) {
       this.carrito[indice].cantidad--;
     } else if (indice !== -1) {
-      // Si el producto existe pero tiene 1 unidad, lo remuevo
       this.carrito.splice(indice, 1);
     }
-    
+
     this.listar();
   }
 
@@ -586,9 +584,11 @@ class Carrito {
               </div>
               <div class="productoUnidades">
                 <i class="fa-solid fa-circle-minus" data-id="${producto.id}"></i>
-                <!-- Agregué un dataset a los botones para enlazar el id del producto -->
                 <p>${producto.cantidad}</p>
-                <i class="fa-solid fa-circle-plus masUnidades" data-id="${producto.id}"></i>
+                <i class="fa-solid fa-circle-plus" data-id="${producto.id}"></i>
+              </div>
+              <div class="productoPrecio">
+                <p>$${producto.precio.toLocaleString("es-ES")}</p>
               </div>
             </div>
           </div>
@@ -596,14 +596,31 @@ class Carrito {
       this.total += producto.precio * producto.cantidad;
       this.cantidadProductos += producto.cantidad;
     }
+
+    // Actualizo el valor del total en el HTML
+    const totalContainer = document.getElementById("totalCarrito");
+    if (totalContainer) {
+      totalContainer.innerHTML = `$${this.total.toLocaleString("es-ES")}`;
+    }
+
     const quitarCarrito = document.querySelectorAll(".fa-circle-minus");
+    const agregarCarrito = document.querySelectorAll(".fa-circle-plus");
+
+    for (const boton of agregarCarrito) {
+      boton.addEventListener("click", (event) => {
+        event.preventDefault();
+        const idRepuesto = Number(boton.dataset.id);
+        const repuesto = bdRepuestos.registroPorId(idRepuesto);
+        console.log("funca", carrito);
+
+        carrito.agregar(repuesto);
+      });
+    }
 
     for (const boton of quitarCarrito) {
       boton.addEventListener("click", (event) => {
         event.preventDefault();
         const idProducto = Number(boton.dataset.id);
-
-        // Aseguro que el dataset contiene el id correcto al hacer click
         this.quitar(idProducto);
       });
     }
@@ -619,7 +636,8 @@ const productoCarrito = [
     categoria: "lavarropas",
     marca: "LG",
     modelo: "12345",
-    descripcion: "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
+    descripcion:
+      "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
     precio: 20000,
     stock: 5,
     codigoProducto: 123,

@@ -24,7 +24,7 @@ body {
           align-items: center;
           border-bottom: 0.5px $clarito solid;
           .productoImgContainer {
-            width: 20%;
+            width: 25%;
             margin: 5px;
             display: flex;
             justify-content: center;
@@ -36,9 +36,7 @@ body {
               box-shadow: inset 0px 0px 3px 1px #00000010;
             }
           }
-          .productoNombreContainer {
-            width: 20%;
-          }
+
           .productoDetailContainer {
             width: 100%;
             display: flex;
@@ -74,16 +72,13 @@ body {
               margin: 2px;
               font-size: 10px;
               color: $grisClaro;
-              // border: solid 1px red;
             }
             .productoUnidades {
               width: 10%;
-              // border: solid 1px red;
               display: flex;
               justify-content: center;
               align-items: center;
               margin: 5px;
-
               p {
                 margin: 4px;
                 color: $grisTexto;
@@ -99,7 +94,25 @@ body {
                 cursor: pointer;
               }
             }
+            .productoPrecio {
+              margin: 5px;
+              p {
+                color: green;
+              }
+            }
           }
+        }
+      }
+      .totalCarritoContainer {
+        height: 40px;
+        width: 100%;
+        display:flex;
+        justify-content: flex-end;
+        align-items: center;
+        text-align: right;
+        #totalCarrito {
+          color: green;
+          margin: 30px 70px 30px 5px;
         }
       }
     }
