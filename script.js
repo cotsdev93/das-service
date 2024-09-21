@@ -224,8 +224,6 @@ function cargarRepuestos(repuestos) {
       event.preventDefault();
       const idRepuesto = Number(boton.dataset.id);
       const repuesto = bdRepuestos.registroPorId(idRepuesto);
-      console.log("funca", carrito);
-
       carrito.agregar(repuesto);
     });
   }
@@ -508,6 +506,24 @@ btnCategoriaEquipos.forEach((boton) => {
     }
   });
 });
+
+function carritoVacio() {
+  const carritoContainer = document.getElementById("carrito");
+
+  const totalContainer = document.querySelector(".totalCarritoContainer");
+  
+  if (carritoContainer) {
+    carritoContainer.innerHTML = `
+    <div class="noHayProductos">
+      <p>No hay productos en el carrito.</p>
+    </div>
+    `;
+    totalContainer.style.display = "none"
+    console.log("funca")
+  }
+}
+
+carritoVacio()
 const divCarrito = document.querySelector("#carrito");
 
 class Carrito {
@@ -540,6 +556,11 @@ class Carrito {
       this.carrito[indice].cantidad--;
     } else if (indice !== -1) {
       this.carrito.splice(indice, 1);
+    }
+
+    if (this.carrito.length === 0) {
+      carritoVacio(); 
+      console.log("carritovacio")
     }
 
     this.listar();
@@ -600,8 +621,6 @@ class Carrito {
         event.preventDefault();
         const idRepuesto = Number(boton.dataset.id);
         const repuesto = bdRepuestos.registroPorId(idRepuesto);
-        console.log("funca", carrito);
-
         carrito.agregar(repuesto);
       });
     }
@@ -616,23 +635,7 @@ class Carrito {
   }
 }
 
-function carritoVacio() {
-  const carritoContainer = document.getElementById("carrito");
 
-  const totalContainer = document.querySelector(".totalCarritoContainer");
-  
-  if (carritoContainer) {
-    carritoContainer.innerHTML = `
-    <div class="noHayProductos">
-      <p>No hay productos en el carrito.</p>
-    </div>
-    `;
-    totalContainer.style.display = "none"
-    console.log("funca")
-  }
-}
-
-carritoVacio()
 
 const carrito = new Carrito();
 
