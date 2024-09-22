@@ -8,6 +8,11 @@ body {
       margin: 40px;
       backdrop-filter: blur(2px);
       padding-bottom: 15px;
+      max-height: 100vh;
+      height: 100%;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scroll-behavior: smooth;
       .titleCart {
         overflow-x: hidden;
         font-size: 18px;
@@ -24,7 +29,7 @@ body {
           align-items: center;
           border-bottom: 0.5px $clarito solid;
           .productoImgContainer {
-            width: 25%;
+            width: 20%;
             margin: 5px;
             display: flex;
             justify-content: center;
