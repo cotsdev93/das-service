@@ -4,7 +4,7 @@ body {
       border: 1px solid rgb(229, 229, 229);
       border-radius: 20px;
       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.1);
-      width: 70%;
+      width: 80%;
       margin: 40px;
       backdrop-filter: blur(2px);
       padding-bottom: 15px;
@@ -34,15 +34,16 @@ body {
               width: 100%;
               background-color: $claritoFondo;
               box-shadow: inset 0px 0px 3px 1px #00000010;
+              cursor: pointer;
             }
           }
-
           .productoDetailContainer {
             width: 100%;
             display: flex;
             align-items: center;
+            justify-content: space-evenly;
             .bloque01 {
-              width: 30%;
+              width: 35%;
               .productoNombreContainer {
                 width: 100%;
                 p {
@@ -68,7 +69,7 @@ body {
               }
             }
             .productoDescrip {
-              width: 30%;
+              width: 35%;
               margin: 2px;
               font-size: 10px;
               color: $grisClaro;
@@ -102,7 +103,7 @@ body {
             }
           }
         }
-        .noHayProductos{
+        .noHayProductos {
           height: 120px;
           display: flex;
           justify-content: center;
@@ -115,13 +116,28 @@ body {
       .totalCarritoContainer {
         height: 40px;
         width: 100%;
-        display:flex;
+        display: flex;
         justify-content: flex-end;
         align-items: center;
         text-align: right;
-        #totalCarrito {
-          color: green;
-          margin: 30px 70px 30px 5px;
+        .totalCarrito {
+          border-radius: 5px;
+          width: auto;
+          background-color: $claritoFondo;
+          box-shadow: inset 0px 0px 3px 1px #00000010;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 10px;
+          p {
+            font-size: 15px;
+            margin: 0px 0px 0px 10px;
+          }
+          #totalCarrito {
+            font-size: 20px;
+            color: green;
+            margin: 10px;
+          }
         }
       }
     }

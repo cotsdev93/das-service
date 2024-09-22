@@ -833,7 +833,7 @@ body #section6 .cartContainer {
   border: 1px solid rgb(229, 229, 229);
   border-radius: 20px;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.1);
-  width: 70%;
+  width: 80%;
   margin: 40px;
   backdrop-filter: blur(2px);
   padding-bottom: 15px;
@@ -867,14 +867,16 @@ body #section6 .cartContainer #carrito .productoContainer .productoImgContainer 
   width: 100%;
   background-color: #f8f8f8;
   box-shadow: inset 0px 0px 3px 1px rgba(0, 0, 0, 0.062745098);
+  cursor: pointer;
 }
 body #section6 .cartContainer #carrito .productoContainer .productoDetailContainer {
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
 }
 body #section6 .cartContainer #carrito .productoContainer .productoDetailContainer .bloque01 {
-  width: 30%;
+  width: 35%;
 }
 body #section6 .cartContainer #carrito .productoContainer .productoDetailContainer .bloque01 .productoNombreContainer {
   width: 100%;
@@ -900,7 +902,7 @@ body #section6 .cartContainer #carrito .productoContainer .productoDetailContain
   margin: 1px;
 }
 body #section6 .cartContainer #carrito .productoContainer .productoDetailContainer .productoDescrip {
-  width: 30%;
+  width: 35%;
   margin: 2px;
   font-size: 10px;
   color: #c5c5c5;
@@ -949,9 +951,24 @@ body #section6 .cartContainer .totalCarritoContainer {
   align-items: center;
   text-align: right;
 }
-body #section6 .cartContainer .totalCarritoContainer #totalCarrito {
+body #section6 .cartContainer .totalCarritoContainer .totalCarrito {
+  border-radius: 5px;
+  width: auto;
+  background-color: #f8f8f8;
+  box-shadow: inset 0px 0px 3px 1px rgba(0, 0, 0, 0.062745098);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+body #section6 .cartContainer .totalCarritoContainer .totalCarrito p {
+  font-size: 15px;
+  margin: 0px 0px 0px 10px;
+}
+body #section6 .cartContainer .totalCarritoContainer .totalCarrito #totalCarrito {
+  font-size: 20px;
   color: green;
-  margin: 30px 70px 30px 5px;
+  margin: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
