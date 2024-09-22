@@ -511,19 +511,20 @@ function carritoVacio() {
   const carritoContainer = document.getElementById("carrito");
 
   const totalContainer = document.querySelector(".totalCarritoContainer");
-  
+
   if (carritoContainer) {
     carritoContainer.innerHTML = `
     <div class="noHayProductos">
       <p>No hay productos en el carrito.</p>
     </div>
     `;
-    totalContainer.style.display = "none"
-    console.log("funca")
+    // totalContainer.style.display = "none"
+    // console.log("funca")
   }
 }
 
-carritoVacio()
+carritoVacio();
+
 const divCarrito = document.querySelector("#carrito");
 
 class Carrito {
@@ -548,7 +549,6 @@ class Carrito {
 
     this.listar();
   }
-
   quitar(id) {
     const indice = this.carrito.findIndex((producto) => producto.id === id);
 
@@ -560,13 +560,17 @@ class Carrito {
 
     // Verifico si el carrito está vacío
     if (this.carrito.length === 0) {
+      this.total = 0; // Actualizo el total a 0 cuando el carrito está vacío
+      const totalCarrito = document.getElementById("totalCarrito");
+      if (totalCarrito) {
+        totalCarrito.innerHTML = `$0`; // Actualizo el total en el HTML a $0
+      }
+
       carritoVacio(); // Muestra el mensaje de carrito vacío
-      console.log("carrito vacío");
     } else {
       this.listar(); // Solo lista si el carrito tiene productos
     }
   }
-
 
   listar() {
     this.total = 0;
@@ -610,9 +614,10 @@ class Carrito {
     }
 
     // Actualizo el valor del total en el HTML
-    const totalContainer = document.getElementById("totalCarrito");
-    if (totalContainer) {
-      totalContainer.innerHTML = `$${this.total.toLocaleString("es-ES")}`;
+    const totalCarrito = document.getElementById("totalCarrito");
+
+    if (totalCarrito) {
+      totalCarrito.innerHTML = `$${this.total.toLocaleString("es-ES")}`;
     }
 
     const quitarCarrito = document.querySelectorAll(".fa-circle-minus");
@@ -637,39 +642,37 @@ class Carrito {
   }
 }
 
-
-
 const carrito = new Carrito();
 
-// const productoCarrito = [
-//   {
-//     id: 1,
-//     nombre: "Bomba desagote",
-//     categoria: "lavarropas",
-//     marca: "LG",
-//     modelo: "12345",
-//     descripcion:
-//       "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
-//     precio: 20000,
-//     stock: 5,
-//     codigoProducto: 123,
-//     img: "./assets/img/bombaDesagote.png",
-//   },
-//   {
-//     id: 3,
-//     nombre: "Bomba desagote",
-//     categoria: "lavarropas",
-//     marca: "LG",
-//     modelo: "12345",
-//     descripcion:
-//       "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
-//     precio: 20000,
-//     stock: 5,
-//     codigoProducto: 123,
-//     img: "./assets/img/bombaDesagote.png",
-//   },
-// ];
+const productoCarrito = [
+  {
+    id: 1,
+    nombre: "Bomba desagote",
+    categoria: "lavarropas",
+    marca: "LG",
+    modelo: "12345",
+    descripcion:
+      "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
+    precio: 20000,
+    stock: 5,
+    codigoProducto: 123,
+    img: "./assets/img/bombaDesagote.png",
+  },
+  {
+    id: 3,
+    nombre: "Bomba desagote",
+    categoria: "lavarropas",
+    marca: "LG",
+    modelo: "12345",
+    descripcion:
+      "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
+    precio: 20000,
+    stock: 5,
+    codigoProducto: 123,
+    img: "./assets/img/bombaDesagote.png",
+  },
+];
 
-// for (const product of productoCarrito) {
-//   carrito.agregar(product);
-// }
+for (const product of productoCarrito) {
+  carrito.agregar(product);
+}
