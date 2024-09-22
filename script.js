@@ -4,32 +4,25 @@ document.querySelectorAll("nav li, .navEnd i").forEach((item) => {
   item.addEventListener("click", (e) => {
     e.preventDefault();
 
-    // Si la animación está en curso, no hacemos nada.
     if (isAnimating) return;
 
     const sectionId = e.target.closest("li, i").getAttribute("data-section");
     const newActiveSection = document.getElementById(`section${sectionId}`);
     const currentActiveSection = document.querySelector(".section.active");
 
-    // Si es la misma sección, no hace nada.
     if (newActiveSection === currentActiveSection) return;
 
-    // Activamos el flag de animación.
     isAnimating = true;
 
-    // Añadir clase para animar la salida de la sección actual.
     if (currentActiveSection) {
       currentActiveSection.classList.remove("active");
       currentActiveSection.classList.add("exit-left");
     }
 
-    // Usamos requestAnimationFrame para coordinar mejor la entrada de la nueva sección.
     requestAnimationFrame(() => {
-      // Activar la entrada de la nueva sección al instante.
       newActiveSection.classList.add("enter-right");
     });
 
-    // Esperar hasta que la animación de salida termine antes de activar la nueva sección.
     setTimeout(() => {
       if (currentActiveSection) {
         currentActiveSection.classList.remove("exit-left");
@@ -37,9 +30,8 @@ document.querySelectorAll("nav li, .navEnd i").forEach((item) => {
       newActiveSection.classList.remove("enter-right");
       newActiveSection.classList.add("active");
 
-      // Desactivamos el flag de animación después de que todas las animaciones hayan terminado.
       isAnimating = false;
-    }, 2000); // Ajusta la duración para que coincida con la duración de las animaciones.
+    }, 2000);
   });
 });
 
@@ -108,13 +100,11 @@ function moverCarrouselMarca(direccion) {
   }
 }
 
-// Mover el carrusel automáticamente hacia la derecha cada 3 segundos
 let autoSlide = setInterval(() => {
   const anchoTotalScroll = serviceMarcasContainer.scrollWidth;
   const desplazamientoActual = serviceMarcasContainer.scrollLeft;
   const anchoMarca = obtenerAnchoMarcaConMargen();
 
-  // Si el desplazamiento actual está al final, reinicia al principio
   if (
     desplazamientoActual + anchoMarca >=
     anchoTotalScroll - serviceMarcasContainer.clientWidth
@@ -124,7 +114,6 @@ let autoSlide = setInterval(() => {
       behavior: "smooth",
     });
   } else {
-    // Mueve el carrusel un casillero hacia la derecha
     moverCarrouselMarca("derecha");
   }
 }, 4000);
@@ -249,12 +238,10 @@ inputBuscadorRepuestos.addEventListener("input", (event) => {
   event.preventDefault();
   const palabra = inputBuscadorRepuestos.value;
 
-  // Obtener repuestos por marca o categoría
   const repuestosPorMarca = bdRepuestos.registrosPorMarca(palabra);
   const repuestosPorCategoria = bdRepuestos.registroPorCategoria(palabra);
   const repuestosPorNombre = bdRepuestos.registroPorNombre(palabra);
 
-  // Combinar los resultados eliminando duplicados
   const repuestos = [
     ...new Set([
       ...repuestosPorMarca,
@@ -263,7 +250,6 @@ inputBuscadorRepuestos.addEventListener("input", (event) => {
     ]),
   ];
 
-  // Cargar los repuestos filtrados
   cargarRepuestos(repuestos);
 });
 
@@ -271,7 +257,6 @@ const btnLeftRepuestos = document.querySelector(".btnLeftRepuestos");
 const btnRightRepuestos = document.querySelector(".btnRightRepuestos");
 const repuestosContainer = document.querySelector(".repuestosContainer");
 
-// Función para obtener el ancho total de un repuesto, incluyendo márgenes
 function obtenerAnchoRepuestoConMargen() {
   const repuesto = document.querySelector(".repuestoContainer");
   if (repuesto) {
@@ -284,11 +269,10 @@ function obtenerAnchoRepuestoConMargen() {
   return 0;
 }
 
-// Función para mover el carrusel
 function moverCarrouselRepuestos(direccion) {
   const anchoRepuesto = obtenerAnchoRepuestoConMargen();
   if (anchoRepuesto > 0) {
-    const desplazamientoActual = repuestosContainer.scrollLeft; // Posición actual del scroll
+    const desplazamientoActual = repuestosContainer.scrollLeft;
     const nuevoDesplazamiento =
       direccion === "izquierda"
         ? desplazamientoActual - anchoRepuesto
@@ -301,7 +285,6 @@ function moverCarrouselRepuestos(direccion) {
   }
 }
 
-// Función para verificar la cantidad de repuestos y ocultar/mostrar flechas
 function verificarCantidadRepuestos() {
   const cantidadRepuestos =
     document.querySelectorAll(".repuestoContainer").length;
@@ -315,7 +298,6 @@ function verificarCantidadRepuestos() {
   }
 }
 
-// Event listeners para los botones
 btnLeftRepuestos.addEventListener("click", () =>
   moverCarrouselRepuestos("izquierda")
 );
@@ -346,22 +328,18 @@ btnCategoriaRepuestos.forEach((boton) => {
 
 // BASE DE DATOS equipos
 
-// Definir la clase BaseDeDatosEquipos para manejar la carga y filtrado de equipos
 class BaseDeDatosEquipos {
   constructor() {
     this.equipos = [];
-    // Cargar los registros al inicializar
     this.cargarRegistros();
   }
 
-  // Cargar los equipos desde el archivo JSON
   async cargarRegistros() {
     const resultado = await fetch("./JSON/productos.json");
     this.equipos = await resultado.json();
-    cargarEquipo(this.equipos); // Llamar a cargarEquipo para mostrar los equipos
+    cargarEquipo(this.equipos);
   }
 
-  // Filtrar equipos por marca
   registrosPorMarca(palabra) {
     return this.equipos.filter(
       (equipo) =>
@@ -369,7 +347,6 @@ class BaseDeDatosEquipos {
     );
   }
 
-  // Filtrar equipos por categoría
   registroPorCategoria(categoria) {
     return this.equipos.filter(
       (equipo) =>
@@ -382,12 +359,10 @@ class BaseDeDatosEquipos {
   }
 }
 
-// Seleccionar el contenedor donde se mostrarán los equipos
 const equiposElement = document.querySelector("#equipos");
 
-// Función para cargar los equipos y mostrarlos en el HTML
 function cargarEquipo(equipos) {
-  equiposElement.innerHTML = ""; // Limpiar el contenido previo
+  equiposElement.innerHTML = "";
 
   for (const equipo of equipos) {
     equiposElement.innerHTML += `
@@ -462,7 +437,7 @@ function obtenerAnchoEquipoConMargen() {
 function moverCarrousel(direccion) {
   const anchoEquipo = obtenerAnchoEquipoConMargen();
   if (anchoEquipo > 0) {
-    const desplazamientoActual = equiposContainer.scrollLeft; // Posición actual del scroll
+    const desplazamientoActual = equiposContainer.scrollLeft;
     const nuevoDesplazamiento =
       direccion === "izquierda"
         ? desplazamientoActual - anchoEquipo
@@ -500,9 +475,9 @@ btnCategoriaEquipos.forEach((boton) => {
 
     const equipos = bdEquipos.registroPorCategoria(boton.dataset.categoria);
     if (equipos.length > 0) {
-      cargarEquipo(equipos); // Mostrar los equipos filtrados
+      cargarEquipo(equipos);
     } else {
-      noHayEquipos(categoria); // Mostrar mensaje si no hay equipos
+      noHayEquipos(categoria);
     }
   });
 });
@@ -518,7 +493,7 @@ function carritoVacio() {
       <p>No hay productos en el carrito.</p>
     </div>
     `;
-    // totalContainer.style.display = "none"
+
     // console.log("funca")
   }
 }
@@ -560,15 +535,15 @@ class Carrito {
 
     // Verifico si el carrito está vacío
     if (this.carrito.length === 0) {
-      this.total = 0; // Actualizo el total a 0 cuando el carrito está vacío
+      this.total = 0; 
       const totalCarrito = document.getElementById("totalCarrito");
       if (totalCarrito) {
-        totalCarrito.innerHTML = `$0`; // Actualizo el total en el HTML a $0
+        totalCarrito.innerHTML = `$0`;
       }
 
-      carritoVacio(); // Muestra el mensaje de carrito vacío
+      carritoVacio();
     } else {
-      this.listar(); // Solo lista si el carrito tiene productos
+      this.listar();
     }
   }
 
@@ -613,7 +588,6 @@ class Carrito {
       this.cantidadProductos += producto.cantidad;
     }
 
-    // Actualizo el valor del total en el HTML
     const totalCarrito = document.getElementById("totalCarrito");
 
     if (totalCarrito) {
