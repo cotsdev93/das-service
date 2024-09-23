@@ -862,6 +862,33 @@ body #section6 .cartContainer .titleCartContainer .iconCarrito .fa-cart-shopping
   transform: translateY(2px);
   margin-right: 5px;
 }
+body #section6 .cartContainer .headerCarrito {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr) 1fr 1fr;
+  align-items: center;
+  color: #c5c5c5;
+  margin: 0px 40px;
+}
+body #section6 .cartContainer .headerCarrito .productoHeader p,
+body #section6 .cartContainer .headerCarrito .cantidadHeader p,
+body #section6 .cartContainer .headerCarrito .precioHeader p {
+  margin: 0;
+  font-size: 12px;
+}
+body #section6 .cartContainer .headerCarrito .productoHeader {
+  grid-column: span 6;
+  text-align: left;
+  padding-left: 8px;
+}
+body #section6 .cartContainer .headerCarrito .cantidadHeader {
+  grid-column: span 1;
+  text-align: center;
+  padding-left: 25px;
+}
+body #section6 .cartContainer .headerCarrito .precioHeader {
+  grid-column: span 1;
+  text-align: center;
+}
 body #section6 .cartContainer #carrito {
   margin: 10px 40px;
 }
