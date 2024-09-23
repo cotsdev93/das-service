@@ -1,43 +1,39 @@
 let isAnimating = false;
 
-document
-  .querySelectorAll("nav li, .navEnd i")
-  .forEach((item) => {
-    item.addEventListener("click", (e) => {
-      e.preventDefault();
+document.querySelectorAll("nav li, .navEnd i").forEach((item) => {
+  item.addEventListener("click", (e) => {
+    e.preventDefault();
 
-      if (isAnimating) return;
+    if (isAnimating) return;
 
-      const sectionId = e.target
-        .closest("li, i")
-        .getAttribute("data-section");
-      const newActiveSection = document.getElementById(`section${sectionId}`);
-      const currentActiveSection = document.querySelector(".section.active");
+    const sectionId = e.target.closest("li, i").getAttribute("data-section");
+    const newActiveSection = document.getElementById(`section${sectionId}`);
+    const currentActiveSection = document.querySelector(".section.active");
 
-      if (newActiveSection === currentActiveSection) return;
+    if (newActiveSection === currentActiveSection) return;
 
-      isAnimating = true;
+    isAnimating = true;
 
-      if (currentActiveSection) {
-        currentActiveSection.classList.remove("active");
-        currentActiveSection.classList.add("exit-left");
-      }
+    if (currentActiveSection) {
+      currentActiveSection.classList.remove("active");
+      currentActiveSection.classList.add("exit-left");
+    }
 
-      requestAnimationFrame(() => {
-        newActiveSection.classList.add("enter-right");
-      });
-
-      setTimeout(() => {
-        if (currentActiveSection) {
-          currentActiveSection.classList.remove("exit-left");
-        }
-        newActiveSection.classList.remove("enter-right");
-        newActiveSection.classList.add("active");
-
-        isAnimating = false;
-      }, 2000);
+    requestAnimationFrame(() => {
+      newActiveSection.classList.add("enter-right");
     });
+
+    setTimeout(() => {
+      if (currentActiveSection) {
+        currentActiveSection.classList.remove("exit-left");
+      }
+      newActiveSection.classList.remove("enter-right");
+      newActiveSection.classList.add("active");
+
+      isAnimating = false;
+    }, 2000);
   });
+});
 
 // SERVICE
 class BaseDeDatosService {
@@ -532,22 +528,31 @@ class Carrito {
     const indice = this.carrito.findIndex((producto) => producto.id === id);
 
     if (indice !== -1 && this.carrito[indice].cantidad > 1) {
+      // Si hay más de un producto, disminuimos la cantidad
       this.carrito[indice].cantidad--;
     } else if (indice !== -1) {
+      // Si solo queda uno, lo eliminamos del carrito
       this.carrito.splice(indice, 1);
     }
 
     // Verifico si el carrito está vacío
     if (this.carrito.length === 0) {
       this.total = 0;
+      this.cantidadProductos = 0; // Aseguramos que la cantidad sea 0 cuando está vacío
       const totalCarrito = document.getElementById("totalCarrito");
       if (totalCarrito) {
-        totalCarrito.innerHTML = `$0`;
+        totalCarrito.innerHTML = `$0`; // Actualizamos el total a 0
       }
 
-      carritoVacio();
+      carritoVacio(); // Llamamos a la función para mostrar mensaje de carrito vacío
     } else {
-      this.listar();
+      this.listar(); // Listamos los productos restantes
+    }
+
+    // ** Cambié aquí para asegurarme de que la cantidad total se actualice correctamente. **
+    const cantidadCartElements = document.querySelectorAll(".cantidadCart");
+    for (const elemento of cantidadCartElements) {
+      elemento.innerHTML = this.cantidadProductos; // Actualiza la cantidad de productos
     }
   }
 
