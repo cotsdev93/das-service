@@ -23,14 +23,20 @@ html {
       .tercerBloque {
         width: 30%;
         height: auto;
-        color:$claritoFondo;
         font-size: 35px;
         display: flex;
         justify-content: center;
         align-items: center;
-        i {
-          margin: 5px;
-          cursor: pointer;
+        a {
+          i {
+            color: $claritoFondo;
+            margin: 5px;
+            cursor: pointer;
+          }
+          .fa-location-dot {
+            font-size: 27px;
+            margin: 10px;
+          }
         }
       }
     }

@@ -733,15 +733,19 @@ html body footer .segundoBloque {
 html body footer .tercerBloque {
   width: 30%;
   height: auto;
-  color: #f8f8f8;
   font-size: 35px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-html body footer .tercerBloque i {
+html body footer .tercerBloque a i {
+  color: #f8f8f8;
   margin: 5px;
   cursor: pointer;
+}
+html body footer .tercerBloque a .fa-location-dot {
+  font-size: 27px;
+  margin: 10px;
 }
 html body .copyR {
   width: 100%;
