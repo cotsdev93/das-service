@@ -71,6 +71,7 @@ html body nav .navMid .navEnd i {
 }
 html body nav .navMid .navEnd .cartContainer {
   position: relative;
+  cursor: pointer;
 }
 html body nav .navMid .navEnd .cartContainer .cartCircle {
   position: absolute;
