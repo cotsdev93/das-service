@@ -86,6 +86,7 @@ html body nav .navMid .navEnd .cartContainer .cartCircle {
 html body nav .navMid .navEnd .cartContainer .cartCircle span {
   color: #f8f8f8;
   font-size: 10px;
+  font-weight: 650;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -840,6 +841,7 @@ body #section6 .cartContainer {
   max-height: 100vh;
   height: 100%;
   overflow-y: auto;
+  overflow-x: hidden;
   scrollbar-width: thin;
   scroll-behavior: smooth;
 }
@@ -1020,6 +1022,40 @@ body #section6 .cartContainer .totalCarritoContainer .totalCarrito #totalCarrito
   font-size: 20px;
   color: green;
   margin: 10px;
+}
+body #section6 .cartContainer .comprarContainer {
+  height: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: right;
+  margin: 10px;
+  cursor: pointer;
+}
+body #section6 .cartContainer .comprarContainer .comprar {
+  border-radius: 5px;
+  width: 20%;
+  height: 100%;
+  background-color: #f8f8f8;
+  box-shadow: inset 0px 0px 3px 1px rgba(255, 255, 255, 0.5647058824);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 45px;
+  background-color: #3498db;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s;
+}
+body #section6 .cartContainer .comprarContainer .comprar:hover {
+  background-color: #52be80;
+}
+body #section6 .cartContainer .comprarContainer .comprar:active {
+  box-shadow: none;
+  background-color: #2ecc71;
+}
+body #section6 .cartContainer .comprarContainer .comprar p {
+  color: #f8f8f8;
 }
 
 /*# sourceMappingURL=style.css.map */

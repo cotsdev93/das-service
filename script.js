@@ -1,7 +1,7 @@
 let isAnimating = false;
 
 document
-  .querySelectorAll("nav li, .navEnd i, .navEnd .cartContainer")
+  .querySelectorAll("nav li, .navEnd i")
   .forEach((item) => {
     item.addEventListener("click", (e) => {
       e.preventDefault();
@@ -9,7 +9,7 @@ document
       if (isAnimating) return;
 
       const sectionId = e.target
-        .closest("li, i, .cartContainer")
+        .closest("li, i")
         .getAttribute("data-section");
       const newActiveSection = document.getElementById(`section${sectionId}`);
       const currentActiveSection = document.querySelector(".section.active");

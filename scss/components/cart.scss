@@ -11,6 +11,7 @@ body {
       max-height: 100vh;
       height: 100%;
       overflow-y: auto;
+      overflow-x: hidden;
       scrollbar-width: thin;
       scroll-behavior: smooth;
       .titleCartContainer {
@@ -33,7 +34,6 @@ body {
           }
         }
         .items {
-          // border: solid 1px red;
           display: flex;
           color: $grisTexto;
           p {
@@ -47,7 +47,7 @@ body {
         align-items: center;
         color: $grisClaro;
         margin: 0px 40px;
-        
+
         .productoHeader,
         .cantidadHeader,
         .precioHeader {
@@ -56,19 +56,19 @@ body {
             font-size: 12px;
           }
         }
-    
+
         .productoHeader {
           grid-column: span 6;
           text-align: left;
           padding-left: 8px;
         }
-    
+
         .cantidadHeader {
           grid-column: span 1;
           text-align: center;
           padding-left: 25px;
         }
-    
+
         .precioHeader {
           grid-column: span 1;
           text-align: center;
@@ -178,7 +178,6 @@ body {
         justify-content: flex-end;
         align-items: center;
         text-align: right;
-        
         .totalCarrito {
           border-radius: 5px;
           width: auto;
@@ -196,6 +195,40 @@ body {
             font-size: 20px;
             color: green;
             margin: 10px;
+          }
+        }
+      }
+      .comprarContainer {
+        height: 40px;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        text-align: right;
+        margin: 10px;
+        cursor: pointer;
+        .comprar {
+          border-radius: 5px;
+          width: 20%;
+          height: 100%;
+          background-color: $claritoFondo;
+          box-shadow: inset 0px 0px 3px 1px #ffffff90;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-right: 45px;
+          background-color: #3498db;
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+          transition: all 0.2s;
+          &:hover {
+            background-color: #52be80;
+          }
+          &:active {
+            box-shadow: none;
+            background-color: #2ecc71;
+          }
+          p {
+            color: $claritoFondo;
           }
         }
       }

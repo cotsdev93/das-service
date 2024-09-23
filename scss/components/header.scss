@@ -49,23 +49,23 @@ html {
             font-size: 23px;
             color: $claritoFondo;
             cursor: pointer;
-
           }
           .cartContainer {
             position: relative;
-            cursor:pointer;
+            cursor: pointer;
             .cartCircle {
               position: absolute;
               width: 15px;
               height: 15px;
               background-color: #b3b3b3;
               border-radius: 50%;
-              top: 30%;   // Posiciona en el centro vertical
-              right: 32%; // Posiciona en el centro horizontal
-              transform: translate(50%, -50%); // Mueve el círculo hacia su propio centro
+              top: 30%;
+              right: 32%;
+              transform: translate(50%, -50%);
               span {
                 color: $claritoFondo;
                 font-size: 10px;
+                font-weight: 650;
                 position: absolute;
                 left: 50%;
                 top: 50%;
@@ -73,7 +73,6 @@ html {
               }
             }
           }
-          
         }
       }
     }
