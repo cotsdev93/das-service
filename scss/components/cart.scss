@@ -13,16 +13,31 @@ body {
       overflow-y: auto;
       scrollbar-width: thin;
       scroll-behavior: smooth;
-      .titleCart {
+      .titleCartContainer {
         overflow-x: hidden;
         font-size: 18px;
         color: $azul;
         font-weight: bold;
         text-align: left;
-        margin: 10px;
+        margin: 40px 40px 20px 40px;
+        padding-bottom: 20px;
+        border-bottom: 0.5px $clarito solid;
+        display: flex;
+        justify-content: space-between;
+        .iconCarrito {
+          display: flex;
+          .fa-cart-shopping {
+            color: $azul;
+            transform: translateY(2px);
+            margin-right: 5px;
+          }
+        }
+        .items {
+          // border: solid 1px red;
+        }
       }
       #carrito {
-        margin: 10px;
+        margin: 10px 40px;
         .productoContainer {
           display: flex;
           height: auto;
@@ -125,6 +140,7 @@ body {
         justify-content: flex-end;
         align-items: center;
         text-align: right;
+        
         .totalCarrito {
           border-radius: 5px;
           width: auto;
@@ -133,7 +149,7 @@ body {
           display: flex;
           align-items: center;
           justify-content: center;
-          margin: 10px;
+          margin-right: 40px;
           p {
             font-size: 15px;
             margin: 0px 0px 0px 10px;
