@@ -35,6 +35,8 @@ document.querySelectorAll("nav li, .navEnd i, .navEnd .cartContainer").forEach((
   });
 });
 
+
+
 // SERVICE
 class BaseDeDatosService {
   constructor() {
@@ -594,6 +596,10 @@ class Carrito {
       totalCarrito.innerHTML = `$${this.total.toLocaleString("es-ES")}`;
     }
 
+        if (cantidadCart) {
+      cantidadCart.innerHTML = this.cantidadProductos;  // Actualizo la cantidad de productos en el carrito
+    }
+
     const quitarCarrito = document.querySelectorAll(".fa-circle-minus");
     const agregarCarrito = document.querySelectorAll(".fa-circle-plus");
 
@@ -617,6 +623,8 @@ class Carrito {
 }
 
 const carrito = new Carrito();
+
+const cantidadCart = document.querySelector("#cantidadCart")
 
 const productoCarrito = [
   {
@@ -650,3 +658,4 @@ const productoCarrito = [
 for (const product of productoCarrito) {
   carrito.agregar(product);
 }
+
