@@ -770,6 +770,10 @@ body #section5 .userContainer {
   backdrop-filter: blur(2px);
   padding-bottom: 15px;
   overflow-x: hidden;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 body #section5 .userContainer .titleUser {
   font-size: 18px;
@@ -832,6 +836,43 @@ body #section5 .userContainer .formsLogin .login:hover {
 body #section5 .userContainer .formsLogin .login:active {
   background: linear-gradient(90deg, #001b28, #003459, #001b28);
   transform: translateY(0px);
+}
+body #section5 .userContainer .oIngresaCon {
+  margin: 20px 0px 10px 0px;
+  font-size: 12px;
+  color: #787878;
+}
+body #section5 .userContainer .othersLoginContainer {
+  width: 70%;
+  height: 80px;
+  display: flex;
+  width: 70%;
+  align-items: center;
+  justify-content: space-around;
+}
+body #section5 .userContainer .othersLoginContainer .imgContainer {
+  width: 30%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #c5c5c5;
+  border-radius: 3px;
+  cursor: pointer;
+  box-shadow: inset 0px 0px 3px 3px rgba(0, 0, 0, 0.062745098);
+  border: solid 0.5px #a8a8a8;
+  transition: all 0.5s;
+}
+body #section5 .userContainer .othersLoginContainer .imgContainer:active {
+  box-shadow: none;
+}
+body #section5 .userContainer .othersLoginContainer .imgContainer:active i {
+  font-size: 30px;
+  color: #003459;
+}
+body #section5 .userContainer .othersLoginContainer .imgContainer i {
+  font-size: 30px;
+  color: #787878;
 }
 
 body #section6 .cartContainer {
