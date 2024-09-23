@@ -849,6 +849,7 @@ body #section5 .userContainer .othersLoginContainer {
   width: 70%;
   align-items: center;
   justify-content: space-around;
+  margin-bottom: 20px;
 }
 body #section5 .userContainer .othersLoginContainer .imgContainer {
   width: 30%;
@@ -863,12 +864,25 @@ body #section5 .userContainer .othersLoginContainer .imgContainer {
   border: solid 0.5px #a8a8a8;
   transition: all 0.5s;
 }
-body #section5 .userContainer .othersLoginContainer .imgContainer:active {
+body #section5 .userContainer .othersLoginContainer .imgContainer:hover {
+  box-shadow: inset 0px 0px 3px 3px rgba(0, 0, 0, 0.062745098), 0px 0px 3px 3px rgba(0, 0, 0, 0.062745098);
+}
+body #section5 .userContainer .othersLoginContainer .imgContainer:hover {
   box-shadow: none;
 }
-body #section5 .userContainer .othersLoginContainer .imgContainer:active i {
+body #section5 .userContainer .othersLoginContainer .imgContainer:hover .fa-google {
   font-size: 30px;
   color: #003459;
+  background: linear-gradient(to right, #4285f4 25%, #34a853 25%, #34a853 50%, #fbbc05 50%, #fbbc05 75%, #ea4335 75%, #ea4335 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+body #section5 .userContainer .othersLoginContainer .imgContainer:hover .fa-facebook-f {
+  color: #3b5998;
+}
+body #section5 .userContainer .othersLoginContainer .imgContainer:hover .fa-apple {
+  color: #555555;
 }
 body #section5 .userContainer .othersLoginContainer .imgContainer i {
   font-size: 30px;

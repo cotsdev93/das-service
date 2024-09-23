@@ -47,12 +47,8 @@ body {
           margin-top: 10px;
           color: rgb(82, 7, 179);
           text-decoration: underline;
-          text-decoration-color: rgb(
-            82,
-            7,
-            179
-          ); 
-          text-decoration-thickness: 0.7px; 
+          text-decoration-color: rgb(82, 7, 179);
+          text-decoration-thickness: 0.7px;
           text-underline-offset: 1px;
           cursor: pointer;
         }
@@ -85,13 +81,14 @@ body {
         font-size: 12px;
         color: $grisTexto;
       }
-      .othersLoginContainer{
+      .othersLoginContainer {
         width: 70%;
         height: 80px;
         display: flex;
         width: 70%;
         align-items: center;
         justify-content: space-around;
+        margin-bottom: 20px;
         .imgContainer {
           width: 30%;
           height: 80px;
@@ -100,23 +97,43 @@ body {
           justify-content: center;
           background-color: $grisClaro;
           border-radius: 3px;
-          cursor:pointer;
+          cursor: pointer;
           box-shadow: inset 0px 0px 3px 3px #00000010;
           border: solid 0.5px #a8a8a8;
-          transition: all 0.5s ;
+          transition: all 0.5s;
           &:hover {
-      
+            box-shadow: inset 0px 0px 3px 3px #00000010,
+              0px 0px 3px 3px #00000010;
           }
-          &:active {
+          &:hover {
             box-shadow: none;
-            i {
+            .fa-google {
               font-size: 30px;
               color: $azul;
+              background: linear-gradient(
+                to right,
+                #4285f4 25%,
+                #34a853 25%,
+                #34a853 50%,
+                #fbbc05 50%,
+                #fbbc05 75%,
+                #ea4335 75%,
+                #ea4335 100%
+              );
+              -webkit-background-clip: text;
+              color: transparent; // Hace el texto transparente
+              -webkit-text-fill-color: transparent; // Para navegadores WebKit
+            }
+            .fa-facebook-f{
+              color: #3b5998
+            }
+            .fa-apple{
+              color: #555555
             }
           }
           i {
             font-size: 30px;
-            color: $grisTexto
+            color: $grisTexto;
           }
         }
       }
