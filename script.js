@@ -499,12 +499,15 @@ function carritoVacio() {
   if (carritoContainer) {
     carritoContainer.innerHTML = `
     <div class="noHayProductos">
-      <p>No hay productos en el carrito.</p>
+    <p>No hay productos en el carrito.</p>
     </div>
     `;
-
-    // console.log("funca")
   }
+
+  const comprarContainer = document.querySelector(".comprarContainer")
+
+  comprarContainer.style.display = "none"
+
 }
 
 carritoVacio();
@@ -534,7 +537,7 @@ class Carrito {
       productoEnCarrito.cantidad++;
     }
 
-    console.log(producto)
+    console.log(producto);
     this.listar();
   }
   quitar(id) {
@@ -551,10 +554,12 @@ class Carrito {
     // Verifico si el carrito está vacío
     if (this.carrito.length === 0) {
       this.total = 0;
-      this.cantidadProductos = 0; // Aseguramos que la cantidad sea 0 cuando está vacío
+      this.cantidadProductos = 0;
+
       const totalCarrito = document.getElementById("totalCarrito");
+
       if (totalCarrito) {
-        totalCarrito.innerHTML = `$0`; // Actualizamos el total a 0
+        totalCarrito.innerHTML = `$0`;
       }
 
       carritoVacio(); // Llamamos a la función para mostrar mensaje de carrito vacío
@@ -610,32 +615,29 @@ class Carrito {
       this.cantidadProductos += producto.cantidad;
     }
 
-    const totalCarrito = document.getElementById("totalCarrito");
-
     if (totalCarrito) {
       totalCarrito.innerHTML = `$${this.total.toLocaleString("es-ES")}`;
     }
-
+    
     const cantidadCartElements = document.querySelectorAll(".cantidadCart");
     for (const elemento of cantidadCartElements) {
       elemento.innerHTML = this.cantidadProductos; // Actualiza la cantidad de productos en cada elemento con la clase .cantidadCart
     }
-
+    
     const quitarCarrito = document.querySelectorAll(".fa-circle-minus");
     const agregarCarrito = document.querySelectorAll(".fa-circle-plus");
-
+    
     for (const boton of agregarCarrito) {
       boton.addEventListener("click", (event) => {
         event.preventDefault();
         const idRepuesto = Number(boton.dataset.id);
         const repuesto = bdRepuestos.registroPorId(idRepuesto);
         carrito.agregar(repuesto);
-        const idProducto = Number(boton.dataset.id);
-        const producto = bdEquipos.registroPorId(idProducto);
-        carrito.agregar(producto);
+        const idEquipo = Number(boton.dataset.id);
+        const equipo = bdEquipos.registroPorId(idEquipo);
+        carrito.agregar(equipo);
       });
     }
-
     
     for (const boton of quitarCarrito) {
       boton.addEventListener("click", (event) => {
@@ -644,6 +646,11 @@ class Carrito {
         this.quitar(idProducto);
       });
     }
+
+    
+  const comprarContainer = document.querySelector(".comprarContainer")
+
+  comprarContainer.style.display = "flex"
   }
 }
 

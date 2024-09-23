@@ -868,6 +868,7 @@ body #section6 .cartContainer .titleCartContainer .iconCarrito .fa-cart-shopping
 body #section6 .cartContainer .titleCartContainer .items {
   display: flex;
   color: #787878;
+  padding-right: 8px;
 }
 body #section6 .cartContainer .titleCartContainer .items p {
   margin-left: 5px;
@@ -1003,6 +1004,7 @@ body #section6 .cartContainer .totalCarritoContainer {
   justify-content: flex-end;
   align-items: center;
   text-align: right;
+  margin: 10px;
 }
 body #section6 .cartContainer .totalCarritoContainer .totalCarrito {
   border-radius: 5px;
@@ -1038,13 +1040,12 @@ body #section6 .cartContainer .comprarContainer .comprar {
   width: 20%;
   height: 100%;
   background-color: #f8f8f8;
-  box-shadow: inset 0px 0px 3px 1px rgba(255, 255, 255, 0.5647058824);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 45px;
+  margin-right: 40px;
   background-color: #3498db;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0px 0px 3px 1px rgba(255, 255, 255, 0.6), 0 5px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.2s;
 }
 body #section6 .cartContainer .comprarContainer .comprar:hover {
@@ -1053,6 +1054,7 @@ body #section6 .cartContainer .comprarContainer .comprar:hover {
 body #section6 .cartContainer .comprarContainer .comprar:active {
   box-shadow: none;
   background-color: #2ecc71;
+  box-shadow: inset 0px 0px 3px 1px rgba(117, 117, 117, 0.3137254902);
 }
 body #section6 .cartContainer .comprarContainer .comprar p {
   color: #f8f8f8;
