@@ -34,6 +34,11 @@ body {
         }
         .items {
           // border: solid 1px red;
+          display: flex;
+          color: $grisTexto;
+          p {
+            margin-left: 5px;
+          }
         }
       }
       .headerCarrito {

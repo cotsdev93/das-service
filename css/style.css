@@ -863,6 +863,13 @@ body #section6 .cartContainer .titleCartContainer .iconCarrito .fa-cart-shopping
   transform: translateY(2px);
   margin-right: 5px;
 }
+body #section6 .cartContainer .titleCartContainer .items {
+  display: flex;
+  color: #787878;
+}
+body #section6 .cartContainer .titleCartContainer .items p {
+  margin-left: 5px;
+}
 body #section6 .cartContainer .headerCarrito {
   display: grid;
   grid-template-columns: repeat(6, 1fr) 1fr 1fr;

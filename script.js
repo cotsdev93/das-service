@@ -1,41 +1,43 @@
 let isAnimating = false;
 
-document.querySelectorAll("nav li, .navEnd i, .navEnd .cartContainer").forEach((item) => {
-  item.addEventListener("click", (e) => {
-    e.preventDefault();
+document
+  .querySelectorAll("nav li, .navEnd i, .navEnd .cartContainer")
+  .forEach((item) => {
+    item.addEventListener("click", (e) => {
+      e.preventDefault();
 
-    if (isAnimating) return;
+      if (isAnimating) return;
 
-    const sectionId = e.target.closest("li, i, .cartContainer").getAttribute("data-section");
-    const newActiveSection = document.getElementById(`section${sectionId}`);
-    const currentActiveSection = document.querySelector(".section.active");
+      const sectionId = e.target
+        .closest("li, i, .cartContainer")
+        .getAttribute("data-section");
+      const newActiveSection = document.getElementById(`section${sectionId}`);
+      const currentActiveSection = document.querySelector(".section.active");
 
-    if (newActiveSection === currentActiveSection) return;
+      if (newActiveSection === currentActiveSection) return;
 
-    isAnimating = true;
+      isAnimating = true;
 
-    if (currentActiveSection) {
-      currentActiveSection.classList.remove("active");
-      currentActiveSection.classList.add("exit-left");
-    }
-
-    requestAnimationFrame(() => {
-      newActiveSection.classList.add("enter-right");
-    });
-
-    setTimeout(() => {
       if (currentActiveSection) {
-        currentActiveSection.classList.remove("exit-left");
+        currentActiveSection.classList.remove("active");
+        currentActiveSection.classList.add("exit-left");
       }
-      newActiveSection.classList.remove("enter-right");
-      newActiveSection.classList.add("active");
 
-      isAnimating = false;
-    }, 2000);
+      requestAnimationFrame(() => {
+        newActiveSection.classList.add("enter-right");
+      });
+
+      setTimeout(() => {
+        if (currentActiveSection) {
+          currentActiveSection.classList.remove("exit-left");
+        }
+        newActiveSection.classList.remove("enter-right");
+        newActiveSection.classList.add("active");
+
+        isAnimating = false;
+      }, 2000);
+    });
   });
-});
-
-
 
 // SERVICE
 class BaseDeDatosService {
@@ -537,7 +539,7 @@ class Carrito {
 
     // Verifico si el carrito está vacío
     if (this.carrito.length === 0) {
-      this.total = 0; 
+      this.total = 0;
       const totalCarrito = document.getElementById("totalCarrito");
       if (totalCarrito) {
         totalCarrito.innerHTML = `$0`;
@@ -596,8 +598,9 @@ class Carrito {
       totalCarrito.innerHTML = `$${this.total.toLocaleString("es-ES")}`;
     }
 
-        if (cantidadCart) {
-      cantidadCart.innerHTML = this.cantidadProductos;  // Actualizo la cantidad de productos en el carrito
+    const cantidadCartElements = document.querySelectorAll(".cantidadCart");
+    for (const elemento of cantidadCartElements) {
+      elemento.innerHTML = this.cantidadProductos; // Actualiza la cantidad de productos en cada elemento con la clase .cantidadCart
     }
 
     const quitarCarrito = document.querySelectorAll(".fa-circle-minus");
@@ -623,8 +626,6 @@ class Carrito {
 }
 
 const carrito = new Carrito();
-
-const cantidadCart = document.querySelector("#cantidadCart")
 
 const productoCarrito = [
   {
@@ -658,4 +659,3 @@ const productoCarrito = [
 for (const product of productoCarrito) {
   carrito.agregar(product);
 }
-
