@@ -1,52 +1,57 @@
 [
-    {
-        "id" : 1,
-        "categoria": "lavarropas",
-        "marca" : "SAMSUNG",
-        "modelo" : "ABC-123",
-        "condicion": "reacondicionado",
-        "precio": 650000,
-        "img": "./assets/img/lavarropas.png",
-        "descripcion": ""
-    },
-    {
-        "id" : 2,
-        "categoria": "lavavajillas",
-        "marca" : "ARISTON",
-        "modelo" : "HJL-567",
-        "condicion": "reacondicionado",
-        "precio": 700000,
-        "img": "./assets/img/lavavajillas.png",
-        "descripcion": ""
-    },
-    {
-        "id" : 3,
-        "categoria": "secarropas",
-        "marca" : "ARISTON",
-        "modelo" : "HJL-567",
-        "condicion": "reacondicionado",
-        "precio": 550000,
-        "img": "./assets/img/secarropa.png",
-        "descripcion": ""
-    },
-    {
-        "id" : 4,
-        "categoria": "heladera",
-        "marca" : "ARISTON",
-        "modelo" : "HJL-567",
-        "condicion": "reacondicionado",
-        "precio": 700000,
-        "img": "./assets/img/heladera.png",
-        "descripcion": ""
-    },
-    {
-        "id" : 4,
-        "categoria": "heladera",
-        "marca" : "ARISTON",
-        "modelo" : "HJL-567",
-        "condicion": "reacondicionado",
-        "precio": 850000,
-        "img": "./assets/img/heladera2.png",
-        "descripcion": ""
-    }
+  {
+    "id": 10,
+    "categoria": "lavarropas",
+    "marca": "SAMSUNG",
+    "modelo": "ABC-123",
+    "condicion": "reacondicionado",
+    "precio": 650000,
+    "img": "./assets/img/lavarropas.png",
+    "descripcion": "",
+    "cantidad" : 5
+  },
+  {
+    "id": 11,
+    "categoria": "lavavajillas",
+    "marca": "ARISTON",
+    "modelo": "HJL-567",
+    "condicion": "reacondicionado",
+    "precio": 700000,
+    "img": "./assets/img/lavavajillas.png",
+    "descripcion": "",
+    "cantidad" : 5
+  },
+  {
+    "id": 12,
+    "categoria": "secarropas",
+    "marca": "ARISTON",
+    "modelo": "HJL-567",
+    "condicion": "reacondicionado",
+    "precio": 550000,
+    "img": "./assets/img/secarropa.png",
+    "descripcion": "",
+    "cantidad" : 5
+  },
+  {
+    "id": 13,
+    "categoria": "heladera",
+    "marca": "ARISTON",
+    "modelo": "HJL-567",
+    "condicion": "reacondicionado",
+    "precio": 700000,
+    "img": "./assets/img/heladera.png",
+    "descripcion": "",
+    "cantidad" : 5
+  },
+  {
+    "id": 14,
+    "categoria": "heladera",
+    "marca": "ARISTON",
+    "modelo": "HJL-567",
+    "condicion": "reacondicionado",
+    "precio": 850000,
+    "img": "./assets/img/heladera2.png",
+    "descripcion": "",
+    "cantidad" : 5
+  }
 ]
