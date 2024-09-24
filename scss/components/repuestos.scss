@@ -10,7 +10,6 @@ body {
       padding-bottom: 15px;
       overflow-x: hidden;
       .titleRepuestosContainer {
-        font-size: 200px;
         margin: 15px 15px 0px 15px;
         .titleRepuestos {
           color: $azul;
@@ -22,7 +21,7 @@ body {
       .textRepuestos {
         margin: 0px 15px 15px 15px;
         text-align: justify;
-        color: #000000;
+        color: $grisTexto;
         font-size: 15px;
       }
       .buscadorContainerRepuestos {
@@ -67,7 +66,7 @@ body {
         position: relative;
         width: 100%;
         overflow: hidden;
-        
+
         .repuestosContainer {
           box-shadow: none;
           border: none;
@@ -144,7 +143,7 @@ body {
                   font-size: 14px;
                   color: rgb(56, 162, 208);
                   cursor: pointer;
-                  transform: translateY(-1px)
+                  transform: translateY(-1px);
                 }
               }
             }
@@ -191,7 +190,145 @@ body {
           }
         }
       }
-      
+    }
+  }
+}
+
+@media (max-width: 737px) {
+  body {
+    #section2 {
+      .repuestosContainerMain {
+        overflow-y: auto;
+        width: 75%;
+        margin: 20px 0px;
+        padding-bottom: 15px;
+        justify-content: center;
+        .titleRepuestosContainer {
+          margin: 10px 10px 0px 10px;
+          .titleRepuestos {
+            font-size: 18px;
+            font-weight: 550;
+          }
+        }
+        .textRepuestos {
+          color: $grisTexto;
+          font-size: 12px;
+          margin: 0px 10px 0px 10px;
+        }
+        .buscadorContainerRepuestos {
+          margin: 0px;
+          input {
+            width: 80%;
+            height: 30px;
+            margin: 5px;
+            &::placeholder {
+              color: $grisClaro;
+            }
+          }
+        }
+        .categoriasContainer {
+          display: flex;
+          justify-content: center;
+          ul {
+            display: flex;
+            flex-direction: column;
+            .categoriasContainerBloque01 {
+              display: flex;
+            }
+            .categoriasContainerBloque02 {
+              display: flex;
+            }
+            li {
+              margin: 2px 5px;
+              font-size: 10px;
+              &:hover {
+              }
+            }
+          }
+        }
+        .repuestosCarrousell {
+          width: 100%;
+          overflow-y: auto;
+          .repuestosContainer {
+            flex-direction: column;
+            flex-wrap: nowrap;
+            width: 50%;
+            position: static;
+            overflow-y: auto;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            &::-webkit-scrollbar {
+              display: block;
+            }
+            .noHayRepuestos {
+              width: 100%;
+              min-height: 30vh;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              p {
+                color: $grisClaro;
+              }
+            }
+            .repuestoContainer {
+              // border:solid 1px red;
+              width:100%;
+              margin: 5px;
+              flex: auto;
+              overflow-x: hidden;
+              .imgContainer {
+                width: 100%;
+                img {
+                  width: 100%;
+                }
+              }
+              .repuestoDetail {
+                display: block;
+                margin: 3px 5px;
+                white-space: nowrap;
+                .repuestoNombre {
+                  font-size: auto;
+                  padding-right: 3px;
+                  font-weight: 450;
+                  white-space: nowrap;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  max-width: 100%;
+                  .repuestoMarca {
+                    font-size: auto;
+                    font-weight: 400;
+                  }
+                }
+              }
+              .repuestoPrecioContainer {
+                display: flex;
+                margin: 3px 5px;
+                .repuestoPrecio {
+                  font-size: auto;
+                  font-weight: 500;
+                  color: rgb(15, 200, 15);
+                }
+                .repuestoPrecioCart {
+                  margin-left: 5px;
+                  pointer-events: auto;
+                  .fa-cart-plus {
+                    font-size: 14px;
+                    color: rgb(56, 162, 208);
+                    cursor: pointer;
+                    transform: translateY(-1px);
+                  }
+                }
+              }
+            }
+          }
+          .bx-chevron-left {
+            display: none;
+          }
+          .bx-chevron-right {
+            display: none;
+          }
+        }
+      }
     }
   }
 }
