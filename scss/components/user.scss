@@ -124,16 +124,72 @@ body {
               color: transparent; // Hace el texto transparente
               -webkit-text-fill-color: transparent; // Para navegadores WebKit
             }
-            .fa-facebook-f{
-              color: #3b5998
+            .fa-facebook-f {
+              color: #3b5998;
             }
-            .fa-apple{
-              color: #555555
+            .fa-apple {
+              color: #555555;
             }
           }
           i {
             font-size: 30px;
             color: $grisTexto;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 737px) {
+  body {
+    #section5 {
+      .userContainer {
+        overflow-y:scroll;
+        width: 75%;
+        margin: 20px 0px;
+        .titleUser {
+        }
+        .formsLogin {
+          .inputUser {
+            &::placeholder {
+            }
+          }
+          .olvideMiContra {
+            margin-top: 10px;
+          }
+          .login {
+            &:hover {
+            }
+            &:active {
+            }
+          }
+        }
+        .oIngresaCon {
+          margin: 20px 0px 10px 0px;
+          font-size: 12px;
+          color: $grisTexto;
+        }
+        .othersLoginContainer {
+          width: 70%;
+          height: auto;
+          flex-direction: column;
+          margin-bottom: 0;
+          .imgContainer {
+            width: 40%;
+            margin: 8px;
+            &:hover {
+            }
+            &:hover {
+              .fa-google {
+              }
+              .fa-facebook-f {
+              }
+              .fa-apple {
+              }
+            }
+            i {
+            }
           }
         }
       }

@@ -97,24 +97,63 @@ html body main {
 }
 
 @media (max-width: 737px) {
-  body nav {
+  html {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  html body {
+    height: 100vh;
+    background-image: url("../assets/img/fondo.jpg");
+    background-position: center;
+    background-repeat: repeat-y;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  html body nav {
+    width: 100%;
+    height: 99px;
+    background-color: #003459;
     display: block;
-    height: auto;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
   }
-  body nav .logoContainer {
-    text-align: center;
+  html body nav .logoContainer {
+    margin: 5px;
   }
-  body nav .logoContainer img {
-    padding-top: 10px;
+  html body nav .logoContainer img {
     width: 150px;
+    object-fit: cover;
   }
-  body nav ul {
+  html body nav .navMid {
+    display: block;
+    justify-content: center;
+    width: 100%;
+  }
+  html body nav .navMid ul {
+    display: flex;
+    align-items: center;
     justify-content: center;
   }
-  body nav ul li {
+  html body nav .navMid ul li {
+    color: #f8f8f8;
     display: flex;
-    margin: 8px;
+    margin: 10px;
     cursor: pointer;
+    font-weight: 400;
+  }
+  html body nav .navMid .navEnd {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 @keyframes exit-left-animation {
@@ -889,6 +928,31 @@ body #section5 .userContainer .othersLoginContainer .imgContainer i {
   color: #787878;
 }
 
+@media (max-width: 737px) {
+  body #section5 .userContainer {
+    overflow-y: scroll;
+    width: 75%;
+    margin: 20px 0px;
+  }
+  body #section5 .userContainer .formsLogin .olvideMiContra {
+    margin-top: 10px;
+  }
+  body #section5 .userContainer .oIngresaCon {
+    margin: 20px 0px 10px 0px;
+    font-size: 12px;
+    color: #787878;
+  }
+  body #section5 .userContainer .othersLoginContainer {
+    width: 70%;
+    height: auto;
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+  body #section5 .userContainer .othersLoginContainer .imgContainer {
+    width: 40%;
+    margin: 8px;
+  }
+}
 body #section6 .cartContainer {
   border: 1px solid rgb(229, 229, 229);
   border-radius: 20px;
