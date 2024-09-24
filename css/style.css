@@ -232,6 +232,7 @@ body .sectionsContainer .section.enter-right {
   }
 }
 body #section2 .repuestosContainerMain {
+  height: auto;
   border: 1px solid rgb(229, 229, 229);
   border-radius: 20px;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -240,7 +241,7 @@ body #section2 .repuestosContainerMain {
   backdrop-filter: blur(2px);
   padding-bottom: 15px;
   overflow-x: hidden;
-  max-height: 72vh;
+  min-height: 72vh;
 }
 body #section2 .repuestosContainerMain .titleRepuestosContainer {
   margin: 15px 15px 0px 15px;
