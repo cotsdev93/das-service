@@ -210,10 +210,35 @@ function cargarRepuestos(repuestos) {
 
   for (const boton of agregarCarrito) {
     boton.addEventListener("click", (event) => {
+      const mobile = window.innerWidth <= 737;
       event.preventDefault();
       const idRepuesto = Number(boton.dataset.id);
       const repuesto = bdRepuestos.registroPorId(idRepuesto);
       carrito.agregar(repuesto);
+      if (mobile) {
+        Toastify({
+          text: `Se ha añadido ${repuesto.nombre} ${repuesto.marca} al Carrito`,
+          className: "info",
+          style: {
+            background: "#003459",
+            minWidth: "350px",
+            transition: "0.8s ease-out"
+          },
+          offset: {
+            x: '0px', // Posición horizontal (0px es centrado)
+            y: '90px' // Posición vertical (a partir de 99px desde la parte superior)
+          }
+        }).showToast();
+        
+      } else {
+        Toastify({
+          text: `se ha añadido ${repuesto.nombre} ${repuesto.marca} al Carrito`,
+          className: "info",
+          style: {
+            background: "#003459",
+          },
+        }).showToast();
+      }
     });
   }
 
@@ -504,10 +529,9 @@ function carritoVacio() {
     `;
   }
 
-  const comprarContainer = document.querySelector(".comprarContainer")
+  const comprarContainer = document.querySelector(".comprarContainer");
 
-  comprarContainer.style.display = "none"
-
+  comprarContainer.style.display = "none";
 }
 
 carritoVacio();
@@ -618,15 +642,15 @@ class Carrito {
     if (totalCarrito) {
       totalCarrito.innerHTML = `$${this.total.toLocaleString("es-ES")}`;
     }
-    
+
     const cantidadCartElements = document.querySelectorAll(".cantidadCart");
     for (const elemento of cantidadCartElements) {
       elemento.innerHTML = this.cantidadProductos; // Actualiza la cantidad de productos en cada elemento con la clase .cantidadCart
     }
-    
+
     const quitarCarrito = document.querySelectorAll(".fa-circle-minus");
     const agregarCarrito = document.querySelectorAll(".fa-circle-plus");
-    
+
     for (const boton of agregarCarrito) {
       boton.addEventListener("click", (event) => {
         event.preventDefault();
@@ -638,7 +662,7 @@ class Carrito {
         carrito.agregar(equipo);
       });
     }
-    
+
     for (const boton of quitarCarrito) {
       boton.addEventListener("click", (event) => {
         event.preventDefault();
@@ -647,10 +671,9 @@ class Carrito {
       });
     }
 
-    
-  const comprarContainer = document.querySelector(".comprarContainer")
+    const comprarContainer = document.querySelector(".comprarContainer");
 
-  comprarContainer.style.display = "flex"
+    comprarContainer.style.display = "flex";
   }
 }
 

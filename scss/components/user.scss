@@ -55,7 +55,7 @@ body {
         .login {
           width: 70%;
           height: 27px;
-          background: linear-gradient(90deg, #003459, #001b28, #003459);
+          background: $azul;
           border: solid 0.5px $clarito;
           box-shadow: inset 0px 0px 3px 1px #00000010;
           border-radius: 20px;
@@ -67,12 +67,12 @@ body {
           transition: all 0.3s ease;
           text-align: center;
           &:hover {
-            transform: translateY(0.5px);
+            transform: translateY(-0.5px);
           }
 
           &:active {
-            background: linear-gradient(90deg, #001b28, #003459, #001b28);
-            transform: translateY(0px);
+            // background: linear-gradient(90deg, #001b28, #003459, #001b28);
+            transform: translateY(1px);
           }
         }
       }
@@ -121,6 +121,7 @@ body {
                 #ea4335 100%
               );
               -webkit-background-clip: text;
+              // background-clip: initial;
               color: transparent; // Hace el texto transparente
               -webkit-text-fill-color: transparent; // Para navegadores WebKit
             }

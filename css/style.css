@@ -1033,7 +1033,7 @@ body #section5 .userContainer .formsLogin .olvideMiContra {
 body #section5 .userContainer .formsLogin .login {
   width: 70%;
   height: 27px;
-  background: linear-gradient(90deg, #003459, #001b28, #003459);
+  background: #003459;
   border: solid 0.5px #c9c9c9;
   box-shadow: inset 0px 0px 3px 1px rgba(0, 0, 0, 0.062745098);
   border-radius: 20px;
@@ -1046,11 +1046,10 @@ body #section5 .userContainer .formsLogin .login {
   text-align: center;
 }
 body #section5 .userContainer .formsLogin .login:hover {
-  transform: translateY(0.5px);
+  transform: translateY(-0.5px);
 }
 body #section5 .userContainer .formsLogin .login:active {
-  background: linear-gradient(90deg, #001b28, #003459, #001b28);
-  transform: translateY(0px);
+  transform: translateY(1px);
 }
 body #section5 .userContainer .oIngresaCon {
   margin: 20px 0px 10px 0px;
