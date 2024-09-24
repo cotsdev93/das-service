@@ -50,8 +50,8 @@ body .sectionsContainer .section.enter-right {
 @media (max-width: 737px) {
   body .sectionsContainer {
     width: 100%;
-    height: 100%;
-    overflow-y: auto;
+    height: 80vh;
+    overflow: hidden;
   }
   body .sectionsContainer .section {
     width: 100%;

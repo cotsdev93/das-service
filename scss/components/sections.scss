@@ -58,9 +58,8 @@ body {
   body {
     .sectionsContainer {
       width: 100%;
-      height: 100%;
-      overflow-y: auto; // Habilita el desplazamiento vertical
-
+      height: 80vh;
+      overflow: hidden;
       .section {
         width: 100%;
         display: flex;
