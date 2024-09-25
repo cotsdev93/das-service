@@ -1029,6 +1029,44 @@ body #section4 .clientesContainer .opinionesContainer .elfsight-app-1cbcc4ce-582
   justify-content: space-between;
 }
 
+@media (max-width: 737px) {
+  body #section4 .clientesContainer {
+    width: 75%;
+    margin: 20px;
+    padding-bottom: 0px;
+    height: 75vh;
+  }
+  body #section4 .clientesContainer .titleClientes {
+    margin: 10px 10px 0px 10px;
+  }
+  body #section4 .clientesContainer .titleClientes .titleSabemos {
+    font-size: 18px;
+    font-weight: 550;
+  }
+  body #section4 .clientesContainer .textClientes {
+    color: #787878;
+    font-size: 11px;
+    margin: 0px 10px 0px 10px;
+  }
+  body #section4 .clientesContainer .opinionesContainer {
+    margin: 10px;
+    height: 70vh;
+    overflow-y: auto;
+  }
+  body #section4 .clientesContainer .opinionesContainer .Main__Content-sc-1oq93m5-1 {
+    border: solid 1px red;
+  }
+  body #section4 .clientesContainer .opinionesContainer .Main__Content-sc-1oq93m5-1 .HeaderContainer__Inner-sc-1532ffp-0 {
+    border: solid 1px green;
+    z-index: 5;
+    padding: 2.5px;
+  }
+  body #section4 .clientesContainer .opinionesContainer .Main__Content-sc-1oq93m5-1 .HeaderContainer__Inner-sc-1532ffp-0 .HeaderInfoContainer__Info-sc-16jx15e-0 {
+    border: solid 1px blue;
+    margin: 0px;
+    width: 100%;
+  }
+}
 html body footer {
   width: 100%;
   height: 90px;

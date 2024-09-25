@@ -5,7 +5,6 @@ body {
       border-radius: 20px;
       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.1);
       width: 70%;
-      // min-height: 50vh;
       margin: 40px;
       backdrop-filter: blur(2px);
       padding-bottom: 45px;
@@ -52,6 +51,49 @@ body {
           display: flex;
           flex-direction: row;
           justify-content: space-between;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 737px) {
+  body {
+    #section4 {
+      .clientesContainer {
+        width: 75%;
+        margin: 20px;
+        padding-bottom: 0px;
+        height: 75vh;
+        .titleClientes {
+          margin: 10px 10px 0px 10px;
+          .titleSabemos {
+            font-size: 18px;
+            font-weight: 550;
+          }
+        }
+        .textClientes {
+          color: $grisTexto;
+          font-size: 11px;
+          margin: 0px 10px 0px 10px;
+        }
+        .opinionesContainer {
+          margin: 10px;
+          height: 70vh;
+          overflow-y: auto;
+          .Main__Content-sc-1oq93m5-1  {
+            border: solid 1px red;
+            .HeaderContainer__Inner-sc-1532ffp-0 {
+              border: solid 1px green;
+              z-index: 5;
+              padding: 2.5px;
+              .HeaderInfoContainer__Info-sc-16jx15e-0 {
+                border: solid 1px blue;
+                margin: 0px;
+                width: 100%;
+              }
+            }
+          }
         }
       }
     }
