@@ -871,6 +871,111 @@ body #section3 .equiposContainerMain .equiposCarrousell .bx-chevron-right:active
   box-shadow: 0px 0px 4px 3px rgba(0, 0, 0, 0.5019607843);
 }
 
+@media (max-width: 737px) {
+  body #section3 {
+    height: auto;
+  }
+  body #section3 .equiposContainerMain {
+    overflow-y: auto;
+    width: 75%;
+    margin: 20px 0px;
+    padding-bottom: 0px;
+    justify-content: center;
+  }
+  body #section3 .equiposContainerMain .staticMobile {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    padding-bottom: 5px;
+  }
+  body #section3 .equiposContainerMain .staticMobile .titleEquiposContainer {
+    margin: 10px 10px 0px 10px;
+  }
+  body #section3 .equiposContainerMain .staticMobile .titleEquiposContainer .titleEquipos {
+    font-size: 18px;
+    font-weight: 550;
+  }
+  body #section3 .equiposContainerMain .staticMobile .textEquipos {
+    color: #787878;
+    font-size: 11px;
+    margin: 0px 10px 0px 10px;
+  }
+  body #section3 .equiposContainerMain .staticMobile .buscadorContainerEquipos {
+    margin: 0px;
+  }
+  body #section3 .equiposContainerMain .staticMobile .buscadorContainerEquipos input {
+    width: 80%;
+    height: 30px;
+    margin: 5px;
+  }
+  body #section3 .equiposContainerMain .staticMobile .buscadorContainerEquipos input::placeholder {
+    color: #c5c5c5;
+  }
+  body #section3 .equiposContainerMain .staticMobile .categoriasContainer {
+    display: flex;
+    justify-content: center;
+  }
+  body #section3 .equiposContainerMain .staticMobile .categoriasContainer ul {
+    display: flex;
+    flex-direction: column;
+  }
+  body #section3 .equiposContainerMain .staticMobile .categoriasContainer ul .categoriasContainerBloque01 {
+    display: flex;
+  }
+  body #section3 .equiposContainerMain .staticMobile .categoriasContainer ul .categoriasContainerBloque02 {
+    display: flex;
+  }
+  body #section3 .equiposContainerMain .staticMobile .categoriasContainer ul li {
+    margin: 2px 5px;
+    font-size: 10px;
+  }
+  body #section3 .equiposContainerMain .equiposCarrousell {
+    width: 100%;
+    height: 50vh;
+    overflow-y: auto;
+    position: relative;
+  }
+  body #section3 .equiposContainerMain .equiposCarrousell .equiposContainer {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100%;
+    position: relative;
+    overflow-y: auto;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+  }
+  body #section3 .equiposContainerMain .equiposCarrousell .equiposContainer::-webkit-scrollbar {
+    display: block;
+  }
+  body #section3 .equiposContainerMain .equiposCarrousell .equiposContainer .noHayEquipos {
+    width: 100%;
+    min-height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  body #section3 .equiposContainerMain .equiposCarrousell .equiposContainer .noHayEquipos p {
+    color: #c5c5c5;
+  }
+  body #section3 .equiposContainerMain .equiposCarrousell .equiposContainer .equipoContainer {
+    width: 50%;
+    margin: 5px;
+    flex: auto;
+    overflow-x: hidden;
+  }
+  body #section3 .equiposContainerMain .equiposCarrousell .equiposContainer .equipoContainer .imgContainer {
+    width: 100%;
+  }
+  body #section3 .equiposContainerMain .equiposCarrousell .equiposContainer .equipoContainer .imgContainer img {
+    width: 100%;
+  }
+  body #section3 .equiposContainerMain .equiposCarrousell .bx-chevron-left {
+    display: none;
+  }
+  body #section3 .equiposContainerMain .equiposCarrousell .bx-chevron-right {
+    display: none;
+  }
+}
 body #section4 .clientesContainer {
   border: 1px solid rgb(229, 229, 229);
   border-radius: 20px;

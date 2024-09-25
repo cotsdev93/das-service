@@ -194,3 +194,153 @@ body {
     }
   }
 }
+
+@media (max-width: 737px) {
+  body {
+    #section3 {
+      // height: 100vh;
+      height: auto;
+      .equiposContainerMain {
+        overflow-y: auto;
+        width: 75%;
+        margin: 20px 0px;
+        padding-bottom: 0px;
+        justify-content: center;
+        .staticMobile {
+          position: sticky;
+          top: 0;
+          z-index: 1;
+          padding-bottom: 5px;
+          .titleEquiposContainer {
+            margin: 10px 10px 0px 10px;
+            .titleEquipos {
+              font-size: 18px;
+              font-weight: 550;
+            }
+          }
+          .textEquipos {
+            color: $grisTexto;
+            font-size: 11px;
+            margin: 0px 10px 0px 10px;
+          }
+          .buscadorContainerEquipos {
+            margin: 0px;
+            input {
+              width: 80%;
+              height: 30px;
+              margin: 5px;
+              &::placeholder {
+                color: $grisClaro;
+              }
+            }
+          }
+          .categoriasContainer {
+            display: flex;
+            justify-content: center;
+            ul {
+              display: flex;
+              flex-direction: column;
+              .categoriasContainerBloque01 {
+                display: flex;
+              }
+              .categoriasContainerBloque02 {
+                display: flex;
+              }
+              li {
+                margin: 2px 5px;
+                font-size: 10px;
+                &:hover {
+                }
+              }
+            }
+          }
+        }
+        .equiposCarrousell {
+          width: 100%;
+          height: 50vh;
+          overflow-y: auto;
+          // border: solid 1px red;
+          position: relative;
+          .equiposContainer {
+            // border:solid 1px blue;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            width: 100%;
+            position: relative;
+            overflow-y: auto;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            &::-webkit-scrollbar {
+              display: block;
+            }
+            .noHayEquipos {
+              width: 100%;
+              min-height: 30vh;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              p {
+                color: $grisClaro;
+              }
+            }
+            .equipoContainer {
+              width: 50%;
+              margin: 5px;
+              flex: auto;
+              overflow-x: hidden;
+              .imgContainer {
+                width: 100%;
+                img {
+                  width: 100%;
+                }
+              }
+              // .equipoDetail {
+              //   display: block;
+              //   margin: 3px 5px;
+              //   white-space: nowrap;
+              //   .equipoNombre {
+              //     font-size: auto;
+              //     padding-right: 3px;
+              //     font-weight: 450;
+              //     white-space: nowrap;
+              //     overflow: hidden;
+              //     text-overflow: ellipsis;
+              //     max-width: 100%;
+              //     .equipoMarca {
+              //       font-size: auto;
+              //       font-weight: 400;
+              //     }
+              //   }
+              // }
+              // .equipoPrecioContainer {
+              //   display: flex;
+              //   margin: 3px 5px;
+              //   .equipoPrecio {
+              //     font-size: auto;
+              //     font-weight: 500;
+              //     color: rgb(15, 200, 15);
+              //   }
+              //   .equipoPrecioCart {
+              //     margin-left: 5px;
+              //     pointer-events: auto;
+              //     .fa-cart-plus {
+              //       font-size: 14px;
+              //       color: rgb(56, 162, 208);
+              //       cursor: pointer;
+              //       transform: translateY(-1px);
+              //     }
+              //   }
+              // }
+            }
+          }
+          .bx-chevron-left {
+            display: none;
+          }
+          .bx-chevron-right {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

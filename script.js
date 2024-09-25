@@ -515,6 +515,7 @@ btnCategoriaEquipos.forEach((boton) => {
     } else {
       noHayEquipos(categoria);
     }
+    console.log("funca")
   });
 });
 
