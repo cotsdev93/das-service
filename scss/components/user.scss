@@ -5,7 +5,7 @@ body {
       border-radius: 20px;
       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.1);
       width: 50%;
-      margin: 40px;
+      margin: 20px;
       backdrop-filter: blur(2px);
       padding-bottom: 15px;
       overflow-x: hidden;
@@ -121,6 +121,7 @@ body {
                 #ea4335 100%
               );
               -webkit-background-clip: text;
+              background-clip: none;
               // background-clip: initial;
               color: transparent; // Hace el texto transparente
               -webkit-text-fill-color: transparent; // Para navegadores WebKit
@@ -148,21 +149,9 @@ body {
       .userContainer {
         width: 75%;
         margin: 20px 0px;
-        .titleUser {
-        }
         .formsLogin {
-          .inputUser {
-            &::placeholder {
-            }
-          }
           .olvideMiContra {
             margin-top: 10px;
-          }
-          .login {
-            &:hover {
-            }
-            &:active {
-            }
           }
         }
         .oIngresaCon {
@@ -178,18 +167,6 @@ body {
           .imgContainer {
             width: 40%;
             margin: 8px;
-            &:hover {
-            }
-            &:hover {
-              .fa-google {
-              }
-              .fa-facebook-f {
-              }
-              .fa-apple {
-              }
-            }
-            i {
-            }
           }
         }
       }
