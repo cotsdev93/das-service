@@ -421,11 +421,37 @@ function cargarEquipo(equipos) {
 
   for (const boton of agregarCarrito) {
     boton.addEventListener("click", (event) => {
+      const mobile = window.innerWidth <= 737;
       event.preventDefault();
       const idEquipo = Number(boton.dataset.id);
       const equipo = bdEquipos.registroPorId(idEquipo);
       carrito.agregar(equipo);
+      if (mobile) {
+        Toastify({
+          text: `Se ha añadido ${equipo.categoria} ${equipo.marca} al Carrito`,
+          className: "info",
+          style: {
+            background: "#003459",
+            minWidth: "350px",
+            transition: "0.8s ease-out"
+          },
+          offset: {
+            x: '0px', // Posición horizontal (0px es centrado)
+            y: '90px' // Posición vertical (a partir de 99px desde la parte superior)
+          }
+        }).showToast();
+        
+      } else {
+        Toastify({
+          text: `se ha añadido ${equipo.categoria} ${equipo.marca} al Carrito`,
+          className: "info",
+          style: {
+            background: "#003459",
+          },
+        }).showToast();
+      }
     });
+    
   }
   verificarCantidadEquipos();
 }
