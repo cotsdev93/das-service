@@ -1052,6 +1052,7 @@ body #section4 .clientesContainer .opinionesContainer .elfsight-app-1cbcc4ce-582
     margin: 10px;
     height: 70vh;
     overflow-y: auto;
+    border: solid 1px blue;
   }
   body #section4 .clientesContainer .opinionesContainer .Main__Content-sc-1oq93m5-1 {
     border: solid 1px red;
@@ -1062,9 +1063,32 @@ body #section4 .clientesContainer .opinionesContainer .elfsight-app-1cbcc4ce-582
     padding: 2.5px;
   }
   body #section4 .clientesContainer .opinionesContainer .Main__Content-sc-1oq93m5-1 .HeaderContainer__Inner-sc-1532ffp-0 .HeaderInfoContainer__Info-sc-16jx15e-0 {
-    border: solid 1px blue;
     margin: 0px;
     width: 100%;
+    justify-content: inherit;
+  }
+  body #section4 .clientesContainer .opinionesContainer .Main__Content-sc-1oq93m5-1 .HeaderContainer__Inner-sc-1532ffp-0 .HeaderInfoContainer__Info-sc-16jx15e-0 .Icon__IconContainer-sc-11wrh3u-0 {
+    width: 70px;
+  }
+  body #section4 .clientesContainer .opinionesContainer .Main__Content-sc-1oq93m5-1 .HeaderContainer__Inner-sc-1532ffp-0 .HeaderInfoContainer__Info-sc-16jx15e-0 .Icon__IconContainer-sc-11wrh3u-0 .injected-svg {
+    width: 100%;
+  }
+  body #section4 .clientesContainer .opinionesContainer .Main__Content-sc-1oq93m5-1 .HeaderContainer__Inner-sc-1532ffp-0 .HeaderInfoContainer__Info-sc-16jx15e-0 .HeaderRating__RatingContainer-sc-117jf4y-0 {
+    margin-left: 5px;
+    flex-wrap: nowrap;
+  }
+  body #section4 .clientesContainer .opinionesContainer .Main__Content-sc-1oq93m5-1 .HeaderContainer__Inner-sc-1532ffp-0 .HeaderInfoContainer__Info-sc-16jx15e-0 .HeaderRating__RatingContainer-sc-117jf4y-0 .Rating__Container-sc-bk54oq-0 {
+    padding-left: 0px;
+  }
+  body #section4 .clientesContainer .opinionesContainer .Main__Content-sc-1oq93m5-1 .HeaderContainer__Inner-sc-1532ffp-0 .HeaderInfoContainer__Info-sc-16jx15e-0 .HeaderRating__RatingContainer-sc-117jf4y-0 .Rating__Container-sc-bk54oq-0 .RatingValue__Container-sc-fl6036-0 {
+    font-size: 15px;
+  }
+  body #section4 .clientesContainer .opinionesContainer .Main__Content-sc-1oq93m5-1 .HeaderContainer__Inner-sc-1532ffp-0 .HeaderInfoContainer__Info-sc-16jx15e-0 .HeaderRating__RatingContainer-sc-117jf4y-0 .Rating__Container-sc-bk54oq-0 .RatingBar__Container-sc-qimg51-0 {
+    width: auto;
+  }
+  body #section4 .clientesContainer .opinionesContainer .Main__Content-sc-1oq93m5-1 .HeaderContainer__Inner-sc-1532ffp-0 .HeaderInfoContainer__Info-sc-16jx15e-0 .HeaderRating__RatingContainer-sc-117jf4y-0 .Rating__Container-sc-bk54oq-0 .RatingBar__Container-sc-qimg51-0 .RatingItemFilledSvg__ContainerAbsolute-sc-14jss50-1 {
+    width: auto;
+    margin: 0px;
   }
 }
 html body footer {
