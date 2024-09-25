@@ -7,7 +7,7 @@
     "condicion": "reacondicionado",
     "precio": 650000,
     "img": "./assets/img/lavarropas.png",
-    "descripcion": "",
+    "descripcion": "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
     "cantidad" : 5
   },
   {
@@ -18,7 +18,7 @@
     "condicion": "reacondicionado",
     "precio": 700000,
     "img": "./assets/img/lavavajillas.png",
-    "descripcion": "",
+    "descripcion": "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
     "cantidad" : 5
   },
   {
@@ -29,7 +29,7 @@
     "condicion": "reacondicionado",
     "precio": 550000,
     "img": "./assets/img/secarropa.png",
-    "descripcion": "",
+    "descripcion": "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
     "cantidad" : 5
   },
   {
@@ -40,7 +40,7 @@
     "condicion": "reacondicionado",
     "precio": 700000,
     "img": "./assets/img/heladera.png",
-    "descripcion": "",
+    "descripcion": "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
     "cantidad" : 5
   },
   {
@@ -51,7 +51,7 @@
     "condicion": "reacondicionado",
     "precio": 850000,
     "img": "./assets/img/heladera2.png",
-    "descripcion": "",
+    "descripcion": "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
     "cantidad" : 5
   }
 ]

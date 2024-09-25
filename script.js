@@ -223,14 +223,13 @@ function cargarRepuestos(repuestos) {
           style: {
             background: "#003459",
             minWidth: "350px",
-            transition: "0.8s ease-out"
+            transition: "0.8s ease-out",
           },
           offset: {
-            x: '0px', // Posición horizontal (0px es centrado)
-            y: '90px' // Posición vertical (a partir de 99px desde la parte superior)
-          }
+            x: "0px", // Posición horizontal (0px es centrado)
+            y: "90px", // Posición vertical (a partir de 99px desde la parte superior)
+          },
         }).showToast();
-        
       } else {
         Toastify({
           text: `se ha añadido ${repuesto.nombre} ${repuesto.marca} al Carrito`,
@@ -429,22 +428,21 @@ function cargarEquipo(equipos) {
       carrito.agregar(equipo);
       if (mobile) {
         Toastify({
-          text: `Se ha añadido ${equipos.nombre} ${equipos.marca} al Carrito`,
+          text: `Se ha añadido ${equipo.categoria} ${equipo.marca} al Carrito`,
           className: "info",
           style: {
             background: "#003459",
             minWidth: "350px",
-            transition: "0.8s ease-out"
+            transition: "0.8s ease-out",
           },
           offset: {
-            x: '0px', // Posición horizontal (0px es centrado)
-            y: '90px' // Posición vertical (a partir de 99px desde la parte superior)
-          }
+            x: "0px", // Posición horizontal (0px es centrado)
+            y: "90px", // Posición vertical (a partir de 99px desde la parte superior)
+          },
         }).showToast();
-        
       } else {
         Toastify({
-          text: `se ha añadido ${equipos.categoria} ${equipos.marca} al Carrito`,
+          text: `se ha añadido ${equipo.categoria} ${equipo.marca} al Carrito`,
           className: "info",
           style: {
             background: "#003459",
@@ -452,7 +450,6 @@ function cargarEquipo(equipos) {
         }).showToast();
       }
     });
-    
   }
   verificarCantidadEquipos();
 }
@@ -542,7 +539,7 @@ btnCategoriaEquipos.forEach((boton) => {
     } else {
       noHayEquipos(categoria);
     }
-    console.log("funca")
+    console.log("funca");
   });
 });
 
@@ -633,37 +630,44 @@ class Carrito {
 
     for (const producto of this.carrito) {
       divCarrito.innerHTML += `
-          <div class="productoContainer">
-            <div class="productoImgContainer">
-              <img src="${producto.img}" alt="${producto.nombre}" />
-            </div>
-            <div class="productoDetailContainer">
+        <div class="productoContainer">
+          <div class="productoImgContainer">
+            <img src="${producto.img}" alt="${producto.nombre}" />
+          </div>
+          <div class="productoDetailContainer">
             <div class="productoDetailContainerMobile">
               <div class="bloque01">
                 <div class="productoNombreContainer">
-                  <p>${producto.nombre}</p>
+                  <p>${producto.nombre || producto.categoria}</p>
+                  <div class="productoMarcaModelo">
+                    <p class="marca">${producto.marca}</p>
+                    <p class="modelo">${producto.modelo}</p>
+                  </div>
                 </div>
-                <div class="productoMarcaModelo">
-                  <p class="marca">${producto.marca}</p>
-                  <p class="modelo">${producto.modelo}</p>
+                <div class="productoDescrip">
+                  <p>${producto.descripcion}</p>
                 </div>
               </div>
-              <div class="productoDescrip">
-                <p>${producto.descripcion}</p>
-              </div>
-              </div>
-              <div class="productoUnidades">
-                <i class="fa-solid fa-circle-minus" data-id="${
-                  producto.id
-                }"></i>
-                <p>${producto.cantidad}</p>
-                <i class="fa-solid fa-circle-plus" data-id="${producto.id}"></i>
-              </div>
-              <div class="productoPrecio">
-                <p>$${producto.precio.toLocaleString("es-ES")}</p>
+              <div class="bloque02">
+                <div class="productosUnidadesContainer">
+                  <div class="productoUnidades">
+                    <i class="fa-solid fa-circle-minus" data-id="${producto.id}"></i>
+                    <p>${producto.cantidad}</p>
+                    <i
+                      class="fa-solid fa-circle-plus"
+                      data-id="${
+                    producto.id
+                  }"
+                    ></i>
+                  </div>
+                </div>
+                <div class="productoPrecio">
+                  <p>$${producto.precio.toLocaleString("es-ES")}</p>
+                </div>
               </div>
             </div>
           </div>
+        </div>
       `;
       this.total += producto.precio * producto.cantidad;
       this.cantidadProductos += producto.cantidad;
@@ -709,126 +713,126 @@ class Carrito {
 
 const carrito = new Carrito();
 
-const productoCarrito = [
-  {
-    id: 1,
-    nombre: "Bomba desagote",
-    categoria: "lavarropas",
-    marca: "LG",
-    modelo: "12345",
-    descripcion:
-      "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
-    precio: 20000,
-    stock: 5,
-    codigoProducto: 123,
-    img: "./assets/img/bombaDesagote.png",
-  },
-  {
-    id: 4,
-    nombre: "Bomba desagote",
-    categoria: "lavarropas",
-    marca: "LG",
-    modelo: "12345",
-    descripcion:
-      "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
-    precio: 20000,
-    stock: 5,
-    codigoProducto: 123,
-    img: "./assets/img/bombaDesagote.png",
-  },
-  {
-    id: 5,
-    nombre: "Bomba desagote",
-    categoria: "lavarropas",
-    marca: "LG",
-    modelo: "12345",
-    descripcion:
-      "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
-    precio: 20000,
-    stock: 5,
-    codigoProducto: 123,
-    img: "./assets/img/bombaDesagote.png",
-  },
-  {
-    id: 6,
-    nombre: "Bomba desagote",
-    categoria: "lavarropas",
-    marca: "LG",
-    modelo: "12345",
-    descripcion:
-      "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
-    precio: 20000,
-    stock: 5,
-    codigoProducto: 123,
-    img: "./assets/img/bombaDesagote.png",
-  },
-  {
-    id: 7,
-    nombre: "Bomba desagote",
-    categoria: "lavarropas",
-    marca: "LG",
-    modelo: "12345",
-    descripcion:
-      "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
-    precio: 20000,
-    stock: 5,
-    codigoProducto: 123,
-    img: "./assets/img/bombaDesagote.png",
-  },
-  {
-    id: 8,
-    nombre: "Bomba desagote",
-    categoria: "lavarropas",
-    marca: "LG",
-    modelo: "12345",
-    descripcion:
-      "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
-    precio: 20000,
-    stock: 5,
-    codigoProducto: 123,
-    img: "./assets/img/bombaDesagote.png",
-  },
-  {
-    id: 9,
-    nombre: "Bomba desagote",
-    categoria: "lavarropas",
-    marca: "LG",
-    modelo: "12345",
-    descripcion:
-      "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
-    precio: 20000,
-    stock: 5,
-    codigoProducto: 123,
-    img: "./assets/img/bombaDesagote.png",
-  },
-  {
-    id: 10,
-    nombre: "Bomba desagote",
-    categoria: "lavarropas",
-    marca: "LG",
-    modelo: "12345",
-    descripcion:
-      "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
-    precio: 20000,
-    stock: 5,
-    codigoProducto: 123,
-    img: "./assets/img/bombaDesagote.png",
-  },
-  {
-    id: 11,
-    nombre: "Bomba desagote",
-    categoria: "lavarropas",
-    marca: "LG",
-    modelo: "12345",
-    descripcion:
-      "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
-    precio: 20000,
-    stock: 5,
-    codigoProducto: 123,
-    img: "./assets/img/bombaDesagote.png",
-  }
-];
+// const productoCarrito = [
+//   {
+//     id: 1,
+//     nombre: "Bomba desagote",
+//     categoria: "lavarropas",
+//     marca: "LG",
+//     modelo: "12345",
+//     descripcion:
+//       "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
+//     precio: 20000,
+//     stock: 5,
+//     codigoProducto: 123,
+//     img: "./assets/img/bombaDesagote.png",
+//   },
+//   {
+//     id: 4,
+//     nombre: "Bomba desagote",
+//     categoria: "lavarropas",
+//     marca: "LG",
+//     modelo: "12345",
+//     descripcion:
+//       "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
+//     precio: 20000,
+//     stock: 5,
+//     codigoProducto: 123,
+//     img: "./assets/img/bombaDesagote.png",
+//   },
+//   {
+//     id: 5,
+//     nombre: "Bomba desagote",
+//     categoria: "lavarropas",
+//     marca: "LG",
+//     modelo: "12345",
+//     descripcion:
+//       "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
+//     precio: 20000,
+//     stock: 5,
+//     codigoProducto: 123,
+//     img: "./assets/img/bombaDesagote.png",
+//   },
+//   {
+//     id: 6,
+//     nombre: "Bomba desagote",
+//     categoria: "lavarropas",
+//     marca: "LG",
+//     modelo: "12345",
+//     descripcion:
+//       "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
+//     precio: 20000,
+//     stock: 5,
+//     codigoProducto: 123,
+//     img: "./assets/img/bombaDesagote.png",
+//   },
+//   {
+//     id: 7,
+//     nombre: "Bomba desagote",
+//     categoria: "lavarropas",
+//     marca: "LG",
+//     modelo: "12345",
+//     descripcion:
+//       "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
+//     precio: 20000,
+//     stock: 5,
+//     codigoProducto: 123,
+//     img: "./assets/img/bombaDesagote.png",
+//   },
+//   {
+//     id: 8,
+//     nombre: "Bomba desagote",
+//     categoria: "lavarropas",
+//     marca: "LG",
+//     modelo: "12345",
+//     descripcion:
+//       "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
+//     precio: 20000,
+//     stock: 5,
+//     codigoProducto: 123,
+//     img: "./assets/img/bombaDesagote.png",
+//   },
+//   {
+//     id: 9,
+//     nombre: "Bomba desagote",
+//     categoria: "lavarropas",
+//     marca: "LG",
+//     modelo: "12345",
+//     descripcion:
+//       "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
+//     precio: 20000,
+//     stock: 5,
+//     codigoProducto: 123,
+//     img: "./assets/img/bombaDesagote.png",
+//   },
+//   {
+//     id: 10,
+//     nombre: "Bomba desagote",
+//     categoria: "lavarropas",
+//     marca: "LG",
+//     modelo: "12345",
+//     descripcion:
+//       "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
+//     precio: 20000,
+//     stock: 5,
+//     codigoProducto: 123,
+//     img: "./assets/img/bombaDesagote.png",
+//   },
+//   {
+//     id: 11,
+//     nombre: "Bomba desagote",
+//     categoria: "lavarropas",
+//     marca: "LG",
+//     modelo: "12345",
+//     descripcion:
+//       "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
+//     precio: 20000,
+//     stock: 5,
+//     codigoProducto: 123,
+//     img: "./assets/img/bombaDesagote.png",
+//   },
+// ];
 
-for (const product of productoCarrito) {
-  carrito.agregar(product);
-}
+// for (const product of productoCarrito) {
+//   carrito.agregar(product);
+// }

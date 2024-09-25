@@ -17,6 +17,8 @@ html {
   height: 100%;
   margin: 0;
   padding: 0;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
 }
 html body {
   height: 100%;
@@ -1308,166 +1310,192 @@ body #section6 .cartContainer {
   margin: 20px;
   backdrop-filter: blur(2px);
   padding-bottom: 15px;
-  max-height: 100vh;
+  max-height: 110vh;
   height: 100%;
-  overflow-y: auto;
+  overflow-y: hidden;
   overflow-x: hidden;
-  scrollbar-width: thin;
-  scroll-behavior: smooth;
 }
-body #section6 .cartContainer .titleCartContainer {
+body #section6 .cartContainer .staticMobile {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding-bottom: 5px;
+  overflow: hidden;
+}
+body #section6 .cartContainer .staticMobile .titleCartContainer {
   overflow-x: hidden;
   font-size: 18px;
   color: #003459;
   font-weight: bold;
   text-align: left;
-  margin: 40px 40px 20px 40px;
+  margin: 20px 20px 10px 20px;
   padding-bottom: 20px;
   border-bottom: 0.5px #c9c9c9 solid;
   display: flex;
   justify-content: space-between;
 }
-body #section6 .cartContainer .titleCartContainer .iconCarrito {
+body #section6 .cartContainer .staticMobile .titleCartContainer .iconCarrito {
   display: flex;
 }
-body #section6 .cartContainer .titleCartContainer .iconCarrito .fa-cart-shopping {
+body #section6 .cartContainer .staticMobile .titleCartContainer .iconCarrito .fa-cart-shopping {
   color: #003459;
   transform: translateY(2px);
   margin-right: 5px;
 }
-body #section6 .cartContainer .titleCartContainer .items {
+body #section6 .cartContainer .staticMobile .titleCartContainer .items {
   display: flex;
   color: #787878;
   padding-right: 8px;
 }
-body #section6 .cartContainer .titleCartContainer .items p {
+body #section6 .cartContainer .staticMobile .titleCartContainer .items p {
   margin-left: 5px;
 }
-body #section6 .cartContainer .headerCarrito {
+body #section6 .cartContainer .staticMobile .headerCarrito {
   display: grid;
   grid-template-columns: repeat(6, 1fr) 1fr 1fr;
   align-items: center;
   color: #c5c5c5;
   margin: 0px 40px;
 }
-body #section6 .cartContainer .headerCarrito .productoHeader p,
-body #section6 .cartContainer .headerCarrito .cantidadHeader p,
-body #section6 .cartContainer .headerCarrito .precioHeader p {
+body #section6 .cartContainer .staticMobile .headerCarrito .productoHeader p,
+body #section6 .cartContainer .staticMobile .headerCarrito .cantidadHeader p,
+body #section6 .cartContainer .staticMobile .headerCarrito .precioHeader p {
   margin: 0;
   font-size: 12px;
 }
-body #section6 .cartContainer .headerCarrito .productoHeader {
+body #section6 .cartContainer .staticMobile .headerCarrito .productoHeader {
   grid-column: span 6;
   text-align: left;
   padding-left: 10px;
 }
-body #section6 .cartContainer .headerCarrito .cantidadHeader {
+body #section6 .cartContainer .staticMobile .headerCarrito .cantidadHeader {
   grid-column: span 1;
   text-align: center;
   padding-left: 20px;
 }
-body #section6 .cartContainer .headerCarrito .precioHeader {
+body #section6 .cartContainer .staticMobile .headerCarrito .precioHeader {
   grid-column: span 1;
   text-align: center;
 }
-body #section6 .cartContainer #carrito {
-  margin: 10px 40px;
+body #section6 .cartContainer .carritoContainer {
+  max-height: 60vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
 }
-body #section6 .cartContainer #carrito .productoContainer {
+body #section6 .cartContainer .carritoContainer #carrito {
+  margin: 10px 20px;
+  overflow-y: auto;
+}
+body #section6 .cartContainer .carritoContainer #carrito .productoContainer {
   display: flex;
   height: auto;
   align-items: center;
   border-bottom: 0.5px #c9c9c9 solid;
 }
-body #section6 .cartContainer #carrito .productoContainer .productoImgContainer {
+body #section6 .cartContainer .carritoContainer #carrito .productoContainer .productoImgContainer {
   width: 20%;
   margin: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-body #section6 .cartContainer #carrito .productoContainer .productoImgContainer img {
+body #section6 .cartContainer .carritoContainer #carrito .productoContainer .productoImgContainer img {
   border-radius: 5px;
   width: 100%;
   background-color: #f8f8f8;
   box-shadow: inset 0px 0px 3px 1px rgba(0, 0, 0, 0.062745098);
   cursor: pointer;
 }
-body #section6 .cartContainer #carrito .productoContainer .productoDetailContainer {
+body #section6 .cartContainer .carritoContainer #carrito .productoContainer .productoDetailContainer {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
-body #section6 .cartContainer #carrito .productoContainer .productoDetailContainer .productoDetailContainerMobile {
+body #section6 .cartContainer .carritoContainer #carrito .productoContainer .productoDetailContainer .productoDetailContainerMobile {
   display: flex;
-}
-body #section6 .cartContainer #carrito .productoContainer .productoDetailContainer .productoDetailContainerMobile .bloque01 {
-  width: 35%;
-}
-body #section6 .cartContainer #carrito .productoContainer .productoDetailContainer .productoDetailContainerMobile .bloque01 .productoNombreContainer {
   width: 100%;
 }
-body #section6 .cartContainer #carrito .productoContainer .productoDetailContainer .productoDetailContainerMobile .bloque01 .productoNombreContainer p {
+body #section6 .cartContainer .carritoContainer #carrito .productoContainer .productoDetailContainer .productoDetailContainerMobile .bloque01 {
+  width: 80%;
+  display: flex;
+}
+body #section6 .cartContainer .carritoContainer #carrito .productoContainer .productoDetailContainer .productoDetailContainerMobile .bloque01 .productoNombreContainer {
+  width: 50%;
+}
+body #section6 .cartContainer .carritoContainer #carrito .productoContainer .productoDetailContainer .productoDetailContainerMobile .bloque01 .productoNombreContainer p {
   color: #787878;
   font-weight: 470;
   white-space: nowrap;
 }
-body #section6 .cartContainer #carrito .productoContainer .productoDetailContainer .productoDetailContainerMobile .bloque01 .productoMarcaModelo {
+body #section6 .cartContainer .carritoContainer #carrito .productoContainer .productoDetailContainer .productoDetailContainerMobile .bloque01 .productoNombreContainer .productoMarcaModelo {
   display: flex;
   width: 100%;
 }
-body #section6 .cartContainer #carrito .productoContainer .productoDetailContainer .productoDetailContainerMobile .bloque01 .productoMarcaModelo .marca {
+body #section6 .cartContainer .carritoContainer #carrito .productoContainer .productoDetailContainer .productoDetailContainerMobile .bloque01 .productoNombreContainer .productoMarcaModelo .marca {
   font-size: auto;
   font-weight: 400;
 }
-body #section6 .cartContainer #carrito .productoContainer .productoDetailContainer .productoDetailContainerMobile .bloque01 .productoMarcaModelo .modelo {
+body #section6 .cartContainer .carritoContainer #carrito .productoContainer .productoDetailContainer .productoDetailContainerMobile .bloque01 .productoNombreContainer .productoMarcaModelo .modelo {
   font-weight: 380;
 }
-body #section6 .cartContainer #carrito .productoContainer .productoDetailContainer .productoDetailContainerMobile .bloque01 .productoMarcaModelo p {
+body #section6 .cartContainer .carritoContainer #carrito .productoContainer .productoDetailContainer .productoDetailContainerMobile .bloque01 .productoNombreContainer .productoMarcaModelo p {
   color: #787878;
   margin: 1px;
 }
-body #section6 .cartContainer #carrito .productoContainer .productoDetailContainer .productoDescrip {
-  width: 35%;
-  margin: 2px;
+body #section6 .cartContainer .carritoContainer #carrito .productoContainer .productoDetailContainer .productoDetailContainerMobile .bloque01 .productoDescrip {
+  margin: 5px;
   font-size: 10px;
   color: #c5c5c5;
+  display: flex;
+  width: auto;
 }
-body #section6 .cartContainer #carrito .productoContainer .productoDetailContainer .productoUnidades {
-  width: 10%;
+body #section6 .cartContainer .carritoContainer #carrito .productoContainer .productoDetailContainer .productoDetailContainerMobile .bloque02 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 30%;
+}
+body #section6 .cartContainer .carritoContainer #carrito .productoContainer .productoDetailContainer .productoDetailContainerMobile .bloque02 .productosUnidadesContainer {
+  margin: 0px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin: 5px;
 }
-body #section6 .cartContainer #carrito .productoContainer .productoDetailContainer .productoUnidades p {
+body #section6 .cartContainer .carritoContainer #carrito .productoContainer .productoDetailContainer .productoDetailContainerMobile .bloque02 .productosUnidadesContainer .productoUnidades {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 10%;
+}
+body #section6 .cartContainer .carritoContainer #carrito .productoContainer .productoDetailContainer .productoDetailContainerMobile .bloque02 .productosUnidadesContainer .productoUnidades p {
   margin: 4px;
   color: #787878;
 }
-body #section6 .cartContainer #carrito .productoContainer .productoDetailContainer .productoUnidades .fa-circle-minus {
+body #section6 .cartContainer .carritoContainer #carrito .productoContainer .productoDetailContainer .productoDetailContainerMobile .bloque02 .productosUnidadesContainer .productoUnidades .fa-circle-minus {
   color: #c5c5c5;
   font-size: 12px;
   cursor: pointer;
 }
-body #section6 .cartContainer #carrito .productoContainer .productoDetailContainer .productoUnidades .fa-circle-plus {
+body #section6 .cartContainer .carritoContainer #carrito .productoContainer .productoDetailContainer .productoDetailContainerMobile .bloque02 .productosUnidadesContainer .productoUnidades .fa-circle-plus {
   color: #c5c5c5;
   font-size: 12px;
   cursor: pointer;
 }
-body #section6 .cartContainer #carrito .productoContainer .productoDetailContainer .productoPrecio {
+body #section6 .cartContainer .carritoContainer #carrito .productoContainer .productoDetailContainer .productoDetailContainerMobile .bloque02 .productoPrecio {
   margin: 5px;
 }
-body #section6 .cartContainer #carrito .productoContainer .productoDetailContainer .productoPrecio p {
+body #section6 .cartContainer .carritoContainer #carrito .productoContainer .productoDetailContainer .productoDetailContainerMobile .bloque02 .productoPrecio p {
   color: green;
 }
-body #section6 .cartContainer #carrito .noHayProductos {
+body #section6 .cartContainer .carritoContainer #carrito .noHayProductos {
   height: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-body #section6 .cartContainer #carrito .noHayProductos p {
+body #section6 .cartContainer .carritoContainer #carrito .noHayProductos p {
   color: #c5c5c5;
 }
 body #section6 .cartContainer .totalCarritoContainer {
@@ -1583,7 +1611,7 @@ body #section6 .cartContainer .comprarContainer .comprar p {
   body #section6 .cartContainer .headerCarrito .precioHeader {
     grid-column: span 1;
     text-align: left;
-    padding-right: 17px;
+    padding-right: 10px;
   }
   body #section6 .cartContainer .carritoContainer {
     height: 100%;

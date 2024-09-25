@@ -3,6 +3,8 @@ html {
   height: 100%;
   margin: 0;
   padding: 0;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
   body {
     height: 100%;
     background-image: url("../assets/img/fondo.jpg");
@@ -87,6 +89,7 @@ html {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    
     body {
       height: 100vh;
       background-image: url("../assets/img/fondo.jpg");
