@@ -63,7 +63,7 @@ body {
       .clientesContainer {
         width: 75%;
         margin: 20px;
-        padding-bottom: 0px;
+        margin-bottom: -5px;
         height: 75vh;
         .titleClientes {
           margin: 10px 10px 0px 10px;
@@ -80,48 +80,38 @@ body {
         .opinionesContainer {
           margin: 10px;
           height: 70vh;
-          overflow-y: auto;
-          border: solid 1px blue;
+          overflow: hidden;
           .Main__Content-sc-1oq93m5-1 {
-            border: solid 1px red;
-            
-            .HeaderContainer__Inner-sc-1532ffp-0 {
-              border: solid 1px green;
-              z-index: 5;
-              padding: 2.5px;
-              
-              .HeaderInfoContainer__Info-sc-16jx15e-0 {
-                // border: solid 1px blue;
-                margin: 0px;
-                width: 100%;
-                justify-content: inherit;
-                .Icon__IconContainer-sc-11wrh3u-0 {
-                  // border: solid 1px red;
-                  width: 70px;
-                  .injected-svg{
-                    width: 100%;
-                  }
-                }
-                .HeaderRating__RatingContainer-sc-117jf4y-0 {
-                  // border: solid 1px brown;
-                  margin-left: 5px;
-                  flex-wrap: nowrap;
-                  .Rating__Container-sc-bk54oq-0 {
-                    // border: solid 1px green;
-                    padding-left: 0px;
-                    .RatingValue__Container-sc-fl6036-0 {
-                      font-size: 15px;
+            .HeaderComponent__Top-sc-9lcg5s-2 {
+              margin-bottom: 10px;
+              position: static;
+              .HeaderContainer__Inner-sc-1532ffp-0 {
+                z-index: 5;
+                padding: 2.5px;
+                .HeaderInfoContainer__Info-sc-16jx15e-0 {
+                  margin: 0px;
+                  width: 100%;
+                  justify-content: inherit;
+                  .Icon__IconContainer-sc-11wrh3u-0 {
+                    width: 70px;
+                    .injected-svg {
+                      width: 100%;
                     }
-                    .RatingBar__Container-sc-qimg51-0 {
-                      // border: solid 1px #0000ff;
-                      width: auto;
-                      // .RatingItemFilledSvg__Container-sc-14jss50-0{
-                      //   border: solid 1px red;
-                      // }
-                      .RatingItemFilledSvg__ContainerAbsolute-sc-14jss50-1 {
-                        // border:solid 1px green;
+                  }
+                  .HeaderRating__RatingContainer-sc-117jf4y-0 {
+                    margin-left: 5px;
+                    flex-wrap: nowrap;
+                    .Rating__Container-sc-bk54oq-0 {
+                      padding-left: 0px;
+                      .RatingValue__Container-sc-fl6036-0 {
+                        font-size: 15px;
+                      }
+                      .RatingBar__Container-sc-qimg51-0 {
                         width: auto;
-                        margin: 0px;
+                        .RatingItemFilledSvg__ContainerAbsolute-sc-14jss50-1 {
+                          width: auto;
+                          margin: 0px;
+                        }
                       }
                     }
                   }

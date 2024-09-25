@@ -47,6 +47,12 @@ body {
       .categoriasContainer {
         display: flex;
         justify-content: center;
+        .categoriasContainerBloque01{
+          display:flex;
+        }
+        .categoriasContainerBloque02{
+          display: flex;
+        }
         ul {
           display: flex;
           li {
