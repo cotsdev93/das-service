@@ -55,13 +55,30 @@ const marcasElement = document.querySelector("#marcas");
 function cargarMarcas(marcas) {
   marcasElement.innerHTML = "";
 
-  for (const marca of marcas) {
-    marcasElement.innerHTML += `
-      <div class="marcaContainer">
-        <img src="${marca.img}" alt="${marca.alt}">
-      </div>
-    `;
+
+
+  const mobile = window.innerWidth <= 737;
+
+
+  if(mobile) {
+    for (const marca of marcas) {
+      marcasElement.innerHTML += `
+        <div class="marcaContainer">
+          <img src="${marca.img}" alt="${marca.alt}">
+        </div>
+      `;
+    }
+    duplicarContenido()
+  } else {
+    for (const marca of marcas) {
+      marcasElement.innerHTML += `
+        <div class="marcaContainer">
+          <img src="${marca.img}" alt="${marca.alt}">
+        </div>
+      `;
+    }
   }
+  
 }
 
 const bdService = new BaseDeDatosService();
@@ -100,6 +117,45 @@ function moverCarrouselMarca(direccion) {
   }
 }
 
+const mobile = window.innerWidth <= 737;
+
+if (mobile) {
+  // Duplicar contenido para simular el loop
+  function duplicarContenido() {
+    const marcas = serviceMarcasContainer.innerHTML;
+    serviceMarcasContainer.innerHTML += marcas;
+  }
+
+  duplicarContenido(); // Llamada inicial para duplicar
+
+  function moverCarrouselContinuo() {
+    // Movimiento continuo hacia la derecha
+    serviceMarcasContainer.scrollLeft += 5; // Ajusta la velocidad aquí
+
+    const desplazamientoActual = serviceMarcasContainer.scrollLeft;
+    const anchoTotalScroll = serviceMarcasContainer.scrollWidth;
+
+    // Si llegamos al final de la primera copia, volvemos al inicio sin saltos
+    if (desplazamientoActual >= anchoTotalScroll / 2) {
+      serviceMarcasContainer.scrollLeft = 0; // Reinicia al principio sin que sea visible
+    }
+  }
+
+  // Auto slide continuo
+  let autoSlide = setInterval(moverCarrouselContinuo, 50); // Ajusta el intervalo para la velocidad
+
+  // Detener el movimiento cuando el usuario interactúa
+  serviceMarcasContainer.addEventListener("mouseenter", () => {
+    clearInterval(autoSlide);
+  });
+
+  serviceMarcasContainer.addEventListener("mouseleave", () => {
+    autoSlide = setInterval(moverCarrouselContinuo, 10);
+  });
+
+
+}
+
 let autoSlide = setInterval(() => {
   const anchoTotalScroll = serviceMarcasContainer.scrollWidth;
   const desplazamientoActual = serviceMarcasContainer.scrollLeft;
@@ -133,6 +189,7 @@ function verificarCantidadMarca() {
 btnLeftService.addEventListener("click", () =>
   moverCarrouselMarca("izquierda")
 );
+
 btnRightService.addEventListener("click", () => moverCarrouselMarca("derecha"));
 
 verificarCantidadMarca();
@@ -593,10 +650,8 @@ class Carrito {
     const indice = this.carrito.findIndex((producto) => producto.id === id);
 
     if (indice !== -1 && this.carrito[indice].cantidad > 1) {
-      // Si hay más de un producto, disminuimos la cantidad
       this.carrito[indice].cantidad--;
     } else if (indice !== -1) {
-      // Si solo queda uno, lo eliminamos del carrito
       this.carrito.splice(indice, 1);
     }
 
@@ -611,9 +666,9 @@ class Carrito {
         totalCarrito.innerHTML = `$0`;
       }
 
-      carritoVacio(); // Llamamos a la función para mostrar mensaje de carrito vacío
+      carritoVacio();
     } else {
-      this.listar(); // Listamos los productos restantes
+      this.listar();
     }
 
     // ** Cambié aquí para asegurarme de que la cantidad total se actualice correctamente. **
@@ -638,7 +693,9 @@ class Carrito {
               <div class="productoDetailContainerMobile">
                 <div class="bloque01">
                   <div class="productoNombreContainer">
-                    <p class="productoNombre">${producto.nombre || producto.categoria}</p>
+                    <p class="productoNombre">${
+                      producto.nombre || producto.categoria
+                    }</p>
                     <div class="productoMarcaModelo">
                       <p class="marca">${producto.marca}</p>
                       <p class="modelo">${producto.modelo}</p>
@@ -651,13 +708,13 @@ class Carrito {
                 <div class="bloque02">
                   <div class="productosUnidadesContainer">
                     <div class="productoUnidades">
-                      <i class="fa-solid fa-circle-minus" data-id="${producto.id}"></i>
+                      <i class="fa-solid fa-circle-minus" data-id="${
+                        producto.id
+                      }"></i>
                       <p>${producto.cantidad}</p>
                       <i
                         class="fa-solid fa-circle-plus"
-                        data-id="${
-                      producto.id
-                    }"
+                        data-id="${producto.id}"
                       ></i>
                     </div>
                   </div>
@@ -713,127 +770,3 @@ class Carrito {
 }
 
 const carrito = new Carrito();
-
-const productoCarrito = [
-  {
-    id: 1,
-    nombre: "Bomba desagote",
-    categoria: "lavarropas",
-    marca: "LG",
-    modelo: "12345",
-    descripcion:
-      "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
-    precio: 20000,
-    stock: 5,
-    codigoProducto: 123,
-    img: "./assets/img/bombaDesagote.png",
-  },
-  {
-    id: 4,
-    nombre: "Bomba desagote",
-    categoria: "lavarropas",
-    marca: "LG",
-    modelo: "12345",
-    descripcion:
-      "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
-    precio: 20000,
-    stock: 5,
-    codigoProducto: 123,
-    img: "./assets/img/bombaDesagote.png",
-  },
-  {
-    id: 5,
-    nombre: "Bomba desagote",
-    categoria: "lavarropas",
-    marca: "LG",
-    modelo: "12345",
-    descripcion:
-      "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
-    precio: 20000,
-    stock: 5,
-    codigoProducto: 123,
-    img: "./assets/img/bombaDesagote.png",
-  },
-  {
-    id: 6,
-    nombre: "Bomba desagote",
-    categoria: "lavarropas",
-    marca: "LG",
-    modelo: "12345",
-    descripcion:
-      "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
-    precio: 20000,
-    stock: 5,
-    codigoProducto: 123,
-    img: "./assets/img/bombaDesagote.png",
-  },
-  {
-    id: 7,
-    nombre: "Bomba desagote",
-    categoria: "lavarropas",
-    marca: "LG",
-    modelo: "12345",
-    descripcion:
-      "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
-    precio: 20000,
-    stock: 5,
-    codigoProducto: 123,
-    img: "./assets/img/bombaDesagote.png",
-  },
-  {
-    id: 8,
-    nombre: "Bomba desagote",
-    categoria: "lavarropas",
-    marca: "LG",
-    modelo: "12345",
-    descripcion:
-      "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
-    precio: 20000,
-    stock: 5,
-    codigoProducto: 123,
-    img: "./assets/img/bombaDesagote.png",
-  },
-  {
-    id: 9,
-    nombre: "Bomba desagote",
-    categoria: "lavarropas",
-    marca: "LG",
-    modelo: "12345",
-    descripcion:
-      "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
-    precio: 20000,
-    stock: 5,
-    codigoProducto: 123,
-    img: "./assets/img/bombaDesagote.png",
-  },
-  {
-    id: 10,
-    nombre: "Bomba desagote",
-    categoria: "lavarropas",
-    marca: "LG",
-    modelo: "12345",
-    descripcion:
-      "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
-    precio: 20000,
-    stock: 5,
-    codigoProducto: 123,
-    img: "./assets/img/bombaDesagote.png",
-  },
-  {
-    id: 11,
-    nombre: "Bomba desagote",
-    categoria: "lavarropas",
-    marca: "LG",
-    modelo: "12345",
-    descripcion:
-      "Compatible con series F12B8, WD-1403, F4J6TN, FH2J3QD, y F14A8.",
-    precio: 20000,
-    stock: 5,
-    codigoProducto: 123,
-    img: "./assets/img/bombaDesagote.png",
-  },
-];
-
-for (const product of productoCarrito) {
-  carrito.agregar(product);
-}

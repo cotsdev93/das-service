@@ -58,7 +58,6 @@ body {
             justify-content: center;
             align-items: center;
             img {
-              
               width: 100%;
               filter: sepia(1) saturate(0) brightness(0.5);
             }
@@ -102,6 +101,60 @@ body {
           }
           &:active {
             box-shadow: 0px 0px 4px 3px #00000080;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 737px) {
+  body {
+    #section1 {
+      .serviceContainer {
+        width: 75%;
+        margin: 20px 0px;
+        padding-bottom: 10px;
+        .titleServiceContainer {
+          margin: 10px 10px 0px 10px;
+          .titleService {
+            font-size: 18px;
+            font-weight: 550;
+          }
+        }
+        .textService {
+          margin: 0px 10px 0px 10px;
+          font-size: 12px;
+        }
+        .titleServiceContainer {
+          .titleService {
+            font-size: 12px;
+          }
+        }
+
+        .serviceMarcasCarrousel {
+          position: relative;
+          width: 100%;
+          overflow: hidden;
+          .serviceMarcasContainer {
+            pointer-events: auto;
+            display: flex;
+            overflow:hidden
+            .marcaContainer {
+              flex: 0 0 auto;
+              height: 60px;
+
+              img {
+                width: 100%;
+                filter: sepia(1) saturate(0) brightness(0.5);
+              }
+            }
+          }
+          .bx-chevron-left {
+            display: none;
+          }
+          .bx-chevron-right {
+            display: none;
           }
         }
       }
