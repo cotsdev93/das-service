@@ -684,6 +684,7 @@ body #section1 .serviceContainer .serviceMarcasCarrousel .bx-chevron-right:activ
 @media (max-width: 737px) {
   body #section1 .serviceContainer {
     width: 75%;
+    pointer-events: auto;
     margin: 20px 0px;
     padding-bottom: 10px;
   }
@@ -705,16 +706,19 @@ body #section1 .serviceContainer .serviceMarcasCarrousel .bx-chevron-right:activ
     position: relative;
     width: 100%;
     overflow: hidden;
+    pointer-events: auto;
   }
   body #section1 .serviceContainer .serviceMarcasCarrousel .serviceMarcasContainer {
     pointer-events: auto;
     display: flex;
+    overflow: hidden;
   }
-  body #section1 .serviceContainer .serviceMarcasCarrousel .serviceMarcasContainer overflow:hidden .marcaContainer {
-    flex: 0 0 auto;
+  body #section1 .serviceContainer .serviceMarcasCarrousel .serviceMarcasContainer .marcaContainer {
+    flex: 0 0 23.6%;
     height: 60px;
+    pointer-events: auto;
   }
-  body #section1 .serviceContainer .serviceMarcasCarrousel .serviceMarcasContainer overflow:hidden .marcaContainer img {
+  body #section1 .serviceContainer .serviceMarcasCarrousel .serviceMarcasContainer .marcaContainer img {
     width: 100%;
     filter: sepia(1) saturate(0) brightness(0.5);
   }

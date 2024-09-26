@@ -113,6 +113,7 @@ body {
     #section1 {
       .serviceContainer {
         width: 75%;
+        pointer-events: auto;
         margin: 20px 0px;
         padding-bottom: 10px;
         .titleServiceContainer {
@@ -136,13 +137,15 @@ body {
           position: relative;
           width: 100%;
           overflow: hidden;
+          pointer-events: auto;
           .serviceMarcasContainer {
             pointer-events: auto;
             display: flex;
-            overflow:hidden
+            overflow: hidden;
             .marcaContainer {
-              flex: 0 0 auto;
+              flex: 0 0 23.6%;
               height: 60px;
+              pointer-events: auto;
 
               img {
                 width: 100%;

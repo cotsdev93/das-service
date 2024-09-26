@@ -55,30 +55,13 @@ const marcasElement = document.querySelector("#marcas");
 function cargarMarcas(marcas) {
   marcasElement.innerHTML = "";
 
-
-
-  const mobile = window.innerWidth <= 737;
-
-
-  if(mobile) {
-    for (const marca of marcas) {
-      marcasElement.innerHTML += `
+  for (const marca of marcas) {
+    marcasElement.innerHTML += `
         <div class="marcaContainer">
           <img src="${marca.img}" alt="${marca.alt}">
         </div>
       `;
-    }
-    duplicarContenido()
-  } else {
-    for (const marca of marcas) {
-      marcasElement.innerHTML += `
-        <div class="marcaContainer">
-          <img src="${marca.img}" alt="${marca.alt}">
-        </div>
-      `;
-    }
   }
-  
 }
 
 const bdService = new BaseDeDatosService();
@@ -119,42 +102,6 @@ function moverCarrouselMarca(direccion) {
 
 const mobile = window.innerWidth <= 737;
 
-if (mobile) {
-  // Duplicar contenido para simular el loop
-  function duplicarContenido() {
-    const marcas = serviceMarcasContainer.innerHTML;
-    serviceMarcasContainer.innerHTML += marcas;
-  }
-
-  duplicarContenido(); // Llamada inicial para duplicar
-
-  function moverCarrouselContinuo() {
-    // Movimiento continuo hacia la derecha
-    serviceMarcasContainer.scrollLeft += 5; // Ajusta la velocidad aquí
-
-    const desplazamientoActual = serviceMarcasContainer.scrollLeft;
-    const anchoTotalScroll = serviceMarcasContainer.scrollWidth;
-
-    // Si llegamos al final de la primera copia, volvemos al inicio sin saltos
-    if (desplazamientoActual >= anchoTotalScroll / 2) {
-      serviceMarcasContainer.scrollLeft = 0; // Reinicia al principio sin que sea visible
-    }
-  }
-
-  // Auto slide continuo
-  let autoSlide = setInterval(moverCarrouselContinuo, 50); // Ajusta el intervalo para la velocidad
-
-  // Detener el movimiento cuando el usuario interactúa
-  serviceMarcasContainer.addEventListener("mouseenter", () => {
-    clearInterval(autoSlide);
-  });
-
-  serviceMarcasContainer.addEventListener("mouseleave", () => {
-    autoSlide = setInterval(moverCarrouselContinuo, 10);
-  });
-
-
-}
 
 let autoSlide = setInterval(() => {
   const anchoTotalScroll = serviceMarcasContainer.scrollWidth;
@@ -172,7 +119,7 @@ let autoSlide = setInterval(() => {
   } else {
     moverCarrouselMarca("derecha");
   }
-}, 4000);
+}, 3000);
 
 function verificarCantidadMarca() {
   const cantidadMarca = document.querySelectorAll(".marcaContainer").length;
