@@ -69,7 +69,7 @@ body {
           .cantidadHeader {
             grid-column: span 1;
             text-align: center;
-            padding-left: 20px;
+            padding-left: 12px;
           }
           .precioHeader {
             grid-column: span 1;
@@ -78,13 +78,13 @@ body {
         }
       }
       .carritoContainer {
-        max-height: 60vh; 
+        max-height: 60vh;
         overflow-y: auto;
         scrollbar-width: thin;
         scroll-behavior: smooth;
         #carrito {
           margin: 10px 20px;
-          overflow-y: auto; 
+          overflow-y: auto;
           .productoContainer {
             display: flex;
             height: auto;
@@ -179,6 +179,9 @@ body {
                   }
                   .productoPrecio {
                     margin: 5px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                     p {
                       color: green;
                     }
@@ -270,77 +273,77 @@ body {
     #section6 {
       .cartContainer {
         padding-bottom: 0px;
-        max-height: 100vh;
-        overflow-y: auto;
-        overflow-x: hidden;
+        max-height: 75vh;
         width: 90%;
-        .titleCartContainer {
-          font-size: 16px;
-          margin: 20px 20px 10px 20px;
-          padding-bottom: 8px;
-          .iconCarrito {
-            .fa-cart-shopping {
-              color: $azul;
-              transform: translateY(2px);
-              margin-right: 5px;
+        .staticMobile {
+          .titleCartContainer {
+            font-size: 16px;
+            padding-bottom: 0px;
+            overflow: hidden;
+            margin: 10px 10px 5px 10px;
+            .iconCarrito {
+              .fa-cart-shopping {
+                color: $azul;
+                transform: translateY(2px);
+                margin-right: 5px;
+              }
+            }
+            .items {
+              display: flex;
+              color: $grisTexto;
+              padding-right: 8px;
+              p {
+                margin-left: 5px;
+              }
             }
           }
-          .items {
-            display: flex;
-            color: $grisTexto;
-            padding-right: 8px;
-            p {
-              margin-left: 5px;
+          .headerCarrito {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr) 1fr 1fr;
+            align-items: center;
+            color: $grisClaro;
+            margin: 0px;
+            .productoHeader,
+            .cantidadHeader,
+            .precioHeader {
+              p {
+                font-size: 12px;
+              }
             }
-          }
-        }
-        .headerCarrito {
-          display: grid;
-          grid-template-columns: repeat(6, 1fr) 1fr 1fr;
-          align-items: center;
-          color: $grisClaro;
-          margin: 0px 20px;
-
-          .productoHeader,
-          .cantidadHeader,
-          .precioHeader {
-            p {
-              margin: 0;
-              font-size: 12px;
+            .productoHeader {
+              margin-left: 30px;
+              padding-left: 0px;
             }
-          }
-          .productoHeader {
-            padding-left: 10px;
-          }
-          .cantidadHeader {
-            grid-column: span 1;
-            text-align: center;
-            padding-right: 8px;
-          }
-          .precioHeader {
-            grid-column: span 1;
-            text-align: left;
-            padding-right: 10px;
+            .cantidadHeader {
+              grid-column: span 1;
+              text-align: center;
+              padding: 0px;
+              margin-right: 15px;
+            }
+            .precioHeader {
+              grid-column: span 1;
+              text-align: center;
+              margin-right: 30px;
+            }
           }
         }
         .carritoContainer {
-          // border: solid 2px green;
           height: 100%;
-          max-height: 55vh;
+          max-height: 50vh;
           overflow-y: auto;
           margin: 5px;
           #carrito {
-            // border: solid 1px red;
             margin: 0px;
             position: relative;
             overflow-y: auto;
+            overflow-x: hidden;
             .productoContainer {
               border-bottom: 0.5px $clarito solid;
               padding-bottom: 5px;
               margin-bottom: 5px;
+              width: 100%;
               .productoImgContainer {
-                // border:solid 1px red;
-                width: 100px;
+                width: 25%;
                 margin: 0px;
                 img {
                   width: 100%;
@@ -352,12 +355,16 @@ body {
                 align-items: center;
                 justify-content: space-evenly;
                 .productoDetailContainerMobile {
-                  display: block;
+                  display: flex;
                   .bloque01 {
-                    width: 100%;
-                    margin: -4px 2px;
+                    display: block;
+                    width: 65%;
+                    margin: 0px;
                     .productoNombreContainer {
                       width: 100%;
+                      .productoNombre {
+                        padding: -2px;
+                      }
                       p {
                         color: $grisTexto;
                         font-weight: 470;
@@ -367,6 +374,7 @@ body {
                     .productoMarcaModelo {
                       display: flex;
                       width: 100%;
+                      padding: -2px;
                       .marca {
                         font-size: auto;
                         font-weight: 400;
@@ -379,37 +387,47 @@ body {
                         margin: 1px;
                       }
                     }
-                  }
-                  .productoDescrip {
-                    width: 100%;
-                    font-size: 10px;
-                    margin: 2px 2px -2px 2px;
-                  }
-                  .productoUnidades {
-                    width: 10%;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    margin: 5px;
-                    p {
-                      margin: 4px;
-                      color: $grisTexto;
-                    }
-                    .fa-circle-minus {
-                      color: $grisClaro;
-                      font-size: 12px;
-                      cursor: pointer;
-                    }
-                    .fa-circle-plus {
-                      color: $grisClaro;
-                      font-size: 12px;
-                      cursor: pointer;
+                    .productoDescrip {
+                      width: 100%;
+                      font-size: 10px;
+                      margin: 0;
                     }
                   }
-                  .productoPrecio {
-                    margin: 2px;
-                    p {
-                      color: green;
+                  .bloque02 {
+                    .productosUnidadesContainer {
+                      .productoUnidades {
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin: 5px;
+                        p {
+                          margin: 4px;
+                          color: $grisTexto;
+                        }
+                        .fa-circle-minus {
+                          color: $grisClaro;
+                          font-size: 12px;
+                          cursor: pointer;
+                        }
+                        .fa-circle-plus {
+                          color: $grisClaro;
+                          font-size: 12px;
+                          cursor: pointer;
+                        }
+                      }
+                      .productoPrecio {
+                        border: solid 1px blue;
+                        // border:solid 1px red;
+                        width: 100%;
+                        margin: 2px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        p {
+                          color: green;
+                        }
+                      }
                     }
                   }
                 }
