@@ -94,19 +94,19 @@ html body nav .navMid .navEnd .cartContainer .cartCircle span {
   top: 50%;
   transform: translate(-50%, -50%);
 }
-html body main {
+html main {
   flex: 2;
 }
 
 @media (max-width: 737px) {
   html {
-    height: 100vh;
+    height: calc(var(--vh) * 100);
     margin: 0;
     padding: 0;
-    overflow: auto;
+    overflow: hidden;
   }
   html body {
-    height: 100vh;
+    height: calc(var(--vh) * 100);
     background-image: url("../assets/img/fondo.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -114,6 +114,7 @@ html body main {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    overflow-y: auto;
   }
   html body nav {
     width: 100%;
@@ -157,7 +158,7 @@ html body main {
     align-items: center;
     justify-content: center;
   }
-  html body main {
+  html main {
     overflow-y: auto;
   }
 }

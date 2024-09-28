@@ -78,9 +78,9 @@ html {
         }
       }
     }
-    main {
-      flex: 2;
-    }
+  }
+  main {
+    flex: 2;
   }
 }
 @media (max-width: 737px) {
@@ -88,7 +88,7 @@ html {
     height: calc(var(--vh) * 100);
     margin: 0;
     padding: 0;
-    overflow: auto;
+    overflow: hidden;
 
     body {
       height: calc(var(--vh) * 100);
@@ -150,9 +150,9 @@ html {
           }
         }
       }
-      main {
-        overflow-y: auto;
-      }
+    }
+    main {
+      overflow-y: auto;
     }
   }
 }
