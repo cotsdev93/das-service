@@ -103,7 +103,7 @@ html body main {
     height: 100vh;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow: none;
   }
   html body {
     height: 100vh;
@@ -1166,6 +1166,12 @@ html body footer .primerBloque img {
 html body footer .segundoBloque {
   width: 40%;
   height: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+html body footer .segundoBloque p {
+  color: #f8f8f8;
 }
 html body footer .tercerBloque {
   width: 30%;
@@ -1198,6 +1204,53 @@ html body .copyR p {
   font-size: 10px;
 }
 
+@media (max-width: 737px) {
+  html body footer {
+    width: 100%;
+    height: 20vh;
+    background-color: #003459;
+    display: flex;
+    justify-content: space-around;
+  }
+  html body footer .primerBloque {
+    display: none;
+  }
+  html body footer .segundoBloque {
+    width: 50%;
+    font-size: 12px;
+    justify-content: center;
+  }
+  html body footer .tercerBloque {
+    width: 50%;
+    height: auto;
+    font-size: 35px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  html body footer .tercerBloque a i {
+    color: #f8f8f8;
+    margin: 5px;
+    cursor: pointer;
+  }
+  html body footer .tercerBloque a .fa-location-dot {
+    font-size: 27px;
+    margin: 10px;
+  }
+  html body .copyR {
+    width: 100%;
+    height: 13px;
+    background-color: #c5c5c5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  html body .copyR p {
+    font-family: "pixel";
+    color: #787878;
+    font-size: 10px;
+  }
+}
 body #section5 .userContainer {
   border: 1px solid rgb(229, 229, 229);
   border-radius: 20px;
