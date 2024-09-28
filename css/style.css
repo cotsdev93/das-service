@@ -95,7 +95,7 @@ html body nav .navMid .navEnd .cartContainer .cartCircle span {
   transform: translate(-50%, -50%);
 }
 html body main {
-  flex: 1;
+  flex: 2;
 }
 
 @media (max-width: 737px) {
@@ -103,7 +103,7 @@ html body main {
     height: 100vh;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow: auto;
   }
   html body {
     height: 100vh;
