@@ -95,26 +95,26 @@ html body nav .navMid .navEnd .cartContainer .cartCircle span {
   transform: translate(-50%, -50%);
 }
 html main {
-  flex: 2;
+  flex: 1;
 }
 
 @media (max-width: 737px) {
   html {
-    height: calc(var(--vh) * 100);
+    height: 5vh;
     margin: 0;
     padding: 0;
     overflow: auto;
     max-height: 100vh;
+    overflow: hidden;
   }
   html body {
-    height: calc(var(--vh) * 100);
+    height: 100vh;
     background-image: url("../assets/img/fondo.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
     overflow-y: auto;
   }
   html body nav {
@@ -215,7 +215,9 @@ body .sectionsContainer .section.enter-right {
 @media (max-width: 737px) {
   body .sectionsContainer {
     width: 100%;
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100%;
   }
   body .sectionsContainer .section {
     width: 100%;
@@ -439,13 +441,15 @@ body #section2 .repuestosContainerMain .repuestosCarrousell .bx-chevron-right:ac
 @media (max-width: 737px) {
   body #section2 {
     height: auto;
+    overflow-y: auto;
   }
   body #section2 .repuestosContainerMain {
-    overflow-y: auto;
     width: 75%;
     margin: 20px 0px;
     padding-bottom: 5px;
     justify-content: center;
+    border: solid 1px red;
+    max-height: 70vh;
   }
   body #section2 .repuestosContainerMain .staticMobile {
     position: sticky;
@@ -940,6 +944,7 @@ body #section3 .equiposContainerMain .equiposCarrousell .bx-chevron-right:active
     margin: 20px 0px;
     padding-bottom: 0px;
     justify-content: center;
+    max-height: 70vh;
   }
   body #section3 .equiposContainerMain .staticMobile {
     position: sticky;
