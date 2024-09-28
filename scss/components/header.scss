@@ -88,13 +88,13 @@ html {
     height: 100vh;
     margin: 0;
     padding: 0;
-    overflow: auto;
+    overflow: hidden;
 
     body {
       height: 100vh;
       background-image: url("../assets/img/fondo.jpg");
       background-position: center;
-      background-repeat: repeat-y;
+      background-repeat: no-repeat;
       background-size: cover;
       display: flex;
       flex-direction: column;
@@ -150,6 +150,7 @@ html {
         }
       }
       main {
+        overflow-y: auto;
       }
     }
   }
