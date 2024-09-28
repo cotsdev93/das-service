@@ -1173,6 +1173,10 @@ html body footer .segundoBloque {
 html body footer .segundoBloque p {
   color: #f8f8f8;
 }
+html body footer .segundoBloque img {
+  width: 30px;
+  transform: translateY(-4px);
+}
 html body footer .tercerBloque {
   width: 30%;
   height: auto;
@@ -1205,28 +1209,20 @@ html body .copyR p {
 }
 
 @media (max-width: 737px) {
-  html body footer {
-    width: 100%;
-    height: 20vh;
-    background-color: #003459;
-    display: flex;
-    justify-content: space-around;
-  }
   html body footer .primerBloque {
     display: none;
   }
   html body footer .segundoBloque {
     width: 50%;
     font-size: 12px;
-    justify-content: center;
+    justify-content: flex-end;
   }
   html body footer .tercerBloque {
     width: 50%;
     height: auto;
     font-size: 35px;
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    justify-content: center;
   }
   html body footer .tercerBloque a i {
     color: #f8f8f8;
