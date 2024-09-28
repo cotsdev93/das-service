@@ -1,11 +1,3 @@
-function ajustarAltura() {
-  const vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
-}
-
-// Llamar la función al cargar la página y cuando cambia el tamaño de la ventana
-window.addEventListener('resize', ajustarAltura);
-window.addEventListener('load', ajustarAltura);
 
 let isAnimating = false;
 
