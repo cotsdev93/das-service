@@ -441,14 +441,13 @@ body #section2 .repuestosContainerMain .repuestosCarrousell .bx-chevron-right:ac
 @media (max-width: 737px) {
   body #section2 {
     height: auto;
-    overflow-y: auto;
   }
   body #section2 .repuestosContainerMain {
+    overflow-y: auto;
     width: 75%;
     margin: 20px 0px;
     padding-bottom: 5px;
     justify-content: center;
-    max-height: 70vh;
   }
   body #section2 .repuestosContainerMain .staticMobile {
     position: sticky;
@@ -943,7 +942,6 @@ body #section3 .equiposContainerMain .equiposCarrousell .bx-chevron-right:active
     margin: 20px 0px;
     padding-bottom: 0px;
     justify-content: center;
-    max-height: 70vh;
   }
   body #section3 .equiposContainerMain .staticMobile {
     position: sticky;
@@ -1096,8 +1094,11 @@ body #section4 .clientesContainer .opinionesContainer .elfsight-app-1cbcc4ce-582
   body #section4 .clientesContainer {
     width: 75%;
     margin: 20px;
-    margin-bottom: -5px;
-    height: 75vh;
+    margin-bottom: 5px;
+    height: 100%;
+    padding-bottom: 0px;
+    border: solid 1px red;
+    max-height: 75vh;
   }
   body #section4 .clientesContainer .titleClientes {
     margin: 10px 10px 0px 10px;
@@ -1113,30 +1114,31 @@ body #section4 .clientesContainer .opinionesContainer .elfsight-app-1cbcc4ce-582
   }
   body #section4 .clientesContainer .opinionesContainer {
     margin: 10px;
-    height: 70vh;
+    height: auto;
     overflow: hidden;
   }
   body #section4 .clientesContainer .opinionesContainer .Main__Content-sc-1oq93m5-1 .HeaderComponent__Top-sc-9lcg5s-2 {
     margin-bottom: 10px;
-    position: static;
   }
   body #section4 .clientesContainer .opinionesContainer .Main__Content-sc-1oq93m5-1 .HeaderComponent__Top-sc-9lcg5s-2 .HeaderContainer__Inner-sc-1532ffp-0 {
-    z-index: 5;
     padding: 2.5px;
   }
   body #section4 .clientesContainer .opinionesContainer .Main__Content-sc-1oq93m5-1 .HeaderComponent__Top-sc-9lcg5s-2 .HeaderContainer__Inner-sc-1532ffp-0 .HeaderInfoContainer__Info-sc-16jx15e-0 {
+    justify-content: space-evenly;
     margin: 0px;
     width: 100%;
-    justify-content: inherit;
   }
   body #section4 .clientesContainer .opinionesContainer .Main__Content-sc-1oq93m5-1 .HeaderComponent__Top-sc-9lcg5s-2 .HeaderContainer__Inner-sc-1532ffp-0 .HeaderInfoContainer__Info-sc-16jx15e-0 .Icon__IconContainer-sc-11wrh3u-0 {
-    width: 70px;
+    width: 60px;
+    margin: 5px;
   }
   body #section4 .clientesContainer .opinionesContainer .Main__Content-sc-1oq93m5-1 .HeaderComponent__Top-sc-9lcg5s-2 .HeaderContainer__Inner-sc-1532ffp-0 .HeaderInfoContainer__Info-sc-16jx15e-0 .Icon__IconContainer-sc-11wrh3u-0 .injected-svg {
     width: 100%;
   }
   body #section4 .clientesContainer .opinionesContainer .Main__Content-sc-1oq93m5-1 .HeaderComponent__Top-sc-9lcg5s-2 .HeaderContainer__Inner-sc-1532ffp-0 .HeaderInfoContainer__Info-sc-16jx15e-0 .HeaderRating__RatingContainer-sc-117jf4y-0 {
-    margin-left: 5px;
+    width: 130px;
+    margin-left: 0px;
+    justify-content: center;
     flex-wrap: nowrap;
   }
   body #section4 .clientesContainer .opinionesContainer .Main__Content-sc-1oq93m5-1 .HeaderComponent__Top-sc-9lcg5s-2 .HeaderContainer__Inner-sc-1532ffp-0 .HeaderInfoContainer__Info-sc-16jx15e-0 .HeaderRating__RatingContainer-sc-117jf4y-0 .Rating__Container-sc-bk54oq-0 {
@@ -1146,10 +1148,15 @@ body #section4 .clientesContainer .opinionesContainer .elfsight-app-1cbcc4ce-582
     font-size: 15px;
   }
   body #section4 .clientesContainer .opinionesContainer .Main__Content-sc-1oq93m5-1 .HeaderComponent__Top-sc-9lcg5s-2 .HeaderContainer__Inner-sc-1532ffp-0 .HeaderInfoContainer__Info-sc-16jx15e-0 .HeaderRating__RatingContainer-sc-117jf4y-0 .Rating__Container-sc-bk54oq-0 .RatingBar__Container-sc-qimg51-0 {
-    width: auto;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  body #section4 .clientesContainer .opinionesContainer .Main__Content-sc-1oq93m5-1 .HeaderComponent__Top-sc-9lcg5s-2 .HeaderContainer__Inner-sc-1532ffp-0 .HeaderInfoContainer__Info-sc-16jx15e-0 .HeaderRating__RatingContainer-sc-117jf4y-0 .Rating__Container-sc-bk54oq-0 .RatingBar__Container-sc-qimg51-0 .RatingItemFilledSvg__ContainerAbsolute-sc-14jss50-1 {
-    width: auto;
+  body #section4 .clientesContainer .opinionesContainer .Main__Content-sc-1oq93m5-1 .HeaderComponent__Top-sc-9lcg5s-2 .HeaderContainer__Inner-sc-1532ffp-0 .HeaderInfoContainer__Info-sc-16jx15e-0 .HeaderRating__RatingContainer-sc-117jf4y-0 .Rating__Container-sc-bk54oq-0 .RatingBar__Container-sc-qimg51-0 .RatingItemFilledSvg__Container-sc-14jss50-0 {
+    width: 20%;
+  }
+  body #section4 .clientesContainer .opinionesContainer .Main__Content-sc-1oq93m5-1 .HeaderComponent__Top-sc-9lcg5s-2 .HeaderContainer__Inner-sc-1532ffp-0 .HeaderInfoContainer__Info-sc-16jx15e-0 .HeaderRating__RatingContainer-sc-117jf4y-0 .Rating__Container-sc-bk54oq-0 .RatingBar__Container-sc-qimg51-0 .RatingItemFilledSvg__Container-sc-14jss50-0 .RatingItemFilledSvg__ContainerAbsolute-sc-14jss50-1 {
     margin: 0px;
   }
 }

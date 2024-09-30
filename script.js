@@ -1,4 +1,5 @@
 
+
 let isAnimating = false;
 
 document.querySelectorAll("nav li, .navEnd i").forEach((item) => {
