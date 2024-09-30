@@ -83,6 +83,7 @@ body {
           display: flex;
           justify-content: space-evenly;
           align-items: center;
+
           flex-wrap: nowrap;
           width: 98%;
           position: relative;
@@ -101,6 +102,7 @@ body {
             justify-content: center;
             p {
               color: $grisClaro;
+              color: red;
             }
           }
           .repuestoContainer {
@@ -280,11 +282,13 @@ body {
               display: block;
             }
             .noHayRepuestos {
+              font-size: 13px;
               width: 100%;
               min-height: 30vh;
               display: flex;
-              align-items: center;
-              justify-content: center;
+              align-items: center; // Alinea verticalmente
+              justify-content: center; // Alinea horizontalmente
+              
               p {
                 color: $grisClaro;
               }

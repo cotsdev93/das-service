@@ -344,6 +344,7 @@ body #section2 .repuestosContainerMain .repuestosCarrousell .repuestosContainer 
 }
 body #section2 .repuestosContainerMain .repuestosCarrousell .repuestosContainer .noHayRepuestos p {
   color: #c5c5c5;
+  color: red;
 }
 body #section2 .repuestosContainerMain .repuestosCarrousell .repuestosContainer .repuestoContainer {
   margin: 2px;
@@ -518,6 +519,7 @@ body #section2 .repuestosContainerMain .repuestosCarrousell .bx-chevron-right:ac
     display: block;
   }
   body #section2 .repuestosContainerMain .repuestosCarrousell .repuestosContainer .noHayRepuestos {
+    font-size: 13px;
     width: 100%;
     min-height: 30vh;
     display: flex;
