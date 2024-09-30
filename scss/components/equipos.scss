@@ -47,10 +47,10 @@ body {
       .categoriasContainer {
         display: flex;
         justify-content: center;
-        .categoriasContainerBloque01{
-          display:flex;
+        .categoriasContainerBloque01 {
+          display: flex;
         }
-        .categoriasContainerBloque02{
+        .categoriasContainerBloque02 {
           display: flex;
         }
         ul {
@@ -216,11 +216,21 @@ body {
           top: 0;
           z-index: 1;
           padding-bottom: 5px;
-          .titleEquiposContainer {
+          .titleEquipos {
+            // border: solid 1px red;
             margin: 10px 10px 0px 10px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
             .titleEquipos {
               font-size: 18px;
               font-weight: 550;
+              .titleSabemos {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                border: solid 1px red;
+              }
             }
           }
           .textEquipos {
@@ -254,15 +264,13 @@ body {
               li {
                 margin: 2px 5px;
                 font-size: 10px;
-                &:hover {
-                }
               }
             }
           }
         }
         .equiposCarrousell {
           width: 100%;
-          height: 52vh;
+          height: 50vh;
           overflow-y: auto;
           // border: solid 1px red;
           position: relative;
@@ -299,43 +307,19 @@ body {
                   width: 100%;
                 }
               }
-              // .equipoDetail {
-              //   display: block;
-              //   margin: 3px 5px;
-              //   white-space: nowrap;
-              //   .equipoNombre {
-              //     font-size: auto;
-              //     padding-right: 3px;
-              //     font-weight: 450;
-              //     white-space: nowrap;
-              //     overflow: hidden;
-              //     text-overflow: ellipsis;
-              //     max-width: 100%;
-              //     .equipoMarca {
-              //       font-size: auto;
-              //       font-weight: 400;
-              //     }
-              //   }
-              // }
-              // .equipoPrecioContainer {
-              //   display: flex;
-              //   margin: 3px 5px;
-              //   .equipoPrecio {
-              //     font-size: auto;
-              //     font-weight: 500;
-              //     color: rgb(15, 200, 15);
-              //   }
-              //   .equipoPrecioCart {
-              //     margin-left: 5px;
-              //     pointer-events: auto;
-              //     .fa-cart-plus {
-              //       font-size: 14px;
-              //       color: rgb(56, 162, 208);
-              //       cursor: pointer;
-              //       transform: translateY(-1px);
-              //     }
-              //   }
-              // }
+              .equipoDetail {
+                .equipoCategoria {
+                }
+                .equipoTitle {
+                  .equipoMarca {
+                  }
+                  .equipoModelo {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                  }
+                }
+              }
             }
           }
           .bx-chevron-left {

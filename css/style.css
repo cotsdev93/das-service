@@ -247,11 +247,11 @@ body #section2 .repuestosContainerMain {
   border-radius: 20px;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.1);
   width: 70%;
-  margin: 20px;
+  margin: 20px 0px 0px 0px;
   backdrop-filter: blur(2px);
   padding-bottom: 15px;
   overflow-x: hidden;
-  min-height: 72vh;
+  max-height: 72vh;
 }
 body #section2 .repuestosContainerMain .titleRepuestosContainer {
   margin: 15px 15px 0px 15px;
@@ -443,12 +443,13 @@ body #section2 .repuestosContainerMain .repuestosCarrousell .bx-chevron-right:ac
 @media (max-width: 737px) {
   body #section2 {
     height: auto;
+    overflow: hidden;
   }
   body #section2 .repuestosContainerMain {
     overflow-y: auto;
     width: 75%;
     margin: 20px 0px;
-    padding-bottom: 5px;
+    padding-bottom: 0px;
     justify-content: center;
   }
   body #section2 .repuestosContainerMain .staticMobile {
@@ -466,7 +467,7 @@ body #section2 .repuestosContainerMain .repuestosCarrousell .bx-chevron-right:ac
   }
   body #section2 .repuestosContainerMain .staticMobile .textRepuestos {
     color: #787878;
-    font-size: 12px;
+    font-size: 11px;
     margin: 0px 10px 0px 10px;
   }
   body #section2 .repuestosContainerMain .staticMobile .buscadorContainerRepuestos {
@@ -500,7 +501,7 @@ body #section2 .repuestosContainerMain .repuestosCarrousell .bx-chevron-right:ac
   }
   body #section2 .repuestosContainerMain .repuestosCarrousell {
     width: 100%;
-    height: 54vh;
+    height: 50vh;
     overflow-y: auto;
     position: relative;
   }
@@ -721,7 +722,7 @@ body #section1 .serviceContainer .serviceMarcasCarrousel .bx-chevron-right:activ
     overflow: hidden;
   }
   body #section1 .serviceContainer .serviceMarcasCarrousel .serviceMarcasContainer .marcaContainer {
-    flex: 0 0 23.6%;
+    flex: 0 0 23.4%;
     height: 60px;
     pointer-events: auto;
   }
@@ -951,12 +952,21 @@ body #section3 .equiposContainerMain .equiposCarrousell .bx-chevron-right:active
     z-index: 1;
     padding-bottom: 5px;
   }
-  body #section3 .equiposContainerMain .staticMobile .titleEquiposContainer {
+  body #section3 .equiposContainerMain .staticMobile .titleEquipos {
     margin: 10px 10px 0px 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
-  body #section3 .equiposContainerMain .staticMobile .titleEquiposContainer .titleEquipos {
+  body #section3 .equiposContainerMain .staticMobile .titleEquipos .titleEquipos {
     font-size: 18px;
     font-weight: 550;
+  }
+  body #section3 .equiposContainerMain .staticMobile .titleEquipos .titleEquipos .titleSabemos {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: solid 1px red;
   }
   body #section3 .equiposContainerMain .staticMobile .textEquipos {
     color: #787878;
@@ -994,7 +1004,7 @@ body #section3 .equiposContainerMain .equiposCarrousell .bx-chevron-right:active
   }
   body #section3 .equiposContainerMain .equiposCarrousell {
     width: 100%;
-    height: 52vh;
+    height: 50vh;
     overflow-y: auto;
     position: relative;
   }
@@ -1031,6 +1041,11 @@ body #section3 .equiposContainerMain .equiposCarrousell .bx-chevron-right:active
   }
   body #section3 .equiposContainerMain .equiposCarrousell .equiposContainer .equipoContainer .imgContainer img {
     width: 100%;
+  }
+  body #section3 .equiposContainerMain .equiposCarrousell .equiposContainer .equipoContainer .equipoDetail .equipoTitle .equipoModelo {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   body #section3 .equiposContainerMain .equiposCarrousell .bx-chevron-left {
     display: none;

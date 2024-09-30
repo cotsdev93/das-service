@@ -6,11 +6,12 @@ body {
       border-radius: 20px;
       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.1);
       width: 70%;
-      margin: 20px;
+      margin: 20px 0px 0px 0px;
       backdrop-filter: blur(2px);
       padding-bottom: 15px;
       overflow-x: hidden;
-      min-height: 72vh;
+      max-height: 72vh;
+      // border: solid 1px red;
       .titleRepuestosContainer {
         margin: 15px 15px 0px 15px;
         .titleRepuestos {
@@ -206,11 +207,12 @@ body {
   body {
     #section2 {
       height: auto;
+      overflow: hidden;
       .repuestosContainerMain {
         overflow-y: auto;
         width: 75%;
         margin: 20px 0px;
-        padding-bottom: 5px;
+        padding-bottom: 0px;
         justify-content: center;
         .staticMobile {
           position: sticky;
@@ -226,7 +228,7 @@ body {
           }
           .textRepuestos {
             color: $grisTexto;
-            font-size: 12px;
+            font-size: 11px;
             margin: 0px 10px 0px 10px;
           }
           .buscadorContainerRepuestos {
@@ -255,15 +257,13 @@ body {
               li {
                 margin: 2px 5px;
                 font-size: 10px;
-                &:hover {
-                }
               }
             }
           }
         }
         .repuestosCarrousell {
           width: 100%;
-          height: 54vh;
+          height: 50vh;
           overflow-y: auto;
           // border: solid 1px red;
           position: relative;
@@ -290,7 +290,6 @@ body {
               }
             }
             .repuestoContainer {
-              // border:solid 1px red;
               width: 50%;
               margin: 5px;
               flex: auto;

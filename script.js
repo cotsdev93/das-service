@@ -669,7 +669,7 @@ class Carrito {
                   </div>
                   <div class="productoPrecioContainer">
                   <div class="productoPrecio">
-                    <p>$${producto.precio.toLocaleString("es-ES")}</p>
+                    <p>$ ${producto.precio.toLocaleString("es-ES")}</p>
                   </div>
                   </div>
                 </div>
