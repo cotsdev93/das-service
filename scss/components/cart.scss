@@ -64,12 +64,12 @@ body {
           .productoHeader {
             grid-column: span 6;
             text-align: left;
-            padding-left: 10px;
+            padding-left: 5px;
           }
           .cantidadHeader {
             grid-column: span 1;
             text-align: center;
-            padding-left: 12px;
+            padding-left: 0px;
           }
           .precioHeader {
             grid-column: span 1;
@@ -311,14 +311,14 @@ body {
               }
             }
             .productoHeader {
-              margin-left: 30px;
+              margin-left: 7px;
               padding-left: 0px;
             }
             .cantidadHeader {
               grid-column: span 1;
               text-align: center;
               padding: 0px;
-              margin-right: 15px;
+              margin-right: 10px;
             }
             .precioHeader {
               grid-column: span 1;
@@ -343,82 +343,101 @@ body {
               margin-bottom: 5px;
               width: 100%;
               .productoImgContainer {
-                width: 25%;
+                width: 80px;
                 margin: 0px;
                 img {
+                  border-radius: 1px;
                   width: 100%;
                 }
               }
               .productoDetailContainer {
-                width: 100%;
+                width: 70%;
                 display: flex;
                 align-items: center;
                 justify-content: space-evenly;
+                margin: 0px 5px;
                 .productoDetailContainerMobile {
                   display: flex;
                   .bloque01 {
                     display: block;
-                    width: 65%;
+                    width: 60%;
                     margin: 0px;
                     .productoNombreContainer {
                       width: 100%;
                       .productoNombre {
-                        padding: -2px;
+                        padding: 0px;
                       }
                       p {
                         color: $grisTexto;
                         font-weight: 470;
                         white-space: nowrap;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
                       }
                     }
                     .productoMarcaModelo {
                       display: flex;
                       width: 100%;
-                      padding: -2px;
+                      padding: 0px;
+                      overflow: hidden;
+                      text-overflow: ellipsis;
                       .marca {
                         font-size: auto;
                         font-weight: 400;
                       }
                       .modelo {
                         font-weight: 380;
+                        width: auto;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
                       }
                       p {
                         color: $grisTexto;
-                        margin: 1px;
+                        margin: 0px;
                       }
                     }
                     .productoDescrip {
                       width: 100%;
                       font-size: 10px;
-                      margin: 0;
+                      margin: 0px;
                     }
                   }
                   .bloque02 {
+                    width: 40%;
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
                     .productosUnidadesContainer {
                       .productoUnidades {
                         width: 100%;
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        margin: 5px;
+                        margin: 0px;
                         p {
-                          margin: 4px;
+                          margin: 0px;
                           color: $grisTexto;
                         }
                         .fa-circle-minus {
+                          margin: 3px 0px;
                           color: $grisClaro;
                           font-size: 12px;
                           cursor: pointer;
                         }
                         .fa-circle-plus {
+                          margin: 3px 0px;
                           color: $grisClaro;
                           font-size: 12px;
                           cursor: pointer;
                         }
                       }
+                    }
+                    .productoPrecioContainer {
                       .productoPrecio {
-                        border: solid 1px blue;
-                        // border:solid 1px red;
+                        height: auto;
                         width: 100%;
                         margin: 2px;
                         display: flex;

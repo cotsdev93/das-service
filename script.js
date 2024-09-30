@@ -667,8 +667,10 @@ class Carrito {
                       ></i>
                     </div>
                   </div>
+                  <div class="productoPrecioContainer">
                   <div class="productoPrecio">
                     <p>$${producto.precio.toLocaleString("es-ES")}</p>
+                  </div>
                   </div>
                 </div>
               </div>
