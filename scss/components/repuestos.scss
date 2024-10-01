@@ -9,9 +9,8 @@ body {
       margin: 20px 0px 0px 0px;
       backdrop-filter: blur(2px);
       padding-bottom: 15px;
-      overflow-x: hidden;
-      max-height: 72vh;
-      // border: solid 1px red;
+      overflow: hidden;
+      min-height: 72vh;
       .titleRepuestosContainer {
         margin: 15px 15px 0px 15px;
         .titleRepuestos {

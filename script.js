@@ -1,4 +1,24 @@
+function intro() {
+  const logoIntro = document.querySelector(".logoIntroContainer");
+  const introContainer = document.querySelector(".introContainer");
 
+  // Primera animación: escalar el logo
+  logoIntro.style.transform = "scale(1)";
+  
+  // Después de 2 segundos, ambos elementos (logo y fondo) subirán juntos
+  setTimeout(function() {
+    logoIntro.style.transform = "translateY(-100vh)"; // El logo sube
+    introContainer.style.transform = "translateY(-100vh)"; // El fondo azul sube
+  }, 2000);
+}
+intro();
+
+window.addEventListener('keydown', function(event) {
+  if (event.key == 'Tab') {
+      event.preventDefault(); // Evita cualquier comportamiento asociado a Shift
+      console.log("funca")
+  }
+})
 
 let isAnimating = false;
 
