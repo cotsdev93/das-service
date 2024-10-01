@@ -1976,10 +1976,10 @@ body .introContainer .logoIntroContainer img {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 1s ease-in-out;
+    transition: transform 2s ease-in-out;
   }
   body .introContainer .logoIntroContainer {
-    width: 10%;
+    width: 40%;
     transform: scale(5);
     transition: transform 2s ease-in-out;
   }

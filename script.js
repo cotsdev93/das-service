@@ -2,27 +2,37 @@ function intro() {
   const logoIntro = document.querySelector(".logoIntroContainer");
   const introContainer = document.querySelector(".introContainer");
   const mobile = window.innerWidth <= 737;
-  
-  if (mobile) {
-    logoIntro.style.transform = "scale(8)"
-  } else {
 
-    logoIntro.style.transform = "scale(1)";
+  if (mobile) {
+    // Escalamos el logo para móviles
+    logoIntro.style.transform = "scale(8)";
+  } else {
+    // En desktop, lo dejamos sin escalar
+    logoIntro.style.transform = "scale(2)";
   }
 
-  setTimeout(function() {
-    logoIntro.style.transform = "translateY(-100vh)"; // El logo sube
-    introContainer.style.transform = "translateY(-100vh)"; // El fondo azul sube
+  setTimeout(function () {
+    if (mobile) {
+      // Para móviles: mantener el scale(8) y mover hacia arriba a la par
+      logoIntro.style.transform = "scale(8)";
+    } else {
+      // Para desktop: mover sin escalar
+      logoIntro.style.transform = "scale(1)";
+    }
+
+    // El fondo azul también se mueve hacia arriba
+    introContainer.style.transform = "translateY(-100vh)";
   }, 2000);
 }
+
 intro();
 
-window.addEventListener('keydown', function(event) {
-  if (event.key == 'Tab') {
-      event.preventDefault(); // Evita cualquier comportamiento asociado a Shift
-      console.log("funca")
+window.addEventListener("keydown", function (event) {
+  if (event.key == "Tab") {
+    event.preventDefault(); // Evita cualquier comportamiento asociado a Shift
+    console.log("funca");
   }
-})
+});
 
 let isAnimating = false;
 
@@ -127,7 +137,6 @@ function moverCarrouselMarca(direccion) {
 }
 
 const mobile = window.innerWidth <= 737;
-
 
 let autoSlide = setInterval(() => {
   const anchoTotalScroll = serviceMarcasContainer.scrollWidth;

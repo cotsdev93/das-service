@@ -10,13 +10,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 1s ease-in-out; // Transición para el movimiento del fondo azul
+    transition: transform 1s ease-in-out; 
 
     .logoIntroContainer {
       width: 10%;
       transform: scale(0.5); // El logo comienza más pequeño
-      transition: transform 2s ease-in-out; // Transición para el logo (escalar y mover)
-
+      transition: transform 2s ease-in-out; 
       img {
         width: 100%;
       }
@@ -26,29 +25,29 @@ body {
 
 
 @media (max-width: 737px) {
-    body {
-        position: relative;
+  body {
+    position: relative;
+
+    .introContainer {
+      width: 100%;
+      height: 100vh;
+      background-color: $azul; // El fondo azul
+      position: absolute;
+      z-index: 20;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 2s ease-in-out; // Transición para el movimiento del fondo azul
       
-        .introContainer {
+      .logoIntroContainer {
+        width: 40%;
+        transform: scale(5); // El logo comienza más pequeño
+        transition: transform 2s ease-in-out; // Transición para el logo (escalar y mover)
+        
+        img {
           width: 100%;
-          height: 100vh;
-          background-color: $azul; // El fondo azul
-          position: absolute;
-          z-index: 20;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          transition: transform 1s ease-in-out; // Transición para el movimiento del fondo azul
-      
-          .logoIntroContainer {
-            width: 40%;
-            transform: scale(5); // El logo comienza más pequeño
-            transition: transform 2s ease-in-out; // Transición para el logo (escalar y mover)
-      
-            img {
-              width: 100%;
-            }
-          }
         }
       }
+    }
+  }
 }
