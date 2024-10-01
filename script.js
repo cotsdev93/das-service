@@ -1,11 +1,15 @@
 function intro() {
   const logoIntro = document.querySelector(".logoIntroContainer");
   const introContainer = document.querySelector(".introContainer");
-
-  // Primera animación: escalar el logo
-  logoIntro.style.transform = "scale(1)";
+  const mobile = window.innerWidth <= 737;
   
-  // Después de 2 segundos, ambos elementos (logo y fondo) subirán juntos
+  if (mobile) {
+    logoIntro.style.transform = "scale(8)"
+  } else {
+
+    logoIntro.style.transform = "scale(1)";
+  }
+
   setTimeout(function() {
     logoIntro.style.transform = "translateY(-100vh)"; // El logo sube
     introContainer.style.transform = "translateY(-100vh)"; // El fondo azul sube
