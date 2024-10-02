@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   text-decoration: none;
   list-style: none;
@@ -722,6 +723,7 @@ body #section1 .serviceContainer .serviceMarcasCarrousel .bx-chevron-right:activ
     pointer-events: auto;
     display: flex;
     overflow: hidden;
+    touch-action: pan-x; /* Habilitar desplazamiento táctil horizontal */
   }
   body #section1 .serviceContainer .serviceMarcasCarrousel .serviceMarcasContainer .marcaContainer {
     flex: 0 0 23.4%;

@@ -1,13 +1,14 @@
 function intro() {
   const logoIntro = document.querySelector(".logoIntroContainer");
   const introContainer = document.querySelector(".introContainer");
+  const body = document.querySelector("body");
   const mobile = window.innerWidth <= 737;
 
+  body.style.overflow = "hidden";
+
   if (mobile) {
-    // Escalamos el logo para móviles
     logoIntro.style.transform = "scale(1)";
   } else {
-    // En desktop, lo dejamos sin escalar
     logoIntro.style.transform = "scale(2)";
   }
 
@@ -17,8 +18,10 @@ function intro() {
     } else {
       logoIntro.style.transform = "scale(2)";
     }
-
     introContainer.style.transform = "translateY(-100vh)";
+    setTimeout(() => {
+      body.style.overflow = "auto";
+    }, 1000);
   }, 2000);
 }
 
@@ -26,7 +29,7 @@ intro();
 
 window.addEventListener("keydown", function (event) {
   if (event.key == "Tab") {
-    event.preventDefault(); // Evita cualquier comportamiento asociado a Shift
+    event.preventDefault();
     console.log("funca");
   }
 });
