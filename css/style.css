@@ -1956,7 +1956,7 @@ body .introContainer {
 }
 body .introContainer .logoIntroContainer {
   width: 10%;
-  transform: scale(0.5);
+  transform: scale(1.5);
   transition: transform 2s ease-in-out;
 }
 body .introContainer .logoIntroContainer img {
@@ -1980,7 +1980,7 @@ body .introContainer .logoIntroContainer img {
   }
   body .introContainer .logoIntroContainer {
     width: 40%;
-    transform: scale(1);
+    transform: scale(0.5);
     transition: transform 2s ease-in-out;
   }
   body .introContainer .logoIntroContainer img {

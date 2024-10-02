@@ -41,9 +41,10 @@ body {
       
       .logoIntroContainer {
         width: 40%;
-        transform: scale(1); // El logo comienza más pequeño
+        transform: scale(0.5); // El logo comienza más pequeño
         transition: transform 2s ease-in-out; // Transición para el logo (escalar y mover)
         
+        // transform: translateY(-100px);
         img {
           width: 100%;
         }

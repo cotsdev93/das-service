@@ -5,7 +5,7 @@ function intro() {
 
   if (mobile) {
     // Escalamos el logo para móviles
-    logoIntro.style.transform = "scale(2)";
+    logoIntro.style.transform = "scale(1)";
   } else {
     // En desktop, lo dejamos sin escalar
     logoIntro.style.transform = "scale(2)";
@@ -13,7 +13,7 @@ function intro() {
 
   setTimeout(function () {
     if (mobile) {
-      logoIntro.style.transform = "scale(2)";
+      logoIntro.style.transform = "scale(1)";
     } else {
       logoIntro.style.transform = "scale(2)";
     }
