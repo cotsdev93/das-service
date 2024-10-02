@@ -13,14 +13,11 @@ function intro() {
 
   setTimeout(function () {
     if (mobile) {
-      // Para móviles: mantener el scale(8) y mover hacia arriba a la par
       logoIntro.style.transform = "scale(2)";
     } else {
-      // Para desktop: mover sin escalar
-      logoIntro.style.transform = "scale(1)";
+      logoIntro.style.transform = "scale(2)";
     }
 
-    // El fondo azul también se mueve hacia arriba
     introContainer.style.transform = "translateY(-100vh)";
   }, 2000);
 }

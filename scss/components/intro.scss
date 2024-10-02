@@ -14,7 +14,7 @@ body {
 
     .logoIntroContainer {
       width: 10%;
-      transform: scale(0.5); // El logo comienza más pequeño
+      transform: scale(1.5); // El logo comienza más pequeño
       transition: transform 2s ease-in-out; 
       img {
         width: 100%;
@@ -37,12 +37,12 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
-      transition: transform 1.5s ease-in-out; // Transición para el movimiento del fondo azul
+      transition: transform 1s ease-in-out; // Transición para el movimiento del fondo azul
       
       .logoIntroContainer {
         width: 40%;
         transform: scale(1); // El logo comienza más pequeño
-        transition: transform 1.5s ease-in-out; // Transición para el logo (escalar y mover)
+        transition: transform 2s ease-in-out; // Transición para el logo (escalar y mover)
         
         img {
           width: 100%;
