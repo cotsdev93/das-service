@@ -1,10 +1,4 @@
 [
-  { "img": "./assets/img/taller01.jpg", "alt": "" },
-  { "img": "./assets/img/taller04.jpg", "alt": "" },
-  { "img": "./assets/img/taller03.jpg", "alt": "" },
-  { "img": "./assets/img/taller05.jpg", "alt": "" },
-  { "img": "./assets/img/taller08.jpg", "alt": "" },
-  { "img": "./assets/img/taller09.jpg", "alt": "" },
-  { "img": "./assets/img/taller12.jpg", "alt": "" },
+  { "img": "./assets/img/taller11.jpg", "alt": "" },
   { "img": "./assets/img/taller11.jpg", "alt": "" }
 ]

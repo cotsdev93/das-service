@@ -614,22 +614,6 @@ body #section1 .serviceContainer {
   overflow-x: hidden;
   height: 100%;
 }
-body #section1 .serviceContainer::-webkit-scrollbar {
-  width: 8px; /* Ancho de la scrollbar */
-  height: 8px; /* Ancho de la scrollbar horizontal */
-}
-body #section1 .serviceContainer::-webkit-scrollbar-track {
-  background: rgba(241, 241, 241, 0.1254901961); /* Fondo del track de la scrollbar */
-  border-radius: 10px;
-}
-body #section1 .serviceContainer::-webkit-scrollbar-thumb {
-  background-color: #c1c1c1; /* Color de la scrollbar */
-  border-radius: 10px;
-  border: 1px solid #f1f1f1; /* Añade borde para dar efecto de separación */
-}
-body #section1 .serviceContainer::-webkit-scrollbar-thumb:hover {
-  background-color: #9e9e9e; /* Color de la scrollbar al pasar el mouse */
-}
 body #section1 .serviceContainer .titleServiceContainer {
   margin: 15px 15px 0px 15px;
 }
@@ -644,6 +628,30 @@ body #section1 .serviceContainer .textService {
   text-align: justify;
   color: #000000;
   font-size: 15px;
+}
+body #section1 .serviceContainer .serviceFotosCarrousel {
+  width: 99%;
+  height: 30vh;
+  margin: auto;
+  transition: height 1s;
+}
+body #section1 .serviceContainer .serviceFotosCarrousel:hover {
+  height: 50vh;
+}
+body #section1 .serviceContainer .serviceFotosCarrousel .serviceImgContainer {
+  width: 100%;
+  margin: 2px;
+  height: 100%;
+  overflow-y: hidden;
+  overflow-x: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  transition: height 1s;
+}
+body #section1 .serviceContainer .serviceFotosCarrousel .serviceImgContainer img {
+  width: 100%;
+  object-fit: cover;
 }
 body #section1 .serviceContainer .serviceMarcasCarrousel {
   position: relative;
@@ -723,25 +731,6 @@ body #section1 .serviceContainer .serviceMarcasCarrousel .bx-chevron-right:hover
 }
 body #section1 .serviceContainer .serviceMarcasCarrousel .bx-chevron-right:active {
   box-shadow: 0px 0px 4px 3px rgba(0, 0, 0, 0.5019607843);
-}
-body #section1 .serviceContainer .serviceFotosCarrousel {
-  height: 40vh;
-  margin: auto;
-  width: 99%;
-  border: solid 2px red;
-}
-body #section1 .serviceContainer .serviceFotosCarrousel .serviceImgContainer {
-  border: solid 2px blue;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 100%;
-  overflow: auto;
-}
-body #section1 .serviceContainer .serviceFotosCarrousel .serviceImgContainer img {
-  width: 100%;
 }
 
 @media (max-width: 737px) {
@@ -1487,22 +1476,6 @@ body #section5 .userContainer .othersLoginContainer .imgContainer i {
     width: 40%;
     margin: 8px;
   }
-}
-body #section6::-webkit-scrollbar {
-  width: 8px; /* Ancho de la scrollbar */
-  height: 8px; /* Ancho de la scrollbar horizontal */
-}
-body #section6::-webkit-scrollbar-track {
-  background: rgba(241, 241, 241, 0.1254901961); /* Fondo del track de la scrollbar */
-  border-radius: 10px;
-}
-body #section6::-webkit-scrollbar-thumb {
-  background-color: #c1c1c1; /* Color de la scrollbar */
-  border-radius: 10px;
-  border: 1px solid #f1f1f1; /* Añade borde para dar efecto de separación */
-}
-body #section6::-webkit-scrollbar-thumb:hover {
-  background-color: #9e9e9e; /* Color de la scrollbar al pasar el mouse */
 }
 body #section6 .cartContainer {
   border: 1px solid rgb(229, 229, 229);
