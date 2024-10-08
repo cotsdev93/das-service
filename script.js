@@ -240,14 +240,6 @@ function moverCarrouselFoto(direccion) {
 
 const serviceFotosCarrousel = document.querySelector(".serviceFotosCarrousel");
 
-function bloquearScroll(event) {
-  event.preventDefault();
-}
-
-serviceFotosCarrousel.addEventListener("wheel", bloquearScroll, {
-  passive: false,
-});
-
 let autoSlideFotos;
 
 function iniciarAutoSlide() {
