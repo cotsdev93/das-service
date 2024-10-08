@@ -1,6 +1,6 @@
 [
-  { "img": "./assets/img/taller01.png", "alt": "" },
-  { "img": "./assets/img/taller02.png", "alt": "" },
-  { "img": "./assets/img/taller03.png", "alt": "" },
-  { "img": "./assets/img/taller04.png", "alt": "" }
+  { "img": "./assets/img/taller00.webp", "alt": "" },
+  { "img": "./assets/img/taller01.webp", "alt": "" },
+  { "img": "./assets/img/taller02.webp", "alt": "" },
+  { "img": "./assets/img/taller03.webp", "alt": "" }
 ]
