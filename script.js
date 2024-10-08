@@ -269,23 +269,31 @@ function detenerAutoSlide() {
 iniciarAutoSlide();
 
 serviceFotosCarrousel.addEventListener("mouseenter", () => {
-  detenerAutoSlide();
-  const body = document.querySelector("body");
+  if (mobile) {
+    return;
+  } else {
+    detenerAutoSlide();
+    const body = document.querySelector("body");
 
-  function estirarBody() {
-    body.style.height = "110%";
+    function estirarBody() {
+      body.style.height = "110%";
+    }
+    estirarBody();
   }
-  estirarBody();
 });
 
 serviceFotosCarrousel.addEventListener("mouseleave", () => {
-  iniciarAutoSlide();
-  const body = document.querySelector("body");
+  if (mobile) {
+    return;
+  } else {
+    iniciarAutoSlide();
+    const body = document.querySelector("body");
 
-  function achicarBody() {
-    body.style.height = "100%";
+    function achicarBody() {
+      body.style.height = "100%";
+    }
+    achicarBody();
   }
-  achicarBody();
 });
 
 function moverCarrouselFoto(direccion) {
