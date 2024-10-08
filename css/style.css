@@ -139,6 +139,9 @@ html main {
     overflow: hidden;
     overflow-y: hidden;
   }
+  html body::-webkit-scrollbar {
+    display: none;
+  }
   html body nav {
     width: 100%;
     height: 99px;
