@@ -64,7 +64,7 @@ body {
           img {
             width: 100%;
             object-fit: cover;
-            transform: translateY(-120px);
+            transform: translateY(-110px);
           }
         }
 
@@ -242,12 +242,14 @@ body {
               object-fit: cover;
               height: 100%;
               transform: translateY(0px);
+           
             }
           }
 
           .btnLeftFotos,
           .btnRightFotos {
             opacity: 0.5;
+
           }
 
           .btnLeftFotos {

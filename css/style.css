@@ -662,7 +662,7 @@ body #section1 .serviceContainer .serviceFotosCarrousel .serviceFotoContainer::-
 body #section1 .serviceContainer .serviceFotosCarrousel .serviceFotoContainer img {
   width: 100%;
   object-fit: cover;
-  transform: translateY(-120px);
+  transform: translateY(-110px);
 }
 body #section1 .serviceContainer .serviceFotosCarrousel .btnLeftFotos,
 body #section1 .serviceContainer .serviceFotosCarrousel .btnRightFotos {
