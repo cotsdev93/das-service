@@ -206,6 +206,71 @@ btnRightService.addEventListener("click", () => moverCarrouselMarca("derecha"));
 
 verificarCantidadMarca();
 
+const btnLeftFotos = document.querySelector(".btnLeftFotos");
+const btnRightFotos = document.querySelector(".btnRightFotos");
+const serviceFotoContainer = document.querySelector(".serviceFotoContainer"); // Corregido el nombre del contenedor
+
+function obtenerAnchoFotoConMargen() {
+  const foto = document.querySelector(".fotoContainer");
+  if (foto) {
+    const estilo = window.getComputedStyle(foto);
+    const margenIzquierdo = parseFloat(estilo.marginLeft);
+    const margenDerecho = parseFloat(estilo.marginRight);
+    const anchoTotal = foto.offsetWidth + margenIzquierdo + margenDerecho;
+    return anchoTotal;
+  }
+  return 0;
+}
+
+function moverCarrouselFoto(direccion) { // Corregido el nombre de la función (falta la "F" en "Foto")
+  const anchoFoto = obtenerAnchoFotoConMargen();
+  if (anchoFoto > 0) {
+    const desplazamientoActual = serviceFotoContainer.scrollLeft; // Corregido el nombre del contenedor
+    const nuevoDesplazamiento =
+      direccion === "izquierda"
+        ? desplazamientoActual - anchoFoto
+        : desplazamientoActual + anchoFoto;
+
+    serviceFotoContainer.scrollTo({
+      left: nuevoDesplazamiento,
+      behavior: "smooth",
+    });
+  }
+}
+
+// Autoslide con corrección de los nombres de contenedor y función
+let autoSlideFotos = setInterval(() => {
+  const anchoTotalScroll = serviceFotoContainer.scrollWidth;
+  const desplazamientoActual = serviceFotoContainer.scrollLeft;
+  const anchoFoto = obtenerAnchoFotoConMargen(); // Corregido el nombre de la función
+
+  if (
+    desplazamientoActual + anchoFoto >=
+    anchoTotalScroll - serviceFotoContainer.clientWidth
+  ) {
+    serviceFotoContainer.scrollTo({
+      left: 0,
+      behavior: "smooth",
+    });
+  } else {
+    moverCarrouselFoto("derecha"); // Corregido el nombre de la función
+  }
+}, 5000);
+
+// Manejo de eventos de las flechas
+btnLeftFotos.addEventListener("click", () => {
+  console.log("funca");
+  moverCarrouselFoto("izquierda"); // Corregido el nombre de la función
+});
+
+btnRightFotos.addEventListener("click", () => {
+  console.log("funca");
+  moverCarrouselFoto("derecha"); // Corregido el nombre de la función
+});
+
+
+
+
 
 // BASE DE DATOS repuestos
 

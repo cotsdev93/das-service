@@ -647,7 +647,7 @@ body #section1 .serviceContainer .serviceFotosCarrousel:hover .btnRightFotos {
   transition: opacity 1s;
   opacity: 0.5;
 }
-body #section1 .serviceContainer .serviceFotosCarrousel .serviceImgContainer {
+body #section1 .serviceContainer .serviceFotosCarrousel .serviceFotoContainer {
   width: 100%;
   height: 100%;
   overflow-y: hidden;
@@ -658,10 +658,10 @@ body #section1 .serviceContainer .serviceFotosCarrousel .serviceImgContainer {
   transition: all 5s;
   border-radius: 10px;
 }
-body #section1 .serviceContainer .serviceFotosCarrousel .serviceImgContainer::-webkit-scrollbar {
+body #section1 .serviceContainer .serviceFotosCarrousel .serviceFotoContainer::-webkit-scrollbar {
   display: none;
 }
-body #section1 .serviceContainer .serviceFotosCarrousel .serviceImgContainer img {
+body #section1 .serviceContainer .serviceFotosCarrousel .serviceFotoContainer img {
   width: 100%;
   object-fit: cover;
   transform: translateY(-120px);
