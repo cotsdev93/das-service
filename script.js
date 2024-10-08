@@ -206,6 +206,7 @@ btnRightService.addEventListener("click", () => moverCarrouselMarca("derecha"));
 
 verificarCantidadMarca();
 
+
 // BASE DE DATOS repuestos
 
 class BaseDeDatosRepuestos {
