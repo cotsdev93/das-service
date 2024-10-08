@@ -747,6 +747,7 @@ body #section1 .serviceContainer .serviceMarcasCarrousel .bx-chevron-left {
   opacity: 0.1;
   cursor: pointer;
   box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.3764705882);
+  transition: 1s ease-in-out;
 }
 body #section1 .serviceContainer .serviceMarcasCarrousel .bx-chevron-left:hover {
   box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.5019607843);
@@ -782,19 +783,68 @@ body #section1 .serviceContainer .serviceMarcasCarrousel .bx-chevron-right:activ
     margin: 20px 0px;
     padding-bottom: 10px;
   }
-  body #section1 .serviceContainer .titleServiceContainer {
-    margin: 10px 10px 0px 10px;
-  }
   body #section1 .serviceContainer .titleServiceContainer .titleService {
-    font-size: 18px;
-    font-weight: 550;
+    font-size: 12px;
   }
   body #section1 .serviceContainer .textService {
     margin: 0px 10px 0px 10px;
     font-size: 12px;
   }
-  body #section1 .serviceContainer .titleServiceContainer .titleService {
-    font-size: 12px;
+  body #section1 .serviceContainer .serviceFotosCarrousel {
+    width: 99%;
+    height: 30vh;
+    margin: auto;
+    transition: all 1s;
+    position: relative;
+  }
+  body #section1 .serviceContainer .serviceFotosCarrousel:hover {
+    height: 30vh;
+  }
+  body #section1 .serviceContainer .serviceFotosCarrousel .btnLeftFotos {
+    transition: opacity 1s;
+    opacity: 0.5;
+  }
+  body #section1 .serviceContainer .serviceFotosCarrousel .btnRightFotos {
+    transition: opacity 1s;
+    opacity: 0.5;
+  }
+  body #section1 .serviceContainer .serviceFotosCarrousel .serviceFotoContainer {
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+    overflow-x: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    transition: all 5s;
+    border-radius: 10px;
+  }
+  body #section1 .serviceContainer .serviceFotosCarrousel .serviceFotoContainer::-webkit-scrollbar {
+    display: none;
+  }
+  body #section1 .serviceContainer .serviceFotosCarrousel .serviceFotoContainer img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    transform: translateY(0px);
+  }
+  body #section1 .serviceContainer .serviceFotosCarrousel .btnLeftFotos,
+  body #section1 .serviceContainer .serviceFotosCarrousel .btnRightFotos {
+    opacity: 0.5;
+  }
+  body #section1 .serviceContainer .serviceFotosCarrousel .btnLeftFotos {
+    left: 0;
+  }
+  body #section1 .serviceContainer .serviceFotosCarrousel .btnLeftFotos .bx-chevron-left {
+    color: #f8f8f8;
+    font-size: 20px;
+  }
+  body #section1 .serviceContainer .serviceFotosCarrousel .btnRightFotos {
+    right: 0;
+  }
+  body #section1 .serviceContainer .serviceFotosCarrousel .btnRightFotos .bx-chevron-right {
+    color: #f8f8f8;
+    font-size: 20px;
   }
   body #section1 .serviceContainer .serviceMarcasCarrousel {
     position: relative;

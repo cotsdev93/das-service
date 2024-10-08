@@ -152,6 +152,7 @@ body {
           opacity: 0.1;
           cursor: pointer;
           box-shadow: 0px 0px 5px 3px #00000060;
+          transition: 1s ease-in-out;
           &:hover {
             box-shadow: 0px 0px 7px 3px #00000080;
           }
@@ -193,22 +194,78 @@ body {
         margin: 20px 0px;
         padding-bottom: 10px;
         .titleServiceContainer {
-          margin: 10px 10px 0px 10px;
           .titleService {
-            font-size: 18px;
-            font-weight: 550;
+            font-size: 12px;
           }
         }
         .textService {
           margin: 0px 10px 0px 10px;
           font-size: 12px;
         }
-        .titleServiceContainer {
-          .titleService {
-            font-size: 12px;
+        .serviceFotosCarrousel {
+          width: 99%;
+          height: 30vh;
+          margin: auto;
+          transition: all 1s;
+          position: relative;
+          &:hover {
+            height: 30vh;
+          }
+
+          .btnLeftFotos {
+            transition: opacity 1s;
+            opacity: 0.5;
+          }
+
+          .btnRightFotos {
+            transition: opacity 1s;
+            opacity: 0.5;
+          }
+
+          .serviceFotoContainer {
+            width: 100%;
+            height: 100%;
+            overflow-y: hidden;
+            overflow-x: auto;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            transition: all 5s;
+            border-radius: 10px;
+
+            &::-webkit-scrollbar {
+              display: none;
+            }
+
+            img {
+              width: 100%;
+              object-fit: cover;
+              height: 100%;
+              transform: translateY(0px);
+            }
+          }
+
+          .btnLeftFotos,
+          .btnRightFotos {
+            opacity: 0.5;
+          }
+
+          .btnLeftFotos {
+            left: 0; // Posiciona a la izquierda
+            .bx-chevron-left {
+              color: $claritoFondo;
+              font-size: 20px; // Ajusta el tamaño del ícono si es necesario
+            }
+          }
+
+          .btnRightFotos {
+            right: 0; // Posiciona a la derecha
+            .bx-chevron-right {
+              color: $claritoFondo;
+              font-size: 20px; // Ajusta el tamaño del ícono si es necesario
+            }
           }
         }
-
         .serviceMarcasCarrousel {
           position: relative;
           width: 100%;
