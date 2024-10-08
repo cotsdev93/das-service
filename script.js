@@ -122,7 +122,7 @@ function cargarFotos(fotos) {
   for (const foto of fotos) {
     fotosElement.innerHTML += `
     <div class="fotoContainer">
-      <img src="${foto.img}" alt="${foto.alt}">
+      <img src="${foto.img}" loading="lazy" alt="${foto.alt}">
     </div>
     `;
   }

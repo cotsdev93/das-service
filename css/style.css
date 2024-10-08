@@ -35,7 +35,6 @@ html {
   height: 100%;
   margin: 0;
   padding: 0;
-  scrollbar-width: thin;
   scroll-behavior: smooth;
   min-height: 150vh;
 }
@@ -362,7 +361,6 @@ body #section2 .repuestosContainerMain .repuestosCarrousell .repuestosContainer 
 }
 body #section2 .repuestosContainerMain .repuestosCarrousell .repuestosContainer .noHayRepuestos p {
   color: #c5c5c5;
-  color: red;
 }
 body #section2 .repuestosContainerMain .repuestosCarrousell .repuestosContainer .repuestoContainer {
   margin: 2px;
