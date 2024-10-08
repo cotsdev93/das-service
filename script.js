@@ -86,6 +86,20 @@ class BaseDeDatosService {
   }
 }
 
+class BaseDeDatosServiceFotos {
+  constructor() {
+    this.fotos = [];
+    this.cargarFotos();
+  }
+
+  async cargarFotos() {
+    const resultado = await fetch("./JSON/fotos.json");
+    this.fotos = await resultado.json();
+    cargarFotos(this.fotos);
+    // verificarCantidadFotos();
+  }
+}
+
 const marcasElement = document.querySelector("#marcas");
 
 function cargarMarcas(marcas) {
@@ -100,7 +114,23 @@ function cargarMarcas(marcas) {
   }
 }
 
+const fotosElement = document.querySelector("#fotos");
+
+function cargarFotos(fotos) {
+  fotosElement.innerHTML = "";
+
+  for (const foto of fotos) {
+    fotosElement.innerHTML += `
+    <div class="fotoContainer">
+      <img src="${foto.img}" alt="${foto.alt}">
+    </div>
+    `;
+  }
+}
+
 const bdService = new BaseDeDatosService();
+
+const bsServiceFotos = new BaseDeDatosServiceFotos();
 
 const btnLeftService = document.querySelector(".btnLeftMarcas");
 const btnRightService = document.querySelector(".btnRightMarcas");
