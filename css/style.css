@@ -128,6 +128,9 @@ html main {
     overflow-x: hidden;
     overflow-y: auto;
   }
+  html::-webkit-scrollbar {
+    display: none;
+  }
   html body {
     height: 100vh;
     background-image: url("../assets/img/fondo.jpg");

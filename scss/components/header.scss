@@ -95,6 +95,9 @@ html {
     padding: 0;
     overflow-x: hidden;
     overflow-y: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
     body {
       height: 100vh;
       background-image: url("../assets/img/fondo.jpg");
