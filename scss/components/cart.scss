@@ -69,21 +69,19 @@ body {
           .cantidadHeader {
             grid-column: span 1;
             text-align: center;
-            padding-left: 0px;
+            padding-left: 32px;
           }
           .precioHeader {
             grid-column: span 1;
-            text-align: center;
+            padding-left: 40px;
           }
         }
       }
       .carritoContainer {
-        max-height: 60vh;
+        max-height: 50vh;
         overflow-y: auto;
-        scrollbar-width: thin;
-        scroll-behavior: smooth;
         #carrito {
-          margin: 10px 20px;
+          margin: 5px;
           overflow-y: auto;
           .productoContainer {
             display: flex;
@@ -98,7 +96,7 @@ body {
               align-items: center;
               img {
                 border-radius: 5px;
-                width: 100%;
+                width: 80%;
                 background-color: $claritoFondo;
                 box-shadow: inset 0px 0px 3px 1px #00000010;
                 cursor: pointer;
@@ -202,7 +200,7 @@ body {
         }
       }
       .totalCarritoContainer {
-        height: 40px;
+        height: 30px;
         width: 100%;
         display: flex;
         justify-content: flex-end;

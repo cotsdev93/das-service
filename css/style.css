@@ -41,7 +41,7 @@ html {
 }
 html body {
   height: 100%;
-  background-image: url("../assets/img/fondo.png");
+  background-image: url("../assets/img/fondo.webp");
   background-position: center;
   background-repeat: repeat-y;
   background-size: auto;
@@ -1638,20 +1638,18 @@ body #section6 .cartContainer .staticMobile .headerCarrito .productoHeader {
 body #section6 .cartContainer .staticMobile .headerCarrito .cantidadHeader {
   grid-column: span 1;
   text-align: center;
-  padding-left: 0px;
+  padding-left: 32px;
 }
 body #section6 .cartContainer .staticMobile .headerCarrito .precioHeader {
   grid-column: span 1;
-  text-align: center;
+  padding-left: 40px;
 }
 body #section6 .cartContainer .carritoContainer {
-  max-height: 60vh;
+  max-height: 50vh;
   overflow-y: auto;
-  scrollbar-width: thin;
-  scroll-behavior: smooth;
 }
 body #section6 .cartContainer .carritoContainer #carrito {
-  margin: 10px 20px;
+  margin: 5px;
   overflow-y: auto;
 }
 body #section6 .cartContainer .carritoContainer #carrito .productoContainer {
@@ -1669,7 +1667,7 @@ body #section6 .cartContainer .carritoContainer #carrito .productoContainer .pro
 }
 body #section6 .cartContainer .carritoContainer #carrito .productoContainer .productoImgContainer img {
   border-radius: 5px;
-  width: 100%;
+  width: 80%;
   background-color: #f8f8f8;
   box-shadow: inset 0px 0px 3px 1px rgba(0, 0, 0, 0.062745098);
   cursor: pointer;
@@ -1769,7 +1767,7 @@ body #section6 .cartContainer .carritoContainer #carrito .noHayProductos p {
   color: #c5c5c5;
 }
 body #section6 .cartContainer .totalCarritoContainer {
-  height: 40px;
+  height: 30px;
   width: 100%;
   display: flex;
   justify-content: flex-end;
