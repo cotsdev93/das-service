@@ -206,12 +206,12 @@ body {
         }
         .serviceFotosCarrousel {
           width: 99%;
-          height: 30vh;
+          height: 25vh;
           margin: auto;
           transition: all 1s;
           position: relative;
           &:hover {
-            height: 30vh;
+            height: 25vh;
           }
           .btnLeftFotos {
             transition: opacity 1s;
@@ -248,17 +248,17 @@ body {
 
           }
           .btnLeftFotos {
-            left: 0; // Posiciona a la izquierda
+            left: 0; 
             .bx-chevron-left {
               color: $claritoFondo;
-              font-size: 20px; // Ajusta el tamaño del ícono si es necesario
+              font-size: 20px;
             }
           }
           .btnRightFotos {
-            right: 0; // Posiciona a la derecha
+            right: 0; 
             .bx-chevron-right {
               color: $claritoFondo;
-              font-size: 20px; // Ajusta el tamaño del ícono si es necesario
+              font-size: 20px; 
             }
           }
         }

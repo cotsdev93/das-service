@@ -775,8 +775,7 @@ class Carrito {
   }
 
   agregar(producto) {
-    // ** Verificamos que el producto esté definido antes de continuar. **
-    if (!producto) return; // Si el producto es undefined, salimos de la función.
+    if (!producto) return;
 
     const productoEnCarrito = this.estaEnCarrito(producto);
 
@@ -798,7 +797,6 @@ class Carrito {
       this.carrito.splice(indice, 1);
     }
 
-    // Verifico si el carrito está vacío
     if (this.carrito.length === 0) {
       this.total = 0;
       this.cantidadProductos = 0;
@@ -814,10 +812,9 @@ class Carrito {
       this.listar();
     }
 
-    // ** Cambié aquí para asegurarme de que la cantidad total se actualice correctamente. **
     const cantidadCartElements = document.querySelectorAll(".cantidadCart");
     for (const elemento of cantidadCartElements) {
-      elemento.innerHTML = this.cantidadProductos; // Actualiza la cantidad de productos
+      elemento.innerHTML = this.cantidadProductos; 
     }
   }
 
@@ -882,7 +879,7 @@ class Carrito {
 
     const cantidadCartElements = document.querySelectorAll(".cantidadCart");
     for (const elemento of cantidadCartElements) {
-      elemento.innerHTML = this.cantidadProductos; // Actualiza la cantidad de productos en cada elemento con la clase .cantidadCart
+      elemento.innerHTML = this.cantidadProductos; 
     }
 
     const quitarCarrito = document.querySelectorAll(".fa-circle-minus");

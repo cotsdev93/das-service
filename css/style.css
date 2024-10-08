@@ -805,13 +805,13 @@ body #section1 .serviceContainer .serviceMarcasCarrousel .bx-chevron-right:activ
   }
   body #section1 .serviceContainer .serviceFotosCarrousel {
     width: 99%;
-    height: 30vh;
+    height: 25vh;
     margin: auto;
     transition: all 1s;
     position: relative;
   }
   body #section1 .serviceContainer .serviceFotosCarrousel:hover {
-    height: 30vh;
+    height: 25vh;
   }
   body #section1 .serviceContainer .serviceFotosCarrousel .btnLeftFotos {
     transition: opacity 1s;
