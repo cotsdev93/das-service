@@ -14,6 +14,10 @@ html {
     background-size: auto;
     display: flex;
     flex-direction: column;
+    transition: 1s ;
+    .agrandar {
+     background-color: red;
+    }
     &::-webkit-scrollbar {
       display: none;
     }

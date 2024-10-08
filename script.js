@@ -208,7 +208,7 @@ verificarCantidadMarca();
 
 const btnLeftFotos = document.querySelector(".btnLeftFotos");
 const btnRightFotos = document.querySelector(".btnRightFotos");
-const serviceFotoContainer = document.querySelector(".serviceFotoContainer"); 
+const serviceFotoContainer = document.querySelector(".serviceFotoContainer");
 
 function obtenerAnchoFotoConMargen() {
   const foto = document.querySelector(".fotoContainer");
@@ -225,7 +225,7 @@ function obtenerAnchoFotoConMargen() {
 function moverCarrouselFoto(direccion) {
   const anchoFoto = obtenerAnchoFotoConMargen();
   if (anchoFoto > 0) {
-    const desplazamientoActual = serviceFotoContainer.scrollLeft; 
+    const desplazamientoActual = serviceFotoContainer.scrollLeft;
     const nuevoDesplazamiento =
       direccion === "izquierda"
         ? desplazamientoActual - anchoFoto
@@ -270,10 +270,22 @@ iniciarAutoSlide();
 
 serviceFotosCarrousel.addEventListener("mouseenter", () => {
   detenerAutoSlide();
+  const body = document.querySelector("body");
+
+  function estirarBody() {
+    body.style.height = "110%";
+  }
+  estirarBody();
 });
 
 serviceFotosCarrousel.addEventListener("mouseleave", () => {
   iniciarAutoSlide();
+  const body = document.querySelector("body");
+
+  function achicarBody() {
+    body.style.height = "100%";
+  }
+  achicarBody();
 });
 
 function moverCarrouselFoto(direccion) {

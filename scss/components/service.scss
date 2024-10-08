@@ -34,7 +34,9 @@ body {
 
         &:hover {
           height: 50vh;
-
+          body {
+            height: 120%;
+          }
           .btnLeftFotos {
             transition: opacity 1s;
             opacity: 0.5;
@@ -211,32 +213,27 @@ body {
           &:hover {
             height: 30vh;
           }
-
           .btnLeftFotos {
             transition: opacity 1s;
             opacity: 0.5;
           }
-
           .btnRightFotos {
             transition: opacity 1s;
             opacity: 0.5;
           }
-
           .serviceFotoContainer {
             width: 100%;
             height: 100%;
             overflow-y: hidden;
-            overflow-x: auto;
+            overflow-x: hidden;
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
             transition: all 5s;
             border-radius: 10px;
-
             &::-webkit-scrollbar {
               display: none;
             }
-
             img {
               width: 100%;
               object-fit: cover;
@@ -245,13 +242,11 @@ body {
            
             }
           }
-
           .btnLeftFotos,
           .btnRightFotos {
             opacity: 0.5;
 
           }
-
           .btnLeftFotos {
             left: 0; // Posiciona a la izquierda
             .bx-chevron-left {
@@ -259,7 +254,6 @@ body {
               font-size: 20px; // Ajusta el tamaño del ícono si es necesario
             }
           }
-
           .btnRightFotos {
             right: 0; // Posiciona a la derecha
             .bx-chevron-right {
@@ -277,7 +271,7 @@ body {
             pointer-events: auto;
             display: flex;
             overflow: hidden;
-            touch-action: pan-x; /* Habilitar desplazamiento táctil horizontal */
+            touch-action: pan-x;
             .marcaContainer {
               flex: 0 0 23.4%;
               height: 60px;
