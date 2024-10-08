@@ -239,25 +239,95 @@ function moverCarrouselFoto(direccion) { // Corregido el nombre de la función (
 }
 
 // Autoslide con corrección de los nombres de contenedor y función
-let autoSlideFotos = setInterval(() => {
-  const anchoTotalScroll = serviceFotoContainer.scrollWidth;
-  const desplazamientoActual = serviceFotoContainer.scrollLeft;
-  const anchoFoto = obtenerAnchoFotoConMargen(); // Corregido el nombre de la función
+const serviceFotosCarrousel = document.querySelector(".serviceFotosCarrousel");
 
-  if (
-    desplazamientoActual + anchoFoto >=
-    anchoTotalScroll - serviceFotoContainer.clientWidth
-  ) {
-    serviceFotoContainer.scrollTo({
-      left: 0,
-      behavior: "smooth",
-    });
-  } else {
-    moverCarrouselFoto("derecha"); // Corregido el nombre de la función
+// Función para bloquear el scroll con el mouse
+function bloquearScroll(event) {
+  event.preventDefault(); // Previene el comportamiento de desplazamiento predeterminado
+}
+
+// Agregar el event listener para bloquear el scroll con el mouse
+serviceFotosCarrousel.addEventListener("wheel", bloquearScroll, { passive: false });
+
+let autoSlideFotos;
+
+
+// Función para iniciar el auto-slide
+function iniciarAutoSlide() {
+  autoSlideFotos = setInterval(() => {
+    const anchoTotalScroll = serviceFotoContainer.scrollWidth;
+    const desplazamientoActual = serviceFotoContainer.scrollLeft;
+    const anchoFoto = obtenerAnchoFotoConMargen(); // Corregido el nombre de la función
+
+    if (
+      desplazamientoActual + anchoFoto >=
+      anchoTotalScroll - serviceFotoContainer.clientWidth
+    ) {
+      serviceFotoContainer.scrollTo({
+        left: 0,
+        behavior: "smooth",
+      });
+    } else {
+      moverCarrouselFoto("derecha"); // Corregido el nombre de la función
+    }
+  }, 4000);
+}
+
+// Función para detener el auto-slide
+function detenerAutoSlide() {
+  clearInterval(autoSlideFotos);
+}
+
+// Iniciar el auto-slide inicialmente
+iniciarAutoSlide();
+
+// Detener el auto-slide al hacer hover
+serviceFotosCarrousel.addEventListener("mouseenter", () => {
+  detenerAutoSlide();
+});
+
+// Reanudar el auto-slide cuando el hover termina
+serviceFotosCarrousel.addEventListener("mouseleave", () => {
+  iniciarAutoSlide();
+});
+
+
+// Función para mover el carrusel de fotos
+function moverCarrouselFoto(direccion) {
+  const anchoFoto = obtenerAnchoFotoConMargen(); // Obtener el ancho de una foto
+  const desplazamientoActual = serviceFotoContainer.scrollLeft; // Desplazamiento actual
+  const anchoTotalScroll = serviceFotoContainer.scrollWidth; // Ancho total del contenedor
+  
+  let nuevoDesplazamiento;
+
+  if (direccion === "derecha") {
+    if (
+      desplazamientoActual + serviceFotoContainer.clientWidth >=
+      anchoTotalScroll - anchoFoto
+    ) {
+      // Si estamos en la última foto, ir al inicio solo en autoslide
+      nuevoDesplazamiento = 0;
+    } else {
+      // Desplazar a la derecha normalmente
+      nuevoDesplazamiento = desplazamientoActual + anchoFoto;
+    }
+  } else if (direccion === "izquierda") {
+    if (desplazamientoActual <= 0) {
+      // Si estamos en la primera foto y se presiona a la izquierda, ir al final
+      nuevoDesplazamiento = anchoTotalScroll - serviceFotoContainer.clientWidth;
+    } else {
+      // Desplazar a la izquierda normalmente
+      nuevoDesplazamiento = desplazamientoActual - anchoFoto;
+    }
   }
-}, 5000);
 
-// Manejo de eventos de las flechas
+  serviceFotoContainer.scrollTo({
+    left: nuevoDesplazamiento,
+    behavior: "smooth",
+  });
+}
+
+// Manejo de eventos de las flechas (no afecta el botón de derecha)
 btnLeftFotos.addEventListener("click", () => {
   console.log("funca");
   moverCarrouselFoto("izquierda"); // Corregido el nombre de la función
