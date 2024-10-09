@@ -1,23 +1,49 @@
 body {
   main {
-    position: relative;
-    .wpNotification {
+    .wpNotificationContainer {
+      position: relative;
       font-size: 45px;
       position: fixed;
       bottom: 60px;
       right: -50px;
-      background-color:#25d366;
+      background-color: #25d366;
       width: 50px;
       height: 50px;
       border-radius: 50%;
-      display: flex; 
+      display: flex;
       justify-content: center;
       transition: right 1s ease;
-      a {
-        i {
-            color: #FFF;
+      box-shadow: 0px 0px 4px 1px #00000040;
+      .wpNotification {
+        .show {
+          right: 20px;
+        }
+
+        a {
+          i {
+            color: #fff;
             font-size: 45px;
             transform: translateY(1px);
+          }
+        }
+      }
+      .wpNotificationNumber {
+        width: 17px;
+        height: 17px;
+        background-color: red;
+        color: white;
+        border-radius: 50%;
+        position: absolute;
+        left: 0px;
+        top: -4px;
+        box-shadow: 0px 0px 4px 1px #00000040;
+        opacity: 0;
+        p {
+          font-size: 15px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-weight: 500;
         }
       }
     }

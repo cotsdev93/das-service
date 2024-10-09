@@ -1,7 +1,5 @@
-body main {
+body main .wpNotificationContainer {
   position: relative;
-}
-body main .wpNotification {
   font-size: 45px;
   position: fixed;
   bottom: 60px;
@@ -13,11 +11,34 @@ body main .wpNotification {
   display: flex;
   justify-content: center;
   transition: right 1s ease;
+  box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.2509803922);
 }
-body main .wpNotification a i {
-  color: #FFF;
+body main .wpNotificationContainer .wpNotification .show {
+  right: 20px;
+}
+body main .wpNotificationContainer .wpNotification a i {
+  color: #fff;
   font-size: 45px;
   transform: translateY(1px);
+}
+body main .wpNotificationContainer .wpNotificationNumber {
+  width: 17px;
+  height: 17px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  position: absolute;
+  left: 0px;
+  top: -4px;
+  box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.2509803922);
+  opacity: 0;
+}
+body main .wpNotificationContainer .wpNotificationNumber p {
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
 }
 
 /*# sourceMappingURL=wpNotification.css.map */

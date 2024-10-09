@@ -73,12 +73,19 @@ document.querySelectorAll("nav li, .navEnd i").forEach((item) => {
 
 // wp notification
 
-const section1 = document.getElementById("#section1");
-
 function wpNotification() {
   setTimeout(() => {
-    const wp = document.querySelector(".wpNotification");
-    wp.style.right = "20px"
+    const wp = document.querySelector(".wpNotificationContainer");
+    wp.style.right = "20px";
+
+    setTimeout(() => {
+      const wpNumber = document.querySelector(".wpNotificationNumber");
+      wpNumber.style.opacity = "1";
+    }, 3000);
+
+    setTimeout(() => {
+      wp.style.right = "-50px";
+    }, 20000);
   }, 5000);
 }
 
