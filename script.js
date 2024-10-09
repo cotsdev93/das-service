@@ -81,15 +81,34 @@ function wpNotification() {
     setTimeout(() => {
       const wpNumber = document.querySelector(".wpNotificationNumber");
       wpNumber.style.opacity = "1";
+      setTimeout(() => {
+        const wpMensaje = document.querySelector(".wpNotificationMensaje");
+        wpMensaje.style.opacity = "1";
+      }, 1000);
     }, 3000);
 
-    setTimeout(() => {
-      wp.style.right = "-50px";
-    }, 20000);
+    // setTimeout(() => {
+    //   const wpMensaje = document.querySelector(".wpNotificationMensaje");
+    //   wp.style.right = "-50px";
+    //   wpMensaje.style.opacity = "0";
+    // }, 20000);
   }, 5000);
 }
 
 wpNotification();
+
+function mostrarHora() {
+  const fecha = new Date();
+  const hora = fecha.getHours().toString().padStart(2, "0");
+  const minutos = fecha.getMinutes().toString().padStart(2, "0");
+
+  // Formato de 24 horas: HH:MM:SS
+  const horaFormateada = `${hora}:${minutos}`;
+
+  document.getElementById("horaActual").textContent = horaFormateada;
+}
+
+mostrarHora();
 
 // SERVICE
 class BaseDeDatosService {
@@ -196,7 +215,6 @@ btnRightService.addEventListener("click", () => moverCarrouselMarca("derecha"));
 
 verificarCantidadMarca();
 
-
 const btnLeftFotos = document.querySelector(".btnLeftFotos");
 const btnRightFotos = document.querySelector(".btnRightFotos");
 const serviceFotoContainer = document.querySelector(".serviceFotoContainer");
@@ -211,7 +229,7 @@ class BaseDeDatosServiceFotos {
     const resultado = await fetch("./JSON/fotos.json");
     this.fotos = await resultado.json();
     cargarFotos(this.fotos);
-    console.log(this.fotos)
+    console.log(this.fotos);
     // verificarCantidadFotos();
   }
 }

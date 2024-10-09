@@ -1,44 +1,17 @@
-body main .wpNotificationContainer {
-  position: relative;
-  font-size: 45px;
-  position: fixed;
-  bottom: 60px;
-  right: -50px;
-  background-color: #25d366;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  transition: right 1s ease;
-  box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.2509803922);
-}
-body main .wpNotificationContainer .wpNotification .show {
-  right: 20px;
-}
-body main .wpNotificationContainer .wpNotification a i {
-  color: #fff;
-  font-size: 45px;
-  transform: translateY(1px);
-}
-body main .wpNotificationContainer .wpNotificationNumber {
-  width: 17px;
-  height: 17px;
-  background-color: red;
-  color: white;
-  border-radius: 50%;
-  position: absolute;
-  left: 0px;
-  top: -4px;
-  box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.2509803922);
-  opacity: 0;
-}
-body main .wpNotificationContainer .wpNotificationNumber p {
-  font-size: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 500;
-}
+/* Error: Undefined variable.
+ *    ,
+ * 92 |               color: $claritoFondo;
+ *    |                      ^^^^^^^^^^^^^
+ *    '
+ *   scss\components\wpNotification.scss 92:22  root stylesheet */
 
-/*# sourceMappingURL=wpNotification.css.map */
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined variable.\a    \2577 \a 92 \2502                color: $claritoFondo;\d\a    \2502                       ^^^^^^^^^^^^^\a    \2575 \a   scss\\components\\wpNotification.scss 92:22  root stylesheet";
+}
