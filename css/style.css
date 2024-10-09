@@ -2136,5 +2136,26 @@ body .introContainer .logoIntroContainer img {
     width: 100%;
   }
 }
+body main {
+  position: relative;
+}
+body main .wpNotification {
+  font-size: 45px;
+  position: fixed;
+  bottom: 60px;
+  right: -50px;
+  background-color: #25d366;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  transition: right 1s ease;
+}
+body main .wpNotification a i {
+  color: #FFF;
+  font-size: 45px;
+  transform: translateY(1px);
+}
 
 /*# sourceMappingURL=style.css.map */

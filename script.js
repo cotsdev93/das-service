@@ -71,6 +71,19 @@ document.querySelectorAll("nav li, .navEnd i").forEach((item) => {
   });
 });
 
+// wp notification
+
+const section1 = document.getElementById("#section1");
+
+function wpNotification() {
+  setTimeout(() => {
+    const wp = document.querySelector(".wpNotification");
+    wp.style.right = "20px"
+  }, 5000);
+}
+
+wpNotification();
+
 // SERVICE
 class BaseDeDatosService {
   constructor() {
@@ -184,7 +197,7 @@ let autoSlide = setInterval(() => {
   } else {
     moverCarrouselMarca("derecha");
   }
-}, 3000);
+}, 4000);
 
 function verificarCantidadMarca() {
   const cantidadMarca = document.querySelectorAll(".marcaContainer").length;
@@ -814,7 +827,7 @@ class Carrito {
 
     const cantidadCartElements = document.querySelectorAll(".cantidadCart");
     for (const elemento of cantidadCartElements) {
-      elemento.innerHTML = this.cantidadProductos; 
+      elemento.innerHTML = this.cantidadProductos;
     }
   }
 
@@ -879,7 +892,7 @@ class Carrito {
 
     const cantidadCartElements = document.querySelectorAll(".cantidadCart");
     for (const elemento of cantidadCartElements) {
-      elemento.innerHTML = this.cantidadProductos; 
+      elemento.innerHTML = this.cantidadProductos;
     }
 
     const quitarCarrito = document.querySelectorAll(".fa-circle-minus");
