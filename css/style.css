@@ -796,11 +796,14 @@ body #section1 .serviceContainer .serviceMarcasCarrousel .bx-chevron-right:activ
     margin: 20px 0px;
     padding-bottom: 10px;
   }
+  body #section1 .serviceContainer .titleServiceContainer {
+    margin: 10px 5px 5px 5px;
+  }
   body #section1 .serviceContainer .titleServiceContainer .titleService {
     font-size: 12px;
   }
   body #section1 .serviceContainer .textService {
-    margin: 0px 10px 0px 10px;
+    margin: 0px 5px;
     font-size: 12px;
   }
   body #section1 .serviceContainer .serviceFotosCarrousel {

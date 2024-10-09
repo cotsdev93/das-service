@@ -196,12 +196,14 @@ body {
         margin: 20px 0px;
         padding-bottom: 10px;
         .titleServiceContainer {
+          // border: solid 1px red;
+          margin: 10px 5px 5px 5px;
           .titleService {
             font-size: 12px;
           }
         }
         .textService {
-          margin: 0px 10px 0px 10px;
+          margin: 0px 5px;
           font-size: 12px;
         }
         .serviceFotosCarrousel {
