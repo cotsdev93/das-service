@@ -1,7 +1,6 @@
 [
-  { "img": "./assets/img/taller00.webp", "alt": "" },
-  { "img": "./assets/img/taller01.webp", "alt": "" },
-  { "img": "./assets/img/taller02.webp", "alt": "" },
-  { "img": "./assets/img/taller03.webp", "alt": "" },
-  { "img": "./assets/img/taller03.webp", "alt": "" }
+  { "img": "./assets/img/taller00.webp", "alt": "taller" },
+  { "img": "./assets/img/taller01.webp", "alt": "taller" },
+  { "img": "./assets/img/taller02.webp", "alt": "taller" },
+  { "img": "./assets/img/taller03.webp", "alt": "taller" }
 ]

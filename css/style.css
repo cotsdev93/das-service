@@ -2150,6 +2150,7 @@ body main .wpNotificationContainer {
   justify-content: center;
   transition: right 1s ease;
   box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.2509803922);
+  cursor: pointer;
 }
 body main .wpNotificationContainer .wpNotification .show {
   right: 20px;
@@ -2191,22 +2192,12 @@ body main .wpNotificationContainer .wpNotificationMensaje {
   opacity: 0;
   transition: 0.5s;
   padding-left: 3px;
+  cursor: pointer;
+  overflow: hidden;
 }
 body main .wpNotificationContainer .wpNotificationMensaje:hover {
   transform: translateY(-40px);
-  height: 75px;
-}
-body main .wpNotificationContainer .wpNotificationMensaje .dasLogoContainer {
-  border-right: solid 0.5px #bababa;
-  height: 100%;
-  width: 20%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-body main .wpNotificationContainer .wpNotificationMensaje .dasLogoContainer img {
-  width: 30px;
-  padding: 2px;
+  height: 67px;
 }
 body main .wpNotificationContainer .wpNotificationMensaje .wpMensajesContainer {
   display: flex;
@@ -2242,6 +2233,25 @@ body main .wpNotificationContainer .wpNotificationMensaje .wpMensajesContainer .
   bottom: 0;
   right: 0;
   margin: 3px;
+}
+body main .wpNotificationContainer .wpNotificationMensaje .wpMensajesContainer .wpMensajes .opciones {
+  display: flex;
+  justify-content: space-around;
+  margin: 5px 0px 0px 0px;
+}
+body main .wpNotificationContainer .wpNotificationMensaje .wpMensajesContainer .wpMensajes .opciones .opcion {
+  border: solid 0.5px #c5c5c5;
+  width: 30%;
+  padding: 2px;
+  border-radius: 2px;
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #6f6f6f;
+}
+body main .wpNotificationContainer .wpNotificationMensaje .wpMensajesContainer .wpMensajes .opciones .opcion a {
+  color: #f8f8f8;
 }
 
 /*# sourceMappingURL=style.css.map */
