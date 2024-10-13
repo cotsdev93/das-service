@@ -49,6 +49,7 @@ body {
         }
       }
       .wpNotificationMensaje {
+        display: none;
         position: absolute;
         top: -30px;
         left: -215px;
@@ -70,6 +71,7 @@ body {
           display: flex;
           align-items: center;
           width: 100%;
+          position: relative;
           .wpMensajes {
             width: 100%;
             height: 100%;
@@ -103,7 +105,7 @@ body {
               display: flex;
               justify-content: space-around;
               margin: 5px 0px 0px 0px;
-              
+
               .opcion {
                 border: solid 0.5px $grisClaro;
                 width: 30%;
@@ -119,6 +121,21 @@ body {
                 }
               }
             }
+          }
+          .close {
+            border: solid 0.5px $grisClaro;
+            border-radius: 50%;
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 6px;
+            display: flex;
+            justify-content: center;
+            align-items:  center;
+            color: $grisClaro;
+            margin: 3px;
           }
         }
       }

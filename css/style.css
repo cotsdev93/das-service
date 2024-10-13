@@ -2181,6 +2181,7 @@ body main .wpNotificationContainer .wpNotificationNumber p {
   font-weight: 500;
 }
 body main .wpNotificationContainer .wpNotificationMensaje {
+  display: none;
   position: absolute;
   top: -30px;
   left: -215px;
@@ -2203,6 +2204,7 @@ body main .wpNotificationContainer .wpNotificationMensaje .wpMensajesContainer {
   display: flex;
   align-items: center;
   width: 100%;
+  position: relative;
 }
 body main .wpNotificationContainer .wpNotificationMensaje .wpMensajesContainer .wpMensajes {
   width: 100%;
@@ -2252,6 +2254,21 @@ body main .wpNotificationContainer .wpNotificationMensaje .wpMensajesContainer .
 }
 body main .wpNotificationContainer .wpNotificationMensaje .wpMensajesContainer .wpMensajes .opciones .opcion a {
   color: #f8f8f8;
+}
+body main .wpNotificationContainer .wpNotificationMensaje .wpMensajesContainer .close {
+  border: solid 0.5px #c5c5c5;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #c5c5c5;
+  margin: 3px;
 }
 
 /*# sourceMappingURL=style.css.map */
