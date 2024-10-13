@@ -84,6 +84,7 @@ function wpNotification() {
       setTimeout(() => {
         const wpMensaje = document.querySelector(".wpNotificationMensaje");
         wpMensaje.style.opacity = "1";
+        wpMensaje.style.display = "block"
       }, 1000);
     }, 3000);
 
