@@ -1872,10 +1872,15 @@ body #section6 .cartContainer .comprarContainer .comprar p {
   }
   body #section6 .cartContainer .staticMobile .headerCarrito {
     display: grid;
-    grid-template-columns: repeat(6, 1fr) 1fr 1fr;
+    grid-template-columns: repeat(6, 1fr) 1fr 1fr 1fr;
     align-items: center;
     color: #c5c5c5;
     margin: 0px;
+  }
+  body #section6 .cartContainer .staticMobile .headerCarrito .productoHeader,
+  body #section6 .cartContainer .staticMobile .headerCarrito .cantidadHeader,
+  body #section6 .cartContainer .staticMobile .headerCarrito .precioHeader {
+    margin: 5px;
   }
   body #section6 .cartContainer .staticMobile .headerCarrito .productoHeader p,
   body #section6 .cartContainer .staticMobile .headerCarrito .cantidadHeader p,
@@ -1883,21 +1888,22 @@ body #section6 .cartContainer .comprarContainer .comprar p {
     font-size: 12px;
   }
   body #section6 .cartContainer .staticMobile .headerCarrito .productoHeader {
-    margin-left: 7px;
+    margin-left: 0px;
     padding-left: 0px;
+    width: 80%;
   }
   body #section6 .cartContainer .staticMobile .headerCarrito .cantidadHeader {
     grid-column: span 1;
     text-align: center;
     padding: 0px;
-    margin-right: 0px;
-    margin-left: 50px;
+    margin-right: 15px;
+    margin-left: 0px;
   }
   body #section6 .cartContainer .staticMobile .headerCarrito .precioHeader {
     grid-column: span 1;
     text-align: center;
-    margin-right: 30px;
-    padding-left: 30px;
+    margin-right: 0px;
+    padding-left: 0px;
   }
   body #section6 .cartContainer .carritoContainer {
     height: 100%;

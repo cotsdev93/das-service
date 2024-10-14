@@ -297,33 +297,37 @@ body {
           }
           .headerCarrito {
             display: grid;
-            grid-template-columns: repeat(6, 1fr) 1fr 1fr;
+            grid-template-columns: repeat(6, 1fr) 1fr 1fr 1fr;
             align-items: center;
             color: $grisClaro;
             margin: 0px;
             .productoHeader,
             .cantidadHeader,
             .precioHeader {
+              
+              margin: 5px;
               p {
                 font-size: 12px;
               }
             }
             .productoHeader {
-              margin-left: 7px;
+              margin-left: 0px;
               padding-left: 0px;
+              width: 80%;
             }
             .cantidadHeader {
+              
               grid-column: span 1;
               text-align: center;
               padding: 0px;
-              margin-right: 0px;
-              margin-left: 50px;
+              margin-right: 15px;
+              margin-left: 0px;
             }
             .precioHeader {
               grid-column: span 1;
               text-align: center;
-              margin-right: 30px;
-              padding-left: 30px;
+              margin-right: 0px;
+              padding-left: 0px;
             }
           }
         }
