@@ -1915,7 +1915,7 @@ body #section6 .cartContainer .comprarContainer .comprar p {
     border-bottom: 0.5px #c9c9c9 solid;
     padding-bottom: 5px;
     margin-bottom: 5px;
-    width: 100%;
+    width: 50%;
   }
   body #section6 .cartContainer .carritoContainer #carrito .productoContainer .productoImgContainer {
     width: 80px;
