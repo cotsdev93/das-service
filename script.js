@@ -93,15 +93,15 @@ function wpNotification() {
     close.addEventListener("click", () => {
       const wpMensaje = document.querySelector(".wpNotificationMensaje");
       wp.style.right = "-50px";
-      wpMensaje.style.opacity = "0";
+      wpMensaje.style.display = "none";
     });
 
 
-    // setTimeout(() => {
-    //   const wpMensaje = document.querySelector(".wpNotificationMensaje");
-    //   wp.style.right = "-50px";
-    //   wpMensaje.style.opacity = "0";
-    // }, 25000);
+    setTimeout(() => {
+      const wpMensaje = document.querySelector(".wpNotificationMensaje");
+      wp.style.right = "-50px";
+      wpMensaje.style.display = "none";
+    }, 25000);
   }, 5000);
 }
 
