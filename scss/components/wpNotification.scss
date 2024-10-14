@@ -63,8 +63,8 @@ body {
         cursor: pointer;
         overflow: hidden;
         &:hover {
-          transform: translateY(-40px);
-          height: 67px;
+          transform: translateY(-30px);
+          height: 55px;
         }
         .wpMensajesContainer {
           display: flex;
@@ -73,7 +73,7 @@ body {
           position: relative;
           .wpMensajes {
             width: 100%;
-            height: 100%;
+            height: 35px;
             justify-content: center;
             align-items: center;
             position: relative;
@@ -86,11 +86,12 @@ body {
               font-weight: 600;
             }
             .wpMensaje {
-              width: 100%;
+              width: 80%;
               font-size: 10.5px;
               color: $claritoFondo;
               margin: 1px 0px 3px 3px;
               white-space: nowrap;
+              // border: solid 1px red;
             }
             #horaActual {
               font-size: 10px;
@@ -98,14 +99,15 @@ body {
               position: absolute;
               bottom: 0;
               right: 0;
-              margin: 3px;
+              margin: 0px 5px 2px 0px; 
             }
             .opciones {
               display: flex;
               justify-content: space-around;
               margin: 5px 0px 0px 0px;
-
+              // border: solid 1px red;
               .opcion {
+                z-index: 3;
                 border: solid 0.5px $grisClaro;
                 width: 30%;
                 padding: 2px;
@@ -135,6 +137,7 @@ body {
             align-items:  center;
             color: $grisClaro;
             margin: 3px;
+
           }
         }
       }

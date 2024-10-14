@@ -94,11 +94,11 @@ function wpNotification() {
       wp.style.right = "-50px";
       wpMensaje.style.opacity = "0";
     });
-    setTimeout(() => {
-      const wpMensaje = document.querySelector(".wpNotificationMensaje");
-      wp.style.right = "-50px";
-      wpMensaje.style.opacity = "0";
-    }, 20000);
+    // setTimeout(() => {
+    //   const wpMensaje = document.querySelector(".wpNotificationMensaje");
+    //   wp.style.right = "-50px";
+    //   wpMensaje.style.opacity = "0";
+    // }, 20000);
   }, 5000);
 }
 
