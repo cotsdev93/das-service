@@ -239,7 +239,6 @@ class BaseDeDatosServiceFotos {
     const resultado = await fetch("./JSON/fotos.json");
     this.fotos = await resultado.json();
     cargarFotos(this.fotos);
-    console.log(this.fotos);
     // verificarCantidadFotos();
   }
 }
