@@ -1847,7 +1847,6 @@ body #section6 .cartContainer .comprarContainer .comprar p {
 
 @media (max-width: 737px) {
   body #section6 .cartContainer {
-    border: solid 1px red;
     padding-bottom: 0px;
     max-height: 75vh;
     width: 90%;
