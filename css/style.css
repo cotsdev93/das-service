@@ -1602,7 +1602,7 @@ body #section6 .cartContainer .staticMobile {
   position: sticky;
   top: 0;
   z-index: 1;
-  padding-bottom: 5px;
+  padding-bottom: 0px;
   overflow: hidden;
 }
 body #section6 .cartContainer .staticMobile .titleCartContainer {
@@ -1909,7 +1909,7 @@ body #section6 .cartContainer .comprarContainer .comprar p {
     height: 100%;
     max-height: 50vh;
     overflow-y: auto;
-    margin: 5px;
+    margin: 0px;
   }
   body #section6 .cartContainer .carritoContainer #carrito {
     margin: 0px;
