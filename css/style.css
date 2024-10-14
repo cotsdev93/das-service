@@ -1923,7 +1923,7 @@ body #section6 .cartContainer .comprarContainer .comprar p {
   }
   body #section6 .cartContainer .carritoContainer #carrito .productoContainer .productoImgContainer img {
     border-radius: 1px;
-    width: 100%;
+    width: 90%;
   }
   body #section6 .cartContainer .carritoContainer #carrito .productoContainer .productoDetailContainer {
     width: 70%;
@@ -2021,6 +2021,7 @@ body #section6 .cartContainer .comprarContainer .comprar p {
   }
   body #section6 .cartContainer .carritoContainer #carrito .productoContainer .productoDetailContainer .productoDetailContainerMobile .bloque02 .productoPrecioContainer .productoPrecio p {
     color: green;
+    white-space: nowrap;
   }
   body #section6 .cartContainer .carritoContainer #carrito .noHayProductos {
     height: 120px;

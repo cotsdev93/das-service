@@ -347,7 +347,7 @@ body {
                 margin: 0px;
                 img {
                   border-radius: 1px;
-                  width: 100%;
+                  width: 90%;
                 }
               }
               .productoDetailContainer {
@@ -445,6 +445,7 @@ body {
                         align-items: center;
                         p {
                           color: green;
+                          white-space: nowrap;
                         }
                       }
                     }
