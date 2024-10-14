@@ -2274,7 +2274,7 @@ body main .wpNotificationContainer .wpNotificationMensaje .wpMensajesContainer .
 
 @media (max-width: 737px) {
   body main .wpNotificationContainer {
-    bottom: 100px;
+    bottom: 70px;
     right: -50px;
     cursor: pointer;
   }
@@ -2290,7 +2290,7 @@ body main .wpNotificationContainer .wpNotificationMensaje .wpMensajesContainer .
     top: -35px;
     left: -230px;
     width: 230px;
-    height: 40px;
+    height: 37px;
   }
   body main .wpNotificationContainer .wpNotificationMensaje:hover {
     transform: translateY(0px);
