@@ -74,6 +74,7 @@ document.querySelectorAll("nav li, .navEnd i").forEach((item) => {
 // wp notification
 
 function wpNotification() {
+  
   setTimeout(() => {
     const wp = document.querySelector(".wpNotificationContainer");
     wp.style.right = "20px";
@@ -84,7 +85,7 @@ function wpNotification() {
       setTimeout(() => {
         const wpMensaje = document.querySelector(".wpNotificationMensaje");
         wpMensaje.style.opacity = "1";
-        wpMensaje.style.display = "block"
+        wpMensaje.style.display = "block";
       }, 1000);
     }, 3000);
 
@@ -94,11 +95,13 @@ function wpNotification() {
       wp.style.right = "-50px";
       wpMensaje.style.opacity = "0";
     });
+
+
     // setTimeout(() => {
     //   const wpMensaje = document.querySelector(".wpNotificationMensaje");
     //   wp.style.right = "-50px";
     //   wpMensaje.style.opacity = "0";
-    // }, 20000);
+    // }, 25000);
   }, 5000);
 }
 
