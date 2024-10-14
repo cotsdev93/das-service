@@ -270,6 +270,7 @@ body {
   body {
     #section6 {
       .cartContainer {
+        border: solid 1px red;
         padding-bottom: 0px;
         max-height: 75vh;
         width: 90%;
@@ -321,7 +322,7 @@ body {
               grid-column: span 1;
               text-align: center;
               padding: 0px;
-              margin-right: 0px;
+              margin-right: 25px;
               margin-left: 0px;
             }
             .precioHeader {
