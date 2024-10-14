@@ -1890,12 +1890,14 @@ body #section6 .cartContainer .comprarContainer .comprar p {
     grid-column: span 1;
     text-align: center;
     padding: 0px;
-    margin-right: 10px;
+    margin-right: 0px;
+    margin-left: 50px;
   }
   body #section6 .cartContainer .staticMobile .headerCarrito .precioHeader {
     grid-column: span 1;
     text-align: center;
     margin-right: 30px;
+    padding-left: 30px;
   }
   body #section6 .cartContainer .carritoContainer {
     height: 100%;

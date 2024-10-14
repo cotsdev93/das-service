@@ -316,12 +316,14 @@ body {
               grid-column: span 1;
               text-align: center;
               padding: 0px;
-              margin-right: 10px;
+              margin-right: 0px;
+              margin-left: 50px;
             }
             .precioHeader {
               grid-column: span 1;
               text-align: center;
               margin-right: 30px;
+              padding-left: 30px;
             }
           }
         }
